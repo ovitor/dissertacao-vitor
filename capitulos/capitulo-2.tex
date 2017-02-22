@@ -110,7 +110,7 @@ outros \cite{amaral2001assistencia}.
 %que os cuidadores enfrentam. exemplo quando são familiares, que muitas vezes, 
 %negam a dar atenção, ou desempenhar determinadas funções.
 
-\subsubsection{Nomenclatura}\label{subsubsec:nomenclatura}
+\subsubsection{Terminologia}\label{subsubsec:terminologia}
 
 Apesar de não haver uma definição formal, a Assistência Domiciliar à Saúde pode
 ser separada em três modalidades, diferenciadas, principalmente, pelo grau de 
@@ -159,32 +159,90 @@ que os objetivos fossem alcançados.
 \subsection{Sistemas Embarcados}\label{subsec:sistemas-embarcados}
 
 Sistemas Embarcados estão inseridos em nossos cotidianos. Aparelhos como
-\textit{smartphones}, \textit{tablets} - com alto poder de processamento,
-produtos comumente encontrados em nossas casas, a exemplo do forno de micro-
-ondas, geladeiras e máquinas de lavar roupas, até computadores de bordo e
-controle de freios ABS\footnote{Tecnologia de freio considerada segura pois seu
-funcionamento impede que, em uma brecada brusca, as rodas  deslizem, tornando
-difícil controlar o veículo} em nossos carros contém sistemas  embarcados em
-suas composições.
+\smartphones[], \tablets[] - com alto poder de processamento,
+produtos comumente encontrados em nossas casas, a exemplo do forno de 
+micro-ondas, geladeiras e máquinas de lavar roupas, até computadores de bordo e
+controle de freios ABS (\textit{Anti-lock Breaking System})\footnote{ABS:
+Tecnologia  de freio considerada segura pois seu funcionamento impede que, em
+uma brecada brusca, as rodas  deslizem, tornando difícil controlar o veículo} em
+nossos carros, contêm sistemas embarcados. Essa diversidade de aplicações
+explicita a importância dessa área.
 
 Nos exemplos citados anteriormente, temos uma classificação quanto à sua
-funcionalidade ou ainda a quantidade de dados processadas pelos equipamentos,
-porém, a definição  de sistemas embarcados não é simples, nem taxativa. Podemos
-definir, informalmente, sistemas embarcados como qualquer
+funcionalidade, porém, sua definição não é simples, nem muito menos taxativa,
+uma vez que possuem uma grande complexidade em sua composição. Dessa forma,
+podemos definir, informalmente, sistemas embarcados como qualquer
 dispositivo/equipamento que disponha de um sistema programável e que seu
-objetivo não seja o de um computador de propósito geral
+objetivo não seja o de um computador de propósito geral\footnote{Computador de
+propósito geral é aquele em que é possível executar as mais diversas tarefas,
+tais como, navegar na Internet, escrever documentos, executar jogos etc, ou
+seja, não há uma função específica a ser realizada. Pelo exposto, percebe-se a
+complexidade da sua definição, uma vez que, muitos desses sistemas embarcados
+desempenham funções que antes cabiam apenas ao computador de propósito geral.}
 \cite{wolf2012computers}.
 
 Marwedel define: ``Sistemas Embarcados são sistemas de processamento de
-informações  incorporados à produtos.'' \cite{marwedel2010embedded}
+informações incorporados à produtos.'', adicionado à esta definição, lista 5
+características que sistemas embarcados devem levar em consideração: 
 
+\begin{itemize}
+  \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
+  equipamento devem permanecer confidenciais e a comunicação deve ser autêntica;
+  \item Seguro - característica indicativa de que o sistema não causará nenhum dano;
+  \item Disponibilidade - sistema disponível para executar as funções para as quais
+  foi programado; 
+  \item Confiabilidade - probabilidade que o sistema tem de que não
+  falhará em sua execução; e
+  \item Manutenabilidade, característica  que se o sistema vir a falhar, deverá 
+  ser concertado em uma determinada janela de tempo.
+\end{itemize}
+
+Além disso, propriedades como, sensores coletando informações do ambiente
+físico e atuadores controlando o ambiente no qual estão inseridos também
+caracterizam um sistema embarcado \cite{marwedel2010embedded}.
+
+\subsubsection{Arquitetura}\label{subsubsec:arquitetura}
+
+A literatura divide o sistema embarcado em duas áreas, o \hardware[] e o 
+\software. O primeiro é composto pelas partes físicas do sistema, 
+tal como o processador, memória, interfaces de entrada e saída etc. O segundo é
+composto pelos componentes lógicos do sistema, ou seja, o(s) programa(s) que 
+irá(ão) executar as funções previamente definidas do sistema embarcado.
+
+No processo de \design[] do sistema embarcado considera-se, dentro dos
+requisitos de \hardware, quais dos processadores disponíveis no mercado atende
+melhor a necessidade do projeto, além da quantidade de memória disponível para o
+\software[] utilizar. Outro ponto a ser determinado são as interfaces de entrada
+e saída - responsáveis por receber dados para processar e apresentar os dados
+processados respectivamente. Em paralelo, os requisitos de \software[] são
+alinhados para que o \hardware[] seja melhor aproveitado
+\cite{wolf2012computers}.
+
+A depender da finalidade do produto, esses requisitos diferem bastante. Por
+exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
+simples (em termos de funcionalidade, processamento, consumo de energia etc),
+uma vez que aplica um componente microcontrolador de baixo poder de
+processamento (tal qual um microprocessador PIC de 16 bits) e um circuito
+auxiliar para atender as especificações de entrada e saída do sistema, assim
+como uma possível comunicação com outros sistemas.
+
+Já o sistema embarcado em um \smartphone[] realiza diversas funções, tem um
+alto nível de processamento de dados e consome muita energia. Para atender a
+estes requisitos, a equipe responsável pelo \design[] utiliza vários
+processadores de alto poder computacional (tal qual processadores ARM), como
+interface de entrada e saída uma tela sensível ao toque e faz uso, ainda, de
+diversos sensores para ajudar na usabilidade do dispositivo.
+
+Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
+Set-Top Box (STB), processa grande quantidade de dados, porém não funciona a
+bateria. Apesar dessa diferença o \hardware[] utilizado é bastante semelhante.
+
+% No âmbito do nosso trabalho
 
 % listar algumas características inerentes aos sistemas embarcados
 
 % e autores renomados o definem levando em
 % consideração à quantidade de processamento, autonomia do dispositivo 
-
-
 
 % computacao pervasiva - computacao no nosso dia a dia, informacao estará
 % presente no a todo momento e em qualquer lugar
