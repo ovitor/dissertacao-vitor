@@ -59,6 +59,9 @@
 \usepackage{float}				% Habilitar opção H nos elementos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{tikz}					% Desenho de gráficos
+\usepackage{multirow}			% Trabalhando com tabelas
+\usepackage{minted}				% Inclusão de códigos
+\usepackage{listings}			% Inclusão de códigos
 % ---
 % Adicionado por Madson Dias
 % ---
@@ -74,6 +77,8 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \include{utils/algoritmos}
+\include{utils/codigos}
+\include{utils/cores}
 \setlist[itemize]{noitemsep, topsep=0pt, leftmargin=1.75cm}
 
 
@@ -204,6 +209,12 @@
 \listofalgorithms
 \cleardoublepage
 % ---
+% inserir lista de códigos
+\pdfbookmark[0]{\lstlistlistingname}{lol}
+\listoflistings
+\cleardoublepage
+% ---
+
 \input{pretextual/abreviacoes.tex}  			% Lista de abreviaturas e siglas
 \input{pretextual/simbolos.tex} 				% Lista de símbolos
 % inserir o sumario
@@ -269,10 +280,6 @@
 %\include{apendices/apendice-b}
 %\include{apendices/apendice-c}
 %\include{apendices/apendice-d}
-
-
-
-
 \end{apendicesenv}
 % ---
 
@@ -284,17 +291,17 @@
 % ---
 % Inicia os anexos
 % ---
-\begin{anexosenv}
+% \begin{anexosenv}
 
 % Imprime uma página indicando o início dos anexos
-\partanexos
+% \partanexos
 % Insere os anexos
-\include{anexos/anexo-a}
+% \include{anexos/anexo-a}
 %\include{anexos/anexo-b}
 %\include{anexos/anexo-c}
 %\include{anexos/anexo-d}
 
-\end{anexosenv}
+% \end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO

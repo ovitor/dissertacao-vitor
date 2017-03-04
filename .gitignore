@@ -16,4 +16,11 @@
 *.ilg
 *.ind
 *.loa
+*.lol
+*.snm
+*.out
+*.nav
 .DS_Store
+_minted-dissertacao-vitor
+presentation/
+
