@@ -1,0 +1,25 @@
+clean:
+	rm dissertacao-vitor.aux
+	rm dissertacao-vitor.bbl
+	rm dissertacao-vitor.blg
+	rm dissertacao-vitor.brf
+	rm dissertacao-vitor.fdb_latexmk
+	rm dissertacao-vitor.fls
+	rm dissertacao-vitor.idx
+	rm dissertacao-vitor.ilg
+	rm dissertacao-vitor.ind
+	rm dissertacao-vitor.loa
+	rm dissertacao-vitor.lof
+	rm dissertacao-vitor.log
+	rm dissertacao-vitor.lot
+	rm dissertacao-vitor.synctex.gz
+	rm dissertacao-vitor.toc
+	rm apresentacao-vitor.aux
+	rm apresentacao-vitor.fdb_latexmk
+	rm apresentacao-vitor.fls
+	rm apresentacao-vitor.log
+	rm apresentacao-vitor.nav
+	rm apresentacao-vitor.out
+	rm apresentacao-vitor.snm
+	rm apresentacao-vitor.synctex.gz
+	rm apresentacao-vitor.toc

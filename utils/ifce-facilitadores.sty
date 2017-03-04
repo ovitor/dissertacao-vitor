@@ -29,6 +29,7 @@
 % ---
 \usepackage{xparse}
 \usepackage{xspace}
+
 \NewDocumentCommand\figurasimples{ommm}{
 \IfNoValueTF{#1}{
 \begin{figure}[H]
@@ -48,40 +49,6 @@
   \end{center}
 \end{figure}
 }\xspace}
-
-%\newcommand{\figurasimples}[3]{
-%  \begin{figure}[H]
-%    \begin{center}
-%      \includegraphics[width=#3]{#1}
-%      \caption{#2}
-%      \label{fig:#1}
-%    \end{center}
-%  \end{figure}
-%}
-
-% ---
-% add figura dupla 
-% ---
-%\newcommand{\figuradupla}[4]{
-%  \begin{figure}[H]
-%    \begin{center}  
-%      \begin{subfigure}[b]{.45\textwidth}
-%        \includegraphics[width=\textwidth]{#1}
-%        \caption{}
-%        \label{fig:#1}
-%      \end{subfigure}
-%      ~
-%      \begin{subfigure}[b]{.45\textwidth}
-%        \includegraphics[width=\textwidth]{#3}
-%        \caption{}
-%        \label{fig:#3}
-%      \end{subfigure}
-
-%   \end{center}
-%    \caption{(a) #2; (b) #4.}
-%  \end{figure}
-%}
-
 
 \NewDocumentCommand\figuradupla{ommmm}{
 \IfNoValueTF{#1}{
