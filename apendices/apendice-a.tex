@@ -1,5 +1,106 @@
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-\lipsum[55-57]
+\chapter{Aspectos de Implementação}
+% ---
+
+% Um dos objetivos deste trabalho é proporcionar uma melhoria no dia-a-dia  dos
+% usuários. Portanto, neste apêndice são descritos aspectos  de implementação da
+% solução apresentada no decorrer do trabalho.
+
+\section{\textit{Hardware} utilizado}\label{sec:hardware-utilizado}
+
+O \stb[] (STB) escolhido possui especificações técnicas robustas, listadas na 
+tabela \ref{tab:stb-specs}. Este STB foi resultado de um projeto de pesquisa
+financiado pela Financiadora de Estudos e Projetos (FINEP) e Agência Nacional
+de Energia Elétrica (ANEEL) e foi reutilizado neste trabalho por se tratar de 
+uma pesquisa em que o autor participou.
+
+\tabela{stb-specs}{Especificação STB}{0.9}
+
+% Por se tratar de um sistema embarcado, seu poder de processamento, memória,
+% alimentação externa e portas de entrada e saída 
+
+\section{\textit{Software} utilizado}\label{sec:software-utilizado}
+
+Por se tratar de um sistema embarcado robusto, faz-se necessário a instalação
+de programas capazes de gerenciar o \hardware[] disponível. Para tanto, o
+sistema operacional escolhido foi o GNU/Linux distribuição Ubuntu 
+\textit{kernel} 3.4 portável para a arquitetura ARM com \textit{drivers} 
+específicos para a plataforma desenvolvida.
+
+\input{figuras/graficos/stb-diagram}
+
+Na camada de usuário utilizamos o \software[] \xbmc[] - um gerenciador de mídia
+- como plataforma de exibição gráfica. É através dele que o usuário irá 
+interagir com as aplicações desenvolvidas.
+
+\section{\textit{Software} implementado}\label{sec:software-implementado}
+
+Por se tratar de um sistema embarcado, nossa solução foi projetada para atender
+aos requisitos que essa plataforma demanda. Apesar das especificações do 
+\hardware[], o desenvolvimento foi encaminhado para obtermos um \software[] 
+simples em consumo de recursos.
+
+As soluções foram implementadas utilizando, quando necessário, o paradigma
+de programação Orientada a Objetos. O desenvolvimento procedural foi aplicado
+com o intuito de realizar pequenas tarefas no sistema, tais como agendamento
+de execução de tarefas, atualização das aplicações, desligamento automático etc.
+
+Além disso, também fizemos uso de \webservices[] através da Internet, acessando
+outros sistemas e complementando as funcionalidades desejadas.
+As linguagens escolhida para compor o sistema foram a linguagem \python[] e a
+linguagem \shell[]. 
+
+\subsection{Módulo \textit{web}}
+
+Foi necessária a implantação de um módulo \textit{web} para gerenciar as 
+informações básicas do usuário. Neste sistema será possível cadastrar um 
+paciente, seus alertas e contatos de emergência. O sistema foi desenvolvido
+na linguagem \python[] e funciona na nuvem.
+
+\subsection{Módulo \textit{service.notification}} 
+
+O módulo \textit{service.notification} foi desenvolvido utilizando a linguagem
+\python[] e sua lógica faz com que constantemente execute um \textit{pooling} 
+à aplicação em nuvem buscando por mensagens destinadas à esta instância de 
+\software. Caso a pergunta tenha uma resposta negativa, o programa espera um 
+tempo e refaz a requisição. Caso a resposta seja positiva, ou seja, exista 
+alguma mensagem para aquele usuário, o programa faz o \download[] e agenda a
+exibição. 
+
+A resposta da requisição carrega informações pertinentes, um exemplo no formato
+JSON é apresentado a seguir:
+
+\begin{listing}[ht!]
+\inputminted{json}{codigos/message.json}
+\caption{Conteúdo da requisição de uma mensagem}
+\label{lst:notification-json}
+\end{listing}
+
+O \software[] no STB verifica o conteúdo JSON, atentando-se para os campos 
+\textit{startDateTime} e \textit{expirationDateTime} que representam quando 
+iniciar a exibição da mensagem e quando não exibir mais a mensagem 
+respectivamente, o tipo de notificação - se será do tipo \textit{pop-up} ou
+caixa de diálogo -, a criticidade da mensagem - indicando se ela deve ser
+exibida interrompendo a programação ou não e o conteúdo da mensagem. 
+
+Após a correta leitura do conteúdo JSON, a mensagem é preparada para ser 
+exibida (código \ref{lst:notification-show}). Uma vez que o sistema tem como 
+camada de exibição o aplicativo \xbmc[], utilizamos sua API para apresentar as 
+notificações.
+
+\begin{listing}[ht!]
+\inputminted{python}{codigos/notification-show.py}
+\caption{Definição dos métodos utilizados para apresentar as notificações}
+\label{lst:notification-show}
+\end{listing}
+
+A mensagem será exibida na tela de acordo com o tipo de notificação escolhida. O
+tipo caixa de diálogo ocupa o centro da tela e tem um tamanho considerado, o 
+intuito é tomar a atenção do usuário para a mensagem a ser exibida, já o tipo
+\textit{pop-up} aparece no canto superior da tela - sendo esta a mais discreta 
+das duas. Veja nas figuras \ref{fig:notification-1} e \ref{fig:notification-2} 
+as duas possibilidades em ação.
+
+\figuradupla{notification-1}{Notificação do tipo caixa de diálogo}
+{notification-2}{Notificação do tipo \textit{pop-up}}
+
+\subsection{Módulo \textit{service.dado}}

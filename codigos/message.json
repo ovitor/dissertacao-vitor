@@ -1,0 +1,11 @@
+{
+  "id": "70e34cbb2b",
+  "startDateTime": "2016-12-26T11:40:30.000000Z", 
+  "expirationDateTime": "2016-12-31T11:40:30.000000Z",
+  "content": {
+    "header": "Title", 
+    "message": "Body"
+  },
+  "type": "1",
+  "critical": "True"
+}
