@@ -1,0 +1,56 @@
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}  
+  \begin{figure}[H]
+    \begin{center}  
+    \caption{Representação gráfica das influências nas áreas de sistemas
+    embarcados, computação ubíqua/pervasiva e meios de comunicação.}
+        % \resizebox{6cm}{5cm}{
+         \begin{tikzpicture}[font=\sffamily, node distance=0.2cm, auto,]
+         \begin{scope}
+             \draw[fill=mycolor4] (0,0) ellipse (3cm and 0.8cm);
+             \draw[fill=mycolor4] (-7,0) ellipse (3cm and 0.8cm);
+             \draw[fill=mycolor2] (-3.5,-2) ellipse (3cm and 1.2cm);
+
+             \node (A) at (0,0) [align=center]{Tecnologias de Comunicação};
+             \node (B) at (-7,0) [align=center]{Sistemas Embarcados};
+             \node (C) at (-3.5,-1.8)[align=center]{Computação ubíqua/pervasiva};
+             \node at (-3.5,-2.2)[align=center]{\tiny (informação em qualquer lugar e};
+             \node at (-3.5,-2.5)[align=center]{\tiny a qualquer momento)};
+
+             \node[above=of A] (A1) {};
+             \node[above=of B] (B1) {}; 
+             \node[above=of C] (C1) {}; 
+
+             \node[below=of A] (A2) {}; 
+             \node[below=of B] (B2) {}; 
+
+             \node[left=of C] (C2) {}; 
+             \node[right=of C] (C3) {}; 
+
+             \draw [pil, <->, bend right=45] (A1) edge (B1);
+             \draw [pil, bend left=30] (A2) edge (C3);
+             \draw [pil, bend right=30] (B2) edge (C2);
+         \end{scope}
+         \end{tikzpicture} 
+         % } % close resizebox
+        \label{fig:ubiqua-diagram}
+      \par
+      Fonte: Adaptado de \cite{marwedel2010embedded}.
+    \end{center}
+  \end{figure}
