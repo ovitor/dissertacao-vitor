@@ -104,3 +104,22 @@ as duas possibilidades em ação.
 {notification-2}{Notificação do tipo \textit{pop-up}}
 
 \subsection{Módulo \textit{service.dado}}
+
+O módulo \textit{service.dado} foi desenvolvido utilizando a linguagem 
+\python[]. O usuário pode iniciar a aplicação através do menu ``Sua Saúde''
+no \stb[] através do controle remoto. O módulo apresenta uma tela inicial como
+a apresentada na figura \ref{fig:tela-principal-dado}.
+
+Seu funcionamento baseia-se no acionamento da aplicação através
+do controle remoto do \stb[] e a interação através de suas telas no televisor
+do usuário. 
+
+A partir da tela principal da aplicação, o usuário que se sente mal escolhe 
+dentre um conjunto de sintomas, àqueles que representam o seu estado atual. Em
+seguida, esses sintomas são enviados através de um \webservice[] para um
+módulo de inferência. A conclusão é retornada para o STB, que a processa e 
+apresenta para o usuário.
+
+\figurasimples{tela-principal-dado}
+{Tela principal do módulo \textit{service.dado}}{14cm}
+
