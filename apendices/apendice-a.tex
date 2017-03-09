@@ -22,21 +22,32 @@ uma pesquisa em que o autor participou.
 
 Por se tratar de um sistema embarcado robusto, faz-se necessário a instalação
 de programas capazes de gerenciar o \hardware[] disponível. Para tanto, o
-sistema operacional escolhido foi o GNU/Linux distribuição Ubuntu 
-\textit{kernel} 3.4 portável para a arquitetura ARM com \textit{drivers} 
-específicos para a plataforma desenvolvida.
+sistema operacional escolhido foi o GNU/Linux distribuição Linaro (derivado da
+distribuição Ubuntu) \textit{kernel} 3.4 portável para a arquitetura 
+ARM com \textit{drivers} específicos para a plataforma desenvolvida.
 
 \input{figuras/graficos/stb-diagram}
 
 Na camada de usuário utilizamos o \software[] \xbmc[] - um gerenciador de mídia
 - como plataforma de exibição gráfica. É através dele que o usuário irá 
-interagir com as aplicações desenvolvidas.
+interagir com as aplicações desenvolvidas. Foram necessárias algumas 
+modificações por conta dos objetivos específicos e do contexto do trabalho 
+desenvolvido. Na figura \ref{fig:tela-principal} abaixo destaque para a tela 
+inicial do \software[] \xbmc[] e para o menu ``Sua Saúde''. Os outros menus
+representam funcionalidades padrão do \software[] em questão, tais como
+acesso a mídias (imagens, vídeos e áudios) e acesso a TV Digital aberta.
+
+Ao clicar no menu ``Sua Saúde'', acessamos a tela com os módulos desenvolvidos
+para este trabalho. 
+
+\figuradupla{tela-principal}{Tela principal do STB. Destaque para o menu
+``Sua Saúde''}{tela-principal-sua-saude}{Tela principal do menu ``Sua Saúde''}
 
 \section{\textit{Software} implementado}\label{sec:software-implementado}
 
-Por se tratar de um sistema embarcado, nossa solução foi projetada para atender
-aos requisitos que essa plataforma demanda. Apesar das especificações do 
-\hardware[], o desenvolvimento foi encaminhado para obtermos um \software[] 
+Nossa solução foi projetada para atender aos requisitos que uma plataforma
+embarcada com essas características demanda. Apesar das especificações do
+\hardware[], o desenvolvimento foi encaminhado para obtermos um \software[]
 simples em consumo de recursos.
 
 As soluções foram implementadas utilizando, quando necessário, o paradigma
@@ -45,9 +56,8 @@ com o intuito de realizar pequenas tarefas no sistema, tais como agendamento
 de execução de tarefas, atualização das aplicações, desligamento automático etc.
 
 Além disso, também fizemos uso de \webservices[] através da Internet, acessando
-outros sistemas e complementando as funcionalidades desejadas.
-As linguagens escolhida para compor o sistema foram a linguagem \python[] e a
-linguagem \shell[]. 
+outros sistemas e complementando as funcionalidades desejadas. As linguagens
+escolhidas para compor o sistema foram as linguagens \python[] e \shell.
 
 \subsection{Módulo \textit{web}}
 
@@ -56,7 +66,7 @@ informações básicas do usuário. Neste sistema será possível cadastrar um
 paciente, seus alertas e contatos de emergência. O sistema foi desenvolvido
 na linguagem \python[] e funciona na nuvem.
 
-\subsection{Módulo \textit{service.notification}} 
+\subsection{Módulo \textit{service.notification}}\label{subsec:notification}
 
 O módulo \textit{service.notification} foi desenvolvido utilizando a linguagem
 \python[] e sua lógica faz com que constantemente execute um \textit{pooling} 
@@ -83,36 +93,52 @@ caixa de diálogo -, a criticidade da mensagem - indicando se ela deve ser
 exibida interrompendo a programação ou não e o conteúdo da mensagem. 
 
 Após a correta leitura do conteúdo JSON, a mensagem é preparada para ser 
-exibida (código \ref{lst:notification-show}). Uma vez que o sistema tem como 
-camada de exibição o aplicativo \xbmc[], utilizamos sua API para apresentar as 
-notificações.
+exibida. O código \ref{lst:notification-popup} faz uso da API do aplicativo
+\xbmc[] para apresentar a mensagem no formato \textit{pop-up} representado pela
+figura \ref{fig:notification-2}.
 
 \begin{listing}[ht!]
-\inputminted{python}{codigos/notification-show.py}
-\caption{Definição dos métodos utilizados para apresentar as notificações}
-\label{lst:notification-show}
+\inputminted{python}{codigos/notification-popup.py}
+\caption{Definição do método utilizado para apresentar as notificações no modo
+\textit{pop-up}}
+\label{lst:notification-popup}
+\end{listing}
+
+O método representado no código \ref{lst:notification-ok} faz uso de um outro 
+método da API, obtendo o resultado visto na figura \ref{fig:notification-1}.
+
+\begin{listing}[ht!]
+\inputminted{python}{codigos/notification-ok.py}
+\caption{Definição do método utilizado para apresentar as notificações no modo
+ok}
+\label{lst:notification-ok}
 \end{listing}
 
 A mensagem será exibida na tela de acordo com o tipo de notificação escolhida. O
 tipo caixa de diálogo ocupa o centro da tela e tem um tamanho considerado, o 
 intuito é tomar a atenção do usuário para a mensagem a ser exibida, já o tipo
 \textit{pop-up} aparece no canto superior da tela - sendo esta a mais discreta 
-das duas. Veja nas figuras \ref{fig:notification-1} e \ref{fig:notification-2} 
+das duas. Veja nas figuras \ref{fig:notification-2} e \ref{fig:notification-1} 
 as duas possibilidades em ação.
 
-\figuradupla{notification-1}{Notificação do tipo caixa de diálogo}
-{notification-2}{Notificação do tipo \textit{pop-up}}
+\figuradupla{notification-2}{Notificação do tipo \textit{pop-up}}
+{notification-1}{Notificação do tipo caixa de diálogo}
 
-\subsection{Módulo \textit{service.dado}}
+\subsection{Módulo \textit{service.dado}}\label{subsec:dado}
 
 O módulo \textit{service.dado} foi desenvolvido utilizando a linguagem 
 \python[]. O usuário pode iniciar a aplicação através do menu ``Sua Saúde''
-no \stb[] através do controle remoto. O módulo apresenta uma tela inicial como
-a apresentada na figura \ref{fig:tela-principal-dado}.
+(figura \ref{fig:tela-principal}) e em seguida escolher a opção ``Não está se 
+sentindo bem?'' (figura \ref{fig:tela-principal-sua-saude}) no \stb[] através do 
+controle remoto. O módulo apresenta uma tela inicial como a apresentada na 
+figura \ref{fig:tela-principal-dado}.
 
-Seu funcionamento baseia-se no acionamento da aplicação através
+O funcionamento deste módulo baseia-se no acionamento da aplicação através
 do controle remoto do \stb[] e a interação através de suas telas no televisor
 do usuário. 
+
+\figurasimples{tela-principal-dado}
+{Tela principal do módulo \textit{service.dado}}{14cm}
 
 A partir da tela principal da aplicação, o usuário que se sente mal escolhe 
 dentre um conjunto de sintomas, àqueles que representam o seu estado atual. Em
@@ -120,6 +146,5 @@ seguida, esses sintomas são enviados através de um \webservice[] para um
 módulo de inferência. A conclusão é retornada para o STB, que a processa e 
 apresenta para o usuário.
 
-\figurasimples{tela-principal-dado}
-{Tela principal do módulo \textit{service.dado}}{14cm}
+\subsection{Módulo \textit{service.panicbutton}}\label{subsec:panicbutton}
 
