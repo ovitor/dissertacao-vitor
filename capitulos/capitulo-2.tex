@@ -171,33 +171,33 @@ explicita a importância dessa área.
 Nos exemplos citados anteriormente, temos uma classificação quanto à sua
 funcionalidade, porém, sua definição não é simples, nem muito menos taxativa,
 uma vez que possuem uma grande complexidade em sua composição. Dessa forma,
-podemos definir, informalmente, sistemas embarcados como qualquer
+podemos definir, a princípio, sistemas embarcados como qualquer
 dispositivo/equipamento que disponha de um sistema programável e que seu
 objetivo não seja o de um computador de propósito geral\footnote{Computador de
 propósito geral é aquele em que é possível executar as mais diversas tarefas,
 tais como, navegar na Internet, escrever documentos, executar jogos etc, ou
 seja, não há uma função específica a ser realizada. Pelo exposto, percebe-se a
-complexidade da sua definição, uma vez que, muitos desses sistemas embarcados
+complexidade da definição de sistemas embarcados, uma vez que, muitos deles, 
 desempenham funções que antes cabiam apenas ao computador de propósito geral.}
 \cite{wolf2012computers}.
 
-Marwedel define: ``Sistemas Embarcados são sistemas de processamento de
-informações incorporados à produtos.'', adicionado à esta definição, lista 5
-características que sistemas embarcados devem levar em consideração: 
+Marwedel define: ``Sistemas Embarcados (como) sistemas de processamento de
+informações incorporados à produtos.'', e, adicionado à esta definição, lista 5
+características que devem levar em consideração: 
 
 \begin{itemize}
   \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
   equipamento devem permanecer confidenciais e a comunicação deve ser autêntica;
-  \item Seguro - característica indicativa de que o sistema não causará nenhum dano;
+  \item Seguro - característica indicativa de que o sistema não causará nenhum dano àqueles que o utilizam;
   \item Disponibilidade - sistema disponível para executar as funções para as quais
   foi programado; 
   \item Confiabilidade - probabilidade que o sistema tem de que não
   falhará em sua execução; e
-  \item Manutenabilidade, característica  que se o sistema vir a falhar, deverá 
-  ser concertado em uma determinada janela de tempo.
+  \item Manutenabilidade, caso o sistema venha a falhar, deverá 
+  ser consertado em uma determinada janela de tempo.
 \end{itemize}
 
-Além disso, propriedades como, sensores coletando informações do ambiente
+Além disso, propriedades como sensores coletando informações do ambiente
 físico e atuadores controlando o ambiente no qual estão inseridos também
 caracterizam um sistema embarcado \cite{marwedel2010embedded}.
 
@@ -211,12 +211,14 @@ irão executar as funções previamente definidas do sistema embarcado.
 
 No processo de \design[] do sistema embarcado considera-se, dentro dos
 requisitos de \hardware, quais dos processadores disponíveis no mercado atende
-melhor a necessidade do projeto, além da quantidade de memória disponível para o
-\software[] utilizar. Outro ponto a ser determinado são as interfaces de entrada
-e saída - responsáveis por receber dados para processar e apresentar os dados
-processados respectivamente. Em paralelo, os requisitos de \software[] são
-alinhados para que o \hardware[] seja melhor aproveitado
-\cite{wolf2012computers}.
+melhor a necessidade do projeto, assim como, é necessário identificar a
+quantidade de memória a ser utilizada pelo \software[]. 
+
+Ainda referente ao processo de design é necessário determinar quais serão as
+interfaces de entrada (responsáveis por receber os dados para posterior
+processamento) e as interfaces de saída (responsáveis por apresentar os dados
+processados). Em paralelo, os requisitos de \software[] são alinhados para que o
+\hardware[] seja melhor aproveitado \cite{wolf2012computers}.
 
 A depender da finalidade do produto, esses requisitos diferem bastante. Por
 exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
@@ -234,8 +236,9 @@ interface de entrada e saída uma tela sensível ao toque e faz uso, ainda, de
 diversos sensores para ajudar na usabilidade do dispositivo.
 
 Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
-Set-Top Box (STB), processa grande quantidade de dados, porém não funciona a
-bateria. Apesar dessa diferença o \hardware[] utilizado é bastante semelhante.
+Set-Top Box (STB), processa grande quantidade de dados, além de realizar
+diferentes funções. Em que pese tais diferenças, o \hardware[] utilizado é
+bastante semelhante.
 
 \subsection{Computação ubíqua e pervasiva}\label{subsec:computacao}
 
@@ -246,16 +249,17 @@ grande porte, dos relógios com tecnologia embarcada (\textit{smartwatches}), da
 vestimentas inteligentes etc.
 
 Percebemos, também, o distanciamento ou o desaparecimento da figura ``computador
-pessoal (PC)'' em nosso cotidiano. A tecnologia está difundida ao ponto do termo 
-``era pós pc'' ser encontrado em diversos estudos \cite{bonilla2011inclusao, 
-chen2011pospc, press1999personal} nas áreas de sistemas embarcados e 
-tecnologias móveis.
+pessoal (PC)'', em nosso cotidiano. A tecnologia está difundida ao ponto do
+termo  ``era pós pc'' ser encontrado em diversos estudos
+\cite{bonilla2011inclusao,  chen2011pospc, press1999personal} nas áreas de
+sistemas embarcados e  tecnologias móveis.
 
 À essa tecnologia ``em todo lugar'' e o distanciamento do usuário com o 
 computador pessoal deu-se o nome de computação ubíqua. Mark Weiser, considerado 
 o pai desse termo, profetizou que encontraríamos tecnologia nos diversos objetos
 do nosso cotidiano, tais como etiquetas de roupas e alimentos, cadeiras, 
-geladeiras, lixeiras, interruptores de luzes etc \cite{weiser1991computer}.
+geladeiras, lixeiras, interruptores de luzes etc \cite{weiser1991computer}. Essa 
+previsão de Weiser já se concretizou em vários dispositivos.
 
 Através de sensores e meios de comunicação, esses objetos ganham novas funções.
 A patente de Yang registra uma lixeira inteligente que abre sua tampa de acordo
@@ -272,15 +276,15 @@ uma lista de compras personalizada \cite{hou2013}.
 % serviços que um computador oferece, independentemente da sua localização 
 % \cite{de2003computaccao}.
 
-Muitas vezes, a tecnologia inserida nesses objetos é invisível para o usuário 
-final e essa transparência era defendida por Weiser para apresentar um outro 
-termo, a ``computação pervasiva''. Weiser a define informalmente: ``(...) criar 
-um computador tão embarcado, tão natural que o usaríamos sem nem pensar sobre 
-ele'', além disso computação pervasiva está relacionada à capacidade de 
-dispositivos serem embarcados no mundo físico, obtendo informações do meio para 
-auxiliar na computação, integrando assim, o ambiente físico e o mundo virtual
-\cite{bolsoni2009computaccao, de2003computaccao}. A figura 
-\ref{fig:ubiqua-diagram} demonstra a interligação entre as áreas de sistemas 
+Muitas vezes, a tecnologia inserida nesses objetos é invisível para o usuário
+final e essa transparência era defendida por Weiser para apresentar um outro
+termo, a ``computação pervasiva'', assim definida pelo autor: ``(...) criar  um
+computador tão embarcado, tão natural que o usaríamos sem nem pensar sobre
+ele''. Além disso, computação pervasiva está relacionada à capacidade de
+dispositivos serem embarcados no mundo físico, obtendo informações do meio para
+auxiliar na computação, integrando, dessa forma, o ambiente físico e o mundo
+virtual \cite{bolsoni2009computaccao, de2003computaccao}. A figura  \ref{fig
+:ubiqua-diagram} demonstra a interligação entre as áreas de sistemas
 embarcados, computação ubíqua e pervasiva com as tecnologias de comunicação.
 
 \input{figuras/graficos/ubiqua-diagram}
@@ -291,27 +295,32 @@ detalhados a seguir \cite{hansmann2013pervasive}:
 \begin{description}
   \item [Descentralização] os diversos dispositivos cooperam entre si e realizam
   pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
-  dinâmica rede de comunicação;
+  dinâmica rede de comunicação; Exemplos: 
   \item [Diversificação] diferente do computador de propósito geral - que 
   proporciona a execução de várias tarefas - cada dispositivo tem um propósito
-  específico atendendo a necessidades únicas;
+  específico atendendo a necessidades únicas; podemos citar, como exemplo, um
+  sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
+  que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
+  diversidade, cada um desempenha uma função específica.
   \item [Conectividade] os dispositivos devem interagir de maneira transparente
-  e àqueles que são móveis, devem mudar entre redes heterogêneas sem o 
-  auxílio de um usuário; e
+  e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
+  auxílio de um usuário; a conectividade diz respeito, também, à relação 
+  transparente entre dispositivo e usuário; 
   \item [Simplicidade] as funções desempenhadas pelos dispositivos devem ser
-  simples e de fácil execução, a interação com o usuário deve manter-se simples
-  para oferecer acesso rápido ao usuário final. 
+  simples e de fácil execução. Existem tipos de dispositivos que não requerem 
+  uma interação com o usuário; outros, no entanto, exigem alguma configuração e,
+  nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
+  rápido ao usuário. 
 \end{description}
 
 No que concerne à assistência domiciliar à saúde, as pesquisas nas áreas de
-computação ubíqua e computação pervasiva são as mais diversas, uma vez que o
-domicílio é um ambiente propício para testar os conceitos apresentados
-anteriormente.  A utilização de sensores, como demonstrado no estudo de Warren,
-em que sensores  vestíveis são empregados na leitura de oxigênio do paciente e o
-envio dos dados à um sistema de monitoramento pessoal para posterior
-processamento  \cite{warren2002sensors} exemplifica a utilização da computação
-pervasiva, uma  vez que os dados coletados se tornam disponíveis a qualquer
-momento.
+computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é um
+ambiente propício à aplicação dessas técnicas. A utilização de sensores, como
+demonstrado no estudo de Warren, em que sensores  vestíveis são empregados na
+leitura de oxigênio do paciente e o envio dos dados à um sistema de
+monitoramento pessoal para posterior processamento \cite{warren2002sensors}
+exemplifica a utilização da computação pervasiva, uma  vez que os dados
+coletados se tornam disponíveis a qualquer momento.
 
 \subsection{Aplicações Sensíveis ao Contexto}\label{subsec:contexto}
 
@@ -319,12 +328,12 @@ O dicionário Houaiss define contexto como um conjunto de palavras, frases ou
 texto que precede ou se segue a determinada palavra, frase ou texto e que
 contribuem para o seu significado. Podemos entender desta definição que contexto
 são circunstâncias que acompanham a situação ou determinado fato. A depender do
-contexto, nos portamos de maneira diferente, para exemplificar: nos portamos de
+contexto, nos portamos de maneira diferente, como por exemplo: nos portamos de
 uma maneira no ambiente de trabalho (contexto) e de uma maneira diferente quando
 estamos na praia (contexto).
 
 % Na comunicação entre pessoas, aproveitamos o contexto para facilitar, ou ainda,
-% acelerar, a velocidade da conversa, mas não é fácil a utilização de contexto nas
+% acelerar a velocidade da conversa, mas não é fácil a utilização de contexto nas
 % comunicações homem-máquina.
 
 Apesar de exemplificar de maneira clara o que é contexto, esse tipo de definição
@@ -338,20 +347,20 @@ em particular \cite{pascoe1998adding}.
 
 O desenvolvedor precisa identificar se determinada informação é contexto ou não
 para determinada aplicação em determinado momento. Tomando como exemplo uma
-aplicação móvel de acompanhamento em um \textit{tour} de um museu a céu aberto, 
+aplicação móvel de acompanhamento de um \textit{tour} em um museu a céu aberto, 
 tanto as informações de tempo (clima, precipitação, umidade etc) quanto as 
 informações de pessoas (quantidades em cada setor) são informações de contexto, 
 já em locais fechados, a informação de tempo não representa uma informação de 
 contexto.
 
-O pesquisador Davies realizou um trabalho semelhante ao apresentado acima. Foi 
+Davies realizou um trabalho semelhante ao apresentado acima. Foi 
 desenvolvido uma aplicação de guia turístico sensível a contexto para a cidade 
 de \textit{Lancaster} na Inglaterra. A solução combinava computação móvel, 
 comunicação sem fio e sistemas embarcados para prover aplicações interativas
 \cite{davies1999caches}.
 
 No sentido de simplificar o desenvolvimento de aplicações sensíveis ao contexto,
-Dey define "contexto é qualquer informação que pode ser utilizada para
+Dey define "contexto (como) qualquer informação que pode ser utilizada para
 caracterizar a situação de uma entidade. Uma entidade pode ser uma pessoa, um
 lugar ou um objeto que é considerado relevante para a interação entre um usuário
 e uma aplicação, incluindo o usuário e a aplicação".
@@ -360,8 +369,9 @@ Portanto, é possível definir que um sistema computacional é sensível ao cont
 se ele fizer uso do contexto para prover informações ou serviços relevantes para
 o usuário de acordo com a sua tarefa no momento \cite{dey2001understanding}.
 
+\subsubsection{Contexto na assistência domiciliar à saúde}
+\label{subsubsec:contexto-ads}
 
-\subsubsection{Contexto na assistência domiciliar}\label{subsubsec:contexto-ads}
 
 
 
