@@ -7,9 +7,9 @@
         % \resizebox{6cm}{5cm}{
          \begin{tikzpicture}[font=\sffamily]
          \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
-             \draw (0,0) ellipse (3.5cm and 2.6cm);
-             \draw (-1.7,-0.6) ellipse (1.2cm and 1cm);
-             \draw (1.5,-0.6) ellipse (1.5cm and 1cm);
+             \draw[fill=mycolor4] (0,0) ellipse (3.5cm and 2.6cm);
+             \draw[fill=mycolor3] (-1.7,-0.6) ellipse (1.2cm and 1cm);
+             \draw[fill=mycolor2] (1.5,-0.6) ellipse (1.5cm and 1cm);
 
              \node at (0,1.4) [align=center]{Assistência Domiciliar\\ à Saúde};
              \node at (-1.7,-0.6) [align=center]{\tiny Internação\\ \tiny Domiciliar};
@@ -25,10 +25,10 @@
         % \resizebox{6cm}{5cm}{
         \begin{tikzpicture}[font=\sffamily]
         \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
-            \draw (0,0) ellipse (3.5cm and 2.6cm); % atencao domiciliar
-            \draw (-1.7,-0.6) ellipse (1.2cm and 1cm); % internacao domiciliar
-            \draw (1.5,-0.1) ellipse (1.5cm and 1cm); % assistencia domiciliar
-            \draw (0.1, -1.7) circle (0.8cm); % visita domiciliar
+            \draw[fill=mycolor4] (0,0) ellipse (3.5cm and 2.6cm); % atencao domiciliar
+            \draw[fill=mycolor3] (-1.7,-0.6) ellipse (1.2cm and 1cm); % internacao domiciliar
+            \draw[fill=mycolor2] (1.5,-0.1) ellipse (1.5cm and 1cm); % assistencia domiciliar
+            \draw[fill=mycolor1] (0.1, -1.7) circle (0.8cm); % visita domiciliar
 
             \node at (0,1.4) [align=center]{Atenção Domiciliar\\ à Saúde};
             \node at (-1.7,-0.6) [align=center]{\tiny Internação\\ \tiny Domiciliar};
