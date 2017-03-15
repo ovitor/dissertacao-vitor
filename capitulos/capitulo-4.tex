@@ -1,20 +1,66 @@
-\chapter{TV-Health}\label{cap:tv-health}
+\chapter{Proposta}\label{cap:proposta}
 
-Neste capítulo é exposto a solução proposta para o problema identificado. 
-Inicialmente apresentamos as características gerais que os sistemas de 
-\textit{home care} devem possuir, em seguida apresentamos as aplicações
-propostas e cenários de uso.
+Neste capítulo serão abordadas as etapas que constituem a estrutura geral do
+sistema de informática voltado para o atendimento de paciente no espaço domiciliar. 
+Sua descrição é realizada na primeira seção. O TV-Health, parte integrante da 
+solução, tem suas características apresentadas no item \ref{sec:tv-health}.
 
-\section{Características gerais de sistemas de \textit{home care}}
-\label{sec:caracteristicas-gerais-home-care}
+\section{Descrição da solução}
+\label{sec:descricao-solucao}
 
-\lipsum[1]
+A arquitetura proposta soluciona o problema relatado na seção  
+\ref{sec:descricao-problema}. Ela tem como ponto principal a utilização de 
+um \stb[], como pode ser visto na figura tal, quando se conectam a ele sensores 
+implantados no ambiente, sensores de dispositivos como \smartphones[] e 
+\smartwatches[] do paciente e do cuidador, e sensores médicos do doente.
 
-\section{Aplicações propostas} \label{sec:aplicacoes-propostas} 
+Esse processo é composto de três momentos distintos, mas 
+interligados, no qual o primeiro é relativo à aquisição de dados do ambiente
+e do paciente, e a transmissão desses dados ao stb. O segundo diz respeito
+ao processamento dos dados brutos. O terceiro momento o envio dos dados
+processados para a plataforma nextsaúde.
 
-\lipsum[1]
+Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam informações como 
+temperatura e umidade da residência, qualidade do ar e localização do paciente
+ou cuidador nos cômodos. A partir desses dados é possível dizer ao software se
+determinado espaço está muito quente, se a qualidade do ar não está favorável
+à melhoria do paciente etc. Dados extraídos de celulares, como a localização,
+também cooperam com o contexto, a exemplo da informação proveniente
+do celular do cuidador que informa, à equipe médica ou aos parentes,
+se este está junto ao paciente.  
 
-\section{Especificação formal} \label{sec:especificacao-formal}
+Já os sensores médicos têm como função principal coletar os sinais vitais do
+paciente (pressão arterial, frequência cardíaca, níveis de oxigênio no sangue
+etc). Em ambos os casos - sensores gerais e sensores médicos -, as informações
+coletadas pelos dispositivos repassam  esses dados para o STB, seja através de
+interfaces com tecnologia  \textit{Bluetooth}, \textit{NFC} ou \textit{Wi-Fi}.
+
+Essa quantidade de dados enviada ao STB deverá então ser processada e encaminhada
+para a plataforma NextSaúde. O processamento é referente ao tratamento do dado
+bruto recebido e a tradução para o padrão OpenEHR entendido pela plataforma
+NextSaúde. Em seguida a transmissão dos dados é feita através de uma
+arquitetura  cliente/servidor. Já no sistema na nuvem, o dado relacionado ao
+paciente é extraído e persistido.
+
+Para permitir ao STB tomar decisões no âmbito domiciliar, parte dos dados
+referentes ao contexto são tratados e processados diretamente no equipamento.
+Já os dados referentes aos sinais vitais são enviados para plataforma. Dessa 
+maneira, ocorre um processamento nos dados para tomada de decisões a nível
+clínico, por exemplo, indicar uma consulta na especialidade cardiológica.
+
+Pelo exposto, uma funcionalidade importante do sistema é a geração de alertas e
+notificações para o paciente e o cuidador. Os atores recebem as notificações
+através da tela da televisão conectada ao STB. Para esse sistema, dois tipos de
+alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
+Além disso, a partir das informações de contexto, o sistema pode decidir
+entregar a mensagem não na tela da televisão e sim no \smartphone.
+
+
+\section{TV-Health} \label{sec:tv-health} 
+
+O protótipo TV-Health surgiu no âmbito do projeto NextSaúde. 
+
+\section{Visão de Engenharia} \label{sec:visao-engenharia}
 
 \lipsum[1]
 
