@@ -14,20 +14,22 @@ um \stb[], como pode ser visto na figura tal, quando se conectam a ele sensores
 implantados no ambiente, sensores de dispositivos como \smartphones[] e 
 \smartwatches[] do paciente e do cuidador, e sensores médicos do doente.
 
+\figurasimples{arquitetura}{Visão geral arquitetural da solução}{12cm}
+
 Esse processo é composto de três momentos distintos, mas 
 interligados, no qual o primeiro é relativo à aquisição de dados do ambiente
-e do paciente, e a transmissão desses dados ao stb. O segundo diz respeito
+e do paciente, e a transmissão desses dados ao STB. O segundo diz respeito
 ao processamento dos dados brutos. O terceiro momento o envio dos dados
-processados para a plataforma nextsaúde.
+processados para a plataforma Nextsaúde.
 
-Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam informações como 
-temperatura e umidade da residência, qualidade do ar e localização do paciente
-ou cuidador nos cômodos. A partir desses dados é possível dizer ao software se
-determinado espaço está muito quente, se a qualidade do ar não está favorável
-à melhoria do paciente etc. Dados extraídos de celulares, como a localização,
-também cooperam com o contexto, a exemplo da informação proveniente
-do celular do cuidador que informa, à equipe médica ou aos parentes,
-se este está junto ao paciente.  
+Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
+informações como  temperatura e umidade da residência, qualidade do ar e
+localização do paciente ou cuidador nos cômodos. A partir desses dados é
+possível dizer ao software se determinado espaço está muito quente, se a
+qualidade do ar não está favorável à melhoria do paciente etc. Dados extraídos
+de celulares, como a localização, também cooperam com o contexto, a exemplo da
+informação proveniente do celular do cuidador que informa, à equipe médica ou
+aos parentes, se este está junto ao paciente.
 
 Já os sensores médicos têm como função principal coletar os sinais vitais do
 paciente (pressão arterial, frequência cardíaca, níveis de oxigênio no sangue
@@ -58,26 +60,216 @@ entregar a mensagem não na tela da televisão e sim no \smartphone.
 
 \section{TV-Health} \label{sec:tv-health} 
 
-O protótipo TV-Health surgiu no âmbito do projeto NextSaúde. 
+A partir do considerado na seção \ref{sec:aspectos-tecnologicos}, surge o
+protótipo TV-Health, com o intuito de resolver alguns dos problemas da
+assistência domiciliar à saúde.
 
 \subsection{Histórico}\label{subsec:historico-tv-health}
-Explicar por que utilizar a tv como plataforma de ajuda à saúde, comentando 
- * o fato da tv digital ser usada como recurso para inclusao social
- * a conjutura da época do projeto nextsaúde
- * a possibilidade de inserção das aplicações aqui descritas no stb voltado aos
- beneficiarios do programa bolsa família
 
-\subsection{Aplicações}\label{subsec:aplicacoes-tv-health}
+O Governo Brasileiro instituiu, através do decreto número 4901 de 26 de novembro
+de 2003, o Sistema Brasileiro de Televisão Digital (SBTVD) no  país. Além da
+melhoria técnica, com a troca do sinal analógico para o sinal  digital,
+promovendo, assim, melhoria na qualidade da imagem e som, a inserção  da TV
+Digital trouxe o conceito de interatividade, permitindo que o  telespectador
+saia da condição de espectador e passe a interagir com a  televisão. Além disso,
+através do decreto, o Governo tenta promover a inclusão social ao ``propiciar a
+criação de uma rede universal de educação à distância'' 
+\cite{digitaltv2015decree}.
 
-Descrever aplicações:
-  * alertas e notificações
-  * dado
-  * botão de pânico
+A proposta do SBTVD contém um forte viés social, uma vez que o Brasil conta com
+uma grande quantidade de lares com televisão que, adicionado à interatividade 
+possibilitada pela TV digital, o telespectador passa a receber um conjunto
+de novas funcionalidades através do \stb. Com isso, a população ganha novas 
+formas de acesso a serviços básicos.
+
+Desde então, houve estudos em diversas áreas para viabilizar tecnicamente o
+que o decreto propusera. As pesquisas apresentaram aplicações em áreas diversas
+como educação e serviços do Governo (receita federal, \textit{status} de benefícios
+etc) e área da saúde. Por conta dessa  abordagem, foi incluído no projeto
+NextSaúde, um conjunto de aplicações voltada para o atendimento domiciliar à
+saúde que fizesse uso da TV Digital, e de sua interatividade característica.
+
+Adicionado a isso, surgiu a possibilidade de inserção das aplicações
+descritas  na subseção \ref{subsec:aplicacoes-tv-health} nos STBs
+disponibilizados aos beneficiários do programa Bolsa Família. Porém, o sinal
+analógico não foi completamente desligado, a adesão ao núcleo da tecnologia
+desenvolvida para a interatividade não foi completamente adotada  pela indústria
+e a distribuição dos STBs para beneficiários do Bolsa Família não levou em
+consideração as aplicações desenvolvidas, por questões financeiras.
+
+Esse histórico é um relato do que nos levou a acreditar na força do programa
+SBTVD, em virtude de seu viés social e inovador, trazendo consigo a
+interatividade. Entretanto, a recusa dessa tecnologia por parte da indústria e 
+sua indiferença no que concerne às importantes contribuições para a sociedade, 
+nos incentivou a pesquisar novas tendências capazes de suprir com outras
+soluções e estratégias tecnológicas o atendimento domiciliar à saúde.
+
+% Para habilitar a recepção do sinal digital nas televisões, a utilização do 
+% \stb[] externo ou um receptor digital interno à TV se torna imprescindível.
+
+\subsection{\textit{Hardware} utilizado}
+
+O \stb[] escolhido possui especificações técnicas robustas, listadas na 
+tabela \ref{tab:stb-specs}. Este STB foi resultado de um projeto de pesquisa
+fomentado pela Financiadora de Estudos e Projetos (FINEP) e Agência Nacional
+de Energia Elétrica (ANEEL) e foi reutilizado neste trabalho por se tratar de 
+uma pesquisa em que o autor participou.
+
+\tabela{stb-specs}{Especificação STB}{0.9}
+
+\subsection{\textit{Software} utilizado}
+
+Por se tratar de um sistema embarcado robusto, faz-se necessário a instalação
+de programas capazes de gerenciar o \hardware[] disponível. Para tanto, o
+sistema operacional escolhido foi o GNU/Linux distribuição Linaro (derivado da
+distribuição Ubuntu) \textit{kernel} 3.4 portável para a arquitetura 
+ARM com \textit{drivers} específicos para a plataforma desenvolvida.
+
+\input{figuras/graficos/stb-diagram}
+
+Na camada de usuário utilizamos o \software[] \xbmc[] - um gerenciador de mídia
+- como plataforma de exibição gráfica. É através dele que o usuário irá 
+interagir com as aplicações desenvolvidas. Foram necessárias algumas 
+modificações por conta dos objetivos específicos definidos para esta pesquisa,
+e do contexto do trabalho desenvolvido. Na figura \ref{fig:tela-principal}
+destaque para a tela inicial do \software[] \xbmc[] e para o menu ``Sua Saúde''.
+Os outros menus representam funcionalidades padrão do \software[] em questão,
+tais como acesso a mídias (imagens, vídeos e áudios) e acesso a TV Digital aberta.
+
+Ao clicar no menu ``Sua Saúde'', acessamos a tela com os módulos desenvolvidos
+para este trabalho (figura \ref{fig:tela-principal-sua-saude}). 
+
+\figuradupla{tela-principal}{Tela principal do STB. Destaque para o menu
+``Sua Saúde''}{tela-principal-sua-saude}{Tela principal do menu ``Sua Saúde''}
+
+\subsection{\textit{Software} implementado}\label{sec:software-implementado}
+\label{subsec:aplicacoes-tv-health}
+
+O intuito das aplicações é melhorar a comunicação entre o doente e cuidador com
+a equipe médica e seus parentes, além de permitir que o usuário utilize o
+controle remoto como um ``botão de pânico''. Por fim, um dos módulos da
+aplicação permite ao usuário escolher dentre os sintomas, aqueles que mais
+caracterizam a sua situação e obter uma resposta do sistema relacionada às
+escolhas. As aplicações  propostas foram validadas através da conclusão do
+projeto NextSaúde e da aprovação de artigos acadêmicos apresentados em
+Congressos.
+
+Nossa solução foi projetada para atender aos requisitos que uma plataforma
+embarcada com essas características demanda. Apesar das especificações do
+\hardware[], o desenvolvimento foi encaminhado para obtermos um \software[]
+simples em consumo de recursos.
+
+\subsubsection{Módulo \textit{service.notification}}\label{subsubsec:notification}
+
+Este módulo é responsável por apresentar na tela da televisão as notificações e
+alertas recebidos no STB. Existem dois tipos de exibição de mensagens, a
+primeira delas, denominada ``caixa de diálogo'', aparece no meio da tela,
+ocupando boa parte da mesma. Esse tipo de notificação é utilizada quando é
+necessário tirar a atenção do usuário da programação televisiva e passar a
+atenção para a mensagem exibida. Mensagens importantes e de cunho emergencial
+podem utilizar esse tipo de notificação.   
+
+\figuradupla{notification-2}{Notificação do tipo \textit{pop-up}}
+{notification-1}{Notificação do tipo caixa de diálogo}
+
+O segundo tipo de notificação é denominada de \textit{pop-up}, com esse modelo,
+a mensagem é exibida no canto superior direito da tela, fazendo com que a
+atenção do usuário não seja totalmente requerida. Mensagens de cunho informativo
+podem utilizar esse tipo de notificação. As figuras \ref{fig:notification-2} e
+\ref{fig:notification-1}  mostram as duas possibilidades em ação.
+
+\subsubsection{Módulo \textit{service.dado}}\label{subsubsec:dado}
+
+O funcionamento deste módulo baseia-se no acionamento da aplicação através
+do controle remoto do \stb[] e a interação através de suas telas no televisor
+do usuário. O módulo apresenta uma tela inicial como a apresentada na 
+figura \ref{fig:tela-principal-dado}.
+
+A partir da tela principal da aplicação, o usuário que se sente mal escolhe, 
+dentre um conjunto de sintomas, aqueles que representam o seu estado atual. Em
+seguida, esses sintomas são enviados através de um \webservice[] para um
+módulo de inferência. A conclusão é retornada para o STB, que a processa e 
+apresenta para o usuário.
+
+\figurasimples{tela-principal-dado}
+{Tela principal do módulo \textit{service.dado}}{14cm}
+
+\subsubsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
+
+O módulo \textit{service.panicbutton} 
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
-\lipsum[1]
+incluir figura visao de engenharia (nazim)
+descrever detalhes tecnicos
 
 \section{Cenários de uso} \label{sec:cenarios-de-uso}
 
-\lipsum[1]
+
+\subsection{Notificações}\label{subsec:notificacoes}
+
+Luisa, aposentada, 75 anos, vive sozinha em seu apartamento, passa boa parte do
+seu dia na sala de estar, lendo ou assistindo à televisão. Sua rotina muda um
+pouco quando seus filhos a visitam nos finais de semana. Infelizmente, Luisa
+sofre de uma doença crônica e seu médico recomenda caminhada uma vez ao dia,
+durante 30 minutos. Além disso, foi prescrito à Luisa alguns medicamentos
+necessários para evitar as dores - cada um deles deveria ser ingerido em
+horários específicos.
+
+Para que Luisa não ficasse sozinha tanto tempo, seus filhos pediram à vizinha
+que checasse sua condição de tempos em tempos, fazendo com que Luisa agora tivesse uma
+espécie de cuidador informal. A função do cuidador informal seria de acompanhar
+Luisa na caminhada e recordá-la de tomar seus remédios.
+
+Através do sistema embarcado acoplado à televisão e conectado à Internet, é
+possível enviar à Luisa avisos e notificações lembrando de suas atividades
+diárias - como por exemplo, a caminhada de 30 minutos recomendada pelo
+médico além do medicamento a ser ingerido.
+
+Portanto, este cenário de uso exemplifica uma aplicação prática do sistema de
+notificação e alertas desenvolvido para compor o trabalho.
+
+\subsection{DADO}\label{subsec:dado}
+
+Roberto é autônomo e trabalha em casa consertando televisores, mora com sua
+filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
+de descanso, assiste aos seus programas favoritos.
+
+Certo dia, Roberto não se sente bem e se deita, tendo instalado à sua televisão
+o set-top box com as aplicações tv-health, ele conta com a disponibilidade da
+aplicação DADO. Em determinado momento, acessa a aplicação "Não está se sentindo
+bem?" através do controle remoto, selecionando-a do menu "Sua Saúde". Através
+dela, verifica um conjunto de imagens, cada uma exemplificando um sintoma.
+Usando o controle remoto, seleciona os sintomas que melhor exemplificam o que
+está sentindo. Essa informação é processada e, em seguida, a aplicação apresenta
+uma notificação contendo uma segunda opinião, informando também a necessidade de
+se apresentar à um médico.
+
+É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
+serem realizados no paciente, momento em que a filha de Roberto teria o papel de
+cuidadora informal ao realizar tais procedimentos. A aplicação guiaria o
+cuidador informal em um processo passo a passo. Neste cenário,  percebe-se a
+importância de contar com um dispositivo que auxilie o cuidador e o paciente em
+situações de risco à saúde.
+
+\subsection{Botão de Pânico}\label{subsec:botao-panico}
+
+Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
+de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
+esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
+
+Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
+que conta com o set-top box com as aplicações tv-health. Passado
+alguns minutos, ela sente uma forte dor no peito seguido por um desconforto no
+braço esquerdo. Neste momento, Maria certa de que precisa de ajuda, aciona no
+controle remoto o "botão de pânico".
+
+A aplicação percebe o acionamento e toma algumas medidas, tais como, enviar
+mensagens de socorro através de SMS ou através de serviços de mensagens pela
+Internet para a equipe médica, para os amigos e familiares, além de entrar em
+contato com o serviço médico de urgência. Por fim, a aplicação envia uma
+notificação para ser exibida na televisão no sentido de tranquilizar o usuário.
+
+Em determinados casos, é possível, ainda, que a aplicação envie, através de
+notificações, sugestões de medidas a serem tomadas enquanto o socorro médico não
+chega.
