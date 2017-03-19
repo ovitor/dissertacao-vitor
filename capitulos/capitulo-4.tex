@@ -57,7 +57,6 @@ alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
 Além disso, a partir das informações de contexto, o sistema pode decidir
 entregar a mensagem não na tela da televisão e sim no \smartphone.
 
-
 \section{TV-Health} \label{sec:tv-health} 
 
 A partir do considerado na seção \ref{sec:aspectos-tecnologicos}, surge o
@@ -191,12 +190,26 @@ seguida, esses sintomas são enviados através de um \webservice[] para um
 módulo de inferência. A conclusão é retornada para o STB, que a processa e 
 apresenta para o usuário.
 
-\figurasimples{tela-principal-dado}
-{Tela principal do módulo \textit{service.dado}}{14cm}
+% \figurasimples{tela-principal-dado}
+% {Tela principal do módulo \textit{service.dado}}{14cm}
 
 \subsubsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
 
-O módulo \textit{service.panicbutton} 
+O módulo \textit{service.panicbutton} tem como objetivo, permitir que o usuário
+utilize o controle remoto para reportar um momento que precisa de ajuda 
+emergencial. Ao acionar a tecla reservada para tal função, o sistema percebe e
+prepara um conjunto de tarefas a serem executadas. Dentre elas, o envio de 
+mensagens via (1) Serviço de Mensagem Simples (SMS) e (2) serviços de comunicação
+pela Internet (como por exemplo o aplicativo \textit{Telegram}) para parentes, 
+amigos, cuidador e a equipe médica que o acompanha. Além de entrar em contato
+com o serviço de urgência e emergência.
+
+Em seguida, o aplicativo exibe uma notificação na tela da televisão no intuito
+de acalmá-lo. A figura \ref{fig:notificacao-botao-de-panico} exibe a mensagem 
+tranquilizando o usuário.
+
+% % \figurasimples{notificacao-botao-de-panico}
+% {Mensagem na tela tranquilizando o usuário.}{14cm}
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
@@ -205,6 +218,8 @@ descrever detalhes tecnicos
 
 \section{Cenários de uso} \label{sec:cenarios-de-uso}
 
+Os seguintes cenários de uso exemplificam a aplicação da tecnologia e em quais
+momentos ela é mais requerida.
 
 \subsection{Notificações}\label{subsec:notificacoes}
 
