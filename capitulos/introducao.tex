@@ -45,31 +45,35 @@ idoso e executa a aferição de seus sinais vitais, além de conversar com o
 próprio paciente, eles também conversam com o cuidador e verificam, ainda, se o
 ambiente domiciliar está propício à melhoria do doente.
 
+A televisão está presente em praticamente todos os  domicílios brasileiros. Com
+isso, o Governo Brasileiro instituiu, através do decreto número 4901 de 26 de
+novembro de 2003, o Sistema Brasileiro de Televisão Digital (SBTVD) no país.
+Além da melhoria técnica, com a troca do sinal analógico para o sinal  digital,
+promovendo, assim, melhoria na qualidade da imagem e som, a inserção  da TV
+Digital trouxe o conceito de interatividade, permitindo que o  telespectador
+saia da condição de espectador e passe a interagir com a  televisão. Além disso,
+através do decreto, o Governo tenta promover a inclusão social ao ``propiciar a
+criação de uma rede universal de educação à distância''
+\cite{digitaltv2015decree}.
+
 O avanço tecnológico nas áreas de sistemas embarcados e tecnologia da informação
 e comunicação permite o desenvolvimento e a produção de dispositivos cada vez
 mais potentes e eficientes no processamento e no consumo de energia. Além disso,
 a miniaturização dos dispositivos possibilitam o surgimento de novas aplicações
 e soluções voltadas para áreas antes não atendidas por essas tecnologias.
 
-% Pesquisas realizadas, sugerem a utilização de sensores no domicílio e sistemas 
-% de informática em saúde na nuvem para prover uma solução de atendimento 
-% domiciliar.
-
 A área da assistência domiciliar à saúde se beneficia do aperfeiçoamento na 
 tecnologia ao ser atendida por dispositivos implantados no ambiente doméstico. 
 Pesquisas realizadas apontam para a utilização de equipamentos que monitorem o 
 cotidiano do paciente e os auxilie nas formas de alertas para o paciente e 
-cuidador, além de informar à equipe médica ou a emergência sobre questões 
+cuidador, além de informar à equipe de saúde ou a emergência sobre questões 
 pertinentes ao paciente.
 
-Neste trabalho, um \stb[] (STB) - dispositivo responsável por receber o sinal da 
-televisão digital e apresentá-lo na TV - foi utilizado como ponto principal em
-uma arquitetura composta por ele (STB), sensores e outros equipamentos para 
-prover uma solução de atenção domiciliar.
-Vale ressaltar que este dispositivo é o resultado de um
-projeto de pesquisa, do qual participei de forma efetiva, que recebeu fomento da 
-Agência Nacional de Energia Elétrica (ANEEL), em parceria com a Empresa CRAFF, 
-sediada no Município de Fortaleza.
+Neste trabalho, é proposta a TVHealthDasCoisas (THECA), um sistema embarcado em
+um \stb[] (STB) - dispositivo responsável por receber o sinal da  televisão
+digital e apresentá-lo na TV - foi utilizado como ponto principal em uma
+arquitetura composta por ele (STB), sensores e outros equipamentos para  prover
+uma solução inteligente de atenção domiciliar.
 
 O STB, além de realizar suas tarefas básicas explicadas anteriormente, tem poder
 de processamento para executar outras funções. Ele conta com interface de
@@ -78,19 +82,33 @@ conexão com a TV, além de portas \textit{USB}. Sendo assim, uma vez conectado 
 Internet, o STB servirá de \textit{gateway} na casa do usuário, comunicando-se
 com sistemas de informática para saúde e com o próprio paciente.
 
-Através dos sensores é possível coletar dados referentes ao paciente e ao 
-contexto em que ele está inserido, como por exemplo, se ele está acamado
-ou se possui certa autonomia, ou ainda, se o doente está acompanhado. 
-Em seguida, os dados coletados são repassados ao STB que 
-os concentra, realiza um processamento, e os repassa para o provedor de 
-\textit{home care} (Estado ou empresa privada). Em determinados momentos, 
-o sistema pode auxiliar os atores envolvidos, emitindo alertas por meio da 
-televisão.
+Através dos sensores é possível coletar dados referentes ao paciente e ao
+contexto em que ele está inserido, como por exemplo, se ele está acamado ou se
+possui certa autonomia, ou ainda, se o doente está acompanhado.  Em seguida, os
+dados coletados são repassados ao STB que  os concentra e realiza um
+processamento. Estes dados, vão alimentar ainda, modelos de ontologias, 
+permitindo a inferência de informações necessárias para à tomada de decisão
+por parte dos atores  envolvidos (paciente, cuidador, equipe de saúde e 
+familiares). 
 
-% não gosto dessa "comprovação de alguns conceitos"
+Dessa maneira, o sistema pode auxiliar os atores envolvidos, emitindo alertas,
+informações, mensagens etc por meio da televisão ou dispositivos móveis
+integrados ao sistema. A THECA comunica-se com o NextSAÚDE - uma plataforma
+de interoperabilidade em saúde baseada no padrão OpenEHR - para compartilhar
+serviços internos disponíveis (regulação, farmácia, leitos etc).
+
+Portanto, a THECA é uma arquitetura orientada a contexto (\textit{context-aware
+concept}), enriquecida com tecnologia da Internet das Coisas (\textit{IoT}), que
+através de um STB, coleta dados e apresenta alertas e informações processadas e
+comunica-se com a plataforma NextSAÚDE através de arquétipos do padrão OpenEHR.
 Até o momento uma parte desse processo já foi implementada, tal como as 
 notificações dos alertas enviados ao doente e cuidador. A fase seguinte 
 dirá a respeito ao envio constante dos dados para a equipe médica.
+
+% Vale ressaltar que este dispositivo é o resultado de um projeto de pesquisa, do
+% qual participei de forma efetiva, que recebeu fomento da  Agência Nacional de
+% Energia Elétrica (ANEEL), em parceria com a Empresa CRAFF,  sediada no Município
+% de Fortaleza.
 
 \section{Motivação para a Dissertação}\label{sec:motivacao}
 
@@ -144,8 +162,10 @@ acompanha necessita de soluções eficientes e acessíveis.
 
 \section{Objetivos Geral e Específicos}\label{sec:objetivos}
 
-Oferecer uma solução que auxilie, através de sistemas de informática, o 
-cuidador, o doente e à equipe médica no tratamento do paciente em domicílio.
+Oferecer uma solução que auxilie, através de sistemas de informática, tecnologia
+de Internet das Coisas e os meios de comunicação (Televisão Digital e 
+\textit{smartphones}) o cuidador, o doente e à equipe de saúde no tratamento 
+do paciente em domicílio.
 % por meio das tecnologias tais e tais..
 %Em seu sentido mais particular, os seguintes objetivos específicos são:
 
@@ -161,8 +181,9 @@ Durante este projeto de mestrado, os seguintes trabalhos científicos foram
 aceitos e publicados, a saber:
 
 \begin{itemize}
-	\item \textbf{Einstein, A.}, 1905. \textbf{The photoelectric effect}. Ann. Phys, 17(132), p.4;
+	% \item \textbf{Einstein, A.}, 1905. \textbf{The photoelectric effect}. Ann. Phys, 17(132), p.4;
 	% \item \textbf{Einstein, A.}, 1904. \textbf{Zur allgemeinen molekularen Theorie der Wärme}. Annalen der Physik, 319(7), pp.354-362.
+  \item produção 1
 \end{itemize}
 
 \section{Estrutura da Dissertação}\label{sec:estrutura}
