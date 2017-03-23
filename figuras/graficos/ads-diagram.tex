@@ -5,17 +5,7 @@
     por Giacomozzi.}
       \begin{subfigure}[b]{.45\textwidth}
         % \resizebox{6cm}{5cm}{
-         \begin{tikzpicture}[font=\sffamily]
-         \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
-             \draw[fill=mycolor4] (0,0) ellipse (3.5cm and 2.6cm);
-             \draw[fill=mycolor3] (-1.7,-0.6) ellipse (1.2cm and 1cm);
-             \draw[fill=mycolor2] (1.5,-0.6) ellipse (1.5cm and 1cm);
-
-             \node at (0,1.4) [align=center]{Assistência Domiciliar\\ à Saúde};
-             \node at (-1.7,-0.6) [align=center]{\tiny Internação\\ \tiny Domiciliar};
-             \node at (1.5,-0.6)[align=center]{\tiny Atenção Domiciliar\\ \tiny à Saúde};
-             \end{scope}
-         \end{tikzpicture} 
+        \input{figuras/graficos/ads-tavalori} 
          % } % close resizebox
         \caption{}
         \label{fig:ads-categoria-tavoloari}
@@ -23,19 +13,7 @@
       ~
       \begin{subfigure}[b]{.45\textwidth}
         % \resizebox{6cm}{5cm}{
-        \begin{tikzpicture}[font=\sffamily]
-        \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
-            \draw[fill=mycolor4] (0,0) ellipse (3.5cm and 2.6cm); % atencao domiciliar
-            \draw[fill=mycolor3] (-1.7,-0.6) ellipse (1.2cm and 1cm); % internacao domiciliar
-            \draw[fill=mycolor2] (1.5,-0.1) ellipse (1.5cm and 1cm); % assistencia domiciliar
-            \draw[fill=mycolor1] (0.1, -1.7) circle (0.8cm); % visita domiciliar
-
-            \node at (0,1.4) [align=center]{Atenção Domiciliar\\ à Saúde};
-            \node at (-1.7,-0.6) [align=center]{\tiny Internação\\ \tiny Domiciliar};
-            \node at (1.5,-0.1)[align=center]{\tiny Assistência\\ \tiny Domiciliar\\ \tiny à Saúde};
-            \node at (0.1,-1.7)[align=center]{\tiny Visita\\ \tiny Domiciliar};
-            \end{scope}
-        \end{tikzpicture}
+        \input{figuras/graficos/ads-giacomozzi} 
         % } % close resizebox
         \caption{}
         \label{fig:ads-categoria-giacamozzi}
