@@ -21,6 +21,6 @@
 *.out
 *.nav
 .DS_Store
-_minted-dissertacao-vitor
+_minted-*
 presentation/
 
