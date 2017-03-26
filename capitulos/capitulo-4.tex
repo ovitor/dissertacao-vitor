@@ -9,53 +9,26 @@ solução, tem suas características apresentadas no item \ref{sec:tv-health}.
 \label{sec:descricao-solucao}
 
 A arquitetura proposta soluciona o problema relatado na seção  
-\ref{sec:descricao-problema}. Ela tem como ponto principal a utilização de 
-um \stb[], como pode ser visto na figura tal, quando se conectam a ele sensores 
-implantados no ambiente, sensores de dispositivos como \smartphones[] e 
-\smartwatches[] do paciente e do cuidador, e sensores médicos do doente.
+\ref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que
+se comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
+responsável por adquirir os dados brutos dos sensores, (2) ``Camada de Gerência 
+e Inteligência'' responsável por tratar os dados e inferir e (3) ``Camada de 
+Apresentação de informações'' - responsável por apresentar os dados nos mais
+diversos dispositivos. A figura \ref{fig:arquitetura-v2} representa graficamente
+a arquitetura proposta.
 
-\figurasimples{arquitetura}{Visão geral arquitetural da solução}{12cm}
+\figurasimples{arquitetura-v2}{Visão geral arquitetural da solução}{12cm}
 
-Esse processo é composto de três momentos distintos, mas 
-interligados, no qual o primeiro é relativo à aquisição de dados do ambiente
-e do paciente, e a transmissão desses dados ao STB. O segundo diz respeito
-ao processamento dos dados brutos. O terceiro momento o envio dos dados
-processados para a plataforma Nextsaúde.
 
-Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
-informações como  temperatura e umidade da residência, qualidade do ar e
-localização do paciente ou cuidador nos cômodos. A partir desses dados é
-possível dizer ao software se determinado espaço está muito quente, se a
-qualidade do ar não está favorável à melhoria do paciente etc. Dados extraídos
-de celulares, como a localização, também cooperam com o contexto, a exemplo da
-informação proveniente do celular do cuidador que informa, à equipe médica ou
-aos parentes, se este está junto ao paciente.
+A ``Camada de aquisição de dados'' representa toda a parte de baixo nível da
+solução.
 
-Já os sensores médicos têm como função principal coletar os sinais vitais do
-paciente (pressão arterial, frequência cardíaca, níveis de oxigênio no sangue
-etc). Em ambos os casos - sensores gerais e sensores médicos -, as informações
-coletadas pelos dispositivos repassam  esses dados para o STB, seja através de
-interfaces com tecnologia  \textit{Bluetooth}, \textit{NFC} ou \textit{Wi-Fi}.
+Já a ``Camada de Gerência e Inferência'' trata os dados processados na camada
+de aquisição de dados, realizando inferências com modelos ontológicos e 
+persistindo-os em base de dados.
 
-Essa quantidade de dados enviada ao STB deverá então ser processada e encaminhada
-para a plataforma NextSaúde. O processamento é referente ao tratamento do dado
-bruto recebido e a tradução para o padrão OpenEHR entendido pela plataforma
-NextSaúde. Em seguida a transmissão dos dados é feita através de uma
-arquitetura  cliente/servidor. Já no sistema na nuvem, o dado relacionado ao
-paciente é extraído e persistido.
-
-Para permitir ao STB tomar decisões no âmbito domiciliar, parte dos dados
-referentes ao contexto são tratados e processados diretamente no equipamento.
-Já os dados referentes aos sinais vitais são enviados para plataforma. Dessa 
-maneira, ocorre um processamento nos dados para tomada de decisões a nível
-clínico, por exemplo, indicar uma consulta na especialidade cardiológica.
-
-Pelo exposto, uma funcionalidade importante do sistema é a geração de alertas e
-notificações para o paciente e o cuidador. Os atores recebem as notificações
-através da tela da televisão conectada ao STB. Para esse sistema, dois tipos de
-alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
-Além disso, a partir das informações de contexto, o sistema pode decidir
-entregar a mensagem não na tela da televisão e sim no \smartphone.
+Por fim, a ``Camada de apresentação'' se encarrega de apresentar os dados brutos
+ou as informações processadas nos dispositivos conectados à plataforma.
 
 \section{TV-Health} \label{sec:tv-health} 
 
@@ -63,48 +36,45 @@ A partir do considerado na seção \ref{sec:aspectos-tecnologicos}, surge o
 protótipo TV-Health, com o intuito de resolver alguns dos problemas da
 assistência domiciliar à saúde.
 
-\subsection{Histórico}\label{subsec:historico-tv-health}
+% \subsection{Histórico}\label{subsec:historico-tv-health}
 
-O Governo Brasileiro instituiu, através do decreto número 4901 de 26 de novembro
-de 2003, o Sistema Brasileiro de Televisão Digital (SBTVD) no  país. Além da
-melhoria técnica, com a troca do sinal analógico para o sinal  digital,
-promovendo, assim, melhoria na qualidade da imagem e som, a inserção  da TV
-Digital trouxe o conceito de interatividade, permitindo que o  telespectador
-saia da condição de espectador e passe a interagir com a  televisão. Além disso,
-através do decreto, o Governo tenta promover a inclusão social ao ``propiciar a
-criação de uma rede universal de educação à distância'' 
-\cite{digitaltv2015decree}.
+% O Governo Brasileiro instituiu, através do decreto número 4901 de 26 de novembro
+% de 2003, o Sistema Brasileiro de Televisão Digital (SBTVD) no  país. Além da
+% melhoria técnica, com a troca do sinal analógico para o sinal  digital,
+% promovendo, assim, melhoria na qualidade da imagem e som, a inserção  da TV
+% Digital trouxe o conceito de interatividade, permitindo que o  telespectador
+% saia da condição de espectador e passe a interagir com a  televisão. Além disso,
+% através do decreto, o Governo tenta promover a inclusão social ao ``propiciar a
+% criação de uma rede universal de educação à distância'' 
+% \cite{digitaltv2015decree}.
 
-A proposta do SBTVD contém um forte viés social, uma vez que o Brasil conta com
-uma grande quantidade de lares com televisão que, adicionado à interatividade 
-possibilitada pela TV digital, o telespectador passa a receber um conjunto
-de novas funcionalidades através do \stb. Com isso, a população ganha novas 
-formas de acesso a serviços básicos.
+% A proposta do SBTVD contém um forte viés social, uma vez que o Brasil conta com
+% uma grande quantidade de lares com televisão que, adicionado à interatividade 
+% possibilitada pela TV digital, o telespectador passa a receber um conjunto
+% de novas funcionalidades através do \stb. Com isso, a população ganha novas 
+% formas de acesso a serviços básicos.
 
-Desde então, houve estudos em diversas áreas para viabilizar tecnicamente o
-que o decreto propusera. As pesquisas apresentaram aplicações em áreas diversas
-como educação e serviços do Governo (receita federal, \textit{status} de benefícios
-etc) e área da saúde. Por conta dessa  abordagem, foi incluído no projeto
-NextSaúde, um conjunto de aplicações voltada para o atendimento domiciliar à
-saúde que fizesse uso da TV Digital, e de sua interatividade característica.
+% Desde então, houve estudos em diversas áreas para viabilizar tecnicamente o
+% que o decreto propusera. As pesquisas apresentaram aplicações em áreas diversas
+% como educação e serviços do Governo (receita federal, \textit{status} de benefícios
+% etc) e área da saúde. Por conta dessa  abordagem, foi incluído no projeto
+% NextSaúde, um conjunto de aplicações voltada para o atendimento domiciliar à
+% saúde que fizesse uso da TV Digital, e de sua interatividade característica.
 
-Adicionado a isso, surgiu a possibilidade de inserção das aplicações
-descritas  na subseção \ref{subsec:aplicacoes-tv-health} nos STBs
-disponibilizados aos beneficiários do programa Bolsa Família. Porém, o sinal
-analógico não foi completamente desligado, a adesão ao núcleo da tecnologia
-desenvolvida para a interatividade não foi completamente adotada  pela indústria
-e a distribuição dos STBs para beneficiários do Bolsa Família não levou em
-consideração as aplicações desenvolvidas, por questões financeiras.
+% Adicionado a isso, surgiu a possibilidade de inserção das aplicações
+% descritas  na subseção \ref{subsec:aplicacoes-tv-health} nos STBs
+% disponibilizados aos beneficiários do programa Bolsa Família. Porém, o sinal
+% analógico não foi completamente desligado, a adesão ao núcleo da tecnologia
+% desenvolvida para a interatividade não foi completamente adotada  pela indústria
+% e a distribuição dos STBs para beneficiários do Bolsa Família não levou em
+% consideração as aplicações desenvolvidas, por questões financeiras.
 
-Esse histórico é um relato do que nos levou a acreditar na força do programa
-SBTVD, em virtude de seu viés social e inovador, trazendo consigo a
-interatividade. Entretanto, a recusa dessa tecnologia por parte da indústria e 
-sua indiferença no que concerne às importantes contribuições para a sociedade, 
-nos incentivou a pesquisar novas tendências capazes de suprir com outras
-soluções e estratégias tecnológicas o atendimento domiciliar à saúde.
-
-% Para habilitar a recepção do sinal digital nas televisões, a utilização do 
-% \stb[] externo ou um receptor digital interno à TV se torna imprescindível.
+% Esse histórico é um relato do que nos levou a acreditar na força do programa
+% SBTVD, em virtude de seu viés social e inovador, trazendo consigo a
+% interatividade. Entretanto, a recusa dessa tecnologia por parte da indústria e 
+% sua indiferença no que concerne às importantes contribuições para a sociedade, 
+% nos incentivou a pesquisar novas tendências capazes de suprir com outras
+% soluções e estratégias tecnológicas o atendimento domiciliar à saúde.
 
 \subsection{\textit{Hardware} utilizado}
 
@@ -112,7 +82,7 @@ O \stb[] escolhido possui especificações técnicas robustas, listadas na
 tabela \ref{tab:stb-specs}. Este STB foi resultado de um projeto de pesquisa
 fomentado pela Financiadora de Estudos e Projetos (FINEP) e Agência Nacional
 de Energia Elétrica (ANEEL) e foi reutilizado neste trabalho por se tratar de 
-uma pesquisa em que o autor participou.
+uma pesquisa em que o autor participou efetivamente.
 
 \tabela{stb-specs}{Especificação STB}{0.9}
 
@@ -124,7 +94,7 @@ sistema operacional escolhido foi o GNU/Linux distribuição Linaro (derivado da
 distribuição Ubuntu) \textit{kernel} 3.4 portável para a arquitetura 
 ARM com \textit{drivers} específicos para a plataforma desenvolvida.
 
-\input{figuras/graficos/stb-diagram}
+\figurasimples{stb}{Camadas do sistema embarcado}{4cm}
 
 Na camada de usuário utilizamos o \software[] \xbmc[] - um gerenciador de mídia
 - como plataforma de exibição gráfica. É através dele que o usuário irá 
@@ -141,8 +111,7 @@ para este trabalho (figura \ref{fig:tela-principal-sua-saude}).
 \figuradupla{tela-principal}{Tela principal do STB. Destaque para o menu
 ``Sua Saúde''}{tela-principal-sua-saude}{Tela principal do menu ``Sua Saúde''}
 
-\subsection{\textit{Software} implementado}\label{sec:software-implementado}
-\label{subsec:aplicacoes-tv-health}
+\subsection{Aplicações interativas} \label{subsec:aplicacoes-tv-health}
 
 O intuito das aplicações é melhorar a comunicação entre o doente e cuidador com
 a equipe médica e seus parentes, além de permitir que o usuário utilize o
@@ -213,8 +182,55 @@ tranquilizando o usuário.
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
-incluir figura visao de engenharia (nazim)
-descrever detalhes tecnicos
+A figura \ref{fig:arquitetura} representa a visão de engenharia da arquitetura
+proposta. Ela tem como ponto principal a utilização de um \stb[], quando se
+conectam a ele sensores  implantados no ambiente, sensores de dispositivos como
+\smartphones[] e  \smartwatches[] do paciente e do cuidador, e sensores médicos
+do doente.
+
+\figurasimples{arquitetura}{Visão de engenharia da arquitetura proposta.}{12cm}
+
+Esse processo é composto de três momentos distintos, mas  interligados, no qual
+o primeiro é relativo à aquisição de dados do ambiente e do paciente, e a
+transmissão desses dados ao STB. O segundo diz respeito ao processamento dos
+dados brutos. O terceiro momento o envio dos dados processados para a plataforma
+NextSAÚDE.
+
+Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
+informações como  temperatura e umidade da residência, qualidade do ar e
+localização do paciente ou cuidador nos cômodos. A partir desses dados é
+possível dizer ao software se determinado espaço está muito quente, se a
+qualidade do ar não está favorável à melhoria do paciente etc. Dados extraídos
+de celulares, como a localização, também cooperam com o contexto, a exemplo da
+informação proveniente do celular do cuidador que informa, à equipe médica ou
+aos parentes, se este está junto ao paciente.
+
+Já os sensores médicos têm como função principal coletar os sinais vitais do
+paciente (pressão arterial, frequência cardíaca, níveis de oxigênio no sangue
+etc). Em ambos os casos - sensores gerais e sensores médicos -, as informações
+coletadas pelos dispositivos repassam  esses dados para o STB, seja através de
+interfaces com tecnologia  \textit{Bluetooth}, \textit{NFC} ou \textit{Wi-Fi}.
+
+Essa quantidade de dados enviada ao STB deverá então ser processada e encaminhada
+para a plataforma NextSaúde. O processamento é referente ao tratamento do dado
+bruto recebido e a tradução para o padrão OpenEHR entendido pela plataforma
+NextSaúde. Em seguida a transmissão dos dados é feita através de uma
+arquitetura  cliente/servidor. Já no sistema na nuvem, o dado relacionado ao
+paciente é extraído e persistido.
+
+Para permitir ao STB tomar decisões no âmbito domiciliar, parte dos dados
+referentes ao contexto são tratados e processados diretamente no equipamento.
+Já os dados referentes aos sinais vitais são enviados para plataforma. Dessa 
+maneira, ocorre um processamento nos dados para tomada de decisões a nível
+clínico, por exemplo, indicar uma consulta na especialidade cardiológica.
+
+Pelo exposto, uma funcionalidade importante do sistema é a geração de alertas e
+notificações para o paciente e o cuidador. Os atores recebem as notificações
+através da tela da televisão conectada ao STB. Para esse sistema, dois tipos de
+alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
+Além disso, a partir das informações de contexto, o sistema pode decidir
+entregar a mensagem não na tela da televisão e sim no \smartphone.
+
 
 \section{Cenários de uso} \label{sec:cenarios-de-uso}
 

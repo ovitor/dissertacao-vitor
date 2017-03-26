@@ -127,7 +127,9 @@ Já no Atendimento Domiciliar, o paciente encontra-se num estado de menor
 complexidade médica, e a atenção a ele dispensada, pode ou não ser realizada por
 uma equipe multiprofissional \cite{tavolari2000desenvolvimento}.
 
-\input{figuras/graficos/ads-diagram}
+\figuradupla{ads-tavalori}{Representação gráfica das categorias defendida 
+por Tavolari, Fernandes e Medina}{ads-giacomozzi}{Representação gráfica das 
+categorias defendida por Giacomozzi}
 
 Giacomozzi faz uma inversão das categorias propostas por Tavolari et al. e 
 define Atenção Domiciliar à Saúde, como um termo mais genérico, englobando
@@ -144,12 +146,6 @@ A despeito da diversidade de categorização apresentada pelos autores, ao nosso
 trabalho interessa tanto aqueles pacientes que inspiram maiores cuidados,
 correndo, inclusive, risco de vida, quanto aqueles que demandam menos
 preocupações.
-
-% \subsection{Urgência e Emergência}\label{subsec:urgencia-emergencia}
-% \lipsum[1]
-
-% \subsection{Atenção domiciliar}\label{subsec:atencao-domiciliar}
-% \lipsum[1]
 
 \section{Aspectos Tecnológicos}\label{sec:aspectos-tecnologicos}
 
@@ -283,11 +279,13 @@ computador tão embarcado, tão natural que o usaríamos sem nem pensar sobre
 ele''. Além disso, computação pervasiva está relacionada à capacidade de
 dispositivos serem embarcados no mundo físico, obtendo informações do meio para
 auxiliar na computação, integrando, dessa forma, o ambiente físico e o mundo
-virtual \cite{bolsoni2009computaccao, de2003computaccao}. A figura  \ref{fig
-:ubiqua-diagram} demonstra a interligação entre as áreas de sistemas
+virtual \cite{bolsoni2009computaccao, de2003computaccao}. A figura  
+\ref{fig:pervasive-marwedel} demonstra a interligação entre as áreas de sistemas
 embarcados, computação ubíqua e pervasiva com as tecnologias de comunicação.
 
-\input{figuras/graficos/pervasive-diagram}
+\figurasimples{pervasive-marwedel}{Representação gráfica das influências nas 
+áreas de sistemas embarcados, computação ubíqua/pervasiva e meios de 
+comunicação.}{12cm}
 
 Segundo Hansmann, a computação pervasiva tem 4 princípios fundamentais,
 detalhados a seguir \cite{hansmann2013pervasive}:
@@ -375,9 +373,67 @@ vitais do paciente), sensores de propósito geral (leituras no ambiente),
 ou ainda sensores virtuais (conjunto de programas cuja função é varrer as redes 
 sociais e extrair informações válidas para determinada situação).
 
+\subsection{Plataforma OpenIoT}\label{subsec:openiot}
+
+O OpenIoT é um esforço conjunto da União Européia para Pesquisa e Inovação (FP7
+- \textit{European Union's Research and Innovation}). A plataforma 
+\textit{OpenIoT} tem como objetivo principal a implantação de uma infraestrutura 
+de \textit{middleware} capaz de integrar soluções de Internet das Coisas.
+
+O projeto enfatiza a convergência de Internet das Coisas e computação em nuvem,
+habilitando esses dois tópicos através de interoperabilidade semântica e dados
+ligados (\textit{Linked Data}), desse modo, será possível fornecer aos
+interessados uma "nuvem de coisas". A figura \ref{fig:arquitetura-openiot} a 
+seguir representa  as partes que compõem a plataforma OpenIoT.
+
+\figurasimples[soldatos2015openiot]{arquitetura-openiot}{Arquitetura plataforma 
+\textit{OpenIoT}}{12cm}
+    
+A plataforma foi arquitetada com 3 grandes seções: (1) Aplicações e Utilitários,
+(2) Plano virtualizado e (3) Plano físico. Diversos componentes compõem as 
+seções, listados abaixo, com uma visão \textit{top-down}:
+
+\begin{description}
+  \item [Aplicações e Utilitários]
+  \item [Request Presentation] Responsável pelas apresentações das saídas dos serviços,
+ou seja, permite a seleção de mashups a partir de uma biblioteca com o intuito
+de facilitar a apresentação dos objetos configurados em uma interface web. Para
+isso, esse módulo comunica-se diretamente com o módulo Service Delivery and
+Utility Manager).
+
+  \item [Request Definition] Conjunto de serviços responsáveis por especificar e
+formular requisições - em tempo de execução - para a plataforma OpenIoT.
+
+  \item [Configuration and Monitoring] Habilita uma visão de gerenciamento,
+monitoramento e configuração das funcionalidades dos sensores e serviços
+acoplados à plataforma OpenIoT.
+\end{description}
 
 
+\begin{description}   
+  \item [Plano Virtualizado]   
+  \item [Scheduler] Processa as solicitações de serviços a partir do módulo 
+  Request Definition. Além disso, tem como outro objetivo encontrar sensores 
+  para serem adicionados à plataforma OpenIoT.
 
+  \item [Linked Stream Middleware] Equivalente a base de dados na nuvem. Persiste os
+dados provenientes da camada de sensores (reais e virtuais). Nesse módulo também
+são guardados as configurações e informações gerais referente ao funcionamento
+da rede OpenIot.
+
+  \item [Service Delivery and Utility Manager] Recebe consultas (geralmente SPARQL)
+para fornecer streams de dados do serviço requisitado. Além disso, realiza uma
+medição de utilização dos serviços fornecidos pela plataforma.
+\end{description}
+
+\begin{description}
+  \item [Plano Físico]
+  \item [Sensor Middleware] extende as funções do Global Sensor Network (GSN), se
+tornando o X-GSN. É responsável pela aquisição de dados de sensores reais e/ou
+virtuais. Ele atua como um gateway entre o mundo físico e a plataforma OpenIoT.
+Tem sua base de funcionamento em sistemas distribuídos - várias instâncias do
+sistema que podem ou não pertencer a entidades diferentes.
+\end{description}
 
 
 
