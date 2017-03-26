@@ -1,25 +1,47 @@
+TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
+PANDOC = pandoc -s -S 
+PREVIEW = open -a /Applications/Preview.app
+
+all: images thesis clean view
+	echo 'ok'
+
+thesis: compile view 
+	echo 'ok'
+
+compile:
+	$(TEX) dissertacao-vitor.tex
+
+images:
+	cd figuras/fontes; \
+	$(TEX) *; \
+	mv *.pdf ../graficos/;
+
+view:
+	$(PREVIEW) dissertacao-vitor.pdf
+
 clean:
-	rm dissertacao-vitor.aux
-	rm dissertacao-vitor.bbl
-	rm dissertacao-vitor.blg
-	rm dissertacao-vitor.brf
-	rm dissertacao-vitor.fdb_latexmk
-	rm dissertacao-vitor.fls
-	rm dissertacao-vitor.idx
-	rm dissertacao-vitor.ilg
-	rm dissertacao-vitor.ind
-	rm dissertacao-vitor.loa
-	rm dissertacao-vitor.lof
-	rm dissertacao-vitor.log
-	rm dissertacao-vitor.lot
-	rm dissertacao-vitor.synctex.gz
-	rm dissertacao-vitor.toc
-	rm apresentacao-vitor.aux
-	rm apresentacao-vitor.fdb_latexmk
-	rm apresentacao-vitor.fls
-	rm apresentacao-vitor.log
-	rm apresentacao-vitor.nav
-	rm apresentacao-vitor.out
-	rm apresentacao-vitor.snm
-	rm apresentacao-vitor.synctex.gz
-	rm apresentacao-vitor.toc
+	-rm -f figuras/fontes/*.aux
+	-rm -f figuras/fontes/*.
+	-rm -f figuras/fontes/*.fdb_latexmk
+	-rm -f figuras/fontes/*.fls
+	-rm -f figuras/fontes/*.log
+	-rm -f *.aux
+	-rm -f *.bbl
+	-rm -f *.blg
+	-rm -f *.brf
+	-rm -f *.fdb_latexmk
+	-rm -f *.fls
+	-rm -f *.idx
+	-rm -f *.ilg
+	-rm -f *.ind
+	-rm -f *.loa
+	-rm -f *.lof
+	-rm -f *.log
+	-rm -f *.lot
+	-rm -f *.synctex.gz
+	-rm -f *.toc 
+	-rm -f *.nav
+	-rm -f *.out
+	-rm -f *.snm
+	-rm -f *.lol
+	-rm -rf _minted-*

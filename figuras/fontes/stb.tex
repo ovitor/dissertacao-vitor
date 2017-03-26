@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+% \usepackage{pgfplots,pgfplotstable}
+\usepackage{color}
+
+\usetikzlibrary{arrows,positioning} 
+\input{../../utils/cores}
+
+\begin{document}
+
+\begin{tikzpicture}[font=\sffamily]
+      \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
+        \node[draw,text width=4cm,text height=0.6cm] 
+        at (0,0) {\textbf{Aplicações}};
+        \node[draw,text width=4cm,text height=0.6cm, fill=mycolor4] 
+        at (0,-1) {\textbf{Middleware}};
+        \node[draw,text width=4cm,text height=0.6cm, fill=mycolor3] 
+        at (0,-2) {\textbf{Sistema Operacional}};
+        \node[draw,text width=4cm,text height=0.5cm, fill=mycolor2] 
+        at (0,-3) {\textbf{Kernel/Drivers}};
+        \node[draw,text width=4cm,text height=0.7cm, fill=mycolor1] 
+        at (0,-4) {\textbf{Hardware}};
+      \end{scope}
+\end{tikzpicture} 
+
+\end{document}

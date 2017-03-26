@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+% \usepackage{pgfplots,pgfplotstable}
+\usepackage{color}
+
+\usetikzlibrary{arrows,positioning} 
+\input{../../utils/cores}
+
+\begin{document}
+
+\begin{tikzpicture}[font=\sffamily]
+  \begin{scope}[shift={(0cm,0cm)}, fill opacity=0.8]
+     \draw[fill=mycolor4] (0,0) ellipse (3.5cm and 2.6cm);
+     \draw[fill=mycolor3] (-1.7,-0.6) ellipse (1.2cm and 1cm);
+     \draw[fill=mycolor2] (1.5,-0.6) ellipse (1.5cm and 1cm);
+
+     \node at (0,1.4) [align=center]{Assistência Domiciliar\\ à Saúde};
+     \node at (-1.7,-0.6) [align=center]{\tiny Internação\\ \tiny Domiciliar};
+     \node at (1.5,-0.6)[align=center]{\tiny Atenção Domiciliar\\ \tiny à Saúde};
+  \end{scope}
+\end{tikzpicture} 
+
+\end{document}
