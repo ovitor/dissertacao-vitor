@@ -5,6 +5,63 @@ sistema de informática voltado para o atendimento de paciente no espaço domici
 Sua descrição é realizada na primeira seção. O TV-Health, parte integrante da 
 solução, tem suas características apresentadas no item \ref{sec:tv-health}.
 
+\section{Descrição de cenários}
+
+A figura tal representa, de maneira generalista, o cenário base para a aplicação
+da solução THECA. Nela podem ser verificados 3 ambientes, o ambiente A, diz
+respeito ao domicílio do paciente. Já o ambiente B, diz respeito aos atores
+móveis, tais como, equipe de saúde, parentes, amigos etc. O ambiente C
+representa os serviços disponibilizados pela solução.
+
+\subsection{Cenário A} \label{subsec:cenario-a}
+
+O cenário A representa o domicílio do usuário, seus atores locais (paciente,
+visitantes e cuidador e/ou parentes), os equipamentos responsáveis por 
+realizar a aquisição dos dados, o \stb[] (\textit{gateway}), a televisão e outros
+dispositivos capazes de apresentar dados e informações úteis para a assistência
+domiciliar à saúde. 
+
+Neste ambiente, o ator principal é o paciente, o monitoramento constante 
+proporcionado pela tecnologia nos permite acompanhar com mais clareza a situação
+do doente. A partir do monitoramento é possível avisar, por exemplo, à equipe
+de saúde (cenário B) uma leitura de sinais vitais. Nesse sentido, é possível 
+também, lembrar ao paciente, a necessidade de tomar determinado remédio em um
+horário específico.
+
+O cuidador também tem papel importante na recuperação ou no cotidiano do 
+paciente. Portanto, a tecnologia inserida neste ambiente tem função de ajudar
+este ator. O sistema pode enviar mensagens no intuito de auxiliar o cuidador no
+que concerne ao tratamento para com o paciente ou idoso, informando como lidar
+com determinada situação ou simplesmente relembrá-lo da agenda diária do 
+paciente, como por exemplo, atividade física, encontro com amigos etc.
+
+Os familiares e visitantes, figuras constantes em um ambiente domiciliar, também
+podem ser informados sobre um fato novo na agenda do doente, algo inusitado ou 
+ainda uma situação de urgência/emergência.
+
+Nesse sentido, podemos inserir no ambiente domiciliar, um conjunto de
+dispositivos dotados de sensores com o intuito de captar eventos no domicílio. É
+possível a utilização de sistemas para captar os sinais vitais do paciente, tais
+como nível de oxigênio no corpo, batimentos cardíacos, temperatura corporal etc.
+Outros tipos de sensores podem ser implantados para captar informações do
+ambiente, disponibilizando assim, informações de contexto para o sistema,  tais
+como, ruído sonoro nos cômodos, presença dos atores no domicílio, temperatura
+ambiente etc. Estas duas categorias caracterizam um  ambiente com tecnologia de
+Internet das coisas (\textit{Internet of Things  - IoT}).
+
+O STB, equipamento que tinha como principal função, o recebimento do sinal
+televisivo, seu processamento e  exibição, ganha novas funcionalidades a partir
+do momento em que, aumentamos seu  poder de processamento e, o conectamos à 
+Internet. Os dados coletados pelos sensores são, então, repassados ao STB,
+que os processa, os apresenta através da tela do televisor ou ainda através de
+\smartphones[] conectados ao sistema.
+
+
+\subsection{Cenário B} \label{subsec:cenario-b}
+
+Os atores externos utilizam o sistema por meio das interfaces web, das mensagens
+via celular
+
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
 
@@ -230,7 +287,6 @@ através da tela da televisão conectada ao STB. Para esse sistema, dois tipos d
 alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
 Além disso, a partir das informações de contexto, o sistema pode decidir
 entregar a mensagem não na tela da televisão e sim no \smartphone.
-
 
 \section{Cenários de uso} \label{sec:cenarios-de-uso}
 
