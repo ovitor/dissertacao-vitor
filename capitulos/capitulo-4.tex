@@ -2,22 +2,23 @@
 
 Neste capítulo serão abordadas as etapas que constituem a estrutura geral do
 sistema de informática voltado para o atendimento de paciente no espaço domiciliar. 
-Sua descrição é realizada na primeira seção. O TV-Health, parte integrante da 
-solução, tem suas características apresentadas no item \ref{sec:tv-health}.
+Na primeira seção são apresentados o cenário e situações do cotidiano exemplificando
+o uso da solução. Em seguida, a descrição da arquitetura é exposta. Por fim, uma
+visão de engenharia é descrito.
 
 \section{Descrição de cenários}
 
-A figura tal representa, de maneira generalista, o cenário base para a aplicação
-da solução THECA. Nela podem ser verificados 3 ambientes, o ambiente A, diz
-respeito ao domicílio do paciente. Já o ambiente B, diz respeito aos atores
-móveis, tais como, equipe de saúde, parentes, amigos etc. O ambiente C
-representa os serviços disponibilizados pela solução.
+A figura \ref{fig:cenarios} representa, de maneira generalista, o cenário base
+para a aplicação da solução THECA. Nela podem ser verificados 3 ambientes, o
+ambiente A, diz respeito ao domicílio do paciente. Já o ambiente B, diz respeito
+aos atores móveis, tais como, equipe de saúde, parentes, amigos etc. O ambiente
+C representa os serviços disponibilizados pela solução.
 
 \figurasimples{cenarios}{Visão geral dos cenários abordados.}{14cm}
 
-\subsection{Parte A} \label{subsec:parte-a}
+\subsection{Ambiente A} \label{subsec:ambiente-a}
 
-A parte A representa o domicílio do usuário, seus atores locais (paciente,
+O ambiente A representa o domicílio do usuário, seus atores locais (paciente,
 visitantes e cuidador e/ou parentes), os equipamentos responsáveis por  realizar
 a aquisição dos dados, o \stb[] (\textit{gateway}), a televisão e outros
 dispositivos capazes de apresentar dados e informações úteis para a assistência
@@ -26,7 +27,7 @@ domiciliar à saúde.
 Neste ambiente, o ator principal é o paciente, o monitoramento constante 
 proporcionado pela tecnologia nos permite acompanhar com mais clareza a situação
 do doente. A partir do monitoramento é possível avisar, por exemplo, à equipe
-de saúde (parte B) uma leitura de sinais vitais. Nesse sentido, é possível 
+de saúde (Ambiente B) uma leitura de sinais vitais. Nesse sentido, é possível 
 também, lembrar ao paciente, a necessidade de tomar determinado remédio em um
 horário específico.
 
@@ -58,9 +59,9 @@ Internet. Os dados coletados pelos sensores são, então, repassados ao STB,
 que os processa, os apresenta através da tela do televisor ou ainda através de
 \smartphones[] conectados ao sistema.
 
-\subsection{Parte B} \label{subsec:parte-b}
+\subsection{Ambiente B} \label{subsec:ambiente-b}
 
-A parte B diz respeito aos atores móveis do cenário geral. Os atores externos
+O ambiente B diz respeito aos atores móveis do cenário geral. Os atores externos
 são a equipe de saúde, os familiares e amigos do paciente. Estes três atores
 estão em constante movimento e não visitam o doente frequentemente. Nesse
 sentido, o sistema disponibiliza meios para que fiquem a par da situação do
@@ -77,18 +78,35 @@ paciente através desta forma de visualização de dados. Nesse modelo, os dados
 apresentados vão desde a leitura de sensores instalados na casa até a
 visualização de sinais vitais do paciente.
 
-\subsection{Parte C} \label{subsec:parte-c}
+\subsection{Ambiente C} \label{subsec:ambiente-c}
 
-A parte C aborda de forma geral, os serviços oferecidos e de que forma eles se
+O ambiente C aborda de forma geral, os serviços oferecidos e de que forma eles se
 relacionam com a parte A e B. Podemos descrever a parte C a partir de uma leitura 
 \textit{top-down} da figura \ref{fig:cenarios}. No subitem X temos a plataforma
-NextSAÚDE, esta plataforma...
+NextSAÚDE, esta plataforma oferece meios de comunicação para que outros sistemas
+possam se comunicar com ela, possibilitando uma integração entre vários sistemas.
+
+Parte dessa integração é realizada através do padrão OpenEHR (subitem Y), sua 
+função é permitir que sistemas informatizados de saúde, no caso a plataforma
+NextSAÚDE se comunique de maneira transparente com outros sistemas de saúde ou
+instâncias de sistemas de saúde, tal como a aplicação TV-Health (seção
+\vref{sec:tv-health}). A utilização do OpenEHR possibilita que toda a solução
+proposta se comunique, com o menor esforço possível, com outros sistemas de 
+saúde.
+
+Na última camada da pilha - no subitem Z - pautamos a Internet das Coisas ou
+\textit{IoT}. A partir deste conceito será possível realizar a aquisição de
+dados dos sensores médicos conectados ao paciente e sensores instalados no domicílio
+(ambiente A), proporcionando um monitoramento constante dos atores envolvidos, 
+o que é ideal para uma situação de internação domiciliar. Este serviço fará uso 
+de tópicos apresentados na plataforma \textit{OpenIoT}
+(seção \vref{subsec:openiot}).
 
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
 
 A arquitetura proposta soluciona o problema relatado na seção  
-\ref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que
+\vref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que
 se comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
 responsável por adquirir os dados brutos dos sensores, (2) ``Camada de Gerência 
 e Inteligência'' responsável por tratar os dados e inferir e (3) ``Camada de 
@@ -97,7 +115,6 @@ diversos dispositivos. A figura \ref{fig:arquitetura-v2} representa graficamente
 a arquitetura proposta.
 
 \figurasimples{arquitetura-v2}{Visão geral arquitetural da solução}{12cm}
-
 
 A ``Camada de aquisição de dados'' representa toda a parte de baixo nível da
 solução.
@@ -111,21 +128,6 @@ ou as informações processadas nos dispositivos conectados à plataforma.
 
 % \figurasimples{tela-principal-dado}
 % {Tela principal do módulo \textit{service.dado}}{14cm}
-
-\subsubsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
-
-O módulo \textit{service.panicbutton} tem como objetivo, permitir que o usuário
-utilize o controle remoto para reportar um momento que precisa de ajuda 
-emergencial. Ao acionar a tecla reservada para tal função, o sistema percebe e
-prepara um conjunto de tarefas a serem executadas. Dentre elas, o envio de 
-mensagens via (1) Serviço de Mensagem Simples (SMS) e (2) serviços de comunicação
-pela Internet (como por exemplo o aplicativo \textit{Telegram}) para parentes, 
-amigos, cuidador e a equipe médica que o acompanha. Além de entrar em contato
-com o serviço de urgência e emergência.
-
-Em seguida, o aplicativo exibe uma notificação na tela da televisão no intuito
-de acalmá-lo. A figura \ref{fig:notificacao-botao-de-panico} exibe a mensagem 
-tranquilizando o usuário.
 
 % % \figurasimples{notificacao-botao-de-panico}
 % {Mensagem na tela tranquilizando o usuário.}{14cm}
