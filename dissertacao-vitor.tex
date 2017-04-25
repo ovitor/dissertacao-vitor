@@ -62,6 +62,7 @@
 \usepackage{multirow}			% Trabalhando com tabelas
 \usepackage{minted}				% Inclusão de códigos
 \usepackage{listings}			% Inclusão de códigos
+\usepackage{varioref}			% Inclui o comando vref
 
 \usetikzlibrary{arrows,positioning} 
 % ---
@@ -277,16 +278,16 @@
 % ---
 % Inicia os apêndices
 % ---
-% \begin{apendicesenv}
+\begin{apendicesenv}
 
 % Imprime uma página indicando o início dos apêndices
-% \partapendices
+\partapendices
 % Insere os apêndices
-% \include{apendices/apendice-a}
+\include{apendices/apendice-a}
 %\include{apendices/apendice-b}
 %\include{apendices/apendice-c}
 %\include{apendices/apendice-d}
-% \end{apendicesenv}
+\end{apendicesenv}
 % ---
 
 
