@@ -2,7 +2,7 @@ TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
 PANDOC = pandoc -s -S 
 PREVIEW = open -a /Applications/Preview.app
 
-all: thesis view
+all: compile view
 	echo 'ok'
 
 thesis: images compile clean view 
