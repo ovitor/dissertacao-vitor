@@ -2,10 +2,10 @@ TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
 PANDOC = pandoc -s -S 
 PREVIEW = open -a /Applications/Preview.app
 
-all: images thesis clean view
+all: thesis view
 	echo 'ok'
 
-thesis: compile view 
+thesis: images compile clean view 
 	echo 'ok'
 
 compile:
@@ -25,23 +25,7 @@ clean:
 	-rm -f figuras/fontes/*.fdb_latexmk
 	-rm -f figuras/fontes/*.fls
 	-rm -f figuras/fontes/*.log
-	-rm -f *.aux
-	-rm -f *.bbl
-	-rm -f *.blg
-	-rm -f *.brf
-	-rm -f *.fdb_latexmk
-	-rm -f *.fls
-	-rm -f *.idx
-	-rm -f *.ilg
-	-rm -f *.ind
-	-rm -f *.loa
-	-rm -f *.lof
-	-rm -f *.log
-	-rm -f *.lot
-	-rm -f *.synctex.gz
-	-rm -f *.toc 
-	-rm -f *.nav
-	-rm -f *.out
-	-rm -f *.snm
-	-rm -f *.lol
+	-rm -f *.aux *.bbl *.blg *.brf *.fdb_latexmk *.fls
+	-rm -f *.idx *.ilg *.ind *.loa *.lof *.log *.lot
+	-rm -f *.synctex.gz *.toc *.nav *.out *.snm *.lol
 	-rm -rf _minted-*
