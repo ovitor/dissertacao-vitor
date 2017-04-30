@@ -3,14 +3,13 @@
 Esta dissertação apresenta uma solução de atenção domiciliar à saúde 
 automatizada com recursos da TV Digital (*Set-top Box*) e tecnologia
 de Internet das Coisas (IoT - *Internet of Things*)
-
 ## TODO
 
 - [ ] [baixa] terminar seção 'estrutura da dissertação' @cap-1 :grin: 
 - [ ] [média] incrementar seção de 'IoT' @cap-2 :cold_sweat: 
 - [ ] [média] reformular seção de OpenIoT @cap-2 :cold_sweat: 
 - [ ] [média] refazer imagem da seção 4.1 (descrição de cenários) @cap-4 :cold_sweat: 
-- [x] [:cry: alta] ˜˜descrever simulações para os ambientes da seção 4.1 (descrição de cenários) @cap-4˜˜ [30/04/2017]
+- [x] [:cry: alta] ~~descrever simulações para os ambientes da seção 4.1 (descrição de cenários) @cap-4~~ [30/04/2017]
 - [ ] [:cry: alta] descrever solução (seção 4.2) @cap-4
 - [ ] [média] realocar seção 4.4 (cenários de uso) @cap-4 :cold_sweat: 
 - [ ] [média] especificar formalmente módulo notification @cap-5 :cold_sweat: 
