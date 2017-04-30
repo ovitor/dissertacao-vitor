@@ -102,10 +102,105 @@ o que é ideal para uma situação de internação domiciliar. Este serviço far
 de tópicos apresentados na plataforma \textit{OpenIoT}
 (seção \vref{subsec:openiot}).
 
+\subsection{Simulações} \label{subsec:simulacoes}
+
+No sentido de exemplificar os ambientes descritos anteriormente, esta subseção
+traz simulações (situações fictícias) do doente em cenários que a solução
+proposta nesta dissertação pode auxiliar. As três primeiras subseções 
+(\nameref{subsubsec:doente-sozinho}, \nameref{subsubsec:doente-com-familiar}
+e \nameref{subsubsec:doente-cuidador}) remetem ao \nameref{subsec:ambiente-a}.
+Já a simulação \nameref{subsubsec:doente-emergencia} remete ao \nameref{subsec:ambiente-b}.
+
+\subsubsection{Doente sozinho} \label{subsubsec:doente-sozinho}
+
+Luisa, aposentada, 75 anos, vive sozinha em seu apartamento. Quando não está
+realizando refeições e lavando pratos, passa boa parte do seu dia na sala de
+estar, lendo ou assistindo à televisão. Infelizmente, Luisa sofre de uma doença 
+crônica e seu médico recomenda caminhada uma vez ao dia, durante 30 minutos. 
+Além disso, foi prescrito à Luisa alguns medicamentos necessários para evitar 
+as dores - cada um deles deveria ser ingerido em horários específicos.
+
+Através do \stb[] acoplado à televisão e conectado à Internet, é
+possível enviar à Luisa avisos e notificações lembrando de suas atividades
+diárias - como por exemplo, a caminhada de 30 minutos recomendada pelo
+médico além do medicamento a ser ingerido.
+
+Através da leitura de sinais vitais, proporcionada pelos sensores médicos,
+e conectados ao STB, será possível enviar leituras de sinais vitais específicos 
+de Luisa para o médico que a acompanha. Assim, Luisa poderá receber tratamento
+diferenciado ou comparecer a uma consulta de maneira antecipada caso seja
+detectado a necessidade para tal.
+
+Portanto, esta simulação de uso exemplifica uma aplicação prática do sistema 
+proposto.
+
+%Para que Luisa não ficasse sozinha tanto tempo, seus filhos pediram à vizinha
+%que checasse sua condição de tempos em tempos, fazendo com que Luisa agora tivesse uma
+%espécie de cuidador informal. A função do cuidador informal seria de acompanhar
+%Luisa na caminhada e recordá-la de tomar seus remédios.
+
+\subsubsection{Doente com um familiar} \label{subsubsec:doente-com-familiar}
+
+Roberto é autônomo e trabalha em casa consertando televisores e mora com sua
+filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
+de descanso, assiste aos seus programas favoritos.
+
+Certo dia, Roberto não sente-se bem e deita-se, tendo instalado à sua televisão
+o STB com as aplicações da solução proposta, ele conta com a disponibilidade de
+diversas funcionalidades que podem auxiliá-lo neste momento. Poderá, por
+exemplo, acessar uma das aplicação através do controle remoto, a aplicação
+apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
+um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
+exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
+aplicação apresenta uma notificação contendo uma segunda opinião, informando
+também a necessidade de se apresentar à um médico.
+
+É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
+serem realizados no paciente, momento em que a filha de Roberto teria o papel de
+cuidadora informal ao realizar tais procedimentos. A aplicação guiaria o
+cuidador informal em um processo passo a passo. Nesta simulação,  percebe-se a
+importância de contar com um dispositivo que auxilie o cuidador e o paciente em
+situações de risco à saúde.
+
+\subsubsection{Doente com um cuidador profissional} \label{subsubsec:doente-cuidador}
+
+Dona Clélia, aposentada, contratou um cuidador profissional para acompanhar seu
+marido Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
+do seu contrato, o cuidador fica na casa, apenas nos horários da manhã e tarde.
+
+Sabendo que o casal de idosos utiliza a solução proposta neste trabalho, e sendo o
+cuidador ciente das necessidades do doente, o cuidador poderá receber em seu celular ou
+acompanhar através da televisão auxílio para a realização de um procedimento inerente
+a um paciente com Parkinson, ou ainda, o \textit{status} das atividades diárias.
+
+\subsubsection{Doente em situação de emergência} \label{subsubsec:doente-emergencia}
+
+Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
+de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
+esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
+
+Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
+que conta com o STB com a solução proposta. Passado alguns minutos, ela sente
+uma forte dor no peito seguido por um desconforto no braço esquerdo. Neste
+momento, Maria certa de que precisa de ajuda, pode acionar no controle remoto o
+"botão de pânico". 
+
+A aplicação percebe o acionamento e toma algumas medidas, tais como, enviar
+mensagens de socorro através de SMS ou através de serviços de mensagens pela
+Internet para a equipe de saúde, para os amigos e familiares.  Por fim, a
+aplicação pode enviar uma notificação para ser exibida na televisão no sentido
+de tranquilizar o usuário.
+
+Além disso, os sensores médicos utilizados por Maria auxiliam os atores
+externos (equipe de saúde, familiares e amigos) a tomarem as medidas
+necessárias para o melhor atendimento de Maria.  Em determinados casos, é
+possível, ainda, que a aplicação envie, através de notificações, sugestões de
+medidas a serem tomadas enquanto o socorro médico não chega.
+
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
 
-A arquitetura proposta soluciona o problema relatado na seção  
+A arquitetura proposta soluciona o problema relatado na seção 
 \vref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que
 se comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
 responsável por adquirir os dados brutos dos sensores, (2) ``Camada de Gerência 
@@ -183,75 +278,3 @@ alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
 Além disso, a partir das informações de contexto, o sistema pode decidir
 entregar a mensagem não na tela da televisão e sim no \smartphone.
 
-\section{Cenários de uso} \label{sec:cenarios-de-uso}
-
-Os seguintes cenários de uso exemplificam a aplicação da tecnologia e em quais
-momentos ela é mais requerida.
-
-\subsection{Notificações}\label{subsec:notificacoes}
-
-Luisa, aposentada, 75 anos, vive sozinha em seu apartamento, passa boa parte do
-seu dia na sala de estar, lendo ou assistindo à televisão. Sua rotina muda um
-pouco quando seus filhos a visitam nos finais de semana. Infelizmente, Luisa
-sofre de uma doença crônica e seu médico recomenda caminhada uma vez ao dia,
-durante 30 minutos. Além disso, foi prescrito à Luisa alguns medicamentos
-necessários para evitar as dores - cada um deles deveria ser ingerido em
-horários específicos.
-
-Para que Luisa não ficasse sozinha tanto tempo, seus filhos pediram à vizinha
-que checasse sua condição de tempos em tempos, fazendo com que Luisa agora tivesse uma
-espécie de cuidador informal. A função do cuidador informal seria de acompanhar
-Luisa na caminhada e recordá-la de tomar seus remédios.
-
-Através do sistema embarcado acoplado à televisão e conectado à Internet, é
-possível enviar à Luisa avisos e notificações lembrando de suas atividades
-diárias - como por exemplo, a caminhada de 30 minutos recomendada pelo
-médico além do medicamento a ser ingerido.
-
-Portanto, este cenário de uso exemplifica uma aplicação prática do sistema de
-notificação e alertas desenvolvido para compor o trabalho.
-
-\subsection{DADO}\label{subsec:dado}
-
-Roberto é autônomo e trabalha em casa consertando televisores, mora com sua
-filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
-de descanso, assiste aos seus programas favoritos.
-
-Certo dia, Roberto não se sente bem e se deita, tendo instalado à sua televisão
-o set-top box com as aplicações tv-health, ele conta com a disponibilidade da
-aplicação DADO. Em determinado momento, acessa a aplicação "Não está se sentindo
-bem?" através do controle remoto, selecionando-a do menu "Sua Saúde". Através
-dela, verifica um conjunto de imagens, cada uma exemplificando um sintoma.
-Usando o controle remoto, seleciona os sintomas que melhor exemplificam o que
-está sentindo. Essa informação é processada e, em seguida, a aplicação apresenta
-uma notificação contendo uma segunda opinião, informando também a necessidade de
-se apresentar à um médico.
-
-É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
-serem realizados no paciente, momento em que a filha de Roberto teria o papel de
-cuidadora informal ao realizar tais procedimentos. A aplicação guiaria o
-cuidador informal em um processo passo a passo. Neste cenário,  percebe-se a
-importância de contar com um dispositivo que auxilie o cuidador e o paciente em
-situações de risco à saúde.
-
-\subsection{Botão de Pânico}\label{subsec:botao-panico}
-
-Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
-de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
-esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
-
-Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
-que conta com o set-top box com as aplicações tv-health. Passado
-alguns minutos, ela sente uma forte dor no peito seguido por um desconforto no
-braço esquerdo. Neste momento, Maria certa de que precisa de ajuda, aciona no
-controle remoto o "botão de pânico".
-
-A aplicação percebe o acionamento e toma algumas medidas, tais como, enviar
-mensagens de socorro através de SMS ou através de serviços de mensagens pela
-Internet para a equipe médica, para os amigos e familiares, além de entrar em
-contato com o serviço médico de urgência. Por fim, a aplicação envia uma
-notificação para ser exibida na televisão no sentido de tranquilizar o usuário.
-
-Em determinados casos, é possível, ainda, que a aplicação envie, através de
-notificações, sugestões de medidas a serem tomadas enquanto o socorro médico não
-chega.
