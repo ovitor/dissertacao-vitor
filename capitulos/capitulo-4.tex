@@ -4,13 +4,13 @@ Neste capítulo serão abordadas as etapas que constituem a estrutura geral do
 sistema de informática voltado para o atendimento de paciente no espaço domiciliar. 
 Na primeira seção são apresentados o cenário e situações do cotidiano exemplificando
 o uso da solução. Em seguida, a descrição da arquitetura é exposta. Por fim, uma
-visão de engenharia é descrito.
+visão de engenharia é descrita.
 
 \section{Descrição de cenários}
 
 A figura \ref{fig:cenarios} representa, de maneira generalista, o cenário base
-para a aplicação da solução THECA. Nela podem ser verificados 3 ambientes, o
-ambiente A, diz respeito ao domicílio do paciente. Já o ambiente B, diz respeito
+para a aplicação da solução THECA. Nela podem ser verificados três ambientes. O
+ambiente A diz respeito ao domicílio do paciente. Já o ambiente B diz respeito
 aos atores móveis, tais como, equipe de saúde, parentes, amigos etc. O ambiente
 C representa os serviços disponibilizados pela solução.
 
@@ -28,33 +28,33 @@ Neste ambiente, o ator principal é o paciente, o monitoramento constante
 proporcionado pela tecnologia nos permite acompanhar com mais clareza a situação
 do doente. A partir do monitoramento é possível avisar, por exemplo, à equipe
 de saúde (Ambiente B) uma leitura de sinais vitais. Nesse sentido, é possível 
-também, lembrar ao paciente, a necessidade de tomar determinado remédio em um
+também lembrar ao paciente a necessidade de tomar determinado remédio em um
 horário específico.
 
 O cuidador também tem papel importante na recuperação ou no cotidiano do 
-paciente. Portanto, a tecnologia inserida neste ambiente tem função de ajudar
+paciente. A tecnologia, portanto, inserida neste ambiente tem função de ajudar
 este ator. O sistema pode enviar mensagens no intuito de auxiliar o cuidador no
 que concerne ao tratamento para com o paciente ou idoso, informando como lidar
 com determinada situação ou simplesmente relembrá-lo da agenda diária do 
-paciente, como por exemplo, atividade física, encontro com amigos etc.
+paciente, como por exemplo atividade física, encontro com amigos etc.
 
 Os familiares e visitantes, figuras constantes em um ambiente domiciliar, também
 podem ser informados sobre um fato novo na agenda do doente, algo inusitado ou 
 ainda uma situação de urgência/emergência.
 
-Nesse sentido, podemos inserir no ambiente domiciliar, um conjunto de
+Nesse sentido, podemos inserir no ambiente domiciliar um conjunto de
 dispositivos dotados de sensores com o intuito de captar eventos no domicílio. É
 possível a utilização de sistemas para captar os sinais vitais do paciente, tais
 como nível de oxigênio no corpo, batimentos cardíacos, temperatura corporal etc.
 Outros tipos de sensores podem ser implantados para captar informações do
-ambiente, disponibilizando assim, informações de contexto para o sistema,  tais
-como, ruído sonoro nos cômodos, presença dos atores no domicílio, temperatura
+ambiente, disponibilizando assim informações de contexto para o sistema,  tais
+como ruído sonoro nos cômodos, presença dos atores no domicílio, temperatura
 ambiente etc. Estas duas categorias caracterizam um  ambiente com tecnologia de
-Internet das coisas (\textit{Internet of Things  - IoT}).
+Internet das Coisas (\textit{Internet of Things  - IoT}).
 
-O STB, equipamento que tinha como principal função, o recebimento do sinal
+O STB, equipamento que tinha como principal função o recebimento do sinal
 televisivo, seu processamento e  exibição, ganha novas funcionalidades a partir
-do momento em que, aumentamos seu  poder de processamento e, o conectamos à 
+do momento em que aumentamos seu  poder de processamento e o conectamos à 
 Internet. Os dados coletados pelos sensores são, então, repassados ao STB,
 que os processa, os apresenta através da tela do televisor ou ainda através de
 \smartphones[] conectados ao sistema.
@@ -72,7 +72,7 @@ sistema, é possível receber alertas relacionados ao paciente. Os alertas podem
 envolver desde o \textit{status} atual do doente, considerações acerca do
 cuidador até mensagens de cunho emergencial.
 
-Já através da interface \web[], os atores mais beneficiados são, a equipe de
+Já através da interface \web[], os atores mais beneficiados são a equipe de
 saúde e os familiares, pois eles têm acesso a informações mais detalhadas do
 paciente através desta forma de visualização de dados. Nesse modelo, os dados
 apresentados vão desde a leitura de sensores instalados na casa até a
@@ -80,7 +80,7 @@ visualização de sinais vitais do paciente.
 
 \subsection{Ambiente C} \label{subsec:ambiente-c}
 
-O ambiente C aborda de forma geral, os serviços oferecidos e de que forma eles se
+O ambiente C aborda de forma geral os serviços oferecidos e de que forma eles se
 relacionam com a parte A e B. Podemos descrever a parte C a partir de uma leitura 
 \textit{top-down} da figura \ref{fig:cenarios}. No subitem X temos a plataforma
 NextSAÚDE, esta plataforma oferece meios de comunicação para que outros sistemas
@@ -88,7 +88,7 @@ possam se comunicar com ela, possibilitando uma integração entre vários siste
 
 Parte dessa integração é realizada através do padrão OpenEHR (subitem Y), sua 
 função é permitir que sistemas informatizados de saúde, no caso a plataforma
-NextSAÚDE se comunique de maneira transparente com outros sistemas de saúde ou
+NextSAÚDE, se comunique de maneira transparente com outros sistemas de saúde ou
 instâncias de sistemas de saúde, tal como a aplicação TV-Health (seção
 \vref{sec:tv-health}). A utilização do OpenEHR possibilita que toda a solução
 proposta se comunique, com o menor esforço possível, com outros sistemas de 
@@ -141,7 +141,7 @@ proposto.
 
 \subsubsection{Doente com um familiar} \label{subsubsec:doente-com-familiar}
 
-Roberto é autônomo e trabalha em casa consertando televisores e mora com sua
+Roberto é autônomo, trabalha em casa consertando televisores e mora com sua
 filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
 de descanso, assiste aos seus programas favoritos.
 
@@ -153,7 +153,7 @@ apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
 um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
 exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
 aplicação apresenta uma notificação contendo uma segunda opinião, informando
-também a necessidade de se apresentar à um médico.
+também a necessidade de se apresentar a um médico.
 
 É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
 serem realizados no paciente, momento em que a filha de Roberto teria o papel de
@@ -166,7 +166,7 @@ situações de risco à saúde.
 
 Dona Clélia, aposentada, contratou um cuidador profissional para acompanhar seu
 marido Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
-do seu contrato, o cuidador fica na casa, apenas nos horários da manhã e tarde.
+do seu contrato, o cuidador fica na casa apenas nos horários da manhã e tarde.
 
 Sabendo que o casal de idosos utiliza a solução proposta neste trabalho, e sendo o
 cuidador ciente das necessidades do doente, o cuidador poderá receber em seu celular ou
