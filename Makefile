@@ -1,6 +1,8 @@
 TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
 PANDOC = pandoc -s -S 
 PREVIEW = open -a /Applications/Preview.app
+#PLANTUML = plantuml -tlatex
+PLANTUML = plantuml
 
 all: compile view
 	echo 'ok'
@@ -15,6 +17,21 @@ images:
 	cd figuras/fontes; \
 	$(TEX) *; \
 	mv *.pdf ../graficos/;
+
+#uml:
+#	cd figuras/uml; \
+#	$(PLANTUML) *.puml; \
+#	sed -i.bak 's/{article}/{standalone}/g' *.latex; \
+#	sed -i.bak 's/yscale=\-1/yscale=\-1,font=\\sffamily/g' *.latex ; \
+#	rm *.bak; \
+#	$(TEX) *; \
+#	rm *.aux *.fdb_latexmk *.fls *.latex *.log; \
+#	mv *.pdf ../graficos/;
+
+uml:
+	cd figuras/uml; \
+	$(PLANTUML) *.puml; \
+	mv *.png ../graficos/;
 
 view:
 	$(PREVIEW) dissertacao-vitor.pdf

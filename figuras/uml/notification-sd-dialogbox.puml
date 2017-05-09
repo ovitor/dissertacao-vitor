@@ -1,0 +1,22 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+actor Usuário
+participant "Sistema web"
+participant "Módulo notificações"
+participant "Tela principal"
+
+Usuário -> "Sistema web" : Cadastrar mensagem
+activate "Sistema web"
+"Sistema web" --> Usuário : Mensagem cadastrada
+deactivate "Sistema web"
+
+"Sistema web" -> "Módulo notificações" : Agendar apresentação\nde mensagem
+"Módulo notificações" -> "Tela principal" : Apresentar mensagem
+activate "Tela principal"
+
+Usuário -> "Módulo notificações" : Fechar mensagem
+deactivate "Tela principal"
+
+@enduml

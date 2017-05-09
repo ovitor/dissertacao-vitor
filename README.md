@@ -11,8 +11,8 @@ de Internet das Coisas (IoT - *Internet of Things*)
 - [ ] [média] refazer imagem da seção 4.1 (descrição de cenários) @cap-4 :cold_sweat: 
 - [x] [:cry: alta] ~~descrever simulações para os ambientes da seção 4.1 (descrição de cenários) @cap-4~~ [30/04/2017]
 - [ ] [:cry: alta] descrever solução (seção 4.2) @cap-4
-- [ ] [média] realocar seção 4.4 (cenários de uso) @cap-4 :cold_sweat: 
-- [ ] [média] especificar formalmente módulo notification @cap-5 :cold_sweat: 
+- [x] [média] ~~realocar seção 4.4 (cenários de uso) @cap-4 :cold_sweat:~~ [30/04/2017]
+- [x] [média] ~~especificar formalmente módulo notification @cap-5 :cold_sweat:~~ [09/05/2017]
 - [ ] [média] especificar formalmente módulo dado @cap-5 :cold_sweat: 
 - [ ] [média] especificar formalmente módulo panicbutton @cap-5 :cold_sweat: 
 - [ ] [baixa] desenvolver parte de IoT do sistema @cap-5 :grin: 

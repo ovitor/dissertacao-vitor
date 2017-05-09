@@ -1,0 +1,14 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+(*) --> "Inicializa variáveis"
+
+if "Checa servidor por\nnovas mensagens" then
+  --> [true] "Agenda mensagem para exibição"
+  --> (*)
+else
+  -> [false] "Não faz nada"
+  -> (*)
+
+@enduml

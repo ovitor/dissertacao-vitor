@@ -1,0 +1,15 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+actor usuario 
+actor sistema
+
+usuario -> (fechar mensagem)
+sistema -> (exibir mensagem)
+sistema --> (agendar mensagem cadastrada)
+
+(cadastrar mensagem) <- usuario
+usuario -> (ler mensagem)
+
+@enduml
