@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+actor Usuário
+participant "Módulo dado"
+participant "Módulo de inferência"
+participant "Tela principal"
+
+Usuário -> "Módulo dado" : Informar sintomas 
+activate "Módulo dado"
+"Módulo dado" -> "Módulo de inferência" : Processar sintomas
+activate "Módulo de inferência"
+"Módulo de inferência" --> "Módulo dado" : Resultado
+deactivate "Módulo de inferência"
+"Módulo dado" -> "Módulo dado" : Trata resultado
+
+"Módulo dado" -> "Tela principal" : Apresentar resultado
+activate "Tela principal"
+
+Usuário -> "Módulo dado" : Fechar mensagem
+deactivate "Módulo dado"
+deactivate "Tela principal"
+
+@enduml

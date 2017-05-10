@@ -1,0 +1,16 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+(*) --> "Inicializa variáveis"
+--> "Inicializa tela"
+
+if "Sintomas selecionados\ne submetidos?" then
+  --> [true] "Envia dados para API externa"
+  --> "Exibe resultado da requisição"
+  --> (*)
+else
+  -> [false] "Não faz nada"
+  -> (*)
+
+@enduml
