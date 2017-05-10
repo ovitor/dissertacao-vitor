@@ -1,0 +1,15 @@
+@startuml
+skinparam dpi 300
+skinparam shadowing false
+
+(*) --> "Inicializa variáveis"
+
+if "Botão de pânico pressionado?" then
+  --> [verdadeiro] "Envia mensagens para contatos\nde emergência"
+  --> "Exibe alerta, notificando o usuário"
+  --> (*)
+else
+  -> [falso] "Não faz nada"
+  -> (*)
+
+@enduml
