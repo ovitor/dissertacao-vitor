@@ -19,6 +19,8 @@ de Internet das Coisas (IoT - *Internet of Things*)
 - [ ] [baixa] desenvolver parte de IoT do sistema @cap-5 :grin: 
 - [ ] [baixa] escrever capítulo 6 (conclusão) @cap-6 :grin: 
 - [ ] [baixa] escrever capítulo 3 (trabalhos relacionados) @cap-3 :grin: 
+- [ ] [:cry: alta] realizar comparativo entre arquiteturas (fazer tabela
+comparativa) @cap-4 ou @cap-3
 
 ## Facilitadores
 
