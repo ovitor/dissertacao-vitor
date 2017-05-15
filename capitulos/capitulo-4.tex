@@ -200,16 +200,20 @@ medidas a serem tomadas enquanto o socorro médico não chega.
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
 
-A arquitetura proposta soluciona o problema relatado na seção 
-\vref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que
-se comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
-responsável por adquirir os dados brutos dos sensores, (2) ``Camada de Gerência 
-e Inteligência'' responsável por tratar os dados e inferir e (3) ``Camada de 
-Apresentação de informações'' - responsável por apresentar os dados nos mais
-diversos dispositivos. A figura \ref{fig:arquitetura-v2} representa graficamente
-a arquitetura proposta.
+A arquitetura proposta soluciona o problema relatado na seção
+\vref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que se
+comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
+responsável por adquirir os dados brutos dos sensores, (2) ``Camada de
+Inteligência local'' responsável por inferir sob os dados acquisitados ainda no
+STB, (3) ``Camada de Inteligência na nuvem'', responsável por realizar
+inferências que não podiam ser realizadas localmente, (4) ``Camada de Gerência
+de dados'', responsável por gerenciar parte dos dados coletados no ambiente
+domiciliar, cruzando com dados oriundos de outros módulos da plataforma
+NextSaúde e (5) ``Camada de Apresentação de informações'' - responsável por
+apresentar os dados nos mais diversos dispositivos. A figura
+\ref{fig:arquitetura-v3} representa graficamente a arquitetura proposta.
 
-\figurasimples{arquitetura-v2}{Visão geral arquitetural da solução}{12cm}
+\figurasimples{arquitetura-v3}{Visão geral arquitetural da solução}{12cm}
 
 A ``Camada de aquisição de dados'' representa toda a parte de baixo nível da
 solução.
