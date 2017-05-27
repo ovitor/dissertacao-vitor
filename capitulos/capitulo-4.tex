@@ -9,7 +9,7 @@ visão de engenharia é descrita.
 \section{Descrição de cenários}
 
 A figura \ref{fig:cenarios} representa, de maneira generalista, o cenário base
-para a aplicação da solução THECA. Nela podem ser verificados três ambientes. O
+para a aplicação da solução. Nela podem ser verificados três ambientes. O
 ambiente A diz respeito ao domicílio do paciente. Já o ambiente B diz respeito
 aos atores móveis, tais como, equipe de saúde, parentes, amigos etc. O ambiente
 C representa os serviços disponibilizados pela solução.
@@ -49,15 +49,15 @@ como nível de oxigênio no corpo, batimentos cardíacos, temperatura corporal e
 Outros tipos de sensores podem ser implantados para captar informações do
 ambiente, disponibilizando assim informações de contexto para o sistema,  tais
 como ruído sonoro nos cômodos, presença dos atores no domicílio, temperatura
-ambiente etc. Estas duas categorias caracterizam um  ambiente com tecnologia de
-Internet das Coisas (\textit{Internet of Things  - IoT}).
+ambiente etc. Os sensores médicos e sensores gerais caracterizam um  ambiente 
+com tecnologia de Internet das Coisas (\textit{Internet of Things  - IoT}).
 
 O STB, equipamento que tinha como principal função o recebimento do sinal
-televisivo, seu processamento e  exibição, ganha novas funcionalidades a partir
-do momento em que aumentamos seu  poder de processamento e o conectamos à 
-Internet. Os dados coletados pelos sensores são, então, repassados ao STB,
-que os processa, os apresenta através da tela do televisor ou ainda através de
-\smartphones[] conectados ao sistema.
+televisivo, seu processamento e a exibição do sinal na tela, ganha novas
+funcionalidades a partir do momento em que aumentamos seu  poder de
+processamento e o conectamos à Internet. Os dados coletados pelos sensores são,
+então, repassados ao STB, que os processa, os apresenta através da tela do
+televisor ou ainda através de \smartphones[] conectados ao sistema.
 
 \subsection{Ambiente B} \label{subsec:ambiente-b}
 
@@ -75,7 +75,7 @@ cuidador até mensagens de cunho emergencial.
 Já através da interface \web[], os atores mais beneficiados são a equipe de
 saúde e os familiares, pois eles têm acesso a informações mais detalhadas do
 paciente através desta forma de visualização de dados. Nesse modelo, os dados
-apresentados vão desde a leitura de sensores instalados na casa até a
+apresentados vão desde a leitura de alguns sensores instalados na casa até a
 visualização de sinais vitais do paciente.
 
 \subsection{Ambiente C} \label{subsec:ambiente-c}
@@ -153,7 +153,8 @@ apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
 um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
 exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
 aplicação apresenta uma notificação contendo uma segunda opinião, informando
-também a necessidade de se apresentar a um médico.
+também a necessidade de se apresentar a um médico. É importante ressaltar que
+o sistema não oferece ou indica nenhum tipo de medicamento.
 
 É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
 serem realizados no paciente, momento em que a filha de Roberto teria o papel de
@@ -201,7 +202,7 @@ medidas a serem tomadas enquanto o socorro médico não chega.
 \label{sec:descricao-solucao}
 
 A arquitetura proposta soluciona o problema relatado na seção
-\vref{sec:descricao-problema}. Ela é composta de 3 camadas distintas mas que se
+\vref{sec:descricao-problema}. Ela é composta de 5 camadas distintas mas que se
 comunicam entre sí. As camadas são, (1) ``Camada de aquisição de dados''
 responsável por adquirir os dados brutos dos sensores, (2) ``Camada de
 Inteligência local'' responsável por inferir sob os dados acquisitados ainda no
@@ -211,41 +212,65 @@ de dados'', responsável por gerenciar parte dos dados coletados no ambiente
 domiciliar, cruzando com dados oriundos de outros módulos da plataforma
 NextSaúde e (5) ``Camada de Apresentação de informações'' - responsável por
 apresentar os dados nos mais diversos dispositivos. A figura
-\ref{fig:arquitetura-v3} representa graficamente a arquitetura proposta.
+\ref{fig:arquitetura-v4} representa graficamente a arquitetura proposta.
 
-\figurasimples{arquitetura-v3}{Visão geral arquitetural da solução}{12cm}
+\figurasimples{arquitetura-v4}{Visão geral arquitetural da solução}{12cm}
 
-A ``Camada de aquisição de dados'' representa toda a parte de baixo nível da
-solução.
+A ``Camada de aquisição de dados'' (1) representada por 2 blocos na figura 
+\ref{fig:arquitetura-v4} caracteriza toda a parte de baixo nível da
+arquitetura. Fazem parte dela os sensores médicos, sensores gerais e o próprio
+\stb[]. A comunicação entre esses dois blocos dar-se através da rede
+Wi-Fi disponibilizada na residência. Os dados adquiridos são persistidos
+no próprio STB. Caso seja necessário, alguns desses dados são repassados
+adiante para posterior processamento. 
 
-Já a ``Camada de Gerência e Inferência'' trata os dados processados na camada
-de aquisição de dados, realizando inferências com modelos ontológicos e 
-persistindo-os em base de dados.
+A ``Camada de inteligência local'' (2) é representada pelo dispositivo STB. 
+O STB contém em sua lógica de funcionamento, a capacidade de inferir sobre
+determinadas situações. Dados provenientes dos sensores e que são úteis para a 
+conclusão de um fato são utilizados como entrada para domínios de conhecimento
+na forma de ontologias. O próprio STB, portanto, pode decidir em eventuais
+situações, fornecendo uma resposta rápida e evitando assim, tráfego de dados 
+desnecessário através da Internet.
 
-Por fim, a ``Camada de apresentação'' se encarrega de apresentar os dados brutos
-ou as informações processadas nos dispositivos conectados à plataforma.
+A função da ``Camada de inteligência remota'' (3) é extender a camada de
+número 2. Ao transmitir dados do ambiente domiciliar para um sistema na nuvem,
+a solução incorpora o poder de processamento disponibilizado por essa
+abordagem. Além de realizar inferências através de ontologias, podemos
+preparar os dados para inteligência artificial por meio de aprendizagem de
+máquinas, aumentando o poder de inferência do sistema.
 
-% \figurasimples{tela-principal-dado}
-% {Tela principal do módulo \textit{service.dado}}{14cm}
+Já a ``Camada de gerência de dados'' (4) trata os dados gerenciais, aqueles
+referentes ao paciente e a logística de um atendimento especializado em
+domicílio, podendo ainda, realizar a integração com o ambiente hospitalar, caso
+seja necessário uma transferência do doente. A plataforma NextSaúde,
+projeto financiado pela Fundação Cearense de Apoio ao Desenvolvimento Científico 
+(FUNCAP) e liderado pelo Laboratório de Redes de Computadores de Aracatí (LAR-A) 
+é utilizada nesta camada para prover os serviços necessários, tais como, o 
+Registro Eletrônico de Saúde\footnote{Documento estrutural responsável por 
+manter um conjunto de informações de saúde e assistência de um paciente durante 
+toda a sua vida.} (RES), integração com áreas hospitalares, farmácias etc.
 
-% % \figurasimples{notificacao-botao-de-panico}
-% {Mensagem na tela tranquilizando o usuário.}{14cm}
+Por fim, a ``Camada de apresentação'' (5) se encarrega de apresentar os dados brutos
+ou as informações processadas nos dispositivos conectados à plataforma. Essa
+camada encontra-se distribuída em toda a arquitetura. Sendo assim, é possível
+que os diversos atores interajam por meio de \smartphones, computadores e
+a tela da televisão.
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
-A figura \ref{fig:arquitetura} representa a visão de engenharia da arquitetura
+A figura \ref{fig:visao-engenharia-v2} representa a visão de engenharia da arquitetura
 proposta. Ela tem como ponto principal a utilização de um \stb[], quando se
 conectam a ele sensores  implantados no ambiente, sensores de dispositivos como
 \smartphones[] e  \smartwatches[] do paciente e do cuidador, e sensores médicos
 do doente.
 
-\figurasimples{arquitetura}{Visão de engenharia da arquitetura proposta.}{12cm}
+\figurasimples{visao-engenharia-v2}{Visão de engenharia da arquitetura proposta.}{12cm}
 
 Esse processo é composto de três momentos distintos, mas  interligados, no qual
 o primeiro é relativo à aquisição de dados do ambiente e do paciente, e a
-transmissão desses dados ao STB. O segundo diz respeito ao processamento dos
+transmissão destes dados ao STB. O segundo diz respeito ao processamento dos
 dados brutos. O terceiro momento o envio dos dados processados para a plataforma
-NextSAÚDE.
+NextSaúde.
 
 Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
 informações como  temperatura e umidade da residência, qualidade do ar e
@@ -262,23 +287,36 @@ etc). Em ambos os casos - sensores gerais e sensores médicos -, as informaçõe
 coletadas pelos dispositivos repassam  esses dados para o STB, seja através de
 interfaces com tecnologia  \textit{Bluetooth}, \textit{NFC} ou \textit{Wi-Fi}.
 
-Essa quantidade de dados enviada ao STB deverá então ser processada e encaminhada
-para a plataforma NextSaúde. O processamento é referente ao tratamento do dado
-bruto recebido e a tradução para o padrão OpenEHR entendido pela plataforma
-NextSaúde. Em seguida a transmissão dos dados é feita através de uma
-arquitetura  cliente/servidor. Já no sistema na nuvem, o dado relacionado ao
-paciente é extraído e persistido.
+Ao utilizarmos sensores com Wi-Fi, por exemplo, os dados são transferidos ao
+STB utilizando um protocolo de transferência de mensagens entre máquinas, o
+MQTT\footnote{O MQTT é um protocolo de transferência de mensagens de baixo
+custo computacional e reside em cima da camada TCP/IP. O sistema funciona a
+partir de um \textit{publish/subscriber}. Utiliza-se um concentrador como um
+servidor MQTT.}.  Foi instalado no STB um servidor MQTT para gerenciar os dados
+de entrada.
 
-Para permitir ao STB tomar decisões no âmbito domiciliar, parte dos dados
-referentes ao contexto são tratados e processados diretamente no equipamento.
-Já os dados referentes aos sinais vitais são enviados para plataforma. Dessa 
-maneira, ocorre um processamento nos dados para tomada de decisões a nível
-clínico, por exemplo, indicar uma consulta na especialidade cardiológica.
+Para que o sistema de inferência local funcione de maneira adequada, parte dos
+dados que chegam devem ser persistidos em um banco de dados local, a partir da
+persistência, o STB pode tomar decisões no âmbito domiciliar, parte dos dados
+referentes ao contexto deverão ser tratados e processados diretamente no
+equipamento.  Já os dados referentes aos sinais vitais são enviados para
+plataforma. Dessa maneira, ocorre um processamento nos dados para tomada de
+decisões a nível clínico, por exemplo, indicar uma consulta na especialidade
+cardiológica.
 
-Pelo exposto, uma funcionalidade importante do sistema é a geração de alertas e
-notificações para o paciente e o cuidador. Os atores recebem as notificações
-através da tela da televisão conectada ao STB. Para esse sistema, dois tipos de
-alertas foram desenvolvidos: o tipo \textit{pop-up} e o caixa de diálogo.
-Além disso, a partir das informações de contexto, o sistema pode decidir
-entregar a mensagem não na tela da televisão e sim no \smartphone.
+O restante de dados enviada ao STB deverá então ser processada e encaminhada
+para a plataforma NextSaúde e para a camada de inferência remota.  O
+processamento é referente ao tratamento do dado bruto recebido e a tradução
+para o padrão OpenEHR entendido pela plataforma NextSaúde. Em seguida a
+transmissão dos dados é feita através de uma arquitetura  cliente/servidor. Já
+no sistema na nuvem, o dado relacionado ao paciente é extraído e persistido.
+
+A partir da lógica de transferência de dados e informações, persistência
+dos dados, inferência local ou na nuvem, é possível a geração de alertas e
+notificações para o paciente e o cuidador. Os atores locais (paciente/cuidador) 
+recebem as notificações principalmente através da tela da televisão conectada ao 
+STB e através do \smartphone. Os atores móveis (equipe de saúde) podem visualizar 
+os dados e receber informações referentes ao paciente a partir da interface \web ou 
+a partir do \smartphone.
+
 
