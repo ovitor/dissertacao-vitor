@@ -2,20 +2,28 @@
 \toprule
 Método & Caminho       & Descrição  \\
 \midrule
+GET    & /api/usuarios/ & Lista usuários cadastrados \\
+\midrule
+POST   & /api/usuarios/ & Cadastra usuários cadastrados na base de dados \\
+\midrule
+PUT    & /api/usuarios/<id> & Atualiza usuário cadastrado a partir de um $id$ \\
+\midrule
+DELETE & /api/usuarios/<id> & Deleta usuário cadastrado ($id$ como parâmetro) \\
+\midrule
 GET    & /api/alertas/ & Lista alertas cadastrados \\
 \midrule
-POST   & /api/alertas/ & Cadastra alertas cadastrados na base de dados \\
+POST   & /api/alertas/ & Cadastra alerta na base de dados \\
 \midrule
-PUT    & /api/alertas/ & Atualiza alertas cadastrados \\
+PUT    & /api/alertas/<id> & Atualiza alerta cadastrado a partir de um $id$ \\
 \midrule
-DELETE & /api/alertas/ & Deleta alertas cadastrados da base de dados \\
+DELETE & /api/alertas/<id> & Deleta alerta cadastrado ($id$ como parâmetro) \\
 \midrule
 GET    & /api/contatos/ & Lista contatos cadastrados \\
 \midrule
-POST   & /api/contatos/ & Cadastra contatos na base de dados \\
+POST   & /api/contatos/ & Cadastra contato na base de dados \\
 \midrule
-PUT    & /api/contatos/ & Atualiza informação de contatos \\
+PUT    & /api/contatos/<id> & Atualiza informação de contato a partir de um $id$ \\
 \midrule
-DELETE & /api/contatos/ & Atualiza informação de contatos \\
+DELETE & /api/contatos/<id> & Deleta contato cadastrado ($id$ como parâmetro) \\
 \bottomrule
 \end{tabular}
