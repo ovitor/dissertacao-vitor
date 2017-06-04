@@ -83,12 +83,12 @@ visualização de sinais vitais do paciente.
 O ambiente C aborda de forma geral os serviços oferecidos e de que forma eles se
 relacionam com a parte A e B. Podemos descrever a parte C a partir de uma leitura 
 \textit{top-down} da figura \ref{fig:cenarios}. No subitem X temos a plataforma
-NextSAÚDE, esta plataforma oferece meios de comunicação para que outros sistemas
+\nextsaude[], esta plataforma oferece meios de comunicação para que outros sistemas
 possam se comunicar com ela, possibilitando uma integração entre vários sistemas.
 
 Parte dessa integração é realizada através do padrão OpenEHR (subitem Y), sua 
 função é permitir que sistemas informatizados de saúde, no caso a plataforma
-NextSAÚDE, se comunique de maneira transparente com outros sistemas de saúde ou
+\nextsaude[], se comunique de maneira transparente com outros sistemas de saúde ou
 instâncias de sistemas de saúde, tal como a aplicação TV-Health (seção
 \vref{sec:tv-health}). A utilização do OpenEHR possibilita que toda a solução
 proposta se comunique, com o menor esforço possível, com outros sistemas de 
@@ -210,7 +210,7 @@ STB, (3) ``Camada de Inteligência na nuvem'', responsável por realizar
 inferências que não podiam ser realizadas localmente, (4) ``Camada de Gerência
 de dados'', responsável por gerenciar parte dos dados coletados no ambiente
 domiciliar, cruzando com dados oriundos de outros módulos da plataforma
-NextSaúde e (5) ``Camada de Apresentação de informações'' - responsável por
+\nextsaude[] e (5) ``Camada de Apresentação de informações'' - responsável por
 apresentar os dados nos mais diversos dispositivos. A figura
 \ref{fig:arquitetura-v4} representa graficamente a arquitetura proposta.
 
@@ -242,7 +242,7 @@ máquinas, aumentando o poder de inferência do sistema.
 Já a ``Camada de gerência de dados'' (4) trata os dados gerenciais, aqueles
 referentes ao paciente e a logística de um atendimento especializado em
 domicílio, podendo ainda, realizar a integração com o ambiente hospitalar, caso
-seja necessário uma transferência do doente. A plataforma NextSaúde,
+seja necessário uma transferência do doente. A plataforma \nextsaude[],
 projeto financiado pela Fundação Cearense de Apoio ao Desenvolvimento Científico 
 (FUNCAP) e liderado pelo Laboratório de Redes de Computadores de Aracati (LAR-A) 
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
@@ -270,7 +270,7 @@ Esse processo é composto de três momentos distintos, mas  interligados, no qua
 o primeiro é relativo à aquisição de dados do ambiente e do paciente, e a
 transmissão destes dados ao STB. O segundo diz respeito ao processamento dos
 dados brutos. O terceiro momento o envio dos dados processados para a plataforma
-NextSaúde.
+\nextsaude[].
 
 Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
 informações como  temperatura e umidade da residência, qualidade do ar e
@@ -305,9 +305,9 @@ decisões a nível clínico, por exemplo, indicar uma consulta na especialidade
 cardiológica.
 
 O restante de dados enviada ao STB deverá então ser processada e encaminhada
-para a plataforma NextSaúde e para a camada de inferência remota.  O
+para a plataforma \nextsaude[] e para a camada de inferência remota.  O
 processamento é referente ao tratamento do dado bruto recebido e a tradução
-para o padrão OpenEHR entendido pela plataforma NextSaúde. Em seguida a
+para o padrão OpenEHR entendido pela plataforma \nextsaude[]. Em seguida a
 transmissão dos dados é feita através de uma arquitetura  cliente/servidor. Já
 no sistema na nuvem, o dado relacionado ao paciente é extraído e persistido.
 
