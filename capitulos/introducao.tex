@@ -35,10 +35,10 @@ de idosos. A escolha da atenção domiciliar em substituição da hospitalizaç�
 mostra-se positivo nos planos social, psicológico e econômico. 
 
 No que concerne às políticas públicas desenvolvidas pelo Estado,  a vantagem é
-de reduzir os custos com internação. Estudos na área da saúde pública revelam  que é possível economizar,
-ao se substituir a internação hospitalar por uma  abordagem em atenção 
-domiciliar nos casos de menor gravidade,  ou seja, casos em que o paciente não 
-corre risco de morte \cite{bourdette1993health}.  
+de reduzir os custos com internação. Estudos na área da saúde pública revelam
+que é possível economizar, ao se substituir a internação hospitalar por uma
+abordagem em atenção domiciliar nos casos de menor gravidade,  ou seja, casos
+em que o paciente não corre risco de morte \cite{bourdette1993health}.  
 
 Na atenção domiciliar, é de grande importância o acompanhamento do paciente.
 Essa tarefa é realizada por uma equipe médica que se desloca até o domicílio do
@@ -70,17 +70,17 @@ cotidiano do paciente e os auxilie nas formas de alertas para o paciente e o
 cuidador, além de informar à equipe de saúde ou a emergência sobre questões 
 pertinentes ao paciente.
 
-Neste trabalho, é proposta a TVHealthDasCoisas (THECA), um sistema embarcado em
-um \stb[] (STB) - dispositivo responsável por receber o sinal da  televisão
+Neste trabalho, é proposta a TVHealthDasCoisas, um sistema embarcado em
+um \stb[] - dispositivo responsável por receber o sinal da  televisão
 digital e apresentá-lo na TV. Este dispositivo foi utilizado como ponto principal em uma
-arquitetura composta por ele (STB), sensores e outros equipamentos para  prover
-uma solução inteligente de atenção domiciliar.
+arquitetura composta por ele (STB), sensores e outros componentes para  prover
+uma solução inteligente de atenção domiciliar à saúde.
 
 O STB, além de realizar suas tarefas básicas explicadas anteriormente, tem poder
 de processamento para executar outras funções. Ele conta com interface de
 comunicação Wi-Fi, portas \textit{ethernet} e HDMI e o padrão RCA para
 conexão com a TV, além de portas \textit{USB}. Sendo assim, uma vez conectado à
-Internet, o STB servirá de \textit{gateway} na casa do usuário, comunicando-se
+Internet, o STB servirá de \textit{hub} na casa do usuário, comunicando-se
 com sistemas de informática para saúde e com o próprio paciente.
 
 Através dos sensores é possível coletar dados referentes ao paciente e ao
@@ -94,17 +94,18 @@ familiares).
 
 Dessa maneira, o sistema pode auxiliar os atores envolvidos, emitindo alertas,
 informações, mensagens etc por meio da televisão ou dispositivos móveis
-integrados ao sistema. A THECA comunica-se com o \nextsaude[] - uma plataforma
-de interoperabilidade em saúde baseada no padrão OpenEHR - para compartilhar
-serviços internos disponíveis (regulação, farmácia, leitos etc).
+integrados ao sistema. A TVHealthDasCoisas comunica-se com o \nextsaude[] - uma
+plataforma de interoperabilidade em saúde baseada no padrão OpenEHR - para
+compartilhar serviços internos disponíveis (regulação, farmácia, leitos etc).
 
-Portanto, a THECA é uma arquitetura orientada a contexto (\textit{context-aware
-concept}), enriquecida com tecnologia da Internet das Coisas (\textit{IoT}), que
-através de um STB coleta dados e apresenta alertas e informações processadas e
-comunica-se com a plataforma \nextsaude[] através de arquétipos do padrão OpenEHR.
-Até o momento uma parte desse processo já foi implementada, tal como as 
-notificações dos alertas enviados ao doente e cuidador. A fase seguinte 
-dirá a respeito ao envio constante dos dados para a equipe médica.
+A TVHealthDasCoisas é, portanto, uma arquitetura orientada a contexto
+(\textit{context-aware concept}), enriquecida com tecnologia da Internet das
+Coisas (\textit{Internet of  Things -  IoT}), que através de um STB coleta
+dados e apresenta alertas e informações processadas e comunica-se com a
+plataforma \nextsaude[] através de arquétipos do padrão OpenEHR.  Até o momento
+uma parte desse processo já foi implementada, tal como as notificações dos
+alertas enviados ao doente e cuidador. A fase seguinte dirá a respeito ao envio
+constante dos dados para a equipe médica.
 
 % Vale ressaltar que este dispositivo é o resultado de um projeto de pesquisa, do
 % qual participei de forma efetiva, que recebeu fomento da  Agência Nacional de
@@ -142,8 +143,8 @@ a piora do paciente realiza algum procedimento e em alguns casos, entra
 em contato com o socorro médico ou a equipe médica responsável pelo paciente.
 
 O cuidador, como já afirmamos, é geralmente um familiar, amigo, ou profissional
-remunerado, sem formação médica apropriada para a função que desempenha  e sem,
-necessariamente, disponibilizar todo o seu horário para o paciente. Do exposto,
+remunerado, mesmo com a formação médica apropriada para a função que desempenha não
+necessariamente, disponibiliza todo o seu horário para o paciente. Do exposto,
 percebe-se a dificuldade do cuidador de realizar um procedimento médico mais
 elaborado ou auxiliar o paciente durante 24 horas do dia.
 
@@ -183,9 +184,49 @@ Durante este projeto de mestrado, os seguintes trabalhos científicos foram
 aceitos e publicados, a saber:
 
 \begin{itemize}
-	% \item \textbf{Einstein, A.}, 1905. \textbf{The photoelectric effect}. Ann. Phys, 17(132), p.4;
-	% \item \textbf{Einstein, A.}, 1904. \textbf{Zur allgemeinen molekularen Theorie der Wärme}. Annalen der Physik, 319(7), pp.354-362.
-  \item produção 1
+  \item \textbf{LOPES, V. C. M.}; QUEIROZ, E.; FREITAS, N.; OLIVEIRA, M.; MONTEIRO, O. TV-Health:
+  A Context-Aware health Care Application for Brazilian Digital TV. In ACM.
+  \textit{Proceedings of the 22nd Brazilian Symposium on Multimedia and the Web (Webmedia)}. 
+  Teresina, Brasil. 2016, pp. 103-106.
+
+  \item \textbf{LOPES, V. C. M.}; ROCHA, E.; QUEIROZ, E.; FREITAS, N.; VIANA, D.; OLIVEIRA, M. VITESSE 
+  - more intelligence with emerging technologies for health systems. In: IEEE. 
+  \textit{2016 7th International Conference on the Network of the Future (NOF)}. Buzios, Brasil. 2016, pp. 1-3.
+\end{itemize}
+
+Além do seguinte artigo aceito para publicação:
+
+\begin{itemize}
+  \item \textbf{LOPES, V. C. M.}; MOTA, H.; OLIVEIRA, M.; CARVALHO, G. Towards an Emergency/Urgency
+    approach based on the Brazilian Digital TV. \textit{Multi Conference on Computer Science 
+    and Information Systems (MCCSIS)}. Ilha da Madeira, Portugal, 2016.
 \end{itemize}
 
 \section{Estrutura da Dissertação}\label{sec:estrutura}
+
+O restante da dissertação é dividido em 5 capítulos: \nameref{cap:fundamentacao-teorica},
+\nameref{cap:trabalhos-relacionados}, \nameref{cap:quatro}, \nameref{cap:aspectos-de-implementacao}
+e \nameref{cap:conclusao}. No decorrer do trabalho, busca-se detalhar o assunto de modo que o
+leitor entenda as considerações, levando em consideração a literatura. 
+
+No capítulo \ref{cap:fundamentacao-teorica}, são descritos conceitos de Atenção
+Domiciliar à Saúde, Sistemas Embarcados, Aplicações Sensíveis ao Contexto,
+Computação Ubíqua e Pervasiva, além do novo termo \textit{Internet of Things -
+IoT}, separados nas seções \nameref{sec:aspectos-de-saude} e
+\nameref{sec:aspectos-tecnologicos}.
+
+No capítulo \ref{cap:trabalhos-relacionados} é apresentado o estado da arte de
+sistemas para a Anteção Domiciliar à Saúde, assim como os trabalhos semelhantes
+nessa área.
+
+No capítulo \ref{cap:quatro} são descritos os cenários de ADS em que a arquitetura
+se mostra relevante. Além disso, é apresentada a visão funcional e de engenharia
+da solução.
+
+O capítulo \ref{cap:aspectos-de-implementacao} aborda detalhes da implementação
+referente ao TVHealthDasCoisas, tais como o módulo de notificações, módulo de 
+auxílio e módulo de botão de pânico.
+
+Por fim, no capítulo \ref{cap:conclusao} é exposto, além da conclusão com as 
+considerações finais, os trabalhos futuros que achamos ser importantes linhas
+de estudo.
