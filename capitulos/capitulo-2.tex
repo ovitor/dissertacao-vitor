@@ -6,7 +6,7 @@ Saúde e suas particularidades, além de explanar, brevemente, sobre a história
 hospitalização no Brasil. A seção \ref{sec:aspectos-tecnologicos} trata das
 tecnologias e conceitos tecnológicos utilizados neste trabalho.
 
-\section{Aspectos de Saúde}\label{sec:aspectos-de-saude}
+\section{Aspectos de Saúde} \label{sec:aspectos-de-saude}
 
 Segundo \citeonline{inaia2008}, uma das primeiras instituições voltadas para o
 cuidado com a saúde foi a fundação da Santa Casa de Misericórdia de Santos, em
@@ -36,7 +36,7 @@ Entretanto, em virtude da vigência da ditadura militar, implantada em 1964, que
 levou o país a vivenciar um estado de exceção, tais propostas não conseguiram se
 concretizar. Assim, somente no período da redemocratização, ocorrida em meados
 dos anos 1980, é que o SUS foi criado oficialmente pela Constituição Federal de
-1988, Lei 8080/90\footnote{ Acessível em
+1988, Lei 8080/90\footnote{Acessível em
 \url{http://www.planalto.gov.br/ccivil_03/leis/L8080.htm}}, com o  objetivo de
 garantir à população Brasileira, o acesso universal às ações e  serviços de
 saúde.
@@ -181,9 +181,9 @@ complexidade da definição de sistemas embarcados, uma vez que, muitos deles,
 desempenham funções que antes cabiam apenas ao computador de propósito geral.}
 \cite{wolf2012computers}.
 
-Marwedel define: ``Sistemas Embarcados (como) sistemas de processamento de
-informações incorporados à produtos.'', e, adicionado à esta definição, lista 5
-características que devem levar em consideração: 
+\citeonline{marwedel2010embedded} define: ``Sistemas Embarcados (como) sistemas
+de processamento de informações incorporados à produtos.'', e, adicionado à
+esta definição, lista 5 características que devem levar em consideração: 
 
 \begin{itemize}
   \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
@@ -224,19 +224,25 @@ A depender da finalidade do produto, esses requisitos diferem bastante. Por
 exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
 simples (em termos de funcionalidade, processamento, consumo de energia etc),
 uma vez que aplica um componente microcontrolador de baixo poder de
-processamento (tal qual um microprocessador PIC de 16 bits) e um circuito
-auxiliar para atender as especificações de entrada e saída do sistema, assim
-como uma possível comunicação com outros sistemas.
+processamento (tal qual um microcontrolador PIC\footnote{Família de
+microcontroladores desenvolvido e fabricado pela empresa \textit{Microchip
+Technology} comumente utilizado em sistemas embarcados que não necessitam de
+muito processamento.} de 16 bits) e um circuito auxiliar para atender as
+especificações de entrada e saída do sistema, assim como uma possível
+comunicação com outros sistemas.
 
 Já o sistema embarcado em um \smartphone[] realiza diversas funções, tem um
 alto nível de processamento de dados e consome muita energia. Para atender a
 estes requisitos, a equipe responsável pelo \design[] utiliza vários
-processadores de alto poder computacional (tal qual processadores ARM), como
-interface de entrada e saída uma tela sensível ao toque e faz uso, ainda, de
-diversos sensores para ajudar na usabilidade do dispositivo.
+processadores de alto poder computacional (tal qual processadores
+ARM\footnote{ARM - \textit{Advanced RISC Machine}. Empresa que desenvolve 
+processadores de arquitetura RISC, comumente utilizados em sistemas
+embarcados que necessitam de um poder de processamento alto.}), como interface
+de entrada e saída uma tela sensível ao toque e faz uso, ainda, de diversos
+sensores para ajudar na usabilidade do dispositivo.
 
 Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
-Set-Top Box (STB), processa grande quantidade de dados, além de realizar
+\stb[], processa grande quantidade de dados, além de realizar
 diferentes funções. Em que pese tais diferenças, o \hardware[] utilizado é
 bastante semelhante.
 
@@ -262,13 +268,13 @@ geladeiras, lixeiras, interruptores de luzes etc \cite{weiser1991computer}. Essa
 previsão de Weiser já se concretizou em vários dispositivos.
 
 Através de sensores e meios de comunicação, esses objetos ganham novas funções.
-A patente de Yang registra uma lixeira inteligente que abre sua tampa de acordo
-com a proximidade do usuário \cite{yang2005trash}. Já a pesquisa de Wang
+A patente de \citeonline{yang2005trash} registra uma lixeira inteligente que abre sua tampa de acordo
+com a proximidade do usuário. Já a pesquisa de \citeonline{hou2013}
 demonstra a utilização de sensores em uma geladeira. A partir de um sistema de
 gerenciamento da geladeira é possível ter informações das comidas e recomendar
 receitas para o usuário de acordo com os alimentos disponíveis, além de 
 verificar quais itens estão próximos do final da validade ou faltantes e gerar 
-uma lista de compras personalizada \cite{hou2013}.
+uma lista de compras personalizada.
 
 % Os dispositivos \smartphones, \tablets, relógios inteligentes e até mesmo roupas
 % inteligentes são realidades para muitos. Esses dispositivos permitem que o 
@@ -277,22 +283,23 @@ uma lista de compras personalizada \cite{hou2013}.
 % \cite{de2003computaccao}.
 
 Muitas vezes, a tecnologia inserida nesses objetos é invisível para o usuário
-final e essa transparência era defendida por Weiser para apresentar um outro
-termo, a ``computação pervasiva'', assim definida pelo autor: ``(...) criar  um
-computador tão embarcado, tão natural que o usaríamos sem nem pensar sobre
-ele''. Além disso, computação pervasiva está relacionada à capacidade de
-dispositivos serem embarcados no mundo físico, obtendo informações do meio para
-auxiliar na computação, integrando, dessa forma, o ambiente físico e o mundo
-virtual \cite{bolsoni2009computaccao, de2003computaccao}. A figura  
-\ref{fig:pervasive-marwedel} demonstra a interligação entre as áreas de sistemas
-embarcados, computação ubíqua e pervasiva com as tecnologias de comunicação.
+final e essa transparência era defendida por \citeonline{weiser1991computer} para
+apresentar um outro termo, a ``computação pervasiva'', assim definida pelo
+autor: ``(...) criar  um computador tão embarcado, tão natural que o usaríamos
+sem nem pensar sobre ele''. Além disso, computação pervasiva está relacionada à
+capacidade de dispositivos serem embarcados no mundo físico, obtendo
+informações do meio para auxiliar na computação, integrando, dessa forma, o
+ambiente físico e o mundo virtual \cite{bolsoni2009computaccao,
+de2003computaccao}. A figura  \ref{fig:pervasive-marwedel} demonstra a
+interligação entre as áreas de sistemas embarcados, computação ubíqua e
+pervasiva com as tecnologias de comunicação.
 
 \figurasimples{pervasive-marwedel}{Representação gráfica das influências nas 
 áreas de sistemas embarcados, computação ubíqua/pervasiva e meios de 
 comunicação.}{12cm}
 
-Segundo Hansmann, a computação pervasiva tem 4 princípios fundamentais,
-detalhados a seguir \cite{hansmann2013pervasive}:
+Segundo \citeonline{hansmann2013pervasive}, a computação pervasiva tem 4 princípios fundamentais,
+detalhados a seguir: 
 
 \begin{description}
   \item [Descentralização] os diversos dispositivos cooperam entre si e realizam
@@ -318,13 +325,13 @@ detalhados a seguir \cite{hansmann2013pervasive}:
 \end{description}
 
 No que concerne à assistência domiciliar à saúde, as pesquisas nas áreas de
-computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é um
-ambiente propício à aplicação dessas técnicas. A utilização de sensores, como
-demonstrado no estudo de Warren, em que sensores  vestíveis são empregados na
-leitura de oxigênio do paciente e o envio dos dados à um sistema de
-monitoramento pessoal para posterior processamento \cite{warren2002sensors}
-exemplifica a utilização da computação pervasiva, uma  vez que os dados
-coletados se tornam disponíveis a qualquer momento.
+computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é
+um ambiente propício à aplicação dessas técnicas. A utilização de sensores,
+como demonstrado no estudo de \citeonline{warren2002sensors}, em que sensores
+vestíveis são empregados na leitura de oxigênio do paciente e o envio dos dados
+à um sistema de monitoramento pessoal para posterior processamento exemplifica
+a utilização da computação pervasiva, uma  vez que os dados coletados se tornam
+disponíveis a qualquer momento.
 
 \subsubsection{Internet das Coisas} \label{subsubsec:iot}
 
@@ -344,7 +351,7 @@ pessoas e coisas estejam conectadas a qualquer hora, em qualquer lugar com
 qualquer coisa e qualquer um, preferencialmente usando uma rede e qualquer
 serviço.
 
-\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
+\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{5cm}
 
 %Apesar da capacidade de trocar dados entre si, alguns autores como, Dada e
 %Thiesse, Broll e Gama et al argumentam que a falta de padrões pode diminuir a
@@ -367,7 +374,7 @@ surgindo, possibilitando um monitoramento do paciente em tempo real.
 
 \subsection{Aplicações Sensíveis ao Contexto}\label{subsec:contexto}
 
-O dicionário Houaiss define contexto como um conjunto de palavras, frases ou
+O dicionário \citeonline{houaiss2001dicionario} define contexto como um conjunto de palavras, frases ou
 texto que precede ou se segue a determinada palavra, frase ou texto e que
 contribuem para o seu significado. Podemos entender desta definição que contexto
 são circunstâncias que acompanham a situação ou determinado fato. A depender do
@@ -382,11 +389,11 @@ estamos na praia (contexto).
 Apesar de exemplificar de maneira clara o que é contexto, esse tipo de definição
 apresentada anteriormente é de difícil aplicação na área da computação.
 Outras abordagens com definições mais específicas foram surgindo com o
-passar do tempo. No trabalho de Schilit et al são definidos 3 aspectos
+passar do tempo. No trabalho de \citeonline{schilit1994context} são definidos 3 aspectos
 importantes para o contexto, (1) onde você está, (2) com quem você está e (3)
-quais recursos estão próximos \cite{schilit1994context}. Pascoe define contexto 
+quais recursos estão próximos. \citeonline{pascoe1998adding} define contexto 
 como um conjunto de estados de interesse conceituais e físicos para uma entidade 
-em particular \cite{pascoe1998adding}.
+em particular.
 
 O desenvolvedor precisa identificar se determinada informação é contexto ou não
 para determinada aplicação em determinado momento. Tomando como exemplo uma
@@ -396,17 +403,18 @@ informações de pessoas (quantidades em cada setor) são informações de conte
 já em locais fechados, a informação de tempo não representa uma informação de 
 contexto.
 
-Davies realizou um trabalho semelhante ao apresentado acima. Foi 
-desenvolvido uma aplicação de guia turístico sensível a contexto para a cidade 
-de \textit{Lancaster} na Inglaterra. A solução combinava computação móvel, 
-comunicação sem fio e sistemas embarcados para prover aplicações interativas
-\cite{davies1999caches}.
+\citeonline{davies1999caches} realizou um trabalho semelhante ao apresentado
+acima. Foi desenvolvido uma aplicação de guia turístico sensível a contexto
+para a cidade de \textit{Lancaster} na Inglaterra. A solução combinava
+computação móvel, comunicação sem fio e sistemas embarcados para prover
+aplicações interativas \cite{davies1999caches}.
 
-No sentido de simplificar o desenvolvimento de aplicações sensíveis ao contexto,
-Dey define "contexto (como) qualquer informação que pode ser utilizada para
-caracterizar a situação de uma entidade. Uma entidade pode ser uma pessoa, um
-lugar ou um objeto que é considerado relevante para a interação entre um usuário
-e uma aplicação, incluindo o usuário e a aplicação".
+No sentido de simplificar o desenvolvimento de aplicações sensíveis ao
+contexto, \citeonline{dey2001understanding} define ``contexto (como) qualquer
+informação que pode ser utilizada para caracterizar a situação de uma entidade.
+Uma entidade pode ser uma pessoa, um lugar ou um objeto que é considerado
+relevante para a interação entre um usuário e uma aplicação, incluindo o
+usuário e a aplicação''.
 
 É possível, portanto, definir que um sistema computacional é sensível ao contexto
 se ele fizer uso do contexto para prover informações ou serviços relevantes para
@@ -428,11 +436,11 @@ de \textit{middleware} capaz de integrar soluções de Internet das Coisas.
 O projeto enfatiza a convergência de Internet das Coisas e computação em nuvem,
 habilitando esses dois tópicos através de interoperabilidade semântica e dados
 ligados (\textit{Linked Data}), desse modo, será possível fornecer aos
-interessados uma "nuvem de coisas". A figura \ref{fig:arquitetura-openiot} a 
+interessados uma ``nuvem de coisas''. A figura \ref{fig:arquitetura-openiot} a 
 seguir representa  as partes que compõem a plataforma OpenIoT.
 
 \figurasimples[soldatos2015openiot]{arquitetura-openiot}{Arquitetura plataforma 
-\textit{OpenIoT}}{12cm}
+\textit{OpenIoT}}{8cm}
     
 A plataforma foi arquitetada com 3 grandes seções: (1) Aplicações e Utilitários,
 (2) Plano virtualizado e (3) Plano físico. Diversos componentes compõem as 
@@ -453,7 +461,6 @@ formular requisições - em tempo de execução - para a plataforma OpenIoT.
 monitoramento e configuração das funcionalidades dos sensores e serviços
 acoplados à plataforma OpenIoT.
 \end{description}
-
 
 \begin{description}   
   \item [Plano Virtualizado]   
