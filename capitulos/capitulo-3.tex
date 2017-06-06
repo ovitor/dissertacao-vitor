@@ -39,10 +39,10 @@ nos medicamentos etc.  corroborando assim, com o estudo realizado por
 
 \section{Soluções semelhantes} \label{sec:solucoes-semelhantes}
 
-O trabalho de \citeonline{isern2011agent} descreve uma arquitetura
+O trabalho de \citeonline{isern2011agent} (TS-1) descreve uma arquitetura
 descentralizada baseada em agentes para o \textit{home care}. A arquitetura é
-dividida em três camadas: (1) Camada de conhecimento, representando um registro
-eletrônico de saúde (RES), ontologias e bancos de dados de atividades que podem
+dividida em três camadas: (1) Camada de conhecimento, representando um Registro
+Eletrônico de Saúde (RES), ontologias e bancos de dados de atividades que podem
 ser realizadas por outros atores descritos no sistema. (2) Camada de abstração
 de dados é responsável por recuperar os dados de fontes e tecnologias
 diferentes, como por exemplo os dados das ontologias, de RES e de base de dados
@@ -56,12 +56,12 @@ O trabalho, no entanto, não explica de que maneira será possível acompanhar o
 doente no seu dia-a-dia, além de não aplicar ou permitir, na descrição da
 arquitetura, que haja um acompanhamento constante.
 
-A arquitetura funcional, descrita no trabalho de \citeonline{capozzi2010agent},
+A arquitetura funcional, descrita no trabalho de \citeonline{capozzi2010agent} (TS-2),
 envolve a criação de duas áreas de interesse. Parte da arquitetura é chamada de
 ``Unidade de tratamento remoto'' (\textit{Replace Care Unit (RCU)}), responsável
 pela interação do usuário, no caso o doente, com o sistema implantado no centro
 de tratamento, nomeado de ``Unidade Central de Tratamento de Saúde''
-( \textit{Health Care Center Unit - HCCU}). Nesta camada estão descritos os
+(\textit{Health Care Center Unit - HCCU}). Nesta camada estão descritos os
 sistemas utilizados pela equipe de saúde que acompanha o doente.
 
 Além de usar dispositivos médicos para adquirir os sinais vitais, o trabalho
@@ -71,9 +71,9 @@ sistema implantado no HCCU. Na comunicação entre essas partes, trafegam, ainda
 alertas, lembretes, informações para alimentar o RES do paciente e informações
 das atividades diárias do doente.
 
-Do ponto de vista computacional, \citeonline{capozzi2010agent} optou por uma
-arquitetura baseada em agentes, um agente servidor, responsável por ser um
-ponto de encontro dos agente móveis - (computadores de propósito geral ou
+Do ponto de vista computacional, \citeonline{capozzi2010agent} optaram
+por uma arquitetura baseada em agentes, um agente servidor, responsável por ser
+um ponto de encontro dos agente móveis - (computadores de propósito geral ou
 \smartphones[] para repassar os dados adquiridos pelos dispositivos). Há ainda,
 nos agentes móveis, espaço para a utilização de domínios de conhecimentos
 através de ontologias.
@@ -84,7 +84,7 @@ solução no cotidiano do doente. Além disso, não ficou claro se os dados
 coletados trafegam dentro do sistema através de um protocolo conhecido e
 aberto, permitindo que o sistema se comunique com outros sistemas de saúde.
 
-O trabalho de \citeonline{bajo2010thomas} descreve a solução THOMAS
+O trabalho de \citeonline{bajo2010thomas} (TS-3) descreve a solução THOMAS
 (\textit{MeTHods, Techniques and Tools for Open Multi-Agent Systems}), uma
 arquitetura modular composta por serviços. Ela é dividida em três camadas,
 Facilitador de Serviços (1), Sistema de Gerenciamento Organizacional e Núcleo
@@ -98,7 +98,7 @@ localização  etc. No Núcleo da Plataforma é onde reside os serviços necess�
 para uma arquitetura multi-agente, permitindo que vários agentes se comuniquem
 entre si.
 
-O trabalho de \citeonline{costa2012sensor} descreve uma plataforma de três
+O trabalho de \citeonline{costa2012sensor} (TS-4) descreve uma plataforma de três
 camadas, a camada de baixo nível de nome ``Aquisição de dados e
 processamento'', realiza funções básicas de sistemas de monitoramento, coleta e
 processamento de dados dos sensores. A camada intermediária chamada de
@@ -119,13 +119,15 @@ Apesar do descrito, o trabalho não informa se há a utilização de outros
 sensores no ambiente que não as câmeras. Também não deixa claro quais
 técnicas são utilizadas para o agendamento e as tomadas de decisão.
 
-O trabalho de \citeonline{palumbo2014sensor} mostra a infraestrutura de redes
+O trabalho de \citeonline{palumbo2014sensor} (TS-5) mostra a infraestrutura de redes
 de sensores necessários para atender um ambiente de atenção domiciliar.
 Sensores médicos são utilizados no intuito de monitorar o paciente
 continuamente. Com isso, o sistema pode emitir alarmes referentes a possíveis
 problemas eminentes ou a longo prazo (de acordo com os dados coletados).
-Adiciona-se a essa abordagem um \middleware[] com padrão OSGi e uma aplicação
-sensível a contexto.
+Adiciona-se a essa abordagem um \middleware[] com padrão OSGi\footnote{OSGI -
+\textit{Open Services Gateway initiative}. Descreve um padrão aberto para
+especificações que definem um sistema dinâmico de componentes para Plataforma
+\textit{Java}.} e uma aplicação sensível a contexto.
 
 Neste trabalho, além do \middleware, há uma infraestrutura de software composta
 de serviços responsáveis por interligar várias funcionalidades, tais como o
@@ -138,13 +140,13 @@ neste momento são discutidas as atividades do doente assim como os dados
 adquiridos pelos sensores.
 
 Apesar de não aparecer explicitamente os termo ``computação ubíqua'' ou ``Internet
-das Coisas'', percebe-se a utilização de técnicas e tecnologias referentes a
+das Coisas'', percebe-se a tentativa de utilizar técnicas e tecnologias referentes a
 estes assuntos. O trabalha espera ainda, que o paciente esteja sempre próximo
 de um \smartphone[] que é usado como \gateway[] para o restante do sistema na nuvem.
 No entanto, não há uma abordagem na utilização de técnicas de inferência como
 aprendizagem de máquinas ou ontologias.
 
-\citeonline{spinsante2012remote} apresenta uma arquitetura sem fio centrada no
+\citeonline{spinsante2012remote} (TS-6) apresentam uma arquitetura sem fio centrada no
 domicílio para monitorar a saúde do paciente, através dela, o usuário têm pouca
 ou nenhuma interação com os dispositivos médicos, facilitando assim a
 utilização do sistema pelos idosos. O trabalho utiliza um \framework[] OSGi para
@@ -163,7 +165,7 @@ Digital Assistant} (PDA). Além disso, não utiliza nenhum tipo de inferência o
 inteligência no sistema para que se possa alertar o paciente ou a equipe de
 saúde sobre uma possível anomalia.
 
-\citeonline{niiranen2002personal} utiliza a melhoria tecnológica proveniente da
+\citeonline{niiranen2002personal} (TS-7) utiliza a melhoria tecnológica proveniente da
 mudança da TV analógica para a TV digital para a criação da ``TV Digital para
 cuidados médicos''. Focando na funcionalidade interativa da televisão digital,
 o trabalho cria uma aplicação para \stb[] para que o usuário utilize através
@@ -174,7 +176,7 @@ técnica da televisão digital e na interação que ela proporciona, não
 mencionando termos como sensores, informações de contexto ou inteligência
 artificial.
 
-O trabalho de \citeonline{chan2008mobile} aborda a criação de um ambiente de
+O trabalho de \citeonline{chan2008mobile} (TS-8) aborda a criação de um ambiente de
 monitoramento remoto baseado em sistemas de tecnologia da informação modernos.
 Para isso, uma arquitetura de vários agentes para dispositivos móveis foi
 desenvolvida, a arquitetura permite a coleta de dados e posterior recomendações
@@ -197,4 +199,11 @@ entram no escopo do trabalho.
 
 \section{Comparação entre soluções} \label{sec:comparacao}
 
+A tabela \ref{tab:trabalhos-semelhantes} a seguir apresenta um comparativo
+simplificado do que foi exposto na seção anterior. O termo \texttt{TS} refere-se
+a ``trabalhos semelhantes'' enquanto que o termo \texttt{SP} refere-se a
+``solução proposta''.
+
+\tabela{trabalhos-semelhantes}{Resumo das características das soluções semelhantes apresentadas
+anteriormente}{0.9}
 
