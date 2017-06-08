@@ -60,14 +60,13 @@
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{tikz}					% Desenho de gráficos
 \usepackage{multirow}			% Trabalhando com tabelas
-\usepackage{minted}				% Inclusão de códigos
-\usepackage{listings}			% Inclusão de códigos
 \usepackage{varioref}			% Inclui o comando vref
 
 \usetikzlibrary{arrows,positioning} 
 % ---
 % Adicionado por Madson Dias
 % ---
+
 \usepackage{utils/termos}						% Pacote com termos comumente utilizados
 \usepackage{utils/ifce-modelo} 					% Pacote com informações da customização
 \usepackage{utils/ifce-facilitadores} 					% Pacote com facilitadore 
@@ -79,16 +78,11 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{colortbl}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\include{utils/algoritmos}
+\usepackage{listings}			% Inclusão de códigos
+\usepackage{minted}				% Inclusão de códigos
 \include{utils/codigos}
 \include{utils/cores}
 \setlist[itemize]{noitemsep, topsep=0pt, leftmargin=1.75cm}
-
-
-
-
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -210,9 +204,9 @@
 \cleardoublepage
 % ---
 % inserir lista de algoritmos
-\pdfbookmark[0]{\listalgorithmname}{loa}
-\listofalgorithms
-\cleardoublepage
+%\pdfbookmark[0]{\listalgorithmname}{loa}
+%\listofalgorithms
+%\cleardoublepage
 % ---
 % inserir lista de códigos
 \pdfbookmark[0]{\lstlistlistingname}{lol}
@@ -221,7 +215,7 @@
 % ---
 
 \input{pretextual/abreviacoes.tex}  			% Lista de abreviaturas e siglas
-\input{pretextual/simbolos.tex} 				% Lista de símbolos
+%\input{pretextual/simbolos.tex} 				% Lista de símbolos
 % inserir o sumario
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
