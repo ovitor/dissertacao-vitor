@@ -9,7 +9,7 @@ de 60 anos \cite{gonccalves2006perfil}.
 Os mais idosos, por conta da fragilidade inerente à idade, necessitam de 
 cuidados especiais na hospitalização, além de demandarem mais tempo na 
 recuperação. Muitas vezes há uma demanda de vários profissionais de uma equipe 
-médica multidisciplinar para a total recuperação do doente.
+de saúde multidisciplinar para a total recuperação do doente.
 
 Essa situação afeta políticas públicas dos governos municipais, estaduais e
 federal - que, segundo a Constituição Federal, devem prover atendimento
@@ -41,13 +41,13 @@ abordagem em atenção domiciliar nos casos de menor gravidade,  ou seja, casos
 em que o paciente não corre risco de morte \cite{bourdette1993health}.  
 
 Na atenção domiciliar, é de grande importância o acompanhamento do paciente.
-Essa tarefa é realizada por uma equipe médica que se desloca até o domicílio do
+Essa tarefa é realizada por uma equipe de saúde que se desloca até o domicílio do
 idoso e executa a aferição de seus sinais vitais, além de conversar com o
 próprio paciente, eles também conversam com o cuidador e verificam, ainda, se o
 ambiente domiciliar está propício à melhoria do doente.
 
-A televisão está presente em praticamente todos os  domicílios brasileiros. Com
-isso, o Governo Brasileiro instituiu, através do decreto número 4901 de 26 de
+A televisão está presente em praticamente todos os  domicílios brasileiros \cite{ibge2015tv}. 
+Com isso, o Governo Brasileiro instituiu, através do decreto número 4901 de 26 de
 novembro de 2003, o Sistema Brasileiro de Televisão Digital (SBTVD) no país.
 Além da melhoria técnica, com a troca do sinal analógico para o sinal  digital,
 promovendo, assim, melhoria na qualidade da imagem e som, a inserção  da TV
@@ -63,18 +63,34 @@ mais potentes e eficientes no processamento e no consumo de energia. Além disso
 a miniaturização dos dispositivos possibilitam o surgimento de novas aplicações
 e soluções voltadas para áreas antes não atendidas por essas tecnologias.
 
-A área da assistência domiciliar à saúde se beneficia do aperfeiçoamento na 
-tecnologia ao ser atendida por dispositivos implantados no ambiente doméstico. 
-Pesquisas realizadas apontam para a utilização de equipamentos que monitorem o 
-cotidiano do paciente e os auxilie nas formas de alertas para o paciente e o
-cuidador, além de informar à equipe de saúde ou a emergência sobre questões 
-pertinentes ao paciente.
+A partir dessa evolução, surge a Internet das Coisas (\textit{Internet of Things},
+IoT). A IoT consiste de bilhões de ``coisas'' inteligentes que se comunicam entre
+si \cite{li2015internet}. Os objetos ou ``coisas'' são pequenos sistemas embarcados
+com sensores e/ou atuadores com um meio de comunicação. Uma vez conectados à Internet, 
+os objetos podem ser acionados através da Internet - quando possuem atuadores - ou
+podem contribuir com dados relevantes sobre o ambiente - quando possuem sensores.
 
-Neste trabalho, é proposta a TVHealthDasCoisas, um sistema embarcado em
-um \stb[] - dispositivo responsável por receber o sinal da  televisão
-digital e apresentá-lo na TV. Este dispositivo foi utilizado como ponto principal em uma
-arquitetura composta por ele (STB), sensores e outros componentes para  prover
-uma solução inteligente de atenção domiciliar à saúde.
+A comunicação que antes ocorria principalmente entre homens e máquinas na ``Internet
+dos computadores'' muda com o advento da IoT, e passa a ser principalmente entre
+máquinas, sendo elas (as coisas) os maiores produtores e consumidores de dados.
+Com isso, é possível perceber que a tecnologia IoT traz consigo a possibilidade de
+produzir uma grande quantidade de dados e permite que a interação homem-máquina
+seja atualizada, proporcionando novas formas de interação.
+
+A área da assistência domiciliar à saúde se beneficia do aperfeiçoamento na
+tecnologia e do surgimento da IoT ao ser atendida por dispositivos implantados
+no ambiente doméstico.  Pesquisas realizadas \cite{triantafyllidis2013,moreira2016} 
+apontam para a utilização de equipamentos que monitorem o cotidiano do paciente
+e os auxilie nas formas de alertas para o paciente e o cuidador, além de
+informar à equipe de saúde ou a emergência sobre questões pertinentes ao
+paciente.
+
+Neste trabalho, é proposta a TVHealthDasCoisas, um sistema embarcado em um
+\stb[] - dispositivo responsável por receber o sinal da  televisão digital e
+apresentá-lo na TV. Este dispositivo foi utilizado como ponto principal em uma
+arquitetura composta por ele (STB), sensores e outros componentes com
+tecnologias e conceitos de IoT para  prover uma solução inteligente de atenção
+domiciliar à saúde.
 
 O STB, além de realizar suas tarefas básicas explicadas anteriormente, tem poder
 de processamento para executar outras funções. Ele conta com interface de
@@ -100,12 +116,12 @@ compartilhar serviços internos disponíveis (regulação, farmácia, leitos etc
 
 A TVHealthDasCoisas é, portanto, uma arquitetura orientada a contexto
 (\textit{context-aware concept}), enriquecida com tecnologia da Internet das
-Coisas (\textit{Internet of  Things -  IoT}), que através de um STB coleta
-dados e apresenta alertas e informações processadas e comunica-se com a
-plataforma \nextsaude[] através de arquétipos do padrão OpenEHR.  Até o momento
-uma parte desse processo já foi implementada, tal como as notificações dos
-alertas enviados ao doente e cuidador. A fase seguinte dirá a respeito ao envio
-constante dos dados para a equipe médica.
+Coisas (IoT), que através de um STB coleta dados e apresenta alertas e
+informações processadas e comunica-se com a plataforma \nextsaude[] através de
+arquétipos do padrão OpenEHR.  Até o momento uma parte desse processo já foi
+implementada, tal como as notificações dos alertas enviados ao doente e
+cuidador. A fase seguinte dirá a respeito ao envio constante dos dados para a
+equipe médica.
 
 % Vale ressaltar que este dispositivo é o resultado de um projeto de pesquisa, do
 % qual participei de forma efetiva, que recebeu fomento da  Agência Nacional de
@@ -176,30 +192,6 @@ do paciente em domicílio.
   \item Permitir um acompanhamento constante da equipe médica ao paciente;
   \item Facilitar as atividades diárias do cuidador em relação aos procedimentos
   destinados ao doente;
-\end{itemize}
-
-\section{Produção científica}\label{sec:producao}  
-
-Durante este projeto de mestrado, os seguintes trabalhos científicos foram
-aceitos e publicados, a saber:
-
-\begin{itemize}
-  \item \textbf{LOPES, V. C. M.}; QUEIROZ, E.; FREITAS, N.; OLIVEIRA, M.; MONTEIRO, O. TV-Health:
-  A Context-Aware health Care Application for Brazilian Digital TV. In ACM.
-  \textit{Proceedings of the 22nd Brazilian Symposium on Multimedia and the Web (Webmedia)}. 
-  Teresina, Brasil. 2016, pp. 103-106.
-
-  \item \textbf{LOPES, V. C. M.}; ROCHA, E.; QUEIROZ, E.; FREITAS, N.; VIANA, D.; OLIVEIRA, M. VITESSE 
-  - more intelligence with emerging technologies for health systems. In: IEEE. 
-  \textit{2016 7th International Conference on the Network of the Future (NOF)}. Buzios, Brasil. 2016, pp. 1-3.
-\end{itemize}
-
-Além do seguinte artigo aceito para publicação:
-
-\begin{itemize}
-  \item \textbf{LOPES, V. C. M.}; MOTA, H.; OLIVEIRA, M.; CARVALHO, G. Towards an Emergency/Urgency
-    approach based on the Brazilian Digital TV. \textit{Multi Conference on Computer Science 
-    and Information Systems (MCCSIS)}. Ilha da Madeira, Portugal, 2016.
 \end{itemize}
 
 \section{Estrutura da Dissertação}\label{sec:estrutura}
