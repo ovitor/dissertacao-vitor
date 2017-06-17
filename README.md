@@ -5,9 +5,9 @@ automatizada com recursos da TV Digital (*Set-top Box*) e tecnologia
 de Internet das Coisas (IoT - *Internet of Things*)
 ## TODO
 
-- [ ] [baixa] terminar seção 'estrutura da dissertação' @cap-1 :grin: 
+- [x] [baixa] ~~terminar seção 'estrutura da dissertação' @cap-1 :grin:~~ [10/06/2017]
 - [x] [média] ~~incrementar seção de 'IoT' @cap-2 :cold_sweat:~~ [03/06/2017] 
-- [ ] [média] reformular seção de OpenIoT @cap-2 :cold_sweat: 
+- [ ] [alta] reformular seção de OpenIoT @cap-2 :cry: 
 - [ ] [média] refazer imagem da seção 4.1 (descrição de cenários) @cap-4 :cold_sweat: 
 - [x] [:cry: alta] ~~descrever simulações para os ambientes da seção 4.1 (descrição de cenários) @cap-4~~ [30/04/2017]
 - [x] [:cry: alta] ~~descrever solução (seção 4.2) @cap-4~~ [03/06/2017]
@@ -17,20 +17,20 @@ de Internet das Coisas (IoT - *Internet of Things*)
 - [x] [média] ~~especificar formalmente módulo panicbutton @cap-5 :cold_sweat:~~ [10/05/2017]
 - [x] [média] ~~especificar formalmente módulo web @cap-5 :cold_sweat:~~ [03/06/2017]
 - [ ] [baixa] desenvolver parte de IoT do sistema @cap-5 :grin: 
-- [ ] [baixa] escrever capítulo 6 (conclusão) @cap-6 :grin: 
+- [x] [baixa] ~~escrever capítulo 6 (conclusão) @cap-6 :grin:~~ [10/06/2017]
 - [x] [baixa] ~~escrever capítulo 3 (trabalhos relacionados) @cap-3 :grin:~~ [03/06/2017]
-- [ ] [:cry: alta] realizar comparativo entre arquiteturas (fazer tabela
-comparativa) @cap-4 ou @cap-3
+- [x] [:cry: alta] ~~realizar comparativo entre arquiteturas (fazer tabela 
+comparativa) @cap-4 ou @cap-3~~ [10/06/2017]
 
 ### sugestões - 11/06/2017
 
 * o que tem de internet das coisas na proposta?!
 * colocar simulações dentro dos ambientes.
 * falar de internet das coisas na descrição dos cenários.
-* colocar 2 ou 3 páginas de internet das coisas.
-* juntar plataforma openIoT da seção IoT
+* ~~colocar 2 ou 3 páginas de internet das coisas.~~
+* ~~juntar plataforma openIoT da seção IoT~~
 * colocar na conclusão 
-* na fundamentação teórica, aspectos de saúde trocar por assistência domiciliar
+* ~~na fundamentação teórica, aspectos de saúde trocar por assistência domiciliar~~
 * na fundamentação teórica, aplicações sensíveis ao contexto
 * ta faltando um 4.4? Como a IoT incluenciaria 
 * eu coloquei internet das coisas pra fortalecer o ambiente, isso está faltando
