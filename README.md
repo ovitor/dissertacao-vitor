@@ -22,6 +22,22 @@ de Internet das Coisas (IoT - *Internet of Things*)
 - [ ] [:cry: alta] realizar comparativo entre arquiteturas (fazer tabela
 comparativa) @cap-4 ou @cap-3
 
+### sugestões - 11/06/2017
+
+* o que tem de internet das coisas na proposta?!
+* colocar simulações dentro dos ambientes.
+* falar de internet das coisas na descrição dos cenários.
+* colocar 2 ou 3 páginas de internet das coisas.
+* juntar plataforma openIoT da seção IoT
+* colocar na conclusão 
+* na fundamentação teórica, aspectos de saúde trocar por assistência domiciliar
+* na fundamentação teórica, aplicações sensíveis ao contexto
+* ta faltando um 4.4? Como a IoT incluenciaria 
+* eu coloquei internet das coisas pra fortalecer o ambiente, isso está faltando
+na dissertação.
+* o que a figura 4 está fazendo aí? O que ela significa pra sua proposta?
+* qual seria a arquitetura para ADS baseada em internet das coisas
+
 ## Facilitadores
 
 Facilitadores são comandos que facilitam o uso de outros comandos. Como por exemplo, a inclusão de imagens. Dois comandos foram criados para simplificar essa inclusão. Os comandos são

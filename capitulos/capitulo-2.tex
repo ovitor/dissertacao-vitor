@@ -3,10 +3,11 @@
 Este capítulo apresenta a fundamentação teórica, separada em aspectos de saúde e
 tecnológicos. As seções de saúde abordam termos como Assistência Domiciliar à
 Saúde e suas particularidades, além de explanar, brevemente, sobre a história da
-hospitalização no Brasil. A seção \ref{sec:aspectos-tecnologicos} trata das
+hospitalização no Brasil. As seções \ref{sec:aspectos-tecnologicos} tratam das
 tecnologias e conceitos tecnológicos utilizados neste trabalho.
 
-\section{Aspectos de Saúde} \label{sec:aspectos-de-saude}
+%\section{Aspectos de Saúde} \label{sec:aspectos-de-saude}
+\section{Assistência Domiciliar à Saúde} \label{sec:ads}
 
 Segundo \citeonline{inaia2008}, uma das primeiras instituições voltadas para o
 cuidado com a saúde foi a fundação da Santa Casa de Misericórdia de Santos, em
@@ -54,8 +55,8 @@ necessariamente, vinculados ao ambiente hospitalar.
 Como consequência, surgiram diversas mudanças no atendimento, onde a Assistência
 Domiciliar à Saúde (ADS) se tornou uma modalidade disponível.
 
-\subsection{Assistência Domiciliar à Saúde}
-\label{subsec:assistencia-domiciliar-a-saude}
+%\subsection{Assistência Domiciliar à Saúde}
+%\label{subsec:assistencia-domiciliar-a-saude}
 
 A Assistência Domiciliar à Saúde (ADS) divide-se basicamente em grupos de
 enfermagem e fisioterapia - nas modalidades mais básicas - até um atendimento
@@ -89,7 +90,7 @@ proximidade com os seus familiares; (3) diminuição do risco de infecção
 hospitalar; (4) Otimização de leitos hospitalares para pacientes que deles
 necessitem; e (5) Redução do custo/dia da internação.
 
-\subsubsection{Envolvidos}\label{subsubsec:envolvidos}
+\subsection{Envolvidos}\label{subsec:envolvidos}
 
 Para o entendimento geral da modalidade ADS, faz-se necessário separar e
 explicar a atuação de cada um dos envolvidos. O paciente, para quem está
@@ -112,7 +113,7 @@ outros \cite{amaral2001assistencia}.
 %que os cuidadores enfrentam. exemplo quando são familiares, que muitas vezes, 
 %negam a dar atenção, ou desempenhar determinadas funções.
 
-\subsubsection{Terminologia}\label{subsubsec:terminologia}
+\subsection{Terminologia}\label{subsec:terminologia}
 
 Apesar de não haver uma definição formal, a Assistência Domiciliar à Saúde pode
 ser separada em três modalidades, diferenciadas, principalmente, pelo grau de 
@@ -151,12 +152,306 @@ correndo, inclusive, risco de vida, quanto aqueles que demandam menos
 preocupações - mas que, invariavelmente, estão sob os cuidados fora do
 ambiente hospitalar.
 
-\section{Aspectos Tecnológicos}\label{sec:aspectos-tecnologicos}
+\section{Internet das Coisas} \label{sec:iot}
 
-Este trabalho foi amparado em tecnologias bem conhecidas, permitindo assim, 
-que os objetivos fossem alcançados.
+Nesta seção serão abordados o histórico e o surgimento do termo
+Internet das Coisas (\textit{Internet of Things}, IoT), definições
+na literatura, arquiteturas e exemplos de aplicações de IoT nas cidades,
+na zona rural, e na saúde.
 
-\subsection{Sistemas Embarcados}\label{subsec:sistemas-embarcados}
+\subsection{Histórico} \label{subsec:iot-historico}
+
+No final dos anos 90, \citeonline{ashton2009internet} defendeu que a Internet
+das Coisas tinha potencial para mudar o mundo, assim como a Internet mudou.
+Desde então pesquisas em diversas áreas, a inovação tecnológica e a atualização
+de conceitos já existentes possibilitou o surgimento da tecnologia Internet das
+Coisas (\textit{Internet of Things - IoT}).
+
+O termo IoT, apesar de recente, remete a estudos realizados no final da década
+de 1990. Antes de IoT, termos como ``computação ubíqua'' e ``computação pervasiva''
+eram os tópicos quentes\footnote{Tópicos quentes são tópicos que estão em relevância
+na época em questão (final da década de 1990) em que muitos pesquisadores depositam seus 
+estudos.} nas pesquisas acadêmicas.
+
+A época dos estudos, percebia-se o distanciamento ou o desaparecimento da
+figura ``computador pessoal (PC)'', em nosso cotidiano. A tecnologia estava
+difundida ao ponto do termo  ``era pós pc'' ser encontrado em diversos estudos
+\cite{bonilla2011inclusao,  chen2011pospc, press1999personal} nas áreas de
+sistemas embarcados e tecnologias móveis.
+
+Além disso, os estudos abordavam a convergência das diversas tecnologias 
+através de: troca constante de informações por meio melhoria nos meios de comunicação,
+na melhoria no poder computacional dos sistemas embarcados, na melhoria contínua 
+das baterias etc, proporcionando um ambiente em que seria possível encontrar
+tecnologia em todo lugar \cite{lyytinen2002ubiquitous}.
+
+À essa tecnologia ``em todo lugar'' e ao distanciamento do usuário com o
+computador pessoal deu-se o nome de computação ubíqua.
+\citeonline{weiser1991computer}, considerado o pai desse termo, antecipou que
+encontraríamos tecnologia nos diversos objetos do nosso cotidiano, tais como
+etiquetas de roupas e alimentos, cadeiras, geladeiras, lixeiras, interruptores
+de luzes etc. Essa previsão de Weiser já se concretizou em vários dispositivos.
+
+\figurasimples{pervasive-marwedel}{Representação gráfica das influências nas 
+áreas de sistemas embarcados, computação ubíqua/pervasiva e meios de 
+comunicação.}{12cm}
+
+Muitas vezes, a tecnologia inserida nesses objetos é invisível para o usuário
+final e essa transparência era defendida por \citeonline{weiser1991computer} para
+apresentar um outro termo, a ``computação pervasiva'', assim definida pelo
+autor: ``(...) criar  um computador tão embarcado, tão natural que o usaríamos
+sem nem pensar sobre ele''. Além disso, computação pervasiva está relacionada à
+capacidade de dispositivos serem embarcados no mundo físico, obtendo
+informações do meio para auxiliar na computação, integrando, dessa forma, o
+ambiente físico e o mundo virtual \cite{bolsoni2009computaccao,
+de2003computaccao}. A figura  \ref{fig:pervasive-marwedel} demonstra a
+interligação entre as áreas de sistemas embarcados, computação ubíqua e
+pervasiva com as tecnologias de comunicação.
+
+Segundo \citeonline{hansmann2013pervasive}, a computação pervasiva tem 4 princípios 
+fundamentais, detalhados a seguir: 
+
+\begin{description}
+  \item [Descentralização] os diversos dispositivos cooperam entre si e realizam
+  pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
+  dinâmica rede de comunicação; Podemos citar como exemplo os diversos 
+  dispositivos implantados na casa proporcionando conectividade em toda
+  a extensão da casa.
+  \item [Diversificação] diferente do computador de propósito geral - que 
+  proporciona a execução de várias tarefas - cada dispositivo tem um propósito
+  específico atendendo a necessidades únicas; podemos citar, como exemplo, um
+  sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
+  que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
+  diversidade, cada um desempenha uma função específica.
+  \item [Conectividade] os dispositivos devem interagir de maneira transparente
+  e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
+  auxílio de um usuário; a conectividade diz respeito, também, à relação 
+  transparente entre dispositivo e usuário; 
+  \item [Simplicidade] as funções desempenhadas pelos dispositivos devem ser
+  simples e de fácil execução. Existem tipos de dispositivos que não requerem 
+  uma interação com o usuário; outros, no entanto, exigem alguma configuração e,
+  nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
+  rápido ao usuário. 
+\end{description}
+
+Com isso, os estudos foram aplicados, inicialmente, a tecnologias como RFID
+(\textit{Radio Frequency Identification} ou Identificação por
+rádio-frequência).  Essa tecnologia permitia a identificação de objetos através
+de \textit{tags} e leitores. As \textit{tags}, em sua maioria, são do tipo
+passiva, ou seja, os leitores é que devem emitir a energia necessária para que
+ela funcione. Há ainda as \textit{tags} ativas - com bateria interna enviando
+sua identificação periodicamente - e semi-passivas - com bateria interna,
+porém, envia sua identificação apenas quando um leitor se aproxima
+\cite{want2006introduction}. A aplicabilidade desta tecnologia se da, 
+principalmente, para identificar e rastrear um objeto.
+
+Em seguida, as Redes de Sensores Sem Fio (\textit{Wireless Sensor Network}, WSN)
+foram ganhando espaço nos estudos acadêmicos. As redes são constituídas de nós
+que monitoram o ambiente ou as condições do ambiente em que estão inseridos.
+Cada nó está conectado a um ou mais nós, dessa maneira os dados são repassados
+até um nó principal (nó \gateway), tornando o dado disponível
+\cite{lewis2004wireless}.
+
+Posteriormente, as \textit{smart things} colaboraram para o surgimento do IoT.
+Através da computação móvel e de dispositivos conectados foi possível explorar
+a cooperação entre dispositivos, tais como os \smartphones[] e \smartwatches.
+
+Possibilitado por todo o avanço tecnológico descrito anteriormente e em
+conjunto com as várias tecnologias, o IoT, através de uma conexão à redes sem
+fio mais rápida, através de sistemas embarcados menores e com a possibilidade
+de aplicar análises preditivas aos dados coletados, torna-se realidade.
+
+\figuraadaptada[li2015internet]{historico-iot}{Histórico das tecnologias que 
+fundamentaram o surgimento da \textit{Internet of Things}.}{12cm}
+
+%No que concerne à assistência domiciliar à saúde, as pesquisas nas áreas de
+%computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é
+%um ambiente propício à aplicação dessas técnicas. A utilização de sensores,
+%como demonstrado no estudo de \citeonline{warren2002sensors}, em que sensores
+%vestíveis são empregados na leitura de oxigênio do paciente e o envio dos dados
+%à um sistema de monitoramento pessoal para posterior processamento exemplifica
+%a utilização da computação pervasiva, uma  vez que os dados coletados se tornam
+%disponíveis a qualquer momento.
+
+\subsection{Definições} \label{subsec:iot-definicoes}
+
+Na revisão sistemática sobre IoT, \citeonline{li2015internet}, defende IoT como
+parte da Internet do futuro, sendo constituída de bilhões de ``coisas''
+inteligentes que se comunicam entre si. Já \citeonline{pretz2013next} define
+IoT como um conjunto de coisas conectadas por uma rede sem fio e que são
+capazes de interagir entre si, sem interferência humana. Já
+\citeonline{guillemin2009internet} define: IoT permite que pessoas e coisas
+estejam conectadas a qualquer hora, em qualquer lugar com qualquer coisa e
+qualquer um, preferencialmente usando uma rede e qualquer serviço.
+
+A IoT é um conceito em que o mundo virtual da tecnologia da informação se 
+integra perfeitamente com o mundo real das coisas. Detecção do \textit{status}
+das coisas através de sensores em adição a coleta e processamento de dados
+detalhadamente, permite que sistemas respondam de imediato a qualquer mudança
+no mundo físico \cite{uckelmann2011architectural}.
+
+Um grupo Europeu de pesquisa em IoT definiu: (IoT como) uma parte integrante da
+Internet do Futuro, tornando-se parte da infraestrutura de uma dinâmica rede
+global com capacidade de autoconfiguração baseada em padrões e protocolos
+de comunicação interoperáveis em que ``coisas'' possuem identidade, atributos
+físicos e personalidade virtual além de possuírem interfaces inteligentes e
+estarem integrados com a rede de informação \cite{cerpiot2009}.
+
+Além disso, \citeonline{guillemin2009internet} espera que as ``coisas''
+de IoT se tornem participantes ativas em processos sociais, de negócio e de 
+informação - preparadas para se comunicar entre si e com o ambiente -
+ao trocar dados e informações sobre o ambiente em que estão inseridos ao mesmo
+tempo que reagem de forma autônoma com o mundo real. Possibilitando a criação
+de serviços com ou sem a intervenção direta de um ser humano.
+
+\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
+
+IoT habilita sistemas, portanto, a capturar, armazenar e transmitir dados de modo que
+cresce a quantidade de áreas atendidas por esse tipo de tecnologia.
+Alimentação, segurança, indústrias, logística, turismo e armazenamento são
+algumas das áreas em que a aplicação de IoT é abrangente e traz benefícios
+\cite{xu2014ubiquitous}.
+
+\subsection{Aplicações} \label{subsec:iot-aplicacoes}
+
+IoT pode ser aplicado a diversas áreas, porém, os três principais grandes 
+domínios que o IoT está sendo aplicado são: (1) cidades inteligentes, 
+(2) indústria e (3) saúde.
+
+Cidades inteligentes englobam, por exemplo, tópicos como mobilidade urbana
+inteligente e turismo inteligente. Através do monitoramento do tráfego, será
+possível oferecer novas rotas de deslocamento, compartilhar modais (bicicletas,
+ônibus, metrô e carros) para alcançar o destino rapidamente e sugerir rotas
+alternativas para bombeiros, policiais ou serviço de emergência em saúde. As
+vegetações nas praças urbanas podem ser irrigadas de acordo com a presença ou
+não das chuvas. A iluminação das vias públicas podem ser acionadas apenas
+quando na presença de pessoas. Assim como o turismo, que também pode ser
+beneficiado através de melhores meios de transporte na cidade. 
+
+\textit{Smart grid} é um outro tópico ligado a cidades inteligentes. Através
+das aplicações nesta área será possível identificar falhas na rede elétrica em 
+tempo real e proporcionar melhores prestações de serviço aos usuários. Casas
+e prédios inteligentes entram nessa categoria também.
+
+Ligado a estes tópicos, casas inteligentes têm sido uma área de aplicação de
+IoT bastante ativa. Através de sensores e interfaces de comunicação, os objetos
+da casa ganham novas funções. A patente de \citeonline{yang2005trash} registra
+uma lixeira inteligente que abre sua tampa de acordo com a proximidade do
+usuário. Já a pesquisa de \citeonline{hou2013} demonstra a utilização de
+sensores em uma geladeira. A partir de um sistema de gerenciamento da geladeira
+é possível ter informações das comidas e recomendar receitas para o usuário de
+acordo com os alimentos disponíveis, além de verificar quais itens estão
+próximos do final da validade ou faltantes e gerar uma lista de compras
+personalizada.
+
+A área da indústria será também uma das mais beneficiadas com as aplicações em IoT.
+São tópicos de relevante interesse, agricultura e pecuária, logística e 
+processos industriais em geral. O rastreio e identificação do animal pode ser
+auxiliado pelo IoT, assim como o plantio de monoculturas, monitoramento e 
+irrigação, até mesmo o armazenamento dos grãos pode ser acompanhado em tempo
+real. Já nos processos industriais, o IoT pode auxiliar em todo o processo
+de produção de veículos por exemplo. No que se refere a logística, o gerenciamento
+do armazenamento e do inventário, além de todo o processo de entrega pode
+ser monitorado por IoT.
+
+O domínio da saúde listado anteriormente, tem os seguintes tópicos principais:
+cuidados médicos e de saúde e vida independente para idosos e doentes, este último
+está intimamente ligado a este trabalho e é um dos tópicos mais estudados, tendo
+como base IoT e cuidado da saúde.
+
+Os ganhos para os idosos são perceptíveis, o IoT visa possibilitar um ambiente
+onde ele tenha assistência sempre que precisar. Através do monitoramento de 
+sinais vitais e do comportamento diário é possível inferir sobre o estado 
+de saúde do idoso. A captura de sinais vitais pode ajudar, ainda, no diagnóstico
+de uma doença ainda por vir.
+
+Por exemplo, os dispositivos \smartphones e \smartwatches, sensores médicos e até 
+mesmo roupas inteligentes permitem que o indivíduo que os carrega, tenha um poder 
+computacional que o permita utilizar serviços que um computador oferece, 
+independentemente da sua localização \cite{de2003computaccao}.
+
+%Apesar da capacidade de trocar dados entre si, alguns autores como, Dada e
+%Thiesse, Broll e Gama et al argumentam que a falta de padrões pode diminuir a
+%competitividade de produtos IoT. Por esse motivo, esses mesmos autores
+%trabalham em comissões internacionais para padronizar protocolos de
+%comunicação.
+
+A área de atendimento domiciliar, portanto, é uma importante área de aplicação de IoT.
+Segundo \citeonline{xu2014ubiquitous}, IoT é adotado para melhorar a qualidade
+do serviço e reduzir custos. Um número cada vez maior de sensores médicos e
+dispositivos capazes de capturar sinais vitais do paciente  - como por exemplo
+temperatura corporal, nível de glicose no sangue, e pressão sanguínea - estão
+surgindo, possibilitando um monitoramento do paciente em tempo real.
+
+O gráfico da figura \ref{fig:circulo-iot} ilustra o que foi descrito
+anteriormente de forma circular o que remete a interoperabilidade entre as
+áreas citadas.
+
+\figuraadaptada[gil2016internet]{circulo-iot}{Ilustração das áreas em que o IoT
+poderá atuar e suas conexões.}{10cm} 
+
+\section{Plataforma OpenIoT}\label{sec:openiot}
+
+O OpenIoT é um esforço conjunto da União Européia para Pesquisa e Inovação (FP7
+- \textit{European Union's Research and Innovation}). A plataforma 
+\textit{OpenIoT} tem como objetivo principal a implantação de uma infraestrutura 
+de \textit{middleware} capaz de integrar soluções de Internet das Coisas.
+
+O projeto enfatiza a convergência de Internet das Coisas e computação em nuvem,
+habilitando esses dois tópicos através de interoperabilidade semântica e dados
+ligados (\textit{Linked Data}), desse modo, será possível fornecer aos
+interessados uma ``nuvem de coisas''. A figura \ref{fig:arquitetura-openiot} a 
+seguir representa  as partes que compõem a plataforma OpenIoT.
+
+\figurasimples[soldatos2015openiot]{arquitetura-openiot}{Arquitetura plataforma 
+\textit{OpenIoT}}{8cm}
+    
+A plataforma foi arquitetada com 3 grandes seções: (1) Aplicações e Utilitários,
+(2) Plano virtualizado e (3) Plano físico. Diversos componentes compõem as 
+seções, listados abaixo, com uma visão \textit{top-down}:
+
+\begin{description}
+  \item [Aplicações e Utilitários]
+  \item [Request Presentation] Responsável pelas apresentações das saídas dos serviços,
+ou seja, permite a seleção de mashups a partir de uma biblioteca com o intuito
+de facilitar a apresentação dos objetos configurados em uma interface web. Para
+isso, esse módulo comunica-se diretamente com o módulo Service Delivery and
+Utility Manager).
+
+  \item [Request Definition] Conjunto de serviços responsáveis por especificar e
+formular requisições - em tempo de execução - para a plataforma OpenIoT.
+
+  \item [Configuration and Monitoring] Habilita uma visão de gerenciamento,
+monitoramento e configuração das funcionalidades dos sensores e serviços
+acoplados à plataforma OpenIoT.
+\end{description}
+
+\begin{description}   
+  \item [Plano Virtualizado]   
+  \item [Scheduler] Processa as solicitações de serviços a partir do módulo 
+  Request Definition. Além disso, tem como outro objetivo encontrar sensores 
+  para serem adicionados à plataforma OpenIoT.
+
+  \item [Linked Stream Middleware] Equivalente a base de dados na nuvem. Persiste os
+dados provenientes da camada de sensores (reais e virtuais). Nesse módulo também
+são guardados as configurações e informações gerais referente ao funcionamento
+da rede OpenIot.
+
+  \item [Service Delivery and Utility Manager] Recebe consultas (geralmente SPARQL)
+para fornecer streams de dados do serviço requisitado. Além disso, realiza uma
+medição de utilização dos serviços fornecidos pela plataforma.
+\end{description}
+
+\begin{description}
+  \item [Plano Físico]
+  \item [Sensor Middleware] extende as funções do Global Sensor Network (GSN), se
+tornando o X-GSN. É responsável pela aquisição de dados de sensores reais e/ou
+virtuais. Ele atua como um gateway entre o mundo físico e a plataforma OpenIoT.
+Tem sua base de funcionamento em sistemas distribuídos - várias instâncias do
+sistema que podem ou não pertencer a entidades diferentes.
+\end{description}
+
+\section{Sistemas Embarcados}\label{sec:sistemas-embarcados}
 
 Sistemas Embarcados estão inseridos em nossos cotidianos. Aparelhos como
 \smartphones[], \tablets[] - com alto poder de processamento,
@@ -246,133 +541,7 @@ Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
 diferentes funções. Em que pese tais diferenças, o \hardware[] utilizado é
 bastante semelhante.
 
-\subsection{Computação ubíqua e pervasiva}\label{subsec:computacao}
-
-A convergência das diversas tecnologias pode ser observado no nosso dia-a-dia
-através de: informações constantes que recebemos nos dispositivos móveis, nos
-meios de comunicação, do monitoramento em tempo real do tráfego nas cidades de
-grande porte, dos relógios com tecnologia embarcada (\textit{smartwatches}), das
-vestimentas inteligentes etc.
-
-Percebemos, também, o distanciamento ou o desaparecimento da figura ``computador
-pessoal (PC)'', em nosso cotidiano. A tecnologia está difundida ao ponto do
-termo  ``era pós pc'' ser encontrado em diversos estudos
-\cite{bonilla2011inclusao,  chen2011pospc, press1999personal} nas áreas de
-sistemas embarcados e  tecnologias móveis.
-
-À essa tecnologia ``em todo lugar'' e ao distanciamento do usuário com o 
-computador pessoal deu-se o nome de computação ubíqua. Mark Weiser, considerado 
-o pai desse termo, antecipou que encontraríamos tecnologia nos diversos objetos
-do nosso cotidiano, tais como etiquetas de roupas e alimentos, cadeiras, 
-geladeiras, lixeiras, interruptores de luzes etc \cite{weiser1991computer}. Essa 
-previsão de Weiser já se concretizou em vários dispositivos.
-
-Através de sensores e meios de comunicação, esses objetos ganham novas funções.
-A patente de \citeonline{yang2005trash} registra uma lixeira inteligente que abre sua tampa de acordo
-com a proximidade do usuário. Já a pesquisa de \citeonline{hou2013}
-demonstra a utilização de sensores em uma geladeira. A partir de um sistema de
-gerenciamento da geladeira é possível ter informações das comidas e recomendar
-receitas para o usuário de acordo com os alimentos disponíveis, além de 
-verificar quais itens estão próximos do final da validade ou faltantes e gerar 
-uma lista de compras personalizada.
-
-% Os dispositivos \smartphones, \tablets, relógios inteligentes e até mesmo roupas
-% inteligentes são realidades para muitos. Esses dispositivos permitem que o 
-% indivíduo que os carrega, tenha um poder computacional que o permita utilizar 
-% serviços que um computador oferece, independentemente da sua localização 
-% \cite{de2003computaccao}.
-
-Muitas vezes, a tecnologia inserida nesses objetos é invisível para o usuário
-final e essa transparência era defendida por \citeonline{weiser1991computer} para
-apresentar um outro termo, a ``computação pervasiva'', assim definida pelo
-autor: ``(...) criar  um computador tão embarcado, tão natural que o usaríamos
-sem nem pensar sobre ele''. Além disso, computação pervasiva está relacionada à
-capacidade de dispositivos serem embarcados no mundo físico, obtendo
-informações do meio para auxiliar na computação, integrando, dessa forma, o
-ambiente físico e o mundo virtual \cite{bolsoni2009computaccao,
-de2003computaccao}. A figura  \ref{fig:pervasive-marwedel} demonstra a
-interligação entre as áreas de sistemas embarcados, computação ubíqua e
-pervasiva com as tecnologias de comunicação.
-
-\figurasimples{pervasive-marwedel}{Representação gráfica das influências nas 
-áreas de sistemas embarcados, computação ubíqua/pervasiva e meios de 
-comunicação.}{12cm}
-
-Segundo \citeonline{hansmann2013pervasive}, a computação pervasiva tem 4 princípios fundamentais,
-detalhados a seguir: 
-
-\begin{description}
-  \item [Descentralização] os diversos dispositivos cooperam entre si e realizam
-  pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
-  dinâmica rede de comunicação; Podemos citar como exemplo os diversos 
-  dispositivos implantados na casa proporcionando conectividade em toda
-  a extensão da casa.
-  \item [Diversificação] diferente do computador de propósito geral - que 
-  proporciona a execução de várias tarefas - cada dispositivo tem um propósito
-  específico atendendo a necessidades únicas; podemos citar, como exemplo, um
-  sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
-  que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
-  diversidade, cada um desempenha uma função específica.
-  \item [Conectividade] os dispositivos devem interagir de maneira transparente
-  e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
-  auxílio de um usuário; a conectividade diz respeito, também, à relação 
-  transparente entre dispositivo e usuário; 
-  \item [Simplicidade] as funções desempenhadas pelos dispositivos devem ser
-  simples e de fácil execução. Existem tipos de dispositivos que não requerem 
-  uma interação com o usuário; outros, no entanto, exigem alguma configuração e,
-  nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
-  rápido ao usuário. 
-\end{description}
-
-No que concerne à assistência domiciliar à saúde, as pesquisas nas áreas de
-computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é
-um ambiente propício à aplicação dessas técnicas. A utilização de sensores,
-como demonstrado no estudo de \citeonline{warren2002sensors}, em que sensores
-vestíveis são empregados na leitura de oxigênio do paciente e o envio dos dados
-à um sistema de monitoramento pessoal para posterior processamento exemplifica
-a utilização da computação pervasiva, uma  vez que os dados coletados se tornam
-disponíveis a qualquer momento.
-
-\subsubsection{Internet das Coisas} \label{subsubsec:iot}
-
-No final dos anos 90, \citeonline{ashton2009internet} defendeu que a Internet
-das Coisas tinha potencial para mudar o mundo, assim como a Internet mudou.
-Desde então pesquisas em diversas áreas, a inovação tecnológica e a atualização
-de conceitos já existentes possibilitou o surgimento da tecnologia Internet das
-Coisas (\textit{Internet of Things - IoT}).
-
-Na revisão sistemática sobre IoT, \citeonline{li2015internet}, defende IoT como
-parte da Internet do futuro e consiste de bilhões de ``coisas'' inteligentes
-que se comunicam entre si. Já \citeonline{pretz2013next} define IoT como um
-conjunto de coisas conectadas por uma rede sem fio e que são capazes de
-interagir entre si, sem interferência humana. Já
-\citeonline{guillemin2009internet} define Internet of Things permite que
-pessoas e coisas estejam conectadas a qualquer hora, em qualquer lugar com
-qualquer coisa e qualquer um, preferencialmente usando uma rede e qualquer
-serviço.
-
-\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{5cm}
-
-%Apesar da capacidade de trocar dados entre si, alguns autores como, Dada e
-%Thiesse, Broll e Gama et al argumentam que a falta de padrões pode diminuir a
-%competitividade de produtos IoT. Por esse motivo, esses mesmos autores
-%trabalham em comissões internacionais para padronizar protocolos de
-%comunicação.
-
-IoT habilita sistemas a capturar, armazenar e  transmitir dados de modo que
-cresce a quantidade de áreas atendidas por esse tipo de tecnologia.
-Alimentação, segurança, indústrias, logística, turismo e armazenamento são
-algumas das áreas em que a aplicação de IoT é abrangente e traz benefícios
-\cite{xu2014ubiquitous}.
-
-A área de atendimento domiciliar é uma importante área de aplicação de IoT.
-Segundo \citeonline{xu2014ubiquitous}, IoT é adotado para melhorar a qualidade
-do serviço e reduzir custos. Um número cada vez maior de sensores médicos e
-dispositivos capazes de capturar sinais vitais do paciente  - como por exemplo
-temperatura corporal, nível de glicose no sangue, e pressão sanguínea - estão
-surgindo, possibilitando um monitoramento do paciente em tempo real.
-
-\subsection{Aplicações Sensíveis ao Contexto}\label{subsec:contexto}
+\section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
 
 O dicionário \citeonline{houaiss2001dicionario} define contexto como um conjunto de palavras, frases ou
 texto que precede ou se segue a determinada palavra, frase ou texto e que
@@ -425,67 +594,6 @@ contexto podem fazer uso de informações de sensores médicos (leitura de sinai
 vitais do paciente), sensores de propósito geral (leituras no ambiente), 
 ou ainda sensores virtuais (conjunto de programas cuja função é varrer as redes 
 sociais e extrair informações válidas para determinada situação).
-
-\subsection{Plataforma OpenIoT}\label{subsec:openiot}
-
-O OpenIoT é um esforço conjunto da União Européia para Pesquisa e Inovação (FP7
-- \textit{European Union's Research and Innovation}). A plataforma 
-\textit{OpenIoT} tem como objetivo principal a implantação de uma infraestrutura 
-de \textit{middleware} capaz de integrar soluções de Internet das Coisas.
-
-O projeto enfatiza a convergência de Internet das Coisas e computação em nuvem,
-habilitando esses dois tópicos através de interoperabilidade semântica e dados
-ligados (\textit{Linked Data}), desse modo, será possível fornecer aos
-interessados uma ``nuvem de coisas''. A figura \ref{fig:arquitetura-openiot} a 
-seguir representa  as partes que compõem a plataforma OpenIoT.
-
-\figurasimples[soldatos2015openiot]{arquitetura-openiot}{Arquitetura plataforma 
-\textit{OpenIoT}}{8cm}
-    
-A plataforma foi arquitetada com 3 grandes seções: (1) Aplicações e Utilitários,
-(2) Plano virtualizado e (3) Plano físico. Diversos componentes compõem as 
-seções, listados abaixo, com uma visão \textit{top-down}:
-
-\begin{description}
-  \item [Aplicações e Utilitários]
-  \item [Request Presentation] Responsável pelas apresentações das saídas dos serviços,
-ou seja, permite a seleção de mashups a partir de uma biblioteca com o intuito
-de facilitar a apresentação dos objetos configurados em uma interface web. Para
-isso, esse módulo comunica-se diretamente com o módulo Service Delivery and
-Utility Manager).
-
-  \item [Request Definition] Conjunto de serviços responsáveis por especificar e
-formular requisições - em tempo de execução - para a plataforma OpenIoT.
-
-  \item [Configuration and Monitoring] Habilita uma visão de gerenciamento,
-monitoramento e configuração das funcionalidades dos sensores e serviços
-acoplados à plataforma OpenIoT.
-\end{description}
-
-\begin{description}   
-  \item [Plano Virtualizado]   
-  \item [Scheduler] Processa as solicitações de serviços a partir do módulo 
-  Request Definition. Além disso, tem como outro objetivo encontrar sensores 
-  para serem adicionados à plataforma OpenIoT.
-
-  \item [Linked Stream Middleware] Equivalente a base de dados na nuvem. Persiste os
-dados provenientes da camada de sensores (reais e virtuais). Nesse módulo também
-são guardados as configurações e informações gerais referente ao funcionamento
-da rede OpenIot.
-
-  \item [Service Delivery and Utility Manager] Recebe consultas (geralmente SPARQL)
-para fornecer streams de dados do serviço requisitado. Além disso, realiza uma
-medição de utilização dos serviços fornecidos pela plataforma.
-\end{description}
-
-\begin{description}
-  \item [Plano Físico]
-  \item [Sensor Middleware] extende as funções do Global Sensor Network (GSN), se
-tornando o X-GSN. É responsável pela aquisição de dados de sensores reais e/ou
-virtuais. Ele atua como um gateway entre o mundo físico e a plataforma OpenIoT.
-Tem sua base de funcionamento em sistemas distribuídos - várias instâncias do
-sistema que podem ou não pertencer a entidades diferentes.
-\end{description}
 
 
 

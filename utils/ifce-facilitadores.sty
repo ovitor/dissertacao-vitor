@@ -37,6 +37,28 @@
 \usepackage{xparse}
 \usepackage{xspace}
 
+\NewDocumentCommand\figuraadaptada{ommm}{
+\IfNoValueTF{#1}{
+\begin{figure}[H]
+  \begin{center}
+    \caption{#3}\label{fig:#2}
+    \includegraphics[width=#4]{#2} \par \vspace{0.5em}
+    Fonte: Próprio autor.
+  \end{center}
+\end{figure}
+}
+{
+\begin{figure}[H]
+  \begin{center}
+    \caption{#3}\label{fig:#2}
+    \includegraphics[width=#4]{#2} \par \vspace{0.5em}
+    Fonte: Adaptado de \citeonline{#1}.
+  \end{center}
+\end{figure}
+}\xspace}
+
+
+
 \NewDocumentCommand\figurasimples{ommm}{
 \IfNoValueTF{#1}{
 \begin{figure}[H]
