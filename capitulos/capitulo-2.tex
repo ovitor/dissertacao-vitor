@@ -392,64 +392,81 @@ poderá atuar e suas conexões.}{10cm}
 
 \section{Plataforma OpenIoT}\label{sec:openiot}
 
-O OpenIoT é um esforço conjunto da União Européia para Pesquisa e Inovação (FP7
-- \textit{European Union's Research and Innovation}). A plataforma 
-\textit{OpenIoT} tem como objetivo principal a implantação de uma infraestrutura 
-de \textit{middleware} capaz de integrar soluções de Internet das Coisas.
+Com o intuito de tratar a grande quantidade de dados provenientes de todas as
+``coisas'', os grupos de pesquisa, estudaram e desenvolveram middlewares com as
+mais diversas características. Desse grupo destacam-se as soluções: (1) Kaa\footnote{Kaa é um
+middleware para IoT disponível em \url{https://www.kaaproject.org}},
+(2) Thingsboard\footnote{Thingsboard é uma plataforma que permite o monitoramento 
+e controle dos dispositivos IoT, disponível em \url{https://thingsboard.io}} e (3) OpenIoT
+\footnote{OpenIoT está disponível em \url{http://www.openiot.eu/}}.
+
+Dos três listados anteriormente, este trabalho verificou que a plataforma
+OpenIoT foi a que mais contribuiu, em termos de ideias, conceitos e arquitetura
+para a solução proposta. Apesar de apresentarem casos de uso para cidades
+inteligentes, indústria e até mesmo cuidados de saúde, não foi encontrado na
+literatura tal documento que indique o mesmo para as outras duas abordagens,
+uma vez que elas tem um viés mais comercial.
+
+Constatamos, portanto, que o OpenIoT - uma plataforma mantida pela União
+Européia para Pesquisa e Inovação (FP7 - European Union's Research and
+Innovation) - tem como objetivo principal a implantação de uma infraestrutura
+de middleware capaz de integrar soluções de Internet das Coisas.
 
 O projeto enfatiza a convergência de Internet das Coisas e computação em nuvem,
 habilitando esses dois tópicos através de interoperabilidade semântica e dados
-ligados (\textit{Linked Data}), desse modo, será possível fornecer aos
-interessados uma ``nuvem de coisas''. A figura \ref{fig:arquitetura-openiot} a 
-seguir representa  as partes que compõem a plataforma OpenIoT.
+ligados (\textit{Linked Data}), desse modo, torna-se possível fornecer aos interessados
+uma ``nuvem de coisas''.
 
-\figurasimples[soldatos2015openiot]{arquitetura-openiot}{Arquitetura plataforma 
-\textit{OpenIoT}}{8cm}
+A plataforma conta ainda com uma ontologia para padronizar a representação de
+sensores físicos e virtuais. Além disso, o middleware facilita a coleta de
+dados e garante o entendimento semântico da informação proveniente do sensor.
+Por fim, é pontuado no estudo, a habilidade da plataforma de lidar com sensores
+móveis, possibilitando que uma série de aplicações sensitivas enviem dados para
+a plataforma.
+
+OpenIoT foi arquitetado com 3 grandes seções: Aplicações e Utilitários, Plano
+virtualizado e Plano físico. A figura \ref{fig:arquitetura-openiot-2} ilustra as
+seções, seus módulos e suas conexões. Em seguida é detalhado as partes que
+compõem a plataforma OpenIoT.
+
+\figurasimples[soldatos2015openiot]{arquitetura-openiot-2}{Arquitetura
+plataforma \textit{OpenIoT}}{13cm}
     
-A plataforma foi arquitetada com 3 grandes seções: (1) Aplicações e Utilitários,
-(2) Plano virtualizado e (3) Plano físico. Diversos componentes compõem as 
-seções, listados abaixo, com uma visão \textit{top-down}:
+A área de Aplicações e Utilitários é composta por três módulos. O principal
+objetivo desses módulos é permitir que o usuário final possa visualizar os
+dados (\textit{Request Presentation}) comunicando-se diretamente com o módulo
+\textit{Service Delivery and Utility Manager}.  Já o módulo \textit{Request
+Definition} permite que o usuário defina um conjunto de requisições a serem
+executadas pela plataforma OpenIoT. Por fim, o módulo \textit{Configuration and
+Monitoring} permite que o administrador do sistema tenha uma visão de
+gerenciamento e configuração das funcionalidades dos sensores conectados a
+plataforma. 
 
-\begin{description}
-  \item [Aplicações e Utilitários]
-  \item [Request Presentation] Responsável pelas apresentações das saídas dos serviços,
-ou seja, permite a seleção de mashups a partir de uma biblioteca com o intuito
-de facilitar a apresentação dos objetos configurados em uma interface web. Para
-isso, esse módulo comunica-se diretamente com o módulo Service Delivery and
-Utility Manager).
+A camada do meio, nomeada de Plano virtualizado, também contém três módulos. O
+\textit{Scheduler} agenda as requisições definidas no módulo \textit{Request
+Definition}, além disso, realiza constantes requisições a procura de novos
+sensores a serem adicionados a plataforma OpenIoT. Já o módulo \textit{Linked
+Stream Middleware} é responsável por persistir os dados dos sensores, é neste
+módulo que os dados são guardados levando em consideração a semântica deles,
+adicionado a isso, as configurações e informações gerais referentes ao
+funcionamento do OpenIoT são guardados também nessa camada. Por fim, o
+\textit{Service Delivery and Utility Manager} é responsável por consultar no
+banco de dados e retornar essa consulta para o módulo \textit{Request
+Presentation}.
 
-  \item [Request Definition] Conjunto de serviços responsáveis por especificar e
-formular requisições - em tempo de execução - para a plataforma OpenIoT.
+A terceira camada, Plano Físico, é composto por um módulo apenas. O Sensor
+Middleware é responsável pela aquisição dos dados de sensores reais ou
+virtuais. Ele atua como um gateway entre o mundo real e o virtual (plataforma
+OpenIoT). Se comunica diretamente com o \textit{Linked Stream Middleware}
+possibilitando a persistência dos dados.
 
-  \item [Configuration and Monitoring] Habilita uma visão de gerenciamento,
-monitoramento e configuração das funcionalidades dos sensores e serviços
-acoplados à plataforma OpenIoT.
-\end{description}
-
-\begin{description}   
-  \item [Plano Virtualizado]   
-  \item [Scheduler] Processa as solicitações de serviços a partir do módulo 
-  Request Definition. Além disso, tem como outro objetivo encontrar sensores 
-  para serem adicionados à plataforma OpenIoT.
-
-  \item [Linked Stream Middleware] Equivalente a base de dados na nuvem. Persiste os
-dados provenientes da camada de sensores (reais e virtuais). Nesse módulo também
-são guardados as configurações e informações gerais referente ao funcionamento
-da rede OpenIot.
-
-  \item [Service Delivery and Utility Manager] Recebe consultas (geralmente SPARQL)
-para fornecer streams de dados do serviço requisitado. Além disso, realiza uma
-medição de utilização dos serviços fornecidos pela plataforma.
-\end{description}
-
-\begin{description}
-  \item [Plano Físico]
-  \item [Sensor Middleware] extende as funções do Global Sensor Network (GSN), se
-tornando o X-GSN. É responsável pela aquisição de dados de sensores reais e/ou
-virtuais. Ele atua como um gateway entre o mundo físico e a plataforma OpenIoT.
-Tem sua base de funcionamento em sistemas distribuídos - várias instâncias do
-sistema que podem ou não pertencer a entidades diferentes.
-\end{description}
+Percebe-se, através da descrição dos módulos, que a arquitetura está bem
+estruturada e que cada módulo tem seu papel definido. Além disso, a
+possibilidade de interoperabilidade semântica e \textit{Linked Data} é um
+atrativo para a plataforma. A captura de dados tanto de sensores reais quanto
+sensores virtuais garante uma grande quantidade de dados. Por outro lado,
+apesar da documentação garantir que o usuário não precisa ser do meio técnico,
+é necessário bastante conhecimento da plataforma para a correta utilização. 
 
 \section{Sistemas Embarcados}\label{sec:sistemas-embarcados}
 
