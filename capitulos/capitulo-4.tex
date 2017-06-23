@@ -59,6 +59,70 @@ processamento e o conectamos à Internet. Os dados coletados pelos sensores são
 então, repassados ao STB, que os processa, os apresenta através da tela do
 televisor ou ainda através de \smartphones[] conectados ao sistema.
 
+\subsubsection{Simulações} \label{subsubsec:simulacoes-A}
+
+No sentido de exemplificar o ambiente descrito anteriormente, esta subseção
+traz simulações (situações fictícias) do doente em cenários que a solução
+proposta nesta dissertação pode auxiliar.
+
+\subparagraph{Doente sozinho}
+
+Luísa, aposentada, 75 anos, vive sozinha em seu apartamento. Quando não está
+realizando refeições e lavando pratos, passa boa parte do seu dia na sala de
+estar, lendo ou assistindo à televisão. Infelizmente, Luísa sofre de uma doença 
+crônica e seu médico recomenda caminhada uma vez ao dia, durante 30 minutos. 
+Além disso, foi prescrito à Luísa alguns medicamentos necessários para evitar 
+as dores - cada um deles deveria ser ingerido em horários específicos.
+
+Através do \stb[] acoplado à televisão e conectado à Internet, é
+possível enviar à Luísa avisos e notificações lembrando de suas atividades
+diárias - como por exemplo, a caminhada de 30 minutos recomendada pelo
+médico além do medicamento a ser ingerido.
+
+Através da leitura de sinais vitais, proporcionada pelos sensores médicos,
+e conectados ao STB, será possível enviar leituras de sinais vitais específicos 
+de Luísa para o médico que a acompanha. Assim, Luísa poderá receber tratamento
+diferenciado ou comparecer a uma consulta de maneira antecipada caso seja
+detectado a necessidade para tal.
+
+Portanto, esta simulação de uso exemplifica uma aplicação prática do sistema 
+proposto.
+
+\subparagraph{Doente com um familiar}
+
+Roberto é autônomo, trabalha em casa consertando televisores e mora com sua
+filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
+de descanso, assiste aos seus programas favoritos.
+
+Certo dia, Roberto não sente-se bem e deita-se, tendo instalado à sua televisão
+o STB com as aplicações da solução proposta, ele conta com a disponibilidade de
+diversas funcionalidades que podem auxiliá-lo neste momento. Poderá, por
+exemplo, acessar uma das aplicação através do controle remoto, a aplicação
+apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
+um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
+exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
+aplicação apresenta uma notificação contendo uma segunda opinião, informando
+também a necessidade de se apresentar a um médico. É importante ressaltar que
+o sistema não oferece ou indica nenhum tipo de medicamento.
+
+É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
+serem realizados no paciente, momento em que a filha de Roberto teria o papel de
+cuidadora informal ao realizar tais procedimentos. A aplicação guiaria o
+cuidador informal em um processo passo a passo. Nesta simulação,  percebe-se a
+importância de contar com um dispositivo que auxilie o cuidador e o paciente em
+situações de risco à saúde.
+
+\subparagraph{Doente com um cuidador profissional}
+
+Dona Clélia, aposentada, contratou um cuidador profissional para acompanhar seu
+marido Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
+do seu contrato, o cuidador fica na casa apenas nos horários da manhã e tarde.
+
+Sabendo que o casal de idosos utiliza a solução proposta neste trabalho, e sendo o
+cuidador ciente das necessidades do doente, o cuidador poderá receber em seu celular ou
+acompanhar através da televisão auxílio para a realização de um procedimento inerente
+a um paciente com Parkinson, ou ainda, o \textit{status} das atividades diárias.
+
 \subsection{Ambiente B} \label{subsec:ambiente-b}
 
 O ambiente B diz respeito aos atores móveis do cenário geral. Os atores externos
@@ -77,6 +141,35 @@ saúde e os familiares, pois eles têm acesso a informações mais detalhadas do
 paciente através desta forma de visualização de dados. Nesse modelo, os dados
 apresentados vão desde a leitura de alguns sensores instalados na casa até a
 visualização de sinais vitais do paciente.
+
+\subsubsection{Simulações}
+
+A simulação a seguir apresenta uma situação fictícia em que a plataforma pode
+se tornar útil.
+
+\subparagraph{Doente em situação de emergência}
+
+Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
+de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
+esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
+
+Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
+que conta com o STB com a solução proposta. Passado alguns minutos, ela sente
+uma forte dor no peito seguido por um desconforto no braço esquerdo. Neste
+momento, Maria certa de que precisa de ajuda, pode acionar no controle remoto o
+"botão de pânico". 
+
+A aplicação percebe o acionamento e toma algumas medidas, tais como, enviar
+mensagens de socorro através de SMS ou através de serviços de mensagens pela
+Internet para a equipe de saúde, para os amigos e familiares.  Por fim, a
+aplicação pode enviar uma notificação para ser exibida na televisão no sentido
+de tranquilizar o usuário.
+
+Além disso, os sensores médicos utilizados por Maria auxiliam os atores
+externos (equipe de saúde, familiares e amigos) a tomarem as medidas
+necessárias para o melhor atendimento de Maria.  Em determinados casos, é
+possível, ainda, que a aplicação envie, através de notificações, sugestões de
+medidas a serem tomadas enquanto o socorro médico não chega.
 
 \subsection{Ambiente C} \label{subsec:ambiente-c}
 
@@ -102,101 +195,22 @@ o que é ideal para uma situação de internação domiciliar. Este serviço far
 de tópicos apresentados na plataforma \textit{OpenIoT}
 (seção \vref{subsec:openiot}).
 
-\subsection{Simulações} \label{subsec:simulacoes}
+%\subsection{Simulações} \label{subsec:simulacoes}
 
-No sentido de exemplificar os ambientes descritos anteriormente, esta subseção
-traz simulações (situações fictícias) do doente em cenários que a solução
-proposta nesta dissertação pode auxiliar. As três primeiras subseções 
-(\nameref{subsubsec:doente-sozinho}, \nameref{subsubsec:doente-com-familiar}
-e \nameref{subsubsec:doente-cuidador}) remetem ao \nameref{subsec:ambiente-a}.
-Já a simulação \nameref{subsubsec:doente-emergencia} remete ao \nameref{subsec:ambiente-b}.
+%(\nameref{subsubsec:doente-sozinho}, \nameref{subsubsec:doente-com-familiar}
+%e \nameref{subsubsec:doente-cuidador}) remetem ao \nameref{subsec:ambiente-a}.
+%Já a simulação \nameref{subsubsec:doente-emergencia} remete ao \nameref{subsec:ambiente-b}.
 
-\subsubsection{Doente sozinho} \label{subsubsec:doente-sozinho}
-
-Luísa, aposentada, 75 anos, vive sozinha em seu apartamento. Quando não está
-realizando refeições e lavando pratos, passa boa parte do seu dia na sala de
-estar, lendo ou assistindo à televisão. Infelizmente, Luísa sofre de uma doença 
-crônica e seu médico recomenda caminhada uma vez ao dia, durante 30 minutos. 
-Além disso, foi prescrito à Luísa alguns medicamentos necessários para evitar 
-as dores - cada um deles deveria ser ingerido em horários específicos.
-
-Através do \stb[] acoplado à televisão e conectado à Internet, é
-possível enviar à Luísa avisos e notificações lembrando de suas atividades
-diárias - como por exemplo, a caminhada de 30 minutos recomendada pelo
-médico além do medicamento a ser ingerido.
-
-Através da leitura de sinais vitais, proporcionada pelos sensores médicos,
-e conectados ao STB, será possível enviar leituras de sinais vitais específicos 
-de Luísa para o médico que a acompanha. Assim, Luísa poderá receber tratamento
-diferenciado ou comparecer a uma consulta de maneira antecipada caso seja
-detectado a necessidade para tal.
-
-Portanto, esta simulação de uso exemplifica uma aplicação prática do sistema 
-proposto.
+%\subsubsection{Doente sozinho} \label{subsubsec:doente-sozinho}
 
 %Para que Luisa não ficasse sozinha tanto tempo, seus filhos pediram à vizinha
 %que checasse sua condição de tempos em tempos, fazendo com que Luisa agora tivesse uma
 %espécie de cuidador informal. A função do cuidador informal seria de acompanhar
 %Luisa na caminhada e recordá-la de tomar seus remédios.
 
-\subsubsection{Doente com um familiar} \label{subsubsec:doente-com-familiar}
-
-Roberto é autônomo, trabalha em casa consertando televisores e mora com sua
-filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
-de descanso, assiste aos seus programas favoritos.
-
-Certo dia, Roberto não sente-se bem e deita-se, tendo instalado à sua televisão
-o STB com as aplicações da solução proposta, ele conta com a disponibilidade de
-diversas funcionalidades que podem auxiliá-lo neste momento. Poderá, por
-exemplo, acessar uma das aplicação através do controle remoto, a aplicação
-apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
-um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
-exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
-aplicação apresenta uma notificação contendo uma segunda opinião, informando
-também a necessidade de se apresentar a um médico. É importante ressaltar que
-o sistema não oferece ou indica nenhum tipo de medicamento.
-
-É possível ainda que a aplicação sugira, em determinados casos, procedimentos a
-serem realizados no paciente, momento em que a filha de Roberto teria o papel de
-cuidadora informal ao realizar tais procedimentos. A aplicação guiaria o
-cuidador informal em um processo passo a passo. Nesta simulação,  percebe-se a
-importância de contar com um dispositivo que auxilie o cuidador e o paciente em
-situações de risco à saúde.
-
-\subsubsection{Doente com um cuidador profissional} \label{subsubsec:doente-cuidador}
-
-Dona Clélia, aposentada, contratou um cuidador profissional para acompanhar seu
-marido Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
-do seu contrato, o cuidador fica na casa apenas nos horários da manhã e tarde.
-
-Sabendo que o casal de idosos utiliza a solução proposta neste trabalho, e sendo o
-cuidador ciente das necessidades do doente, o cuidador poderá receber em seu celular ou
-acompanhar através da televisão auxílio para a realização de um procedimento inerente
-a um paciente com Parkinson, ou ainda, o \textit{status} das atividades diárias.
-
-\subsubsection{Doente em situação de emergência} \label{subsubsec:doente-emergencia}
-
-Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
-de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
-esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
-
-Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
-que conta com o STB com a solução proposta. Passado alguns minutos, ela sente
-uma forte dor no peito seguido por um desconforto no braço esquerdo. Neste
-momento, Maria certa de que precisa de ajuda, pode acionar no controle remoto o
-"botão de pânico". 
-
-A aplicação percebe o acionamento e toma algumas medidas, tais como, enviar
-mensagens de socorro através de SMS ou através de serviços de mensagens pela
-Internet para a equipe de saúde, para os amigos e familiares.  Por fim, a
-aplicação pode enviar uma notificação para ser exibida na televisão no sentido
-de tranquilizar o usuário.
-
-Além disso, os sensores médicos utilizados por Maria auxiliam os atores
-externos (equipe de saúde, familiares e amigos) a tomarem as medidas
-necessárias para o melhor atendimento de Maria.  Em determinados casos, é
-possível, ainda, que a aplicação envie, através de notificações, sugestões de
-medidas a serem tomadas enquanto o socorro médico não chega.
+%\subsubsection{Doente com um familiar} \label{subsubsec:doente-com-familiar}
+%\subsubsection{Doente com um cuidador profissional} \label{subsubsec:doente-cuidador}
+%\subsubsection{Doente em situação de emergência} \label{subsubsec:doente-emergencia}
 
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
