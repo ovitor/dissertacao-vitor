@@ -55,9 +55,6 @@ necessariamente, vinculados ao ambiente hospitalar.
 Como consequência, surgiram diversas mudanças no atendimento, onde a Assistência
 Domiciliar à Saúde (ADS) se tornou uma modalidade disponível.
 
-%\subsection{Assistência Domiciliar à Saúde}
-%\label{subsec:assistencia-domiciliar-a-saude}
-
 A Assistência Domiciliar à Saúde (ADS) divide-se basicamente em grupos de
 enfermagem e fisioterapia - nas modalidades mais básicas - até um atendimento
 multiprofissional, possibilitando um apoio ao paciente como um todo. A ADS pode
@@ -90,7 +87,7 @@ proximidade com os seus familiares; (3) diminuição do risco de infecção
 hospitalar; (4) Otimização de leitos hospitalares para pacientes que deles
 necessitem; e (5) Redução do custo/dia da internação.
 
-\subsection{Envolvidos}\label{subsec:envolvidos}
+\subsection{Atores envolvidos}\label{subsec:envolvidos}
 
 Para o entendimento geral da modalidade ADS, faz-se necessário separar e
 explicar a atuação de cada um dos envolvidos. O paciente, para quem está
@@ -152,6 +149,96 @@ correndo, inclusive, risco de vida, quanto aqueles que demandam menos
 preocupações - mas que, invariavelmente, estão sob os cuidados fora do
 ambiente hospitalar.
 
+\section{Sistemas Embarcados}\label{sec:sistemas-embarcados}
+
+Sistemas Embarcados estão inseridos em nossos cotidianos. Aparelhos como
+\smartphones[], \tablets[] - com alto poder de processamento,
+produtos comumente encontrados em nossas casas, a exemplo do forno de 
+micro-ondas, geladeiras e máquinas de lavar roupas, até computadores de bordo e
+controle de freios ABS (\textit{Anti-lock Breaking System})\footnote{ABS:
+Tecnologia  de freio considerada segura pois seu funcionamento impede que, em
+uma brecada brusca, as rodas  deslizem, tornando difícil controlar o veículo} em
+nossos carros, contêm sistemas embarcados. Essa diversidade de aplicações
+explicita a importância dessa área.
+
+Nos exemplos citados anteriormente, temos uma classificação quanto à sua
+funcionalidade, porém, sua definição não é simples, nem muito menos taxativa,
+uma vez que possuem uma grande complexidade em sua composição. Dessa forma,
+podemos definir, a princípio, sistemas embarcados como qualquer
+dispositivo/equipamento que disponha de um sistema programável e que seu
+objetivo não seja o de um computador de propósito geral\footnote{Computador de
+propósito geral é aquele em que é possível executar as mais diversas tarefas,
+tais como, navegar na Internet, escrever documentos, executar jogos etc, ou
+seja, não há uma função específica a ser realizada. Pelo exposto, percebe-se a
+complexidade da definição de sistemas embarcados, uma vez que, muitos deles, 
+desempenham funções que antes cabiam apenas ao computador de propósito geral.}
+\cite{wolf2012computers}.
+
+\citeonline{marwedel2010embedded} define: ``Sistemas Embarcados (como) sistemas
+de processamento de informações incorporados à produtos.'', e, adicionado à
+esta definição, lista 5 características que devem levar em consideração: 
+
+\begin{itemize}
+  \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
+  equipamento devem permanecer confidenciais e a comunicação deve ser autêntica;
+  \item Seguro - característica indicativa de que o sistema não causará nenhum dano àqueles que o utilizam;
+  \item Disponibilidade - sistema disponível para executar as funções para as quais
+  foi programado; 
+  \item Confiabilidade - probabilidade que o sistema tem de que não
+  falhará em sua execução; e
+  \item Manutenibilidade, caso o sistema venha a falhar, deverá 
+  ser consertado em uma determinada janela de tempo.
+\end{itemize}
+
+Além disso, propriedades como sensores coletando informações do ambiente
+físico e atuadores controlando o ambiente no qual estão inseridos também
+caracterizam um sistema embarcado \cite{marwedel2010embedded}.
+
+\subsubsection{Arquitetura}\label{subsubsec:arquitetura}
+
+A literatura divide o sistema embarcado em duas áreas, o \hardware[] e o 
+\software. O primeiro é composto pelas partes físicas do sistema, 
+tal como o processador, memória, interfaces de entrada e saída etc. O segundo é
+composto pelos componentes lógicos do sistema, ou seja, os programas que 
+irão executar as funções previamente definidas do sistema embarcado.
+
+No processo de \design[] do sistema embarcado considera-se, dentro dos
+requisitos de \hardware, quais dos processadores disponíveis no mercado atende
+melhor a necessidade do projeto, assim como é necessário identificar a
+quantidade de memória a ser utilizada pelo \software[]. 
+
+Ainda referente ao processo de design é necessário determinar quais serão as
+interfaces de entrada (responsáveis por receber os dados para posterior
+processamento) e as interfaces de saída (responsáveis por apresentar os dados
+processados). Em paralelo, os requisitos de \software[] são alinhados para que o
+\hardware[] seja melhor aproveitado \cite{wolf2012computers}.
+
+A depender da finalidade do produto, esses requisitos diferem bastante. Por
+exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
+simples (em termos de funcionalidade, processamento, consumo de energia etc),
+uma vez que aplica um componente microcontrolador de baixo poder de
+processamento (tal qual um microcontrolador PIC\footnote{Família de
+microcontroladores desenvolvido e fabricado pela empresa \textit{Microchip
+Technology} comumente utilizado em sistemas embarcados que não necessitam de
+muito processamento.} de 16 bits) e um circuito auxiliar para atender as
+especificações de entrada e saída do sistema, assim como uma possível
+comunicação com outros sistemas.
+
+Já o sistema embarcado em um \smartphone[] realiza diversas funções, tem um
+alto nível de processamento de dados e consome muita energia. Para atender a
+estes requisitos, a equipe responsável pelo \design[] utiliza vários
+processadores de alto poder computacional (tal qual processadores
+ARM\footnote{ARM - \textit{Advanced RISC Machine}. Empresa que desenvolve 
+processadores de arquitetura RISC, comumente utilizados em sistemas
+embarcados que necessitam de um poder de processamento alto.}), como interface
+de entrada e saída uma tela sensível ao toque e faz uso, ainda, de diversos
+sensores para ajudar na usabilidade do dispositivo.
+
+Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
+\stb[], processa grande quantidade de dados, além de realizar
+diferentes funções. Em que pese tais diferenças, o \hardware[] utilizado é
+bastante semelhante.
+
 \section{Internet das Coisas} \label{sec:iot}
 
 Nesta seção serão abordados o histórico e o surgimento do termo
@@ -211,28 +298,37 @@ pervasiva com as tecnologias de comunicação.
 Segundo \citeonline{hansmann2013pervasive}, a computação pervasiva tem 4 princípios 
 fundamentais, detalhados a seguir: 
 
-\begin{description}
-  \item [Descentralização] os diversos dispositivos cooperam entre si e realizam
-  pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
-  dinâmica rede de comunicação; Podemos citar como exemplo os diversos 
-  dispositivos implantados na casa proporcionando conectividade em toda
-  a extensão da casa.
-  \item [Diversificação] diferente do computador de propósito geral - que 
-  proporciona a execução de várias tarefas - cada dispositivo tem um propósito
-  específico atendendo a necessidades únicas; podemos citar, como exemplo, um
-  sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
-  que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
-  diversidade, cada um desempenha uma função específica.
-  \item [Conectividade] os dispositivos devem interagir de maneira transparente
-  e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
-  auxílio de um usuário; a conectividade diz respeito, também, à relação 
-  transparente entre dispositivo e usuário; 
-  \item [Simplicidade] as funções desempenhadas pelos dispositivos devem ser
-  simples e de fácil execução. Existem tipos de dispositivos que não requerem 
-  uma interação com o usuário; outros, no entanto, exigem alguma configuração e,
-  nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
-  rápido ao usuário. 
-\end{description}
+\subparagraph{Descentralização} 
+
+Os diversos dispositivos cooperam entre si e realizam
+pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
+dinâmica rede de comunicação; Podemos citar como exemplo os diversos 
+dispositivos implantados na casa proporcionando conectividade em toda
+a extensão da casa.
+
+\subparagraph{Diversificação} 
+
+Diferente do computador de propósito geral - que 
+proporciona a execução de várias tarefas - cada dispositivo tem um propósito
+específico atendendo a necessidades únicas; podemos citar, como exemplo, um
+sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
+que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
+diversidade, cada um desempenha uma função específica.
+
+\subparagraph{Conectividade} 
+
+Os dispositivos devem interagir de maneira transparente
+e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
+auxílio de um usuário; a conectividade diz respeito, também, à relação 
+transparente entre dispositivo e usuário; 
+
+\subparagraph{Simplicidade} 
+
+As funções desempenhadas pelos dispositivos devem ser
+simples e de fácil execução. Existem tipos de dispositivos que não requerem 
+uma interação com o usuário; outros, no entanto, exigem alguma configuração e,
+nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
+rápido ao usuário. 
 
 Com isso, os estudos foram aplicados, inicialmente, a tecnologias como RFID
 (\textit{Radio Frequency Identification} ou Identificação por
@@ -244,6 +340,9 @@ sua identificação periodicamente - e semi-passivas - com bateria interna,
 porém, envia sua identificação apenas quando um leitor se aproxima
 \cite{want2006introduction}. A aplicabilidade desta tecnologia se da, 
 principalmente, para identificar e rastrear um objeto.
+
+\figuraadaptada[li2015internet]{historico-iot}{Histórico das tecnologias que 
+fundamentaram o surgimento da \textit{Internet of Things}.}{12cm}
 
 Em seguida, as Redes de Sensores Sem Fio (\textit{Wireless Sensor Network}, WSN)
 foram ganhando espaço nos estudos acadêmicos. As redes são constituídas de nós
@@ -260,9 +359,6 @@ Possibilitado por todo o avanço tecnológico descrito anteriormente e em
 conjunto com as várias tecnologias, o IoT, através de uma conexão à redes sem
 fio mais rápida, através de sistemas embarcados menores e com a possibilidade
 de aplicar análises preditivas aos dados coletados, torna-se realidade.
-
-\figuraadaptada[li2015internet]{historico-iot}{Histórico das tecnologias que 
-fundamentaram o surgimento da \textit{Internet of Things}.}{12cm}
 
 %No que concerne à assistência domiciliar à saúde, as pesquisas nas áreas de
 %computação ubíqua e pervasiva são as mais diversas. Isso porque o domicílio é
@@ -284,6 +380,8 @@ capazes de interagir entre si, sem interferência humana. Já
 estejam conectadas a qualquer hora, em qualquer lugar com qualquer coisa e
 qualquer um, preferencialmente usando uma rede e qualquer serviço.
 
+\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
+
 A IoT é um conceito em que o mundo virtual da tecnologia da informação se 
 integra perfeitamente com o mundo real das coisas. Detecção do \textit{status}
 das coisas através de sensores em adição a coleta e processamento de dados
@@ -303,8 +401,6 @@ informação - preparadas para se comunicar entre si e com o ambiente -
 ao trocar dados e informações sobre o ambiente em que estão inseridos ao mesmo
 tempo que reagem de forma autônoma com o mundo real. Possibilitando a criação
 de serviços com ou sem a intervenção direta de um ser humano.
-
-\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
 
 IoT habilita sistemas, portanto, a capturar, armazenar e transmitir dados de modo que
 cresce a quantidade de áreas atendidas por esse tipo de tecnologia.
@@ -467,96 +563,6 @@ atrativo para a plataforma. A captura de dados tanto de sensores reais quanto
 sensores virtuais garante uma grande quantidade de dados. Por outro lado,
 apesar da documentação garantir que o usuário não precisa ser do meio técnico,
 é necessário bastante conhecimento da plataforma para a correta utilização. 
-
-\section{Sistemas Embarcados}\label{sec:sistemas-embarcados}
-
-Sistemas Embarcados estão inseridos em nossos cotidianos. Aparelhos como
-\smartphones[], \tablets[] - com alto poder de processamento,
-produtos comumente encontrados em nossas casas, a exemplo do forno de 
-micro-ondas, geladeiras e máquinas de lavar roupas, até computadores de bordo e
-controle de freios ABS (\textit{Anti-lock Breaking System})\footnote{ABS:
-Tecnologia  de freio considerada segura pois seu funcionamento impede que, em
-uma brecada brusca, as rodas  deslizem, tornando difícil controlar o veículo} em
-nossos carros, contêm sistemas embarcados. Essa diversidade de aplicações
-explicita a importância dessa área.
-
-Nos exemplos citados anteriormente, temos uma classificação quanto à sua
-funcionalidade, porém, sua definição não é simples, nem muito menos taxativa,
-uma vez que possuem uma grande complexidade em sua composição. Dessa forma,
-podemos definir, a princípio, sistemas embarcados como qualquer
-dispositivo/equipamento que disponha de um sistema programável e que seu
-objetivo não seja o de um computador de propósito geral\footnote{Computador de
-propósito geral é aquele em que é possível executar as mais diversas tarefas,
-tais como, navegar na Internet, escrever documentos, executar jogos etc, ou
-seja, não há uma função específica a ser realizada. Pelo exposto, percebe-se a
-complexidade da definição de sistemas embarcados, uma vez que, muitos deles, 
-desempenham funções que antes cabiam apenas ao computador de propósito geral.}
-\cite{wolf2012computers}.
-
-\citeonline{marwedel2010embedded} define: ``Sistemas Embarcados (como) sistemas
-de processamento de informações incorporados à produtos.'', e, adicionado à
-esta definição, lista 5 características que devem levar em consideração: 
-
-\begin{itemize}
-  \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
-  equipamento devem permanecer confidenciais e a comunicação deve ser autêntica;
-  \item Seguro - característica indicativa de que o sistema não causará nenhum dano àqueles que o utilizam;
-  \item Disponibilidade - sistema disponível para executar as funções para as quais
-  foi programado; 
-  \item Confiabilidade - probabilidade que o sistema tem de que não
-  falhará em sua execução; e
-  \item Manutenibilidade, caso o sistema venha a falhar, deverá 
-  ser consertado em uma determinada janela de tempo.
-\end{itemize}
-
-Além disso, propriedades como sensores coletando informações do ambiente
-físico e atuadores controlando o ambiente no qual estão inseridos também
-caracterizam um sistema embarcado \cite{marwedel2010embedded}.
-
-\subsubsection{Arquitetura}\label{subsubsec:arquitetura}
-
-A literatura divide o sistema embarcado em duas áreas, o \hardware[] e o 
-\software. O primeiro é composto pelas partes físicas do sistema, 
-tal como o processador, memória, interfaces de entrada e saída etc. O segundo é
-composto pelos componentes lógicos do sistema, ou seja, os programas que 
-irão executar as funções previamente definidas do sistema embarcado.
-
-No processo de \design[] do sistema embarcado considera-se, dentro dos
-requisitos de \hardware, quais dos processadores disponíveis no mercado atende
-melhor a necessidade do projeto, assim como é necessário identificar a
-quantidade de memória a ser utilizada pelo \software[]. 
-
-Ainda referente ao processo de design é necessário determinar quais serão as
-interfaces de entrada (responsáveis por receber os dados para posterior
-processamento) e as interfaces de saída (responsáveis por apresentar os dados
-processados). Em paralelo, os requisitos de \software[] são alinhados para que o
-\hardware[] seja melhor aproveitado \cite{wolf2012computers}.
-
-A depender da finalidade do produto, esses requisitos diferem bastante. Por
-exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
-simples (em termos de funcionalidade, processamento, consumo de energia etc),
-uma vez que aplica um componente microcontrolador de baixo poder de
-processamento (tal qual um microcontrolador PIC\footnote{Família de
-microcontroladores desenvolvido e fabricado pela empresa \textit{Microchip
-Technology} comumente utilizado em sistemas embarcados que não necessitam de
-muito processamento.} de 16 bits) e um circuito auxiliar para atender as
-especificações de entrada e saída do sistema, assim como uma possível
-comunicação com outros sistemas.
-
-Já o sistema embarcado em um \smartphone[] realiza diversas funções, tem um
-alto nível de processamento de dados e consome muita energia. Para atender a
-estes requisitos, a equipe responsável pelo \design[] utiliza vários
-processadores de alto poder computacional (tal qual processadores
-ARM\footnote{ARM - \textit{Advanced RISC Machine}. Empresa que desenvolve 
-processadores de arquitetura RISC, comumente utilizados em sistemas
-embarcados que necessitam de um poder de processamento alto.}), como interface
-de entrada e saída uma tela sensível ao toque e faz uso, ainda, de diversos
-sensores para ajudar na usabilidade do dispositivo.
-
-Semelhante aos \smartphones, o sistema embarcado utilizado neste trabalho, o
-\stb[], processa grande quantidade de dados, além de realizar
-diferentes funções. Em que pese tais diferenças, o \hardware[] utilizado é
-bastante semelhante.
 
 \section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
 
