@@ -3,6 +3,7 @@ PANDOC = pandoc -s -S
 PREVIEW = open -a /Applications/Preview.app
 #PLANTUML = plantuml -tlatex
 PLANTUML = plantuml
+BASEDIR = `pwd`
 
 all: compile view
 	echo 'ok'
@@ -18,15 +19,13 @@ images:
 	$(TEX) *; \
 	mv *.pdf ../graficos/;
 
-#uml:
-#	cd figuras/uml; \
-#	$(PLANTUML) *.puml; \
-#	sed -i.bak 's/{article}/{standalone}/g' *.latex; \
-#	sed -i.bak 's/yscale=\-1/yscale=\-1,font=\\sffamily/g' *.latex ; \
-#	rm *.bak; \
-#	$(TEX) *; \
-#	rm *.aux *.fdb_latexmk *.fls *.latex *.log; \
-#	mv *.pdf ../graficos/;
+expand:
+	latexpand dissertacao-vitor.tex > tmpdissertacao.tex
+
+dev: expand
+	$(TEX) tmpdissertacao.tex
+	mv tmpdissertacao.pdf builds/dev-`date '+%Y%M%d'`-dissertacao.pdf
+	-rm tmpdissertacao.*
 
 uml:
 	cd figuras/uml; \

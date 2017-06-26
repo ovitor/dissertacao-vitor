@@ -25,7 +25,7 @@ comparativa) @cap-4 ou @cap-3~~ [10/06/2017]
 ### sugestões - 11/06/2017
 
 * o que tem de internet das coisas na proposta?!
-* colocar simulações dentro dos ambientes.
+* ~~colocar simulações dentro dos ambientes.~~
 * falar de internet das coisas na descrição dos cenários.
 * ~~colocar 2 ou 3 páginas de internet das coisas.~~
 * ~~juntar plataforma openIoT da seção IoT~~
