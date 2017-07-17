@@ -564,6 +564,50 @@ sensores virtuais garante uma grande quantidade de dados. Por outro lado,
 apesar da documentação garantir que o usuário não precisa ser do meio técnico,
 é necessário bastante conhecimento da plataforma para a correta utilização. 
 
+\section{Lariisa}
+
+O projeto Lariisa foi proposto por \citeonline{oliveira2009implementing}
+(figura \ref{fig:lariisa-v1}). Trata-se de uma arquitetura para tomada de
+decisão em governança de sistemas públicos de saúde. Trabalhava a ideia de unir
+cinco domínios de inteligência em saúde: Gestão do conhecimento, Normatização
+sistémica,  Clínico e Epidemiológico, Administrativa e Conhecimento
+compartilhado.
+
+Esses 5 conceitos deveriam ser implantados, e para isso, criou-se quatro
+componentes necessários para a tomada de decisão, (1) Desenvolvimento de
+aplicações de tomada de decisão, (2) mecanismos de inferência, (3) informação
+coletada em tempo real e (4) conhecimento em saúde. Esses quatro componentes
+convergindo para uma tecnologia sensível a contexto formam o framework Lariisa.
+
+\figurasimples[oliveira2009implementing]{lariisa-v1}{Primeira versão do Lariisa}{14cm}
+
+A arquitetura tinha como principal objetivo o desenvolvimento de tecnologia na
+borda do conhecimento técnico-científico da saúde coletiva, do planejamento e
+gestão em saúde pública e saúde da família. Além disso, a tecnologia da
+informação e mecanismos de inferência que auxiliem a tomada de decisão eram
+pontos importantes da pesquisa.
+
+Com o avanço dos estudos, \citeonline{oliveira2010context} propôs uma
+arquitetura baseada na primeira em que aprofundava os conceitos de contexto e
+ontologias. Os três principais blocos são: (1) Módulo de inteligência de Gestão
+na Saúde, (2) Ciclo de criação do conhecimento e (3) Ciclo de ação.
+
+Da arquitetura representada na figura \ref{fig:lariisa-v2}, o LARIISA Framework
+Core é de extrema importância para esse trabalho. O Context Provider (CP) é
+responsável pela coleta de dados para o sistema. O usuário entra com os dados,
+e o CP os recebe e trata. Já o Context Agregator (CA) agrega a informação de
+vários provedores de contexto. O Context Reasoner (CR) executa os processos de
+inferência a partir do contexto. Em seguida o QOC Evaluator (QOCE) ou Avaliador
+de qualidade de contexto que é utilizado para melhorar as decisões a serem
+tomadas. Por fim, nessa pilha inicial, temos o Query Adapter (QA).
+
+Em conjunto aos quatro módulos listados anteriormente, o Service Adapter (SA) é
+responsável para detectar se determinada informação é relevante para o contexto
+de saúde diante dos ciclos de (1) criação do conhecimento, (2) tomada de
+decisão e (3) ações de cuidados de saúde.
+
+\figurasimples[oliveira2010context]{lariisa-v2}{Arquitetura atualizada do projeto Lariisa}{14cm}
+
 \section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
 
 O dicionário \citeonline{houaiss2001dicionario} define contexto como um conjunto de palavras, frases ou
