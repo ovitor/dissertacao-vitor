@@ -1,0 +1,3 @@
+[submodule "figuras/uml"]
+	path = figuras/uml
+	url = git@github.com:vitorcarvalhoml/uml-dissertacao.git
