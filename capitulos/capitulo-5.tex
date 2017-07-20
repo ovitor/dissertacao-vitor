@@ -6,7 +6,7 @@ da arquitetura apresentada no capítulo \vref{cap:quatro}.
 
 \section{TV-Health} \label{sec:tv-health} 
 
-A partir do considerado na seção \ref{sec:aspectos-tecnologicos}, surge o
+A partir do considerado no capítulo \ref{cap:fundamentacao-teorica}, surge o
 protótipo TV-Health, com o intuito de resolver alguns dos problemas da
 assistência domiciliar à saúde.
 
@@ -91,13 +91,26 @@ aparece no meio da tela, ocupando boa parte da mesma.
 Esse tipo de notificação é utilizada quando é necessário tirar a atenção do
 usuário da programação televisiva e passar a atenção para a mensagem exibida.
 Mensagens importantes e de cunho emergencial podem utilizar esse tipo de
-notificação.   
+notificação. O diagrama de atividades representado na figura
+\ref{fig:notification-sd-dialogbox} foi utilizado como base para o
+desenvolvimento desta aplicação.
+
+\figurasimples{notification-sd-dialogbox}{Diagrama de Sequência para
+módulo \textit{service.notification}. Alerta do tipo caixa de
+diálogo.}{10cm}
+
+\figurasimples{notification-sd-popup}{Diagrama de Sequência para
+módulo \textit{service.notification}. Alerta do tipo 
+\textit{pop-up}.}{10cm}
 
 O segundo tipo de notificação é denominada de \textit{pop-up}, com esse modelo,
 a mensagem é exibida no canto superior direito da tela, fazendo com que a
 atenção do usuário não seja totalmente requerida. Mensagens de cunho informativo
 podem utilizar esse tipo de notificação. A figura \ref{fig:notification-2} 
 (Apêndice \ref{apendice:tv-health}) mostra esta outra possibilidade em ação.
+O diagrama de sequência ilustrado na figura \ref{fig:notification-sd-popup}
+difere da anterior, pois nesta, não é necessário, por parte do usuário, nenhuma
+ação, uma vez que a mensagem desaparece após alguns segundos de exibição.
 
 O módulo \textit{service.notification} foi desenvolvido utilizando a linguagem
 \python[] e sua lógica faz com que constantemente execute um \textit{pooling} 
@@ -163,7 +176,12 @@ do controle remoto. A tela inicial do módulo é  apresentada na figura
 
 O funcionamento deste módulo baseia-se no acionamento da aplicação através
 do controle remoto do \stb[] e a interação através de suas telas no televisor
-do usuário. 
+do usuário. O diagrama de sequência apresentado na figura \ref{fig:dado-sd} norteou
+o desenvolvimento deste módulo. Percebe-se que o usuário deve inicialmente,
+informar os sintomas e também fechar a mensagem com o resultado.
+
+\figurasimples{dado-sd}{Diagrama de Sequência para
+módulo \textit{service.dado}.}{10cm}
 
 A partir da tela principal da aplicação, o usuário que se sente mal escolhe 
 dentre um conjunto de sintomas, aqueles que representam o seu estado atual. Em
@@ -198,7 +216,11 @@ prepara um conjunto de tarefas a serem executadas. Dentre elas, o envio de
 mensagens via (1) Serviço de Mensagem Simples (SMS) e (2) serviços de comunicação
 pela Internet (como por exemplo o aplicativo \textit{Telegram}) para parentes, 
 amigos, cuidador e a equipe médica que o acompanha. Além de entrar em contato
-com o serviço de urgência e emergência.
+com o serviço de urgência e emergência. O diagrama UML de sequência é apresentado
+na figura \ref{fig:panicbutton-sd}.
+
+\figurasimples{panicbutton-sd}{Diagrama de Sequência para
+módulo \textit{service.panicbutton}.}{10cm}
 
 Em seguida, o aplicativo exibe uma notificação na tela da televisão no intuito
 de acalmá-lo. A figura \ref{fig:notificacao-botao-de-panico} exibe a mensagem 
