@@ -194,7 +194,7 @@ dados dos sensores médicos conectados ao paciente e sensores instalados no domi
 (ambiente A), proporcionando um monitoramento constante dos atores envolvidos, 
 o que é ideal para uma situação de internação domiciliar. Este serviço fará uso 
 de tópicos apresentados na plataforma \textit{OpenIoT}
-(seção \vref{subsec:openiot}).
+(seção \vref{sec:openiot}).
 
 %\subsection{Simulações} \label{subsec:simulacoes}
 
@@ -216,45 +216,49 @@ de tópicos apresentados na plataforma \textit{OpenIoT}
 \section{Descrição da solução}
 \label{sec:descricao-solucao}
 
-A arquitetura proposta soluciona o problema relatado na seção
-\vref{sec:descricao-problema}. Ela é composta de 5 camadas distintas mas que se
-comunicam entre si. As camadas são, (1) ``Camada de aquisição de dados''
-responsável por adquirir os dados brutos dos sensores, (2) ``Camada de
-Inteligência local'' responsável por inferir sob os dados acquisitados ainda no
-STB, (3) ``Camada de Inteligência na nuvem'', responsável por realizar
-inferências que não podiam ser realizadas localmente, (4) ``Camada de Gerência
-de dados'', responsável por gerenciar parte dos dados coletados no ambiente
-domiciliar, cruzando com dados oriundos de outros módulos da plataforma
-\nextsaude[] e (5) ``Camada de Apresentação de informações'' - responsável por
-apresentar os dados nos mais diversos dispositivos. A figura
-\ref{fig:arquitetura-v4} representa graficamente a arquitetura proposta.
+A arquitetura proposta nesta seção tem como uma das bases, a plataforma OpenIoT
+(descrita na seção \vref{sec:openiot}). Levando em consideração a divisão da
+arquitetura nas 3 grandes camadas ``Plano Físico'', ``Plano Virtualizado'' e
+``Plano de Utilitários e Aplicativos'', re-estruturamos para suprir a
+necessidade específica do trabalho. Uma arquitetura que atenda a ambientes de
+assistência domiciliar à saúde e que tenha em sua estrutura, espaço para a
+tecnologia IoT.
 
-\figurasimples{arquitetura-v4}{Visão geral arquitetural da solução}{12cm}
+Considerando a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano físico
+em 2 blocos e uma camada de nome ``Aquisição de dados'' (1) (figura
+\ref{fig:arquitetura-passo1}). Esta camada caracteriza toda a parte de baixo
+nível da arquitetura. Fazem parte dela os sensores médicos, sensores gerais e o
+próprio \stb[]. A comunicação entre esses dois blocos dar-se através da rede
+WiFi diponibilizada na residência, Bluetooth ou NFC. Os dados adquiridos são
+persistidos no STB. Caso seja necessário, alguns desses dados são
+repassados adiante para posterior processamento. 
 
-A ``Camada de aquisição de dados'' (1) representada por 2 blocos na figura 
-\ref{fig:arquitetura-v4} caracteriza toda a parte de baixo nível da
-arquitetura. Fazem parte dela os sensores médicos, sensores gerais e o próprio
-\stb[]. A comunicação entre esses dois blocos dar-se através da rede
-Wi-Fi disponibilizada na residência. Os dados adquiridos são persistidos
-no próprio STB. Caso seja necessário, alguns desses dados são repassados
-adiante para posterior processamento. 
+\figurasimples{arquitetura-passo1}{Simplificação da arquitetura OpenIoT - Plano Físico}{10cm}
 
-A ``Camada de inteligência local'' (2) é representada pelo dispositivo STB. 
-O STB contém em sua lógica de funcionamento, a capacidade de inferir sobre
-determinadas situações. Dados provenientes dos sensores e que são úteis para a 
-conclusão de um fato são utilizados como entrada para domínios de conhecimento
-na forma de ontologias. O próprio STB, portanto, pode decidir em eventuais
-situações, fornecendo uma resposta rápida e evitando assim, tráfego de dados 
-desnecessário através da Internet.
+Considerando ainda a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano
+Virtualizado em 3 blocos e 3 camadas distintas, como pode ser visto na figura
+\ref{fig:arquitetura-passo2}). A ``Camada de inteligência local'' (2) não tem
+representante equivalente na arquitetura OpenIoT e podemos relacioná-la tanto
+com o Plano Físico, quanto com o Plano Virtualizado. Ela é representada pelo
+dispositivo STB.  O STB contém em sua lógica de funcionamento, a capacidade de
+inferir sobre determinadas situações. Dados provenientes dos sensores e que são
+úteis para a conclusão de um fato são utilizados como entrada para domínios de
+conhecimento na forma de ontologias. O próprio STB, portanto, pode decidir em
+eventuais situações, fornecendo uma resposta rápida e evitando assim, tráfego
+de dados desnecessário através da Internet.
 
-A função da ``Camada de inteligência remota'' (3) é estender a camada de
-número 2. Ao transmitir dados do ambiente domiciliar para um sistema na nuvem,
-a solução incorpora o poder de processamento disponibilizado por essa
-abordagem. Além de realizar inferências através de ontologias, podemos
-preparar os dados para inteligência artificial por meio de aprendizagem de
-máquinas, aumentando o poder de inferência do sistema.
+\figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
 
-Já a ``Camada de gerência de dados'' (4) trata os dados gerenciais, aqueles
+Já a ``Camada de inteligência remota'' tem sua origem no Plano Virtualizado e
+tem como função estender a camada de número 2. Ao transmitir dados do ambiente
+domiciliar para um sistema na nuvem, a solução incorpora o poder de
+processamento disponibilizado por essa abordagem. Além de realizar inferências
+através de ontologias, podemos preparar os dados para inteligência artificial
+por meio de aprendizagem de máquinas, aumentando o poder de inferência do
+sistema.
+
+A ``Camada de gerência de dados'' (4), foi extraída do Plano Virtualizado e do
+Plano de utilitários e aplicativos. Ela trata os dados gerenciais, aqueles
 referentes ao paciente e a logística de um atendimento especializado em
 domicílio, podendo ainda, realizar a integração com o ambiente hospitalar, caso
 seja necessário uma transferência do doente. A plataforma \nextsaude[],
@@ -263,11 +267,29 @@ projeto financiado pela Fundação Cearense de Apoio ao Desenvolvimento Científ
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
 Registro Eletrônico de Saúde (RES), integração com áreas hospitalares, farmácias etc.
 
-Por fim, a ``Camada de apresentação'' (5) se encarrega de apresentar os dados brutos
-ou as informações processadas nos dispositivos conectados à plataforma. Essa
-camada encontra-se distribuída em toda a arquitetura. Sendo assim, é possível
-que os diversos atores interajam por meio de \smartphones, computadores e
-a tela da televisão.
+Por fim, a ``Camada de apresentação'' (5) é referente ao Plano de utilitários e
+aplicativos, porém, diferente da arquitetura OpenIoT, esta camada se estende por
+toda a arquitetura, uma vez que a visualização de dados está presente em todas 
+as camadas. Sendo assim, é possível que os diversos atores interajam por meio de
+\smartphones, computadores e a tela da televisão na casa do doente.
+A camada, portanto, se encarrega de apresentar os dados brutos ou as informações
+processadas nos dispositivos conectados à plataforma. 
+
+\figurasimples{arquitetura-passo3}{Simplificação da arquitetura OpenIoT - Plano de Utilitários e Aplicações}{10cm}
+
+A arquitetura, portanto, é composta de 5 camadas distintas mas que se comunicam
+entre si. As camadas descritas anteriormente, (1) ``Camada de aquisição de
+dados'' responsável por adquirir os dados brutos dos sensores, (2) ``Camada de
+Inteligência local'' responsável por inferir sob os dados acquisitados ainda no
+STB, (3) ``Camada de Inteligência na nuvem'', responsável por realizar
+inferências que não podiam ser realizadas localmente, (4) ``Camada de Gerência
+de dados'', responsável por gerenciar parte dos dados coletados no ambiente
+domiciliar, cruzando com dados oriundos de outros módulos da plataforma
+\nextsaude[] e (5) ``Camada de Apresentação de informações'' - responsável por
+apresentar os dados nos mais diversos dispositivos, são representadas na figura
+\ref{fig:arquitetura-v4}.
+
+\figurasimples{arquitetura-v4}{Visão geral arquitetural da solução}{12cm}
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
