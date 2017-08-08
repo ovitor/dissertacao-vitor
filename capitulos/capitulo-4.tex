@@ -50,7 +50,8 @@ Outros tipos de sensores podem ser implantados para captar informações do
 ambiente, disponibilizando assim informações de contexto para o sistema,  tais
 como ruído sonoro nos cômodos, presença dos atores no domicílio, temperatura
 ambiente etc. Os sensores médicos e sensores gerais caracterizam um  ambiente 
-com tecnologia de Internet das Coisas (\textit{Internet of Things  - IoT}).
+com tecnologia de Internet das Coisas (\textit{Internet of Things  - IoT}), uma
+vez que os dados coletados poderão ser utilizados para análises preditivas.
 
 O STB, equipamento que tinha como principal função o recebimento do sinal
 televisivo, seu processamento e a exibição do sinal na tela, ganha novas
@@ -224,33 +225,38 @@ necessidade específica do trabalho. Uma arquitetura que atenda a ambientes de
 assistência domiciliar à saúde e que tenha em sua estrutura, espaço para a
 tecnologia IoT.
 
-Considerando a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano físico
+Considerando a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano físico -
+que é composto principalmente pelo módulo \textit{Global Sensor Network} -
 em 2 blocos e uma camada de nome ``Aquisição de dados'' (1) (figura
 \ref{fig:arquitetura-passo1}). Esta camada caracteriza toda a parte de baixo
-nível da arquitetura. Fazem parte dela os sensores médicos, sensores gerais e o
-próprio \stb[]. A comunicação entre esses dois blocos dar-se através da rede
-WiFi diponibilizada na residência, Bluetooth ou NFC. Os dados adquiridos são
-persistidos no STB. Caso seja necessário, alguns desses dados são
-repassados adiante para posterior processamento. 
+nível da arquitetura. Fazem parte dela os sensores médicos, sensores gerais, o
+\stb[] e suas aplicações embarcadas. A comunicação entre esses dois blocos
+dar-se através da rede WiFi diponibilizada na residência, Bluetooth ou NFC. Os
+dados adquiridos são persistidos no STB. Caso seja necessário, alguns desses
+dados são repassados adiante para posterior processamento. 
 
 \figurasimples{arquitetura-passo1}{Simplificação da arquitetura OpenIoT - Plano Físico}{10cm}
 
 Considerando ainda a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano
 Virtualizado em 3 blocos e 3 camadas distintas, como pode ser visto na figura
-\ref{fig:arquitetura-passo2}). A ``Camada de inteligência local'' (2) não tem
-representante equivalente na arquitetura OpenIoT e podemos relacioná-la tanto
-com o Plano Físico, quanto com o Plano Virtualizado. Ela é representada pelo
-dispositivo STB.  O STB contém em sua lógica de funcionamento, a capacidade de
-inferir sobre determinadas situações. Dados provenientes dos sensores e que são
-úteis para a conclusão de um fato são utilizados como entrada para domínios de
-conhecimento na forma de ontologias. O próprio STB, portanto, pode decidir em
-eventuais situações, fornecendo uma resposta rápida e evitando assim, tráfego
-de dados desnecessário através da Internet.
+\ref{fig:arquitetura-passo2}). 
 
-\figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
+A ``Camada de inteligência local'' (2) não tem representante equivalente na
+arquitetura OpenIoT e podemos relacioná-la tanto com o Plano Físico, quanto com
+o Plano Virtualizado, uma vez que ela encontra-se logicamente no dispositivo
+STB mas tem características próprias dos módulos do Plano Virtualizado, 
+fazendo com que as aplicações embarcadas tenham capacidade de inferir sobre
+determinadas situações. Dados provenientes dos sensores e que são úteis para a
+conclusão de um fato são utilizados como entrada para domínios de conhecimento
+na forma de ontologias. O próprio STB, portanto, pode decidir em eventuais
+situações, fornecendo uma resposta rápida e evitando assim, tráfego de dados
+desnecessário através da Internet.
 
-Já a ``Camada de inteligência remota'' tem sua origem no Plano Virtualizado e
-tem como função estender a camada de número 2. Ao transmitir dados do ambiente
+Já a ``Camada de inteligência remota'' (3) baseia-se no Plano Virtualizado que
+é composto pelos módulos ``Scheduler'', ``Linked Stream Middleware'' e ``Service
+Delivery and Utility Manager''. A camada tem como função recuperar os dados
+adquiridos pelos sensores e processá-los através de classificadores,
+estendendo, assim, a camada de número 2. Ao transmitir dados do ambiente
 domiciliar para um sistema na nuvem, a solução incorpora o poder de
 processamento disponibilizado por essa abordagem. Além de realizar inferências
 através de ontologias, podemos preparar os dados para inteligência artificial
@@ -263,12 +269,14 @@ referentes ao paciente e a logística de um atendimento especializado em
 domicílio, podendo ainda, realizar a integração com o ambiente hospitalar, caso
 seja necessário uma transferência do doente. A plataforma \nextsaude[],
 projeto financiado pela Fundação Cearense de Apoio ao Desenvolvimento Científico 
-(FUNCAP) e liderado pelo Laboratório de Redes de Computadores de Aracati (LAR-A) 
+(FUNCAP) e liderado pelo Laboratório de Redes de Computadores de Aracati (LAR) 
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
 Registro Eletrônico de Saúde (RES), integração com áreas hospitalares, farmácias etc.
 
+\figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
+
 Por fim, a ``Camada de apresentação'' (5) é referente ao Plano de utilitários e
-aplicativos, porém, diferente da arquitetura OpenIoT, esta camada se estende por
+aplicativos, porém, diferente da plataforma OpenIoT, esta camada se estende por
 toda a arquitetura, uma vez que a visualização de dados está presente em todas 
 as camadas. Sendo assim, é possível que os diversos atores interajam por meio de
 \smartphones, computadores e a tela da televisão na casa do doente.
