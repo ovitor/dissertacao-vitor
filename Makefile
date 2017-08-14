@@ -41,6 +41,7 @@ clean:
 	-rm -f figuras/fontes/*.fdb_latexmk
 	-rm -f figuras/fontes/*.fls
 	-rm -f figuras/fontes/*.log
+	-rm -f capitulos/*.aux
 	-rm -f *.aux *.bbl *.blg *.brf *.fdb_latexmk *.fls
 	-rm -f *.idx *.ilg *.ind *.loa *.lof *.log *.lot
 	-rm -f *.synctex.gz *.toc *.nav *.out *.snm *.lol
