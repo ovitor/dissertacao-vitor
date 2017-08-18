@@ -241,6 +241,8 @@ Considerando ainda a figura \ref{fig:arquitetura-openiot-2}, separamos o Plano
 Virtualizado em 3 blocos e 3 camadas distintas, como pode ser visto na figura
 \ref{fig:arquitetura-passo2}). 
 
+\figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
+
 A ``Camada de inteligência local'' (2) não tem representante equivalente na
 arquitetura OpenIoT e podemos relacioná-la tanto com o Plano Físico, quanto com
 o Plano Virtualizado, uma vez que ela encontra-se logicamente no dispositivo
@@ -273,7 +275,7 @@ projeto financiado pela Fundação Cearense de Apoio ao Desenvolvimento Científ
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
 Registro Eletrônico de Saúde (RES), integração com áreas hospitalares, farmácias etc.
 
-\figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
+\figurasimples{arquitetura-passo3}{Simplificação da arquitetura OpenIoT - Plano de Utilitários e Aplicações}{10cm}
 
 Por fim, a ``Camada de apresentação'' (5) é referente ao Plano de utilitários e
 aplicativos, porém, diferente da plataforma OpenIoT, esta camada se estende por
@@ -282,8 +284,6 @@ as camadas. Sendo assim, é possível que os diversos atores interajam por meio 
 \smartphones, computadores e a tela da televisão na casa do doente.
 A camada, portanto, se encarrega de apresentar os dados brutos ou as informações
 processadas nos dispositivos conectados à plataforma. 
-
-\figurasimples{arquitetura-passo3}{Simplificação da arquitetura OpenIoT - Plano de Utilitários e Aplicações}{10cm}
 
 A arquitetura, portanto, é composta de 5 camadas distintas mas que se comunicam
 entre si. As camadas descritas anteriormente, (1) ``Camada de aquisição de
@@ -295,25 +295,25 @@ de dados'', responsável por gerenciar parte dos dados coletados no ambiente
 domiciliar, cruzando com dados oriundos de outros módulos da plataforma
 \nextsaude[] e (5) ``Camada de Apresentação de informações'' - responsável por
 apresentar os dados nos mais diversos dispositivos, são representadas na figura
-\ref{fig:arquitetura-v4}.
+\ref{fig:arquitetura-final}.
 
-\figurasimples{arquitetura-v4}{Visão geral arquitetural da solução}{12cm}
+\figurasimples{arquitetura-final}{Visão geral arquitetural da solução}{12cm}
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
-A figura \ref{fig:visao-engenharia-v2} representa a visão de engenharia da arquitetura
+A figura \ref{fig:visao-engenharia-final} representa a visão de engenharia da arquitetura
 proposta. Ela tem como ponto principal a utilização de um \stb[], quando se
 conectam a ele sensores  implantados no ambiente, sensores de dispositivos como
 \smartphones[] e  \smartwatches[] do paciente e do cuidador, e sensores médicos
 do doente.
-
-\figurasimples{visao-engenharia-v2}{Visão de engenharia da arquitetura proposta.}{12cm}
 
 Esse processo é composto de três momentos distintos, mas  interligados, no qual
 o primeiro é relativo à aquisição de dados do ambiente e do paciente, e a
 transmissão destes dados ao STB. O segundo diz respeito ao processamento dos
 dados brutos. O terceiro momento o envio dos dados processados para a plataforma
 \nextsaude[].
+
+\figurasimples{visao-engenharia-final}{Visão de engenharia da arquitetura proposta.}{12cm}
 
 Neste sentido, os sensores gerais, relativos ao ambiente domiciliar, coletam
 informações como  temperatura e umidade da residência, qualidade do ar e
@@ -359,7 +359,7 @@ dos dados, inferência local ou na nuvem, é possível a geração de alertas e
 notificações para o paciente e o cuidador. Os atores locais (paciente/cuidador) 
 recebem as notificações principalmente através da tela da televisão conectada ao 
 STB e através do \smartphone. Os atores móveis (equipe de saúde) podem visualizar 
-os dados e receber informações referentes ao paciente a partir da interface \web ou 
+os dados e receber informações referentes ao paciente a partir da interface \web[] ou 
 a partir do \smartphone.
 
 
