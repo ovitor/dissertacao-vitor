@@ -1,11 +1,109 @@
 \chapter{Fundamentação Teórica}\label{cap:fundamentacao-teorica}
 
 Este capítulo apresenta a fundamentação teórica, separada em aspectos de saúde e
-tecnológicos. A seções de saúde aborda termos como Assistência Domiciliar à
-Saúde e suas particularidades, além de explanar, brevemente, sobre a história da
-hospitalização no Brasil. As seções \ref{sec:sistemas-embarcados}, 
-\ref{sec:iot}, \ref{sec:openiot}, \ref{sec:lariisa}, \ref{sec:contexto} tratam das
+tecnológicos. A seção de saúde aborda termos como Assistência Domiciliar à
+Saúde e suas particularidades, além de explanar, brevemente, sobre a história
+da hospitalização no Brasil. As seções \ref{sec:lariisa}, \ref{sec:contexto}
+\ref{sec:sistemas-embarcados}, \ref{sec:iot}, \ref{sec:openiot}, tratam das
 tecnologias e conceitos tecnológicos utilizados neste trabalho.
+
+\section{Lariisa}\label{sec:lariisa}
+
+O projeto Lariisa foi proposto por \citeonline{oliveira2009implementing}
+(figura \ref{fig:lariisa-v1}). Trata-se de uma arquitetura para tomada de
+decisão em governança de sistemas públicos de saúde. Trabalhava a ideia de unir
+cinco domínios de inteligência em saúde: Gestão do conhecimento, Normatização
+sistémica,  Clínico e Epidemiológico, Administrativa e Conhecimento
+compartilhado.
+
+Esses 5 conceitos deveriam ser implantados, e para isso, criou-se quatro
+componentes necessários para a tomada de decisão, (1) Desenvolvimento de
+aplicações de tomada de decisão, (2) mecanismos de inferência, (3) informação
+coletada em tempo real e (4) conhecimento em saúde. Esses quatro componentes
+convergindo para uma tecnologia sensível a contexto formam o framework Lariisa.
+
+\figurasimples[oliveira2009implementing]{lariisa-v1}{Primeira versão do Lariisa}{14cm}
+
+A arquitetura tinha como principal objetivo o desenvolvimento de tecnologia na
+borda do conhecimento técnico-científico da saúde coletiva, do planejamento e
+gestão em saúde pública e saúde da família. Além disso, a tecnologia da
+informação e mecanismos de inferência que auxiliem a tomada de decisão eram
+pontos importantes da pesquisa.
+
+Com o avanço dos estudos, \citeonline{oliveira2010context} propôs uma
+arquitetura baseada na primeira em que aprofundava os conceitos de contexto e
+ontologias. Os três principais blocos são: (1) Módulo de inteligência de Gestão
+na Saúde, (2) Ciclo de criação do conhecimento e (3) Ciclo de ação.
+
+Da arquitetura representada na figura \ref{fig:lariisa-v2}, o LARIISA Framework
+Core é de extrema importância para esse trabalho. O Context Provider (CP) é
+responsável pela coleta de dados para o sistema. O usuário entra com os dados,
+e o CP os recebe e trata. Já o Context Agregator (CA) agrega a informação de
+vários provedores de contexto. O Context Reasoner (CR) executa os processos de
+inferência a partir do contexto. Em seguida o QOC Evaluator (QOCE) ou Avaliador
+de qualidade de contexto que é utilizado para melhorar as decisões a serem
+tomadas. Por fim, nessa pilha inicial, temos o Query Adapter (QA).
+
+Em conjunto aos quatro módulos listados anteriormente, o Service Adapter (SA) é
+responsável para detectar se determinada informação é relevante para o contexto
+de saúde diante dos ciclos de (1) criação do conhecimento, (2) tomada de
+decisão e (3) ações de cuidados de saúde.
+
+\figurasimples[oliveira2010context]{lariisa-v2}{Arquitetura atualizada do projeto Lariisa}{14cm}
+
+\section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
+
+O dicionário \citeonline{houaiss2001dicionario} define contexto como um conjunto de palavras, frases ou
+texto que precede ou se segue a determinada palavra, frase ou texto e que
+contribuem para o seu significado. Podemos entender desta definição que contexto
+são circunstâncias que acompanham a situação ou determinado fato. A depender do
+contexto, nos portamos de maneira diferente, como por exemplo: nos portamos de
+uma maneira no ambiente de trabalho (contexto) e de uma maneira diferente quando
+estamos na praia (contexto).
+
+% Na comunicação entre pessoas, aproveitamos o contexto para facilitar, ou ainda,
+% acelerar a velocidade da conversa, mas não é fácil a utilização de contexto nas
+% comunicações homem-máquina.
+
+Apesar de exemplificar de maneira clara o que é contexto, esse tipo de definição
+apresentada anteriormente é de difícil aplicação na área da computação.
+Outras abordagens com definições mais específicas foram surgindo com o
+passar do tempo. No trabalho de \citeonline{schilit1994context} são definidos 3 aspectos
+importantes para o contexto, (1) onde você está, (2) com quem você está e (3)
+quais recursos estão próximos. \citeonline{pascoe1998adding} define contexto 
+como um conjunto de estados de interesse conceituais e físicos para uma entidade 
+em particular.
+
+O desenvolvedor precisa identificar se determinada informação é contexto ou não
+para determinada aplicação em determinado momento. Tomando como exemplo uma
+aplicação móvel de acompanhamento de um \textit{tour} em um museu a céu aberto, 
+tanto as informações de tempo (clima, precipitação, umidade etc) quanto as 
+informações de pessoas (quantidades em cada setor) são informações de contexto, 
+já em locais fechados, a informação de tempo não representa uma informação de 
+contexto.
+
+\citeonline{davies1999caches} realizou um trabalho semelhante ao apresentado
+acima. Foi desenvolvido uma aplicação de guia turístico sensível a contexto
+para a cidade de \textit{Lancaster} na Inglaterra. A solução combinava
+computação móvel, comunicação sem fio e sistemas embarcados para prover
+aplicações interativas \cite{davies1999caches}.
+
+No sentido de simplificar o desenvolvimento de aplicações sensíveis ao
+contexto, \citeonline{dey2001understanding} define ``contexto (como) qualquer
+informação que pode ser utilizada para caracterizar a situação de uma entidade.
+Uma entidade pode ser uma pessoa, um lugar ou um objeto que é considerado
+relevante para a interação entre um usuário e uma aplicação, incluindo o
+usuário e a aplicação''.
+
+É possível, portanto, definir que um sistema computacional é sensível ao contexto
+se ele fizer uso do contexto para prover informações ou serviços relevantes para
+o usuário de acordo com a sua tarefa no momento \cite{dey2001understanding}.
+
+No que concerne a assistência domiciliar à saúde, os sistemas sensíveis a
+contexto podem fazer uso de informações de sensores médicos (leitura de sinais 
+vitais do paciente), sensores de propósito geral (leituras no ambiente), 
+ou ainda sensores virtuais (conjunto de programas cuja função é varrer as redes 
+sociais e extrair informações válidas para determinada situação).
 
 %\section{Aspectos de Saúde} \label{sec:aspectos-de-saude}
 \section{Assistência Domiciliar à Saúde} \label{sec:ads}
@@ -299,7 +397,7 @@ pervasiva com as tecnologias de comunicação.
 Segundo \citeonline{hansmann2013pervasive}, a computação pervasiva tem 4 princípios 
 fundamentais, detalhados a seguir: 
 
-\subparagraph{Descentralização} 
+\subparagraph{Descentralização:} 
 
 Os diversos dispositivos cooperam entre si e realizam
 pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
@@ -307,7 +405,7 @@ dinâmica rede de comunicação; Podemos citar como exemplo os diversos
 dispositivos implantados na casa proporcionando conectividade em toda
 a extensão da casa.
 
-\subparagraph{Diversificação} 
+\subparagraph{Diversificação:} 
 
 Diferente do computador de propósito geral - que 
 proporciona a execução de várias tarefas - cada dispositivo tem um propósito
@@ -316,14 +414,14 @@ sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
 que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
 diversidade, cada um desempenha uma função específica.
 
-\subparagraph{Conectividade} 
+\subparagraph{Conectividade:} 
 
 Os dispositivos devem interagir de maneira transparente
 e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
 auxílio de um usuário; a conectividade diz respeito, também, à relação 
 transparente entre dispositivo e usuário; 
 
-\subparagraph{Simplicidade} 
+\subparagraph{Simplicidade:} 
 
 As funções desempenhadas pelos dispositivos devem ser
 simples e de fácil execução. Existem tipos de dispositivos que não requerem 
@@ -564,104 +662,6 @@ atrativo para a plataforma. A captura de dados tanto de sensores reais quanto
 sensores virtuais garante uma grande quantidade de dados. Por outro lado,
 apesar da documentação garantir que o usuário não precisa ser do meio técnico,
 é necessário bastante conhecimento da plataforma para a correta utilização. 
-
-\section{Lariisa}\label{sec:lariisa}
-
-O projeto Lariisa foi proposto por \citeonline{oliveira2009implementing}
-(figura \ref{fig:lariisa-v1}). Trata-se de uma arquitetura para tomada de
-decisão em governança de sistemas públicos de saúde. Trabalhava a ideia de unir
-cinco domínios de inteligência em saúde: Gestão do conhecimento, Normatização
-sistémica,  Clínico e Epidemiológico, Administrativa e Conhecimento
-compartilhado.
-
-Esses 5 conceitos deveriam ser implantados, e para isso, criou-se quatro
-componentes necessários para a tomada de decisão, (1) Desenvolvimento de
-aplicações de tomada de decisão, (2) mecanismos de inferência, (3) informação
-coletada em tempo real e (4) conhecimento em saúde. Esses quatro componentes
-convergindo para uma tecnologia sensível a contexto formam o framework Lariisa.
-
-\figurasimples[oliveira2009implementing]{lariisa-v1}{Primeira versão do Lariisa}{14cm}
-
-A arquitetura tinha como principal objetivo o desenvolvimento de tecnologia na
-borda do conhecimento técnico-científico da saúde coletiva, do planejamento e
-gestão em saúde pública e saúde da família. Além disso, a tecnologia da
-informação e mecanismos de inferência que auxiliem a tomada de decisão eram
-pontos importantes da pesquisa.
-
-Com o avanço dos estudos, \citeonline{oliveira2010context} propôs uma
-arquitetura baseada na primeira em que aprofundava os conceitos de contexto e
-ontologias. Os três principais blocos são: (1) Módulo de inteligência de Gestão
-na Saúde, (2) Ciclo de criação do conhecimento e (3) Ciclo de ação.
-
-Da arquitetura representada na figura \ref{fig:lariisa-v2}, o LARIISA Framework
-Core é de extrema importância para esse trabalho. O Context Provider (CP) é
-responsável pela coleta de dados para o sistema. O usuário entra com os dados,
-e o CP os recebe e trata. Já o Context Agregator (CA) agrega a informação de
-vários provedores de contexto. O Context Reasoner (CR) executa os processos de
-inferência a partir do contexto. Em seguida o QOC Evaluator (QOCE) ou Avaliador
-de qualidade de contexto que é utilizado para melhorar as decisões a serem
-tomadas. Por fim, nessa pilha inicial, temos o Query Adapter (QA).
-
-Em conjunto aos quatro módulos listados anteriormente, o Service Adapter (SA) é
-responsável para detectar se determinada informação é relevante para o contexto
-de saúde diante dos ciclos de (1) criação do conhecimento, (2) tomada de
-decisão e (3) ações de cuidados de saúde.
-
-\figurasimples[oliveira2010context]{lariisa-v2}{Arquitetura atualizada do projeto Lariisa}{14cm}
-
-\section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
-
-O dicionário \citeonline{houaiss2001dicionario} define contexto como um conjunto de palavras, frases ou
-texto que precede ou se segue a determinada palavra, frase ou texto e que
-contribuem para o seu significado. Podemos entender desta definição que contexto
-são circunstâncias que acompanham a situação ou determinado fato. A depender do
-contexto, nos portamos de maneira diferente, como por exemplo: nos portamos de
-uma maneira no ambiente de trabalho (contexto) e de uma maneira diferente quando
-estamos na praia (contexto).
-
-% Na comunicação entre pessoas, aproveitamos o contexto para facilitar, ou ainda,
-% acelerar a velocidade da conversa, mas não é fácil a utilização de contexto nas
-% comunicações homem-máquina.
-
-Apesar de exemplificar de maneira clara o que é contexto, esse tipo de definição
-apresentada anteriormente é de difícil aplicação na área da computação.
-Outras abordagens com definições mais específicas foram surgindo com o
-passar do tempo. No trabalho de \citeonline{schilit1994context} são definidos 3 aspectos
-importantes para o contexto, (1) onde você está, (2) com quem você está e (3)
-quais recursos estão próximos. \citeonline{pascoe1998adding} define contexto 
-como um conjunto de estados de interesse conceituais e físicos para uma entidade 
-em particular.
-
-O desenvolvedor precisa identificar se determinada informação é contexto ou não
-para determinada aplicação em determinado momento. Tomando como exemplo uma
-aplicação móvel de acompanhamento de um \textit{tour} em um museu a céu aberto, 
-tanto as informações de tempo (clima, precipitação, umidade etc) quanto as 
-informações de pessoas (quantidades em cada setor) são informações de contexto, 
-já em locais fechados, a informação de tempo não representa uma informação de 
-contexto.
-
-\citeonline{davies1999caches} realizou um trabalho semelhante ao apresentado
-acima. Foi desenvolvido uma aplicação de guia turístico sensível a contexto
-para a cidade de \textit{Lancaster} na Inglaterra. A solução combinava
-computação móvel, comunicação sem fio e sistemas embarcados para prover
-aplicações interativas \cite{davies1999caches}.
-
-No sentido de simplificar o desenvolvimento de aplicações sensíveis ao
-contexto, \citeonline{dey2001understanding} define ``contexto (como) qualquer
-informação que pode ser utilizada para caracterizar a situação de uma entidade.
-Uma entidade pode ser uma pessoa, um lugar ou um objeto que é considerado
-relevante para a interação entre um usuário e uma aplicação, incluindo o
-usuário e a aplicação''.
-
-É possível, portanto, definir que um sistema computacional é sensível ao contexto
-se ele fizer uso do contexto para prover informações ou serviços relevantes para
-o usuário de acordo com a sua tarefa no momento \cite{dey2001understanding}.
-
-No que concerne a assistência domiciliar à saúde, os sistemas sensíveis a
-contexto podem fazer uso de informações de sensores médicos (leitura de sinais 
-vitais do paciente), sensores de propósito geral (leituras no ambiente), 
-ou ainda sensores virtuais (conjunto de programas cuja função é varrer as redes 
-sociais e extrair informações válidas para determinada situação).
 
 
 
