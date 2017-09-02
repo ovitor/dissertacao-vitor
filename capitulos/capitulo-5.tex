@@ -4,13 +4,13 @@ Neste capítulo será abordado os aspectos de implementação. Dificuldades e as
 soluções encontradas para construir o \software, que é um dos componentes
 da arquitetura apresentada no capítulo \vref{cap:quatro}.
 
-\section{TV-Health} \label{sec:tv-health} 
+%\section{TV-Health} \label{sec:tv-health} 
 
 A partir do considerado no capítulo \ref{cap:fundamentacao-teorica}, surge o
 protótipo TV-Health, com o intuito de resolver alguns dos problemas da
 assistência domiciliar à saúde.
 
-\subsection{\textit{Hardware} utilizado}
+\section{\textit{Hardware} utilizado}
 
 O \stb[] escolhido possui especificações técnicas robustas, listadas na 
 tabela \ref{tab:stb-specs}. Este STB foi resultado de um projeto de pesquisa
@@ -20,7 +20,13 @@ uma pesquisa em que o autor participou efetivamente.
 
 \tabela{stb-specs}{Especificação STB}{0.9}
 
-\subsection{\textit{Software} utilizado}
+O STB representado na figura \vref{fig:stb-real} foi montado na empresa
+CRAFF, na figura pode ser verificado as entradas USB, o leitor de cartões
+microSD (na parte da frente) e as entradas de vídeo (HDMI e RCA) além da 
+conexão com a antena externa e a conexão com a fonte de energia na
+parte de trás).
+
+\section{\textit{Software} utilizado}
 
 Por se tratar de um sistema embarcado robusto, faz-se necessário a instalação
 de programas capazes de gerenciar o \hardware[] disponível. Para tanto, o
@@ -44,7 +50,7 @@ Ao clicar no menu ``Sua Saúde'', acessamos a tela com os módulos desenvolvidos
 para este trabalho (figura \ref{fig:tela-principal-sua-saude} - Apêndice 
 \fullref{apendice:tv-health}).
 
-\subsection{Aplicações interativas} \label{subsec:aplicacoes-tv-health}
+\section{Aplicações interativas} \label{subsec:aplicacoes-tv-health}
 
 O intuito das aplicações é melhorar a comunicação entre o doente e cuidador com
 a equipe médica e seus parentes, além de permitir que o usuário utilize o
@@ -69,7 +75,7 @@ Além disso, também fizemos uso de \webservices[] através da Internet, acessan
 outros sistemas e complementando as funcionalidades desejadas. As linguagens
 escolhidas para compor o sistema foram as linguagens \python[] e \shell.
 
-\subsubsection{Módulo \textit{web}}
+\subsection{Módulo \textit{web}}
 
 Foi necessária a implantação de um módulo \textit{web} para gerenciar as 
 informações básicas do usuário. Neste sistema será possível cadastrar um 
@@ -81,7 +87,7 @@ de entidades e relação da aplicação.
 
 \tabela{web-api}{Lista de métodos disponíveis por API}{0.9}
 
-\subsubsection{Módulo \textit{service.notification}}\label{subsubsec:notification}
+\subsection{Módulo \textit{service.notification}}\label{subsubsec:notification}
 
 Este módulo é responsável por apresentar na tela da televisão as notificações e
 alertas recebidos no STB. Existem dois tipos de exibição de mensagens, a
@@ -160,7 +166,7 @@ ok}
 
 A mensagem será exibida na tela de acordo com o tipo de notificação escolhida. 
 
-\subsubsection{Módulo \textit{service.dado}}\label{subsubsec:dado}
+\subsection{Módulo \textit{service.dado}}\label{subsubsec:dado}
 
 O funcionamento deste módulo baseia-se no acionamento da aplicação através
 do controle remoto do \stb[] e a interação através de suas telas no televisor
@@ -207,7 +213,7 @@ do controle remoto.  Os sintomas estão dispostos em um dicionário da linguagem
 repassada como parâmetro para a requisição. A resposta da requisição é apresentada
 através de um alerta do tipo caixa de diálogo.
 
-\subsubsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
+\subsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
 
 O módulo \textit{service.panicbutton} tem como objetivo, permitir que o usuário
 utilize o controle remoto para reportar um momento que precisa de ajuda 
