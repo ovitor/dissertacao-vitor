@@ -10,11 +10,10 @@ tecnologias e conceitos tecnológicos utilizados neste trabalho.
 \section{Lariisa}\label{sec:lariisa}
 
 O projeto Lariisa foi proposto por \citeonline{oliveira2009implementing}
-(figura \ref{fig:lariisa-v1}). Trata-se de uma arquitetura para tomada de
-decisão em governança de sistemas públicos de saúde. Trabalhava a ideia de unir
-cinco domínios de inteligência em saúde: Gestão do conhecimento, Normatização
-sistémica,  Clínico e Epidemiológico, Administrativa e Conhecimento
-compartilhado.
+Trata-se de uma arquitetura para tomada de decisão em governança de sistemas
+públicos de saúde. Trabalhava a ideia de unir cinco domínios de inteligência em
+saúde: Gestão do conhecimento, Normatização sistémica,  Clínico e
+Epidemiológico, Administrativa e Conhecimento compartilhado.
 
 Esses 5 conceitos deveriam ser implantados, e para isso, criou-se quatro
 componentes necessários para a tomada de decisão, (1) Desenvolvimento de
@@ -22,7 +21,8 @@ aplicações de tomada de decisão, (2) mecanismos de inferência, (3) informaç
 coletada em tempo real e (4) conhecimento em saúde. Esses quatro componentes
 convergindo para uma tecnologia sensível a contexto formam o framework Lariisa.
 
-\figurasimples[oliveira2009implementing]{lariisa-v1}{Primeira versão do Lariisa}{14cm}
+\figuraadaptada[gardini2015]{lariisa01}{Aplicação do Lariisa no ambiente domiciliar.}{14cm}
+%\figurasimples[oliveira2009implementing]{lariisa-v1}{Primeira versão do Lariisa}{14cm}
 
 A arquitetura tinha como principal objetivo o desenvolvimento de tecnologia na
 borda do conhecimento técnico-científico da saúde coletiva, do planejamento e
@@ -34,6 +34,14 @@ Com o avanço dos estudos, \citeonline{oliveira2010context} propôs uma
 arquitetura baseada na primeira em que aprofundava os conceitos de contexto e
 ontologias. Os três principais blocos são: (1) Módulo de inteligência de Gestão
 na Saúde, (2) Ciclo de criação do conhecimento e (3) Ciclo de ação.
+
+A aplicação do Lariisa no ambiente domiciliar foi um dos estudos de caso que ajudaram
+este trabalho a ser construído. Na figura \ref{fig:lariisa01} percebe-se o STB como 
+ponto principal, recebendo dados dos sensores e em seguida os processando e enviando
+para a TV, \smartphones[] e sistemas \web. Essa abordagem permite o auxílio aos
+gestores, equipe de saúde, familiares, cuidador e paciente.
+
+\figurasimples[oliveira2010context]{lariisa-v2}{Arquitetura atualizada do projeto Lariisa}{14cm}
 
 Da arquitetura representada na figura \ref{fig:lariisa-v2}, o LARIISA Framework
 Core é de extrema importância para esse trabalho. O Context Provider (CP) é
@@ -48,8 +56,6 @@ Em conjunto aos quatro módulos listados anteriormente, o Service Adapter (SA) �
 responsável para detectar se determinada informação é relevante para o contexto
 de saúde diante dos ciclos de (1) criação do conhecimento, (2) tomada de
 decisão e (3) ações de cuidados de saúde.
-
-\figurasimples[oliveira2010context]{lariisa-v2}{Arquitetura atualizada do projeto Lariisa}{14cm}
 
 \section{Aplicações Sensíveis ao Contexto}\label{sec:contexto}
 
@@ -215,6 +221,10 @@ Apesar de não haver uma definição formal, a Assistência Domiciliar à Saúde
 ser separada em três modalidades, diferenciadas, principalmente, pelo grau de 
 atenção dispensada ao paciente. 
 
+\figuradupla{ads-tavalori}{Representação gráfica das categorias defendida 
+por Tavolari, Fernandes e Medina}{ads-giacomozzi}{Representação gráfica das 
+categorias defendida por Giacomozzi}
+
 É defendido por Tavolari, Fernandes e Medina, que o termo Assistência Domiciliar
 à Saúde é genérico e referente a todo e qualquer procedimento de saúde realizado
 em domicílio, não importando o grau de complexidade. Já o termo Internação
@@ -225,10 +235,6 @@ caso, é categorizado com complexidade alta ou moderada.
 Já no Atendimento Domiciliar, o paciente encontra-se num estado de menor 
 complexidade médica, e a atenção a ele dispensada pode ou não ser realizada por
 uma equipe multiprofissional \cite{tavolari2000desenvolvimento}.
-
-\figuradupla{ads-tavalori}{Representação gráfica das categorias defendida 
-por Tavolari, Fernandes e Medina}{ads-giacomozzi}{Representação gráfica das 
-categorias defendida por Giacomozzi}
 
 \citeonline{giacomozzi2006pratica} faz uma inversão das categorias propostas
 por \citeonline{tavolari2000desenvolvimento} e  define Atenção Domiciliar à
@@ -479,8 +485,6 @@ capazes de interagir entre si, sem interferência humana. Já
 estejam conectadas a qualquer hora, em qualquer lugar com qualquer coisa e
 qualquer um, preferencialmente usando uma rede e qualquer serviço.
 
-\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
-
 A IoT é um conceito em que o mundo virtual da tecnologia da informação se 
 integra perfeitamente com o mundo real das coisas. Detecção do \textit{status}
 das coisas através de sensores em adição a coleta e processamento de dados
@@ -500,6 +504,8 @@ informação - preparadas para se comunicar entre si e com o ambiente -
 ao trocar dados e informações sobre o ambiente em que estão inseridos ao mesmo
 tempo que reagem de forma autônoma com o mundo real. Possibilitando a criação
 de serviços com ou sem a intervenção direta de um ser humano.
+
+\figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
 
 IoT habilita sistemas, portanto, a capturar, armazenar e transmitir dados de modo que
 cresce a quantidade de áreas atendidas por esse tipo de tecnologia.
