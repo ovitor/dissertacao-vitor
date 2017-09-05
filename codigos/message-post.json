@@ -1,0 +1,9 @@
+{
+  "id": "01",
+  "name": "Temperature",
+  "endpoint": {
+    "location": "room 1",
+    "unit": "C"
+  },
+  "pulltime": 10
+}

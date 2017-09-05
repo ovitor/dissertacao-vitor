@@ -242,6 +242,54 @@ do televisor.
 \begin{listing}[ht!]
 \inputminted{python}{codigos/panicbutton-main.py}
 \caption{Definição de método utilizado para capturar situação de emergência enviada
-pelo usuário}
+pelo usuário.}
 \label{lst:panicbutton-main}
 \end{listing}
+
+\section{Conectando novos sensores} \label{sec:conectando-novos-sensores}
+
+A API permite que desenvolvedores de dispositivos com sensores passem a fazer
+parte da solução. A partir desta abordagem, qualquer um pode contribuir  com
+mais dados para o ambiente de assistência domiciliar à saúde. Espera-se que o
+dispositivo, seja ele um \textit{hardware} ou um \textit{script}, consiga
+realizar requisições HTTP e enviar mensagens MQTT com conteúdo JSON.
+
+A \textit{API Restful} projetada permite que o dispositivo seja encontrado e
+adicionado à rede (API de Gerenciamento) e que passe a fazer parte dos sensores
+que contribuem com dados para o sistema através da API de Dados.
+
+\tabela{sensors-api}{Métodos disponíveis na API de gerenciamento}{0.9}
+
+Em primeiro momento, o dispositivo precisará realizar requisições HTTP do tipo
+\texttt{POST} e \texttt{DELETE}. Uma vez conectado a rede local o dispositivo envia sua
+identificação e o \textit{hub} trata essa informação, adicionando o dispositivo
+sensor ao sistema, contendo informações como: ID, localização (cômodo da casa
+ou corporal), tempo de leitura e unidade de sensoriamento (temperatura, ruído,
+nível de oxigênio no sangue etc). Uma vez conectado ao sistema e o dispositivo
+tenha sido identificado, ele pode enviar os dados coletados por meio de
+mensagens MQTT. 
+
+A API de gerenciamento conta inicialmente com dois métodos, listados na tabela
+\ref{tab:sensors-api}. A mensagem JSON que deve ser enviada ao fazer uma
+requisição POST no caminho \texttt{api/v1/device/} é apresentada no código
+\ref{lst:message-post}.
+
+\begin{listing}[ht!]
+\inputminted{json}{codigos/message-post.json}
+\caption{Mensagem JSON enviada no corpo da requisição HTTP.}
+\label{lst:message-post}
+\end{listing}
+
+No passo 1 da figura \ref{fig:sensor-hub} o sensor faz uma requisição HTTP
+identificando-se, em seguida o \textit{hub} cadastra o sensor no banco de dados
+local e responde com um \textit{ack} (passo 2). O sensor pode agora enviar
+dados através do protocolo MQTT, o MQTT \textit{Broker} no \textit{hub} recebe
+o dado e em seguida persiste em banco de dados ou repassa o dado para outro
+sistema na arquitetura, como por exemplo, a plataforma \nextsaude.
+
+\figurasimples{sensor-hub}{Processo de cadastro de novo sensor.}{8cm}
+
+A API de dados é representada por tópicos do MQTT Broker, que tem como padrão
+o caminho \texttt{health/<location>/<sensorID>/<value>/}. Em que os termos 
+\texttt{location} e \texttt{sensorID} foram cadastrados através da API de
+gerenciamento e o termo \texttt{value} representa o valor da leitura do sensor.
