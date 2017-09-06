@@ -1,8 +1,9 @@
 \chapter{Aspectos de implementação} \label{cap:aspectos-de-implementacao}
 
-Neste capítulo será abordado os aspectos de implementação. Dificuldades e as
-soluções encontradas para construir o \software, que é um dos componentes
-da arquitetura apresentada no capítulo \vref{cap:quatro}.
+Neste capítulo serão abordados aspectos de implementação. Nas duas primeiras
+seções são descritos o \textit{hardware} e \textit{software} que fazem parte da
+solução. Em seguida, descreve-se as aplicações interativas. Por fim, descreve-se
+o processo de inserção de um novo sensor na arquitetura é descrito na última seção.
 
 %\section{TV-Health} \label{sec:tv-health} 
 
@@ -10,21 +11,21 @@ A partir do considerado no capítulo \ref{cap:fundamentacao-teorica}, surge o
 protótipo TV-Health, com o intuito de resolver alguns dos problemas da
 assistência domiciliar à saúde.
 
-\section{\textit{Hardware} utilizado}
+\section{\textit{Hardware} utilizado} 
 
 O \stb[] escolhido possui especificações técnicas robustas, listadas na 
-tabela \ref{tab:stb-specs}. Este STB foi resultado de um projeto de pesquisa
+tabela \ref{tab:stb-specs}, sendo resultado de um projeto de pesquisa
 fomentado pela Agência Nacional de Energia Elétrica (ANEEL) e executado pela
-empresa CRAFF. Foi reutilizado neste trabalho por se tratar de 
-uma pesquisa em que o autor participou efetivamente.
+empresa CRAFF. Seu aparelho foi reutilizado neste trabalho, tendo em vista
+que este é fruto de uma pesquisa em que o autor participou efetivamente.
 
 \tabela{stb-specs}{Especificação STB}{0.9}
 
 O STB representado na figura \vref{fig:stb-real} foi montado na empresa
-CRAFF, na figura pode ser verificado as entradas USB, o leitor de cartões
-microSD (na parte da frente) e as entradas de vídeo (HDMI e RCA) além da 
+CRAFF. Na figura verifica-se: as entradas USB, o leitor de cartões
+microSD e as entradas de vídeo (HDMI e RCA) além da 
 conexão com a antena externa e a conexão com a fonte de energia na
-parte de trás).
+parte traseira.
 
 \section{\textit{Software} utilizado}
 
@@ -36,15 +37,17 @@ ARM com \textit{drivers} específicos para a plataforma desenvolvida.
 
 \figurasimples{stb}{Camadas do sistema embarcado}{4cm}
 
-Na camada de usuário utilizamos o \software[] \xbmc[] - um gerenciador de mídia
-- como plataforma de exibição gráfica. É através dele que o usuário irá 
-interagir com as aplicações desenvolvidas. Foram necessárias algumas 
-modificações por conta dos objetivos específicos definidos para esta pesquisa,
-e do contexto do trabalho desenvolvido. Na figura \ref{fig:tela-principal}
-(Apêndice \fullref{apendice:tv-health})
-destaque para a tela inicial do \software[] \xbmc[] e para o menu ``Sua Saúde''.
-Os outros menus representam funcionalidades padrão do \software[] em questão,
-tais como acesso a mídias (imagens, vídeos e áudios) e acesso a TV Digital aberta.
+Na camada de usuário utilizou-se o \software[] \xbmc[] - um gerenciador de mídia
+- como plataforma de exibição gráfica, sendo através dele que o usuário
+interage com as aplicações desenvolvidas. Nele, foram necessárias algumas 
+modificações em razão dos objetivos específicos definidos para esta pesquisa,
+e do contexto do trabalho desenvolvido. 
+
+Na figura \ref{fig:tela-principal} (Apêndice \fullref{apendice:tv-health})
+destaque para a tela inicial do \software[] \xbmc[] e para o menu ``Sua
+Saúde''.  Os outros menus representam funcionalidades padrão do \software[] em
+questão, tais como acesso a mídias (imagens, vídeos e áudios) e acesso a TV
+Digital aberta.
 
 Ao clicar no menu ``Sua Saúde'', acessamos a tela com os módulos desenvolvidos
 para este trabalho (figura \ref{fig:tela-principal-sua-saude} - Apêndice 
@@ -53,35 +56,35 @@ para este trabalho (figura \ref{fig:tela-principal-sua-saude} - Apêndice
 \section{Aplicações interativas} \label{subsec:aplicacoes-tv-health}
 
 O intuito das aplicações é melhorar a comunicação entre o doente e cuidador com
-a equipe médica e seus parentes, além de permitir que o usuário utilize o
-controle remoto como um ``botão de pânico''. Por fim, um dos módulos da
-aplicação permite ao usuário escolher, dentre os sintomas, aqueles que mais
-caracterizam a sua situação e obter uma resposta do sistema relacionada às
-escolhas. As aplicações  propostas foram validadas através da conclusão do
+a equipe de saúde e seus parentes. Permite também que o usuário utilize o
+controle remoto como um ``botão de pânico''. Outro módulo da
+aplicação permite ao usuário escolher, dentre os sintomas apresentados, aqueles que mais
+caracterizam a sua situação, obtendo-se assim, uma resposta do sistema relacionada às
+escolhas do usuário. As aplicações  propostas foram validadas através da conclusão do
 projeto \nextsaude[] e da aprovação de artigos acadêmicos apresentados em
-Congressos.
+congressos.
 
-Nossa solução foi projetada para atender aos requisitos que uma plataforma
-embarcada - com as características da tabela \ref{tab:stb-specs} - demanda. Apesar 
+Esta solução foi projetada para atender aos requisitos de uma plataforma
+embarcada com as características da tabela \ref{tab:stb-specs}. Apesar 
 das especificações do \hardware[], o desenvolvimento foi encaminhado para 
-obtermos um \software[] simples em consumo de recursos.
+obter-se um \software[] simples em consumo de recursos.
 
 As soluções foram implementadas utilizando, quando necessário, o paradigma
 de programação Orientada a Objetos. O desenvolvimento procedural foi aplicado
 com o intuito de realizar pequenas tarefas no sistema, tais como agendamento
 de execução de tarefas, atualização das aplicações, desligamento automático etc.
 
-Além disso, também fizemos uso de \webservices[] através da Internet, acessando
+Além disso, também utilizou-se \webservices[] através da Internet, acessando
 outros sistemas e complementando as funcionalidades desejadas. As linguagens
-escolhidas para compor o sistema foram as linguagens \python[] e \shell.
+escolhidas para compor o sistema foi a \python[] e a \shell.
 
 \subsection{Módulo \textit{web}}
 
 Foi necessária a implantação de um módulo \textit{web} para gerenciar as 
-informações básicas do usuário. Neste sistema será possível cadastrar um 
+informações básicas do usuário. Neste sistema, será possível cadastrar um 
 paciente, seus alertas e contatos de emergência. O sistema foi desenvolvido
 na linguagem \python[] e funciona no STB. Ele pode ser acessado através de
-um navegador conectado a rede Wi-Fi local. A tabela \ref{tab:web-api} apresenta
+um navegador conectado a rede WiFi local. A tabela \ref{tab:web-api} apresenta
 a API disponível no sistema. A figura \vref{fig:web-db} representa o diagrama
 de entidades e relação da aplicação.
 
@@ -93,11 +96,11 @@ Este módulo é responsável por apresentar na tela da televisão as notificaç�
 alertas recebidos no STB. Existem dois tipos de exibição de mensagens, a
 primeira delas, denominada ``caixa de diálogo'' (figura
 \vref{fig:notification-1} - Apêndice \ref{apendice:tv-health}), 
-aparece no meio da tela, ocupando boa parte da mesma.
+aparece no meio da tela, ocupando boa parte desta.
 Esse tipo de notificação é utilizada quando é necessário tirar a atenção do
-usuário da programação televisiva e passar a atenção para a mensagem exibida.
-Mensagens importantes e de cunho emergencial podem utilizar esse tipo de
-notificação. O diagrama de atividades representado na figura
+usuário da programação televisiva e passar a atenção para o texto exibido,
+ela poderá ser empregada por mensagens importantes e de cunho emergencial.
+O diagrama de atividades representado na figura
 \ref{fig:notification-sd-dialogbox} foi utilizado como base para o
 desenvolvimento desta aplicação.
 
@@ -109,25 +112,25 @@ diálogo.}{10cm}
 módulo \textit{service.notification}. Alerta do tipo 
 \textit{pop-up}.}{10cm}
 
-O segundo tipo de notificação é denominada de \textit{pop-up}. Com esse modelo,
+O segundo tipo de notificação é denominado de \textit{pop-up}. Com esse modelo,
 a mensagem é exibida no canto superior direito da tela, fazendo com que a
 atenção do usuário não seja totalmente requerida. Mensagens de cunho informativo
 podem utilizar esse tipo de notificação. A figura \ref{fig:notification-2} 
 (Apêndice \ref{apendice:tv-health}) mostra esta outra possibilidade em ação.
 O diagrama de sequência ilustrado na figura \ref{fig:notification-sd-popup}
-difere da anterior, pois nesta, não é necessário, por parte do usuário, nenhuma
-ação, uma vez que a mensagem desaparece após alguns segundos de exibição.
+difere da anterior, pois nesta, não é demandado nenhuma
+ação do usuário, uma vez que a mensagem desaparece após alguns segundos de exibição.
 
 O módulo \textit{service.notification} foi desenvolvido utilizando a linguagem
 \python[] e sua lógica faz com que constantemente execute um \textit{pooling} 
 à aplicação em nuvem buscando por mensagens destinadas à esta instância de 
 \software. Caso a pergunta tenha uma resposta negativa, o programa espera um 
 tempo e refaz a requisição. Caso a resposta seja positiva, ou seja, exista 
-alguma mensagem para aquele usuário, o programa faz o \download[] e agenda a
+alguma mensagem para aquele usuário, o programa faz o \download[] e agenda sua 
 exibição. 
 
 A resposta da requisição carrega informações pertinentes, um exemplo no formato
-JSON é apresentado a seguir:
+JSON, como observa-se a seguir:
 
 \begin{listing}[ht!]
 \inputminted{json}{codigos/message.json}
@@ -168,8 +171,8 @@ A mensagem será exibida na tela de acordo com o tipo de notificação escolhida
 
 \subsection{Módulo \textit{service.dado}}\label{subsubsec:dado}
 
-O funcionamento deste módulo baseia-se no acionamento da aplicação através
-do controle remoto do \stb[] e a interação através de suas telas no televisor
+O funcionamento deste módulo é baseado no acionamento da aplicação através
+do controle remoto do \stb[] e da interação através de suas telas no televisor
 do usuário. O módulo apresenta uma tela inicial como a apresentada na 
 figura \vref{fig:tela-principal-dado}.
 
@@ -180,19 +183,17 @@ sentindo bem?'' (figura \vref{fig:tela-principal-sua-saude}) no \stb[] através
 do controle remoto. A tela inicial do módulo é  apresentada na figura
 \vref{fig:tela-principal-dado}.
 
-O funcionamento deste módulo baseia-se no acionamento da aplicação através
-do controle remoto do \stb[] e a interação através de suas telas no televisor
-do usuário. O diagrama de sequência apresentado na figura \ref{fig:dado-sd} norteou
+O diagrama de sequência apresentado na figura \ref{fig:dado-sd} norteou
 o desenvolvimento deste módulo. Percebe-se que o usuário deve inicialmente,
 informar os sintomas e também fechar a mensagem com o resultado.
 
 \figurasimples{dado-sd}{Diagrama de Sequência para
 módulo \textit{service.dado}.}{10cm}
 
-A partir da tela principal da aplicação, o usuário que se sente mal escolhe 
+A partir da tela principal da aplicação, o usuário que esteja se sentindo mal escolherá
 dentre um conjunto de sintomas, aqueles que representam o seu estado atual. Em
-seguida, esses sintomas são enviados através de um \webservice[] para um
-módulo de inferência. A conclusão é retornada para o STB, que a processa e 
+seguida, esses sintomas são enviados através de uma API para um
+módulo de inferência na nuvem. A conclusão é retornada para o STB, que a processa e 
 apresenta para o usuário.
 
 \begin{listing}[ht!]
@@ -208,7 +209,7 @@ do resultado através de um alerta. Cada elemento da tela tem um \textit{ID},
 assim, é possível identificar qual elemento foi escolhido pelo usuário através
 do controle remoto.  Os sintomas estão dispostos em um dicionário da linguagem
 \python[] em que cada chave é um \textit{ID} e o valor, o nome do sintoma
-(variável \texttt{SINTOMS}). Quando o usuário escolhe um sintoma, este sintoma
+(variável \texttt{SINTOMS}). Quando o usuário escolhe um sintoma, ele 
 é adicionado à variável \texttt{selectedSintoms}, em seguida essa variável é
 repassada como parâmetro para a requisição. A resposta da requisição é apresentada
 através de um alerta do tipo caixa de diálogo.
@@ -216,12 +217,12 @@ através de um alerta do tipo caixa de diálogo.
 \subsection{Módulo \textit{service.panicbutton}}\label{subsubsec:panicbutton}
 
 O módulo \textit{service.panicbutton} tem como objetivo permitir que o usuário
-utilize o controle remoto para reportar um momento que precisa de ajuda 
+utilize o controle remoto para reportar um momento em que precise de ajuda 
 emergencial. Ao acionar a tecla reservada para tal função, o sistema percebe e
 prepara um conjunto de tarefas a serem executadas. Dentre elas, o envio de 
 mensagens via (1) Serviço de Mensagem Simples (SMS) e (2) serviços de comunicação
 pela Internet (como por exemplo o aplicativo \textit{Telegram}) para parentes, 
-amigos, cuidador e a equipe médica que o acompanha. Além de entrar em contato
+amigos, cuidador e a equipe de saúde que o acompanha. Além de entrar em contato
 com o serviço de urgência e emergência. O diagrama UML de sequência é apresentado
 na figura \ref{fig:panicbutton-sd}.
 
@@ -263,13 +264,13 @@ que contribuem com dados para o sistema através da API de Dados.
 Em primeiro momento, o dispositivo precisará realizar requisições HTTP do tipo
 \texttt{POST} e \texttt{DELETE}. Uma vez conectado a rede local o dispositivo envia sua
 identificação e o \textit{hub} trata essa informação, adicionando o dispositivo
-sensor ao sistema, contendo informações como: ID, localização (cômodo da casa
+sensor ao sistema. A mensagem contém informações como: ID, localização (cômodo da casa
 ou corporal), tempo de leitura e unidade de sensoriamento (temperatura, ruído,
 nível de oxigênio no sangue etc). Uma vez conectado ao sistema e o dispositivo
-tenha sido identificado, ele pode enviar os dados coletados por meio de
+tenha sido identificado, ele poderá enviar os dados coletados por meio de
 mensagens MQTT. 
 
-A API de gerenciamento conta inicialmente com dois métodos, listados na tabela
+A API de gerenciamento conta inicialmente com dois métodos listados na tabela
 \ref{tab:sensors-api}. A mensagem JSON que deve ser enviada ao fazer uma
 requisição POST no caminho \texttt{api/v1/device/} é apresentada no código
 \ref{lst:message-post}.
@@ -281,9 +282,9 @@ requisição POST no caminho \texttt{api/v1/device/} é apresentada no código
 \end{listing}
 
 No passo 1 da figura \ref{fig:sensor-hub} o sensor faz uma requisição HTTP
-identificando-se, em seguida o \textit{hub} cadastra o sensor no banco de dados
+identificando-se. Em seguida o \textit{hub} cadastra o sensor no banco de dados
 local e responde com um \textit{ack} (passo 2). O sensor pode agora enviar
-dados através do protocolo MQTT, o MQTT \textit{Broker} no \textit{hub} recebe
+dados através do protocolo MQTT. O MQTT \textit{Broker} no \textit{hub} recebe
 o dado e em seguida persiste em banco de dados ou repassa o dado para outro
 sistema na arquitetura, como por exemplo, a plataforma \nextsaude.
 
