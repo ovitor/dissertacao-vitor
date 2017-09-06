@@ -4,7 +4,7 @@ Este capítulo apresenta a fundamentação teórica, separada em aspectos de sa�
 tecnológicos. A seção de saúde aborda termos como Assistência Domiciliar à
 Saúde e suas particularidades, além de explanar, brevemente, sobre a história
 da hospitalização no Brasil. As seções \ref{sec:lariisa}, \ref{sec:contexto}
-\ref{sec:sistemas-embarcados}, \ref{sec:iot}, \ref{sec:openiot}, tratam das
+\ref{sec:sistemas-embarcados}, \ref{sec:iot}, \ref{sec:openiot} tratam das
 tecnologias e conceitos tecnológicos utilizados neste trabalho.
 
 \section{Lariisa}\label{sec:lariisa}
@@ -15,8 +15,8 @@ públicos de saúde. Trabalhava a ideia de unir cinco domínios de inteligência
 saúde: Gestão do conhecimento, Normatização sistémica,  Clínico e
 Epidemiológico, Administrativa e Conhecimento compartilhado.
 
-Esses 5 conceitos deveriam ser implantados, e para isso, criou-se quatro
-componentes necessários para a tomada de decisão, (1) Desenvolvimento de
+Esses 5 conceitos deveriam ser implantados, e para isso criou-se quatro
+componentes necessários para a tomada de decisão: (1) Desenvolvimento de
 aplicações de tomada de decisão, (2) mecanismos de inferência, (3) informação
 coletada em tempo real e (4) conhecimento em saúde. Esses quatro componentes
 convergindo para uma tecnologia sensível a contexto formam o framework Lariisa.
@@ -45,7 +45,7 @@ gestores, equipe de saúde, familiares, cuidador e paciente.
 
 Da arquitetura representada na figura \ref{fig:lariisa-v2}, o LARIISA Framework
 Core é de extrema importância para esse trabalho. O Context Provider (CP) é
-responsável pela coleta de dados para o sistema. O usuário entra com os dados,
+responsável pela coleta de dados para o sistema. O usuário entra com os dados
 e o CP os recebe e trata. Já o Context Agregator (CA) agrega a informação de
 vários provedores de contexto. O Context Reasoner (CR) executa os processos de
 inferência a partir do contexto. Em seguida o QOC Evaluator (QOCE) ou Avaliador
@@ -75,7 +75,7 @@ Apesar de exemplificar de maneira clara o que é contexto, esse tipo de definiç
 apresentada anteriormente é de difícil aplicação na área da computação.
 Outras abordagens com definições mais específicas foram surgindo com o
 passar do tempo. No trabalho de \citeonline{schilit1994context} são definidos 3 aspectos
-importantes para o contexto, (1) onde você está, (2) com quem você está e (3)
+importantes para o contexto: (1) onde você está, (2) com quem você está e (3)
 quais recursos estão próximos. \citeonline{pascoe1998adding} define contexto 
 como um conjunto de estados de interesse conceituais e físicos para uma entidade 
 em particular.
@@ -83,9 +83,9 @@ em particular.
 O desenvolvedor precisa identificar se determinada informação é contexto ou não
 para determinada aplicação em determinado momento. Tomando como exemplo uma
 aplicação móvel de acompanhamento de um \textit{tour} em um museu a céu aberto, 
-tanto as informações de tempo (clima, precipitação, umidade etc) quanto as 
-informações de pessoas (quantidades em cada setor) são informações de contexto, 
-já em locais fechados, a informação de tempo não representa uma informação de 
+tanto as informações de tempo (clima, precipitação, umidade etc.) quanto as 
+informações de pessoas (quantidades em cada setor) são informações de contexto.
+Já em locais fechados a informação de tempo não representa uma informação de 
 contexto.
 
 \citeonline{davies1999caches} realizou um trabalho semelhante ao apresentado
@@ -102,7 +102,7 @@ relevante para a interação entre um usuário e uma aplicação, incluindo o
 usuário e a aplicação''.
 
 É possível, portanto, definir que um sistema computacional é sensível ao contexto
-se ele fizer uso do contexto para prover informações ou serviços relevantes para
+se ele fizer uso desse contexto para prover informações ou serviços relevantes para
 o usuário de acordo com a sua tarefa no momento \cite{dey2001understanding}.
 
 No que concerne a assistência domiciliar à saúde, os sistemas sensíveis a
@@ -118,12 +118,12 @@ Segundo \citeonline{inaia2008}, uma das primeiras instituições voltadas para o
 cuidado com a saúde foi a fundação da Santa Casa de Misericórdia de Santos, em
 1543, cuja principal atividade era prestar assistência de cunho caritativo a
 pessoas pobres e desabrigados. Tal estrutura permanece inalterada até o final do
-século XIX, e início do século XX.
+século XIX e início do século XX.
 
 Com o Governo Getúlio Vargas, a partir de 1930, ocorre no Brasil o processo de
 industrialização, que trouxe crescimento rápido e desordenado às cidades,
 principalmente São Paulo e Rio de Janeiro. As transformações econômicas e
-sociais resultantes desse processo, a falta de saneamento básico, a pobreza etc
+sociais resultantes desse processo, a falta de saneamento básico, a pobreza etc.
 foram motivos para que parte da população reivindicasse mais atenção do Governo
 em relação aos cuidados de saúde \cite{carvalho1984}.
 
@@ -135,8 +135,8 @@ décadas subsequentes não foram significativas no tocante a uma ampliação dos
 serviços de saúde oferecidos à população.
 
 Conforme análise de \citeonline{inaia2008}, ainda nos anos 1970, surgem
-tentativas de universalizar o acesso à assistência à saúde. Alguns programas e
-sistemas foram iniciados, sendo válido citar, (i) Sistema Único e
+tentativas de universalizar o acesso da assistência à saúde. Alguns programas e
+sistemas foram iniciados, sendo válido citar o (i) Sistema Único e
 Descentralizado de Saúde, o SUDS e (ii) o Sistema Único de Saúde, o SUS.
 Entretanto, em virtude da vigência da ditadura militar, implantada em 1964, que
 levou o país a vivenciar um estado de exceção, tais propostas não conseguiram se
@@ -144,11 +144,11 @@ concretizar. Assim, somente no período da redemocratização, ocorrida em meado
 dos anos 1980, é que o SUS foi criado oficialmente pela Constituição Federal de
 1988, Lei 8080/90\footnote{Acessível em
 \url{http://www.planalto.gov.br/ccivil_03/leis/L8080.htm}}, com o  objetivo de
-garantir à população Brasileira, o acesso universal às ações e  serviços de
+garantir à população Brasileira o acesso universal às ações e  serviços de
 saúde.
 
 Paralelo à criação do Sistema Único de Saúde (SUS), ocorreu o avanço
-tecnológico que alcançou a prática médica, aperfeiçoando, com isso a
+tecnológico que alcançou a prática médica, aperfeiçoando com isso a
 infraestrutura hospitalar. Dessa forma, os hospitais deixaram de ser espaços
 para abrigarem pobres desamparados e passaram a proporcionar tratamentos mais
 elaborados. O hospital passa a oferecer  procedimentos cirúrgicos, atendimentos
@@ -157,7 +157,7 @@ caráter menos íntimo e acolhedor. Além disso, estudiosos começam a identific
 a possibilidade de tratamentos e cuidados com a  saúde que não estejam,
 necessariamente, vinculados ao ambiente hospitalar.
 
-Como consequência, surgiram diversas mudanças no atendimento, onde a Assistência
+Como consequência, surgiram diversas mudanças no atendimento, em que a Assistência
 Domiciliar à Saúde (ADS) se tornou uma modalidade disponível.
 
 A Assistência Domiciliar à Saúde (ADS) divide-se basicamente em grupos de
@@ -174,13 +174,13 @@ básicos, de baixa complexidade clínica.
 No começo da década de 90, segundo \citeonline{tavolari2000desenvolvimento},
 houve um aumento na quantidade de empresas privadas provendo o serviço de ADS,
 com atuação de cinco empresas que prestavam esse tipo de  serviço. Já em 1999,
-esse número subiu, consideravelmente; para mais de 180
+esse número subiu, consideravelmente: saltou para mais de 180
 \cite{tavolari2000desenvolvimento}.
 
 \citeonline{amaral2001assistencia} define a ADS como uma sequência de serviços
-residuais a serem oferecidos, depois que o indivíduo já recebeu atendimento
-primário e prévios, ou seja, aquele que já recebeu atendimento primário com
-consequente diagnóstico e tratamento.
+residuais a serem oferecidos depois que o indivíduo já recebeu atendimento
+primário e prévios. Ou seja: aquele que já recebeu atendimento primário com
+consequente diagnóstico e tratamento e pode ser acompanhado remotamente.
 
 \citeonline{amaral2001assistencia} lembram, ainda, que o atendimento domiciliar
 pode acelerar a recuperação do  paciente e promover a redução de custos
@@ -189,25 +189,25 @@ doenças crônicas ou de longa duração, frente à  hospitalização. Dessa for
 assistência domiciliar à saúde tem como objetivos principais: (1) humanização
 no atendimento; (2) maior rapidez na recuperação do paciente, devido à
 proximidade com os seus familiares; (3) diminuição do risco de infecção
-hospitalar; (4) Otimização de leitos hospitalares para pacientes que deles
-necessitem; e (5) Redução do custo/dia da internação.
+hospitalar; (4) otimização de leitos hospitalares para pacientes que deles
+necessitem; e (5) redução do custo/dia da internação.
 
 \subsection{Atores envolvidos}\label{subsec:envolvidos}
 
-Para o entendimento geral da modalidade ADS, faz-se necessário separar e
+Para o entendimento geral da modalidade ADS faz-se necessário separar e
 explicar a atuação de cada um dos envolvidos. O paciente, para quem está
 voltado, fundamentalmente, todo o sistema, é aquele que sofre algum problema
-físico ou mental. A família é responsável por prover um ambiente propício à
-melhora do paciente.
+físico ou mental. A família é responsável por prover um ambiente propício a sua
+melhora. 
 
 Outra figura importante na atenção ao paciente é a equipe multiprofissional -
 composta de médicos, enfermeiros, psicólogos, terapeutas, assistentes sociais,
 farmacêuticos, cuidadores e outros - visando propiciar, através da integração
 das diversas áreas de conhecimentos, a melhoria efetiva do paciente.
 
-O cuidador, muitas vezes, é um familiar, alguém próximo à família ou alguém
+O cuidador, em muitos casos, é um familiar, alguém próximo à família ou alguém
 contratado. Seu papel principal é cuidar do paciente, ajudando nas tarefas
-diárias, como alimentação, lazer, socialização, limpeza do paciente, entre
+diárias como alimentação, lazer, socialização e limpeza do paciente, entre
 outros \cite{amaral2001assistencia}.
 
 %Embora as pesquisas indiquem que o tratamento domiciliar ajuda na recuperação do
@@ -229,7 +229,7 @@ categorias defendida por Giacomozzi}
 à Saúde é genérico e referente a todo e qualquer procedimento de saúde realizado
 em domicílio, não importando o grau de complexidade. Já o termo Internação
 Domiciliar é aplicado quando, dos procedimentos realizados, o cuidado intensivo
-e multiprofissional é perceptível, caracterizando-se ainda, pelo transporte de
+e multiprofissional é perceptível, caracterizando-se ainda pelo transporte de
 parte da estrutura hospitalar para o domicílio do paciente. O paciente, nesse
 caso, é categorizado com complexidade alta ou moderada.
 Já no Atendimento Domiciliar, o paciente encontra-se num estado de menor 
@@ -240,10 +240,10 @@ uma equipe multiprofissional \cite{tavolari2000desenvolvimento}.
 por \citeonline{tavolari2000desenvolvimento} e  define Atenção Domiciliar à
 Saúde como um termo mais genérico, englobando o atendimento, a visita e as
 internações domiciliares \cite{giacomozzi2006pratica}. Segundo a autora, a
-atenção domiciliar é ``um componente do \textit{continuum} dos cuidados à
-saúde, pois os serviços de saúde são oferecidos ao indivíduos e sua família
+atenção domiciliar é ``um componente do \textit{continuum} dos cuidados a
+saúde, pois os serviços de saúde são oferecidos ao indivíduo e sua família
 [...] minimizando os efeitos das incapacidades ou doenças, incluindo aquelas
-sem perspectiva de cura.'' Já o termo Assistência Domiciliar à Saúde, é formado
+sem perspectiva de cura.'' Já o termo Assistência Domiciliar à Saúde é formado
 por atividades de cunho ambulatorial, adicionando a essa categorização a
 modalidade Visita Domiciliar, voltada para verificar a realidade do paciente,
 além de realizar ações educativas.
@@ -257,25 +257,25 @@ ambiente hospitalar.
 \section{Sistemas Embarcados}\label{sec:sistemas-embarcados}
 
 Sistemas Embarcados estão inseridos em nossos cotidianos. Aparelhos como
-\smartphones[], \tablets[] - com alto poder de processamento,
+\smartphones[], \tablets[] - com alto poder de processamento, e
 produtos comumente encontrados em nossas casas, a exemplo do forno de 
 micro-ondas, geladeiras e máquinas de lavar roupas, até computadores de bordo e
 controle de freios ABS (\textit{Anti-lock Breaking System})\footnote{ABS:
-Tecnologia  de freio considerada segura pois seu funcionamento impede que, em
+tecnologia  de freio considerada segura pois seu funcionamento impede que, em
 uma brecada brusca, as rodas  deslizem, tornando difícil controlar o veículo} em
 nossos carros, contêm sistemas embarcados. Essa diversidade de aplicações
 explicita a importância dessa área.
 
-Nos exemplos citados anteriormente, temos uma classificação quanto à sua
-funcionalidade, porém, sua definição não é simples, nem muito menos taxativa,
+Nos exemplos citados anteriormente temos uma classificação quanto a 
+funcionalidade dos sistemas embarcados. Sua definição, porém, não é simples, nem muito menos taxativa,
 uma vez que possuem uma grande complexidade em sua composição. Dessa forma,
 podemos definir, a princípio, sistemas embarcados como qualquer
 dispositivo/equipamento que disponha de um sistema programável e que seu
 objetivo não seja o de um computador de propósito geral\footnote{Computador de
 propósito geral é aquele em que é possível executar as mais diversas tarefas,
-tais como, navegar na Internet, escrever documentos, executar jogos etc, ou
-seja, não há uma função específica a ser realizada. Pelo exposto, percebe-se a
-complexidade da definição de sistemas embarcados, uma vez que, muitos deles, 
+tais como navegar na Internet, escrever documentos, executar jogos etc. Ou
+seja: não há uma função específica a ser realizada. Pelo exposto, percebe-se a
+complexidade da definição de sistemas embarcados, uma vez que, muitos deles
 desempenham funções que antes cabiam apenas ao computador de propósito geral.}
 \cite{wolf2012computers}.
 
@@ -284,14 +284,14 @@ de processamento de informações incorporados à produtos.'', e, adicionado à
 esta definição, lista 5 características que devem levar em consideração: 
 
 \begin{itemize}
-  \item Segurança - ou seja, os dados confidenciais transmitidos ou recebidos pelo
+  \item Segurança: dados confidenciais transmitidos ou recebidos pelo
   equipamento devem permanecer confidenciais e a comunicação deve ser autêntica;
-  \item Seguro - característica indicativa de que o sistema não causará nenhum dano àqueles que o utilizam;
-  \item Disponibilidade - sistema disponível para executar as funções para as quais
+  \item Seguro: característica indicativa de que o sistema não causará nenhum dano àqueles que o utilizam;
+  \item Disponibilidade: sistema disponível para executar as funções para as quais
   foi programado; 
-  \item Confiabilidade - probabilidade que o sistema tem de que não
+  \item Confiabilidade: probabilidade que o sistema tem de que não
   falhará em sua execução; e
-  \item Manutenibilidade, caso o sistema venha a falhar, deverá 
+  \item Manutenibilidade: caso o sistema venha a falhar, deverá 
   ser consertado em uma determinada janela de tempo.
 \end{itemize}
 
@@ -312,15 +312,15 @@ requisitos de \hardware, quais dos processadores disponíveis no mercado atende
 melhor a necessidade do projeto, assim como é necessário identificar a
 quantidade de memória a ser utilizada pelo \software[]. 
 
-Ainda referente ao processo de design é necessário determinar quais serão as
+Ainda referente ao processo de \design[] é necessário determinar quais serão as
 interfaces de entrada (responsáveis por receber os dados para posterior
 processamento) e as interfaces de saída (responsáveis por apresentar os dados
 processados). Em paralelo, os requisitos de \software[] são alinhados para que o
 \hardware[] seja melhor aproveitado \cite{wolf2012computers}.
 
 A depender da finalidade do produto, esses requisitos diferem bastante. Por
-exemplo, o sistema embarcado responsável por controlar uma máquina de lavar é
-simples (em termos de funcionalidade, processamento, consumo de energia etc),
+exemplo: o sistema embarcado responsável por controlar uma máquina de lavar é
+simples (em termos de funcionalidade, processamento, consumo de energia etc.),
 uma vez que aplica um componente microcontrolador de baixo poder de
 processamento (tal qual um microcontrolador PIC\footnote{Família de
 microcontroladores desenvolvido e fabricado pela empresa \textit{Microchip
@@ -349,23 +349,23 @@ bastante semelhante.
 Nesta seção serão abordados o histórico e o surgimento do termo
 Internet das Coisas (\textit{Internet of Things}, IoT), definições
 na literatura, arquiteturas e exemplos de aplicações de IoT nas cidades,
-na zona rural, e na saúde.
+na zona rural e na saúde.
 
 \subsection{Histórico} \label{subsec:iot-historico}
 
 No final dos anos 90, \citeonline{ashton2009internet} defendeu que a Internet
 das Coisas tinha potencial para mudar o mundo, assim como a Internet mudou.
 Desde então pesquisas em diversas áreas, a inovação tecnológica e a atualização
-de conceitos já existentes possibilitou o surgimento da tecnologia Internet das
+de conceitos já existentes, possibilitaram o surgimento da tecnologia Internet das
 Coisas (\textit{Internet of Things - IoT}).
 
-O termo IoT, apesar de recente, remete a estudos realizados no final da década
+O termo IoT, apesar de recente remete a estudos realizados no final da década
 de 1990. Antes de IoT, termos como ``computação ubíqua'' e ``computação pervasiva''
 eram os tópicos quentes\footnote{Tópicos quentes são tópicos que estão em relevância
 na época em questão (final da década de 1990) em que muitos pesquisadores depositam seus 
 estudos.} nas pesquisas acadêmicas.
 
-A época dos estudos, percebia-se o distanciamento ou o desaparecimento da
+À época dos estudos, percebia-se o distanciamento ou o desaparecimento da
 figura ``computador pessoal (PC)'', em nosso cotidiano. A tecnologia estava
 difundida ao ponto do termo  ``era pós pc'' ser encontrado em diversos estudos
 \cite{bonilla2011inclusao,  chen2011pospc, press1999personal} nas áreas de
@@ -374,7 +374,7 @@ sistemas embarcados e tecnologias móveis.
 Além disso, os estudos abordavam a convergência das diversas tecnologias 
 através de: troca constante de informações por meio melhoria nos meios de comunicação,
 na melhoria no poder computacional dos sistemas embarcados, na melhoria contínua 
-das baterias etc, proporcionando um ambiente em que seria possível encontrar
+das baterias etc., proporcionando um ambiente em que seria possível encontrar
 tecnologia em todo lugar \cite{lyytinen2002ubiquitous}.
 
 À essa tecnologia ``em todo lugar'' e ao distanciamento do usuário com o
@@ -407,24 +407,24 @@ fundamentais, detalhados a seguir:
 
 Os diversos dispositivos cooperam entre si e realizam
 pequenas tarefas e funções, contribuindo para o estabelecimento de uma 
-dinâmica rede de comunicação; Podemos citar como exemplo os diversos 
+dinâmica rede de comunicação. Podemos citar como exemplo os diversos 
 dispositivos implantados na casa proporcionando conectividade em toda
-a extensão da casa.
+a extensão do lugar.
 
 \subparagraph{Diversificação:} 
 
 Diferente do computador de propósito geral - que 
 proporciona a execução de várias tarefas - cada dispositivo tem um propósito
-específico atendendo a necessidades únicas; podemos citar, como exemplo, um
+específico atendendo a necessidades únicas. Podemos citar, como exemplo, um
 sensor para leitura do nível de oxigênio no sangue, um relógio inteligente
-que conta quantos passos uma pessoa deu durante o dia etc; dentro dessa 
+que conta quantos passos uma pessoa deu durante o dia etc. Dentro dessa 
 diversidade, cada um desempenha uma função específica.
 
 \subparagraph{Conectividade:} 
 
 Os dispositivos devem interagir de maneira transparente
-e aqueles que são móveis, devem mudar entre redes heterogêneas, sem o 
-auxílio de um usuário; a conectividade diz respeito, também, à relação 
+e aqueles que são móveis devem mudar entre redes heterogêneas, sem o 
+auxílio de um usuário. A conectividade diz respeito, também, à relação 
 transparente entre dispositivo e usuário; 
 
 \subparagraph{Simplicidade:} 
@@ -435,15 +435,15 @@ uma interação com o usuário; outros, no entanto, exigem alguma configuração
 nestes casos, a interação deve manter-se simples, capaz de oferecer acesso
 rápido ao usuário. 
 
-Com isso, os estudos foram aplicados, inicialmente, a tecnologias como RFID
+Nesses estudos foram aplicados, inicialmente, tecnologias como RFID
 (\textit{Radio Frequency Identification} ou Identificação por
 rádio-frequência).  Essa tecnologia permitia a identificação de objetos através
 de \textit{tags} e leitores. As \textit{tags}, em sua maioria, são do tipo
 passiva, ou seja, os leitores é que devem emitir a energia necessária para que
 ela funcione. Há ainda as \textit{tags} ativas - com bateria interna enviando
-sua identificação periodicamente - e semi-passivas - com bateria interna,
-porém, envia sua identificação apenas quando um leitor se aproxima
-\cite{want2006introduction}. A aplicabilidade desta tecnologia se da, 
+sua identificação periodicamente -; e semi-passivas, com bateria interna que,
+no entanto, envia sua identificação quando um leitor se aproxima
+\cite{want2006introduction}. A aplicabilidade desta tecnologia se dá, 
 principalmente, para identificar e rastrear um objeto.
 
 \figuraadaptada[li2015internet]{historico-iot}{Histórico das tecnologias que 
@@ -452,7 +452,7 @@ fundamentaram o surgimento da \textit{Internet of Things}.}{14cm}
 Em seguida, as Redes de Sensores Sem Fio (\textit{Wireless Sensor Network}, WSN)
 foram ganhando espaço nos estudos acadêmicos. As redes são constituídas de nós
 que monitoram o ambiente ou as condições do ambiente em que estão inseridos.
-Cada nó está conectado a um ou mais nós, dessa maneira os dados são repassados
+Cada nó está conectado a um ou mais nós. Dessa maneira os dados são repassados
 até um nó principal (nó \gateway), tornando o dado disponível
 \cite{lewis2004wireless}.
 
@@ -461,7 +461,7 @@ Através da computação móvel e de dispositivos conectados foi possível explo
 a cooperação entre dispositivos, tais como os \smartphones[] e \smartwatches.
 
 Possibilitado por todo o avanço tecnológico descrito anteriormente e em
-conjunto com as várias tecnologias, o IoT, através de uma conexão à redes sem
+conjunto com as várias tecnologias, o IoT, através de uma conexão a redes sem
 fio mais rápida, através de sistemas embarcados menores e com a possibilidade
 de aplicar análises preditivas aos dados coletados, torna-se realidade.
 
@@ -483,15 +483,15 @@ IoT como um conjunto de coisas conectadas por uma rede sem fio e que são
 capazes de interagir entre si, sem interferência humana. Já
 \citeonline{guillemin2009internet} define: IoT permite que pessoas e coisas
 estejam conectadas a qualquer hora, em qualquer lugar com qualquer coisa e
-qualquer um, preferencialmente usando uma rede e qualquer serviço.
+qualquer pessoa (preferencialmente usando uma rede) e qualquer serviço.
 
 A IoT é um conceito em que o mundo virtual da tecnologia da informação se 
-integra perfeitamente com o mundo real das coisas. Detecção do \textit{status}
+integra perfeitamente com o mundo real das coisas. A detecção do \textit{status}
 das coisas através de sensores em adição a coleta e processamento de dados
-detalhadamente, permite que sistemas respondam de imediato a qualquer mudança
+detalhadamente permite que sistemas respondam de imediato a qualquer mudança
 no mundo físico \cite{uckelmann2011architectural}.
 
-Um grupo Europeu de pesquisa em IoT definiu: (IoT como) uma parte integrante da
+Um grupo europeu de pesquisa em IoT definiu: (IoT como) uma parte integrante da
 Internet do Futuro, tornando-se parte da infraestrutura de uma dinâmica rede
 global com capacidade de autoconfiguração baseada em padrões e protocolos
 de comunicação interoperáveis em que ``coisas'' possuem identidade, atributos
@@ -500,15 +500,15 @@ estarem integrados com a rede de informação \cite{cerpiot2009}.
 
 Além disso, \citeonline{guillemin2009internet} espera que as ``coisas''
 de IoT se tornem participantes ativas em processos sociais, de negócio e de 
-informação - preparadas para se comunicar entre si e com o ambiente -
-ao trocar dados e informações sobre o ambiente em que estão inseridos ao mesmo
-tempo que reagem de forma autônoma com o mundo real. Possibilitando a criação
+informação - preparadas para se comunicar entre si e com o ambiente. Assim seria possível
+a troca de dados e informações sobre o ambiente em que estão inseridos ao mesmo
+tempo que reagem de forma autônoma com o mundo real, possibilitando a criação
 de serviços com ou sem a intervenção direta de um ser humano.
 
 \figurasimples[perera2014context]{iot-perera}{Ilustração da definição de IoT.}{8cm}
 
-IoT habilita sistemas, portanto, a capturar, armazenar e transmitir dados de modo que
-cresce a quantidade de áreas atendidas por esse tipo de tecnologia.
+IoT habilita sistemas, portanto, a capturar, armazenar e transmitir dados de modo a
+crescer a quantidade de áreas atendidas por esse tipo de tecnologia.
 Alimentação, segurança, indústrias, logística, turismo e armazenamento são
 algumas das áreas em que a aplicação de IoT é abrangente e traz benefícios
 \cite{xu2014ubiquitous}.
@@ -520,7 +520,7 @@ domínios que o IoT está sendo aplicado são: (1) cidades inteligentes,
 (2) indústria e (3) saúde.
 
 Cidades inteligentes englobam, por exemplo, tópicos como mobilidade urbana
-inteligente e turismo inteligente. Através do monitoramento do tráfego, será
+inteligente e turismo inteligente. Através do monitoramento do tráfego será
 possível oferecer novas rotas de deslocamento, compartilhar modais (bicicletas,
 ônibus, metrô e carros) para alcançar o destino rapidamente e sugerir rotas
 alternativas para bombeiros, policiais ou serviço de emergência em saúde. As
@@ -551,12 +551,12 @@ processos industriais em geral. O rastreio e identificação do animal pode ser
 auxiliado pelo IoT, assim como o plantio de monoculturas, monitoramento e 
 irrigação, até mesmo o armazenamento dos grãos pode ser acompanhado em tempo
 real. Já nos processos industriais, o IoT pode auxiliar em todo o processo
-de produção de veículos por exemplo. No que se refere a logística, o gerenciamento
-do armazenamento e do inventário, além de todo o processo de entrega pode
-ser monitorado por IoT.
+de produção de veículos, por exemplo. No que se refere à logística, ao gerenciamento
+do armazenamento e do inventário, além de todo o processo de entrega, o IoT pode
+contribuir permitindo um monitoramento em tempo real.
 
-O domínio da saúde listado anteriormente, tem os seguintes tópicos principais:
-cuidados médicos e de saúde e vida independente para idosos e doentes, este último
+O domínio da saúde listado anteriormente tem os seguintes tópicos principais:
+cuidados médicos e de saúde e vida independente para idosos e doentes, este último, aliás,
 está intimamente ligado a este trabalho e é um dos tópicos mais estudados, tendo
 como base IoT e cuidado da saúde.
 
@@ -567,7 +567,7 @@ de saúde do idoso. A captura de sinais vitais pode ajudar, ainda, no diagnósti
 de uma doença ainda por vir.
 
 Por exemplo, os dispositivos \smartphones e \smartwatches, sensores médicos e até 
-mesmo roupas inteligentes permitem que o indivíduo que os carrega, tenha um poder 
+mesmo roupas inteligentes permitem que o indivíduo que os carrega tenha um poder 
 computacional que o permita utilizar serviços que um computador oferece, 
 independentemente da sua localização \cite{de2003computaccao}.
 
@@ -594,7 +594,7 @@ poderá atuar e suas conexões.}{10cm}
 \section{Plataforma OpenIoT}\label{sec:openiot}
 
 Com o intuito de tratar a grande quantidade de dados provenientes de todas as
-``coisas'', os grupos de pesquisa, estudaram e desenvolveram middlewares com as
+``coisas'', os grupos de pesquisa estudaram e desenvolveram \middlewares[] com as
 mais diversas características. Desse grupo destacam-se as soluções: (1) Kaa\footnote{Kaa é um
 middleware para IoT disponível em \url{https://www.kaaproject.org}},
 (2) Thingsboard\footnote{Thingsboard é uma plataforma que permite o monitoramento 
@@ -621,7 +621,7 @@ uma ``nuvem de coisas''.
 A plataforma conta ainda com uma ontologia para padronizar a representação de
 sensores físicos e virtuais. Além disso, o middleware facilita a coleta de
 dados e garante o entendimento semântico da informação proveniente do sensor.
-Por fim, é pontuado no estudo, a habilidade da plataforma de lidar com sensores
+Por fim, é pontuado no estudo a habilidade da plataforma de lidar com sensores
 móveis, possibilitando que uma série de aplicações sensitivas enviem dados para
 a plataforma.
 

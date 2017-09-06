@@ -1,14 +1,18 @@
 \chapter{Trabalhos relacionados}\label{cap:trabalhos-relacionados}
 
-Neste capítulo é apresentado os trabalhos relacionados à pesquisa. Peculiaridades
-de cada uma das soluções encontradas, seus pontos fortes e fracos de acordo com
-a visão do autor. Na seção \ref{sec:comparacao} uma tabela comparativa é exposta.
+Neste capítulo serão apresentados os trabalhos relacionados à pesquisa. Na
+seção \ref{sec:estado-da-arte} é descrito o estado da arte dos sistemas 
+de atenção domiciliar à saúde. Na seção \ref{sec:solucoes-semelhantes}
+apresenta-se outras propostas semelhantes a arquitetura TV Health das Coisas.
+
+%de cada uma das soluções encontradas, seus pontos fortes e fracos de acordo com
+%a visão do autor. Na seção \ref{sec:comparacao} uma tabela comparativa é exposta.
 
 \section{Estado da arte} \label{sec:estado-da-arte}
 
 O trabalho de \citeonline{koch2006home} é uma leitura do estado atual e dos
-tópicos mais estudados em relação a atenção domiciliar. Segundo o trabalho,
-esta é uma das áreas que mais cresce. Com o intuito de diminuir custos,
+tópicos mais estudados em relação a atenção domiciliar. Segundo \citeauthor{koch2006home},
+esta é uma das áreas que mais cresce nas pesquisas. O intuito de diminuir custos,
 permitir que o indivíduo tenha mais controle sobre seu estado de saúde e a
 preferência de envelhecer em casa e próximo de seus familiares faz com que a
 área esteja em alta. Alinhado a isso, o rápido crescimento da tecnologia da
@@ -18,23 +22,23 @@ Palavras-chave como \textit{``home monitoring''}, \textit{``home
 telemedicine''} , \textit{``information systems and home care''} estão no topo
 de uma lista de termos buscados pela pesquisadora. Dentre os trabalhos
 publicados, grande parte encontra-se nos Estados Unidos da América, Reino Unido
-e Japão. Adicionado a isso, os estudos publicados têm como foco, pacientes com
+e Japão. Adicionado a isso, os estudos publicados têm como foco pacientes com
 doenças crônicas ou idosos.
 
 É possível extrair do trabalho, ainda, que as linhas de pesquisas, a partir de
-2000, envolve casas inteligentes e sensores vestíveis - principalmente para
+2000, envolvem casas inteligentes e sensores vestíveis - principalmente para
 detecção de quedas. Técnicas e soluções para vídeo consultas é um tópico
 importante para a área. Outros tópicos importantes neglicenciados pelos
 trabalhos são as padronizações para comunicar sistemas incompatíveis e a falta
 de guias práticos para criação de casas com potencial atendimento em atenção à
-saúde a distância. A área de segurança de dados também cresce com o intuito de
+saúde à distância. A área de segurança de dados também cresce com o intuito de
 garantir a privacidade e confidencialidade dos dados previnindo questões legais
 e éticas.
 
 A revisão sistemática de \citeonline{pare2007systematic} sobre tele
 monitoramento de pacientes com doenças crônicas apresenta como resultado
-estudos que obtiveram sucesso em detecção antecipada de sintomas, periodicidade
-nos medicamentos etc.  corroborando assim, com o estudo realizado por
+estudos que obtiveram sucesso em detecção antecipada de doenças. 
+Corroborando assim, com o estudo realizado por
 \citeonline{koch2006home}.
 
 \section{Outras propostas} \label{sec:solucoes-semelhantes}
@@ -48,8 +52,8 @@ toda a sua vida.} (RES), ontologias e bancos de dados de atividades que podem
 ser realizadas por outros atores descritos no sistema. (2) Camada de abstração
 de dados é responsável por recuperar os dados de fontes e tecnologias
 diferentes, como por exemplo os dados das ontologias, de RES e de base de dados
-relacionais, esta camada é uma espécie de \textit{middleware}. (3) A camada
-baseada em agentes contém a interface web que os atores (equipe de saúde e
+relacionais. Esta camada é uma espécie de \textit{middleware}. (3) A camada
+baseada em agentes contém a interface \web[] que os atores (equipe de saúde e
 pacientes) utilizam para interagir com o sistema. Além disso conta com os
 agentes, que são entidade que agem de maneira semi automática no sentido de
 realizar diversas tarefas do sistema. 
@@ -58,23 +62,23 @@ O trabalho, no entanto, não explica de que maneira será possível acompanhar o
 doente no seu dia-a-dia, além de não aplicar ou permitir, na descrição da
 arquitetura, que haja um acompanhamento constante.
 
-A arquitetura funcional, descrita no trabalho de \citeonline{capozzi2010agent} (TS-2),
+A arquitetura funcional descrita no trabalho de \citeonline{capozzi2010agent} (TS-2),
 envolve a criação de duas áreas de interesse. Parte da arquitetura é chamada de
 ``Unidade de tratamento remoto'' (\textit{Replace Care Unit (RCU)}), responsável
-pela interação do usuário, no caso o doente, com o sistema implantado no centro
-de tratamento, nomeado de ``Unidade Central de Tratamento de Saúde''
+pela interação do usuário com o sistema. O sistema está implantado no centro
+de tratamento e é chamado de  ``Unidade Central de Tratamento de Saúde''
 (\textit{Health Care Center Unit - HCCU}). Nesta camada estão descritos os
 sistemas utilizados pela equipe de saúde que acompanha o doente.
 
 Além de usar dispositivos médicos para adquirir os sinais vitais, o trabalho
-enfatiza, ainda, a solução criada para melhor acquisitar os dados médicos do
+enfatiza, ainda, a solução criada para melhor obter os dados médicos do
 paciente. Foi utilizado reconhecimento de voz através de ligações para um
-sistema implantado no HCCU. Na comunicação entre essas partes, trafegam, ainda,
+módulo implantado no HCCU. Na comunicação entre essas partes, trafegam, ainda,
 alertas, lembretes, informações para alimentar o RES do paciente e informações
 das atividades diárias do doente.
 
 Do ponto de vista computacional, \citeonline{capozzi2010agent} optaram
-por uma arquitetura baseada em agentes, um agente servidor, responsável por ser
+por uma arquitetura baseada em agentes, entre eles, um servidor, responsável por ser
 um ponto de encontro dos agente móveis - (computadores de propósito geral ou
 \smartphones[] para repassar os dados adquiridos pelos dispositivos). Há ainda,
 nos agentes móveis, espaço para a utilização de domínios de conhecimentos
@@ -84,24 +88,24 @@ Apesar da inovação ao utilizar reconhecimento de voz para realizar a aquisiç�
 de dados, o trabalho não faz nenhum estudo relacionado a usabilidade dessa
 solução no cotidiano do doente. Além disso, não ficou claro se os dados
 coletados trafegam dentro do sistema através de um protocolo conhecido e
-aberto, permitindo que o sistema se comunique com outros sistemas de saúde.
+aberto, o que permitiria que o sistema se comunicasse com outros sistemas de saúde.
 
 O trabalho de \citeonline{bajo2010thomas} (TS-3) descreve a solução THOMAS
-(\textit{MeTHods, Techniques and Tools for Open Multi-Agent Systems}), uma
-arquitetura modular composta por serviços. Ela é dividida em três camadas,
-Facilitador de Serviços (1), Sistema de Gerenciamento Organizacional e Núcleo
+(\textit{MeTHods, Techniques and Tools for Open Multi-Agent Systems}). Uma
+arquitetura modular composta por serviços. Ela é dividida em três camadas:
+Facilitador de Serviços, Sistema de Gerenciamento Organizacional e Núcleo
 da Plataforma. O Facilitador de Serviços age como um \gateway[] para que outras
 partes do sistema tenham acesso e para que duas entidades possam se comunicar,
 permitindo a utilização de um serviço. O sistema de Gestão da Organização é
 responsável pelo ciclo de vida de uma organização. Para o sistema, uma
-organização pode ser o atendimento em domicílio e é estruturado por meio de
-unidades, por exemplo, a unidade de alerta, unidade de tratamento, unidade de
+organização pode ser, por exemplo o atendimento em domicílio e é estruturado por meio de
+unidades. A unidade de alerta, unidade de tratamento, unidade de
 localização  etc. No Núcleo da Plataforma é onde reside os serviços necessários
 para uma arquitetura multi-agente, permitindo que vários agentes se comuniquem
 entre si.
 
 O trabalho de \citeonline{costa2012sensor} (TS-4) descreve uma plataforma de três
-camadas, a camada de baixo nível de nome ``Aquisição de dados e
+camadas. A camada de baixo nível de nome ``Aquisição de dados e
 processamento'', realiza funções básicas de sistemas de monitoramento, coleta e
 processamento de dados dos sensores. A camada intermediária chamada de
 ``Detecção de atividades'' tem o propósito de detectar atividades humanas a
@@ -109,21 +113,19 @@ partir dos dados coletados na primeira camada. A camada ``Agendamento e tomadas
 de decisão'' provê agendamento de alertas, consultas etc.  além de servir de
 interface para o restante do sistema.
 
-A aquisição de dados dar-se prioritariamente a partir de câmeras, uma vez que
-os autores do trabalho em questão já trabalharam com esse tipo de dispositivo.
-Outra fonte de dados são os \smartphones, possibilitando por exemplo, se
-determinado indivíduo sofreu uma queda. A camada intermediária utiliza
-algoritmos de visão computacional para detectar atividades do dia-a-dia,
-repassando estas informações para a terceira camada. O agendamento utiliza as
-informações das outras camadas para realizar suas ações. 
+A aquisição de dados dar-se prioritariamente a partir de câmeras.  Outra fonte
+de dados são os \smartphones.  A camada intermediária utiliza algoritmos de
+visão computacional para detectar atividades do dia-a-dia, repassando estas
+informações para a terceira camada. O agendamento utiliza as informações das
+outras camadas para realizar suas ações. 
 
 Apesar do descrito, o trabalho não informa se há a utilização de outros
-sensores no ambiente que não as câmeras. Também não deixa claro quais
-técnicas são utilizadas para o agendamento e as tomadas de decisão.
+sensores no ambiente que não as câmeras e os \smartphones. Também não deixa
+claro quais técnicas são utilizadas para o agendamento e as tomadas de decisão.
 
 O trabalho de \citeonline{palumbo2014sensor} (TS-5) mostra a infraestrutura de redes
-de sensores necessários para atender um ambiente de atenção domiciliar.
-Sensores médicos são utilizados no intuito de monitorar o paciente
+de sensores necessária para atender um ambiente de atenção domiciliar.
+Sensores de saúde são utilizados no intuito de monitorar o paciente
 continuamente. Com isso, o sistema pode emitir alarmes referentes a possíveis
 problemas eminentes ou a longo prazo (de acordo com os dados coletados).
 Adiciona-se a essa abordagem um \middleware[] com padrão OSGi\footnote{OSGI -
@@ -135,31 +137,30 @@ Neste trabalho, além do \middleware, há uma infraestrutura de software compost
 de serviços responsáveis por interligar várias funcionalidades, tais como o
 serviço de armazenamento, responsável por persistir os dados remotamente e o
 monitoramento inteligente que permite o acesso ao reconhecimento de atividades
-e ao contexto.  
-
-O sistema permite, ainda, uma visita remota a partir da utilização de um robô,
-neste momento são discutidas as atividades do doente assim como os dados
-adquiridos pelos sensores.
+e ao contexto. O sistema permite, ainda, uma visita remota a partir da
+utilização de um robô.
 
 Apesar de não aparecer explicitamente os termo ``computação ubíqua'' ou ``Internet
 das Coisas'', percebe-se a tentativa de utilizar técnicas e tecnologias referentes a
-estes assuntos. O trabalha espera ainda, que o paciente esteja sempre próximo
+estes assuntos. A proposta espera que o paciente esteja sempre próximo
 de um \smartphone[] que é usado como \gateway[] para o restante do sistema na nuvem.
 No entanto, não há uma abordagem na utilização de técnicas de inferência como
 aprendizagem de máquinas ou ontologias.
 
 \citeonline{spinsante2012remote} (TS-6) apresentam uma arquitetura sem fio centrada no
-domicílio para monitorar a saúde do paciente, através dela, o usuário têm pouca
+domicílio para monitorar a saúde do paciente. Através dela o usuário tem pouca
 ou nenhuma interação com os dispositivos médicos, facilitando assim a
-utilização do sistema pelos idosos. O trabalho utiliza um \framework[] OSGi para
+utilização do sistema pelos idosos. A proposta utiliza um \framework[] OSGi para
 lidar com os dispositivos médicos e uma aplicação interativa instalada no
-\stb[] conectado a tela da TV, além disso, um serviço na nuvem recebe os
-dados adquiridos pelos sensores. O \gateway[] é a figura central da arquitetura
-proposta, ele é responsável por receber os dados dos sensores médicos através
-da tecnologia \bluetooth[] e transmití-los para um repositório virtual na nuvem.
-Já as aplicações interativas instaladas no STB tem acesso aos dados através de
-uma API. A aplicação remota disponibiliza os dados através de uma interface
-\web, que pode ser acessada pela equipe médica.
+\stb[] conectado a tela da TV. 
+
+Além disso, um serviço na nuvem recebe os dados adquiridos pelos sensores. O
+\gateway[] é a figura central da arquitetura proposta, ele é responsável por
+receber os dados dos sensores de saúde através da tecnologia \bluetooth[] e
+transmití-los para um repositório virtual na nuvem.  Já as aplicações
+interativas instaladas no STB tem acesso aos dados através de uma API. A
+aplicação remota disponibiliza os dados através de uma interface \web, que pode
+ser acessada pela equipe médica.
 
 O trabalho não esclarece, no entanto, qual dispositivo desempenhará o papel do
 \gateway[], podendo ser um \tablet[], um \smartphone[] ou um \textit{Personal
@@ -170,9 +171,11 @@ saúde sobre uma possível anomalia.
 \citeonline{niiranen2002personal} (TS-7) utiliza a melhoria tecnológica proveniente da
 mudança da TV analógica para a TV digital para a criação da ``TV Digital para
 cuidados médicos''. Focando na funcionalidade interativa da televisão digital,
-o trabalho cria uma aplicação para \stb[] para que o usuário utilize através
+o trabalho cria uma aplicação para \stb[]. O usuário faz uso da aplicação através
 do controle remoto, entrando com valores das medições realizadas por ele ou um
-cuidador. Além de serem apresentados na tela da televisão, os dados são salvos
+cuidador. 
+
+Além de serem apresentados na tela da televisão, os dados são salvos
 em um banco de dados para posterior processamento. Este trabalho foca na parte
 técnica da televisão digital e na interação que ela proporciona, não
 mencionando termos como sensores, informações de contexto ou inteligência
@@ -181,20 +184,20 @@ artificial.
 O trabalho de \citeonline{chan2008mobile} (TS-8) aborda a criação de um ambiente de
 monitoramento remoto baseado em sistemas de tecnologia da informação modernos.
 Para isso, uma arquitetura de vários agentes para dispositivos móveis foi
-desenvolvida, a arquitetura permite a coleta de dados e posterior recomendações
+desenvolvida. A arquitetura permite a coleta de dados e posterior recomendações
 para pacientes e equipe de saúde. A solução é dividida em 3 áreas de
-comunicação, (1) \textit{Body Area Network} (BAN), responsável pela comunicação
+comunicação: (1) \textit{Body Area Network} (BAN), responsável pela comunicação
 entre os sensores médicos com comunicação \bluetooth[] e o dispositivo móvel do
-paciente.  (2) \textit{Personal Area Network} (PAN), responsável pela
+paciente,  (2) \textit{Personal Area Network} (PAN), responsável pela
 comunicação do dispositivo móvel (\smartphone) com a rede de telefonia móvel
-(3G/4G), um agente é responsável por enviar para o servidor na nuvem os dados
-através de web services. (3) \textit{Wide Area Network} (WAN), permite à equipe
-de saúde, acompanhar o estado do paciente através de um dispositivo móvel ou um
+(3G/4G) em que um agente é responsável por enviar para o servidor na nuvem os dados
+através de \webservices[],  (3) \textit{Wide Area Network} (WAN) permite que a equipe
+de saúde acompanhe o estado do paciente através de um dispositivo móvel ou um
 computador de propósito geral (interface \web).
 
 Apesar da descrição com viés para a tecnologia de telecomunicação,
-\citeonline{chan2008mobile} apresenta características que encontramos em
-trabalhos descritos anteriormente, tais como sensores médicos, monitoramento
+\citeonline{chan2008mobile} apresentam características que encontramos em
+trabalhos descritos anteriormente, tais como: sensores médicos, monitoramento
 remoto e acompanhamento por parte da equipe de saúde. Tópicos como sistemas
 inteligentes, aplicações sensíveis a contexto e TV digital, no entanto, não
 entram no escopo do trabalho.
@@ -204,7 +207,7 @@ entram no escopo do trabalho.
 A tabela \ref{tab:trabalhos-semelhantes} a seguir apresenta um comparativo
 simplificado do que foi exposto na seção anterior. O termo \texttt{TS} refere-se
 a ``trabalhos semelhantes'' enquanto que o termo \texttt{SP} refere-se a
-``solução proposta''.
+``solução proposta'' neste trabalho.
 
 \tabela{trabalhos-semelhantes}{Resumo das características das soluções semelhantes apresentadas
 anteriormente}{0.9}

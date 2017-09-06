@@ -1,10 +1,8 @@
 \chapter{TV Health das Coisas}\label{cap:quatro}
 
-Neste capítulo serão abordadas as etapas que constituem a estrutura geral do
-sistema de informática voltado para o atendimento de paciente no espaço domiciliar. 
-Na primeira seção são apresentados o cenário e situações do cotidiano exemplificando
-o uso da solução. Em seguida, a descrição da arquitetura é exposta. Por fim, uma
-visão de engenharia é descrita.
+Neste capítulo será descrito a principal contribuição do trabalho. Composto
+pelo cenário de utilização da solução proposta, a visão arquitetural e a visão
+de engenharia da arquitetura.
 
 \section{Descrição de cenários}
 
@@ -24,10 +22,10 @@ a aquisição dos dados, o \stb[] (\textit{gateway}), a televisão e outros
 dispositivos capazes de apresentar dados e informações úteis para a assistência
 domiciliar à saúde.
 
-Neste ambiente, o ator principal é o paciente, o monitoramento constante 
+Neste ambiente, um dos atores é o paciente, o monitoramento constante 
 proporcionado pela tecnologia nos permite acompanhar com mais clareza a situação
-do doente. A partir do monitoramento é possível avisar, por exemplo, à equipe
-de saúde (Ambiente B) uma leitura de sinais vitais. Nesse sentido, é possível 
+do doente. A partir do monitoramento é possível alertar à equipe
+de saúde (Ambiente B) sobre alguma situação incomum. É possível 
 também lembrar ao paciente a necessidade de tomar determinado remédio em um
 horário específico.
 
@@ -43,8 +41,9 @@ podem ser informados sobre um fato novo na agenda do doente, algo inusitado ou
 ainda uma situação de urgência/emergência.
 
 Nesse sentido, podemos inserir no ambiente domiciliar um conjunto de
-dispositivos dotados de sensores com o intuito de captar eventos no domicílio. É
-possível a utilização de sistemas para captar os sinais vitais do paciente, tais
+dispositivos dotados de sensores com o intuito de captar eventos no domicílio. 
+Os eventos captados contribuem com informações de contexto para a arquitetura.
+É possível a utilização de sistemas para captar os sinais vitais do paciente, tais
 como nível de oxigênio no corpo, batimentos cardíacos, temperatura corporal etc.
 Outros tipos de sensores podem ser implantados para captar informações do
 ambiente, disponibilizando assim informações de contexto para o sistema,  tais
@@ -60,13 +59,14 @@ processamento e o conectamos à Internet. Os dados coletados pelos sensores são
 então, repassados ao STB, que os processa, os apresenta através da tela do
 televisor ou ainda através de \smartphones[] conectados ao sistema.
 
-\subsubsection{Simulações} \label{subsubsec:simulacoes-A}
+%\subsubsection{Simulações} 
 
 Para exemplificar o ambiente descrito anteriormente, esta subseção
 traz simulações (situações fictícias) do doente em cenários que a solução
 proposta nesta dissertação pode auxiliar.
+\label{subsubsec:simulacoes-A}
 
-\subparagraph{Doente sozinho:}
+\subsubsection{Doente sozinho}
 
 Luísa, aposentada, 75 anos, vive sozinha em seu apartamento. Infelizmente,
 Luísa sofre de uma doença crônica e seu médico recomenda caminhada uma vez ao
@@ -88,16 +88,16 @@ detectado a necessidade para tal.
 Esta simulação, portanto, exemplifica uma aplicação prática do sistema 
 proposto.
 
-\subparagraph{Doente com um familiar:}
+\subsubsection{Doente com um familiar}
 
 Roberto é autônomo, trabalha em casa consertando televisores e mora com sua
 filha de 16 anos. Apesar do constante contato com os televisores, em seu momento
 de descanso, assiste aos seus programas favoritos.
 
-Certo dia, Roberto não sente-se bem e deita-se, tendo instalado à sua televisão
-o STB com as aplicações da solução proposta, ele conta com a disponibilidade de
+Certo dia, Roberto não se sente bem e se deita. Tendo instalado a sua televisão
+o STB com as aplicações da solução proposta ele conta com a disponibilidade de
 diversas funcionalidades que podem auxiliá-lo neste momento. Poderá, por
-exemplo, acessar uma das aplicação através do controle remoto, a aplicação
+exemplo, acessar uma das aplicação através do controle remoto. A aplicação
 apresenta um conjunto de imagens na tela da televisão, cada uma exemplificando
 um sintoma.  Usando o controle remoto, seleciona os sintomas que melhor
 exemplificam o que está sentindo. Essa informação é processada e, em seguida, a
@@ -112,27 +112,27 @@ cuidador informal em um processo passo a passo. Nesta simulação,  percebe-se a
 importância de contar com um dispositivo que auxilie o cuidador e o paciente em
 situações de risco à saúde.
 
-\subparagraph{Doente com um cuidador profissional:}
+\subsubsection{Doente com um cuidador profissional}
 
 Dona Clélia, aposentada, contratou um cuidador profissional para acompanhar seu
-marido Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
+marido, Francisco. Infelizmente, Francisco sofre da doença de Parkinson. Por conta
 do seu contrato, o cuidador fica na casa apenas nos horários da manhã e tarde e 
 de sobreaviso durante a noite.
 
 Sabendo que o casal de idosos utiliza a solução proposta neste trabalho, e sendo o
 cuidador ciente das necessidades do doente, o cuidador poderá receber em seu celular ou
-acompanhar através da televisão auxílio para a realização de um procedimento inerente
+acompanhar através da televisão, um auxílio para a realização de um procedimento inerente
 a um paciente com Parkinson, ou ainda, o \textit{status} das atividades diárias.
 
 \subsection{Ambiente B} \label{subsec:ambiente-b}
 
 O ambiente B diz respeito aos atores móveis do cenário geral. Os atores externos
-são a equipe de saúde, os familiares e amigos do paciente. Estes três atores
+são a equipe de saúde, os familiares e amigos do paciente. Estes três tipos de atores
 estão em constante movimento e não visitam o doente frequentemente. Nesse
 sentido, o sistema disponibiliza meios para que fiquem a par da situação do
 paciente.
 
-Estando os atores de porte de um \smartphone[] e este dispositivo conectado ao
+Estando os atores com um \smartphone[] e este dispositivo conectado ao
 sistema, é possível receber alertas relacionados ao paciente. Os alertas podem
 envolver desde o \textit{status} atual do doente, considerações acerca do
 cuidador até mensagens de cunho emergencial.
@@ -143,16 +143,11 @@ paciente através desta forma de visualização de dados. Nesse modelo, os dados
 apresentados vão desde a leitura de alguns sensores instalados na casa até a
 visualização de sinais vitais do paciente.
 
-\subsubsection{Simulações}
-
-A simulação a seguir apresenta uma situação fictícia em que a plataforma pode
-se tornar útil.
-
-\subparagraph{Doente em situação de emergência:}
+\subsubsection{Doente em situação de emergência}
 
 Maria é dona de casa e passa suas manhãs organizando e limpando a casa. Apesar
 de todo esse apreço pela casa, Maria não se cuida e, além de ser hipertensa,
-esquece de tomar seu remédio em algumas ocasiões, tamanho é o seu desleixo.
+esquece de tomar seu remédio em algumas ocasiões.
 
 Certa manhã, após preparar o almoço, Maria senta-se para assistir televisão -
 que conta com o STB com a solução proposta. Passado alguns minutos, ela sente
@@ -176,25 +171,31 @@ medidas a serem tomadas enquanto o socorro médico não chega.
 
 O ambiente C aborda de forma geral os serviços oferecidos e de que forma eles se
 relacionam com a parte A e B. Podemos descrever a parte C a partir de uma leitura 
-\textit{top-down} da figura \ref{fig:cenarios}. No subitem X temos a plataforma
-\nextsaude[], esta plataforma oferece meios de comunicação para que outros sistemas
-possam se comunicar com ela, possibilitando uma integração entre vários sistemas.
+\textit{bottom-up} da figura \ref{fig:cenarios}. 
 
-Parte dessa integração é realizada através do padrão OpenEHR (subitem Y), sua 
-função é permitir que sistemas informatizados de saúde, no caso a plataforma
-\nextsaude[], se comunique de maneira transparente com outros sistemas de saúde ou
-instâncias de sistemas de saúde, tal como a aplicação TV-Health (descrito no capítulo
-\ref{cap:aspectos-de-implementacao}). A utilização do OpenEHR possibilita que toda a solução
-proposta se comunique, com o menor esforço possível, com outros sistemas de 
-saúde.
+No subitem Z pautamos a Internet das Coisas ou \textit{IoT} e o \textit{hub}. A
+partir desses dois blocos será possível realizar a aquisição de dados dos sensores
+médicos conectados ao paciente e sensores instalados no domicílio (ambiente A),
+proporcionando um monitoramento constante dos atores envolvidos, o que é ideal
+para uma situação de assistência domiciliar. Este serviço fará uso de tópicos
+apresentados na plataforma \textit{OpenIoT} (seção \vref{sec:openiot}).
 
-Na última camada da pilha - no subitem Z - pautamos a Internet das Coisas ou
-\textit{IoT}. A partir deste conceito será possível realizar a aquisição de
-dados dos sensores médicos conectados ao paciente e sensores instalados no domicílio
-(ambiente A), proporcionando um monitoramento constante dos atores envolvidos, 
-o que é ideal para uma situação de internação domiciliar. Este serviço fará uso 
-de tópicos apresentados na plataforma \textit{OpenIoT}
-(seção \vref{sec:openiot}).
+O subitem Y representa o bloco em que é feita a intengração dos dados adquiridos
+à plataforma \nextsaude[] (subitem X). Para isso, utiliza-se o padrão OpenEHR. Sua 
+função é permitir que outros sistemas de saúde se comuniquem de maneira transparente 
+e com o menor esforço técnico possível.
+
+%Parte dessa integração é realizada através do padrão OpenEHR (subitem Y), sua 
+%função é permitir que sistemas informatizados de saúde, no caso a plataforma
+%\nextsaude[], se comunique de maneira transparente com outros sistemas de saúde ou
+%instâncias de sistemas de saúde, tal como a aplicação TV-Health (descrito no capítulo
+%\ref{cap:aspectos-de-implementacao}). A utilização do OpenEHR possibilita que toda a solução
+%proposta se comunique, com o menor esforço possível, com outros sistemas de 
+%saúde.
+
+No subitem X temos a plataforma \nextsaude[], esta plataforma oferece meios
+para que outros sistemas possam se comunicar com ela, possibilitando uma
+integração entre vários sistemas.
 
 %\subsection{Simulações} \label{subsec:simulacoes}
 
@@ -216,19 +217,24 @@ de tópicos apresentados na plataforma \textit{OpenIoT}
 \section{Descrição da arquitetura}
 \label{sec:descricao-solucao}
 
-A arquitetura proposta nesta seção tem como uma das bases, a plataforma OpenIoT
-(descrita na seção \vref{sec:openiot}). Levando em consideração a divisão da
-arquitetura nas 3 grandes camadas ``Plano Físico'', ``Plano Virtualizado'' e
-``Plano de Utilitários e Aplicativos'', re-estruturamos para suprir a
-necessidade específica do trabalho. Uma arquitetura que atenda a ambientes de
-assistência domiciliar à saúde e que tenha em sua estrutura, espaço para a
-tecnologia IoT.
+A arquitetura TV Health das Coisas proposta nesta seção tem como uma das bases
+a plataforma OpenIoT (descrita na seção \vref{sec:openiot}). Considerando a
+forma em que ela foi dividida (``Plano Físico'', ``Plano Virtualizado'' e
+``Plano de Utilitários e Aplicativos''), foi feito um estudo para entender de
+que forma ela poderia ser modificada e utilizada para atender o ambiente de
+assistência domiciliar à saúde.
 
-Considerando a figura \ref{fig:arquitetura-openiot-2}, foi separado o Plano físico -
-que é composto principalmente pelo módulo \textit{Global Sensor Network} -
-em 2 blocos e uma camada de nome ``Aquisição de dados'' (1) (figura
+%Levando em consideração a divisão da
+%arquitetura nas 3 grandes camadas , re-estruturamos para suprir a
+%necessidade específica do trabalho. Uma arquitetura que atenda a ambientes de
+%assistência domiciliar à saúde e que tenha em sua estrutura, espaço para a
+%tecnologia IoT.
+
+Na figura \ref{fig:arquitetura-openiot-2} foi separado o Plano físico -
+composto principalmente pelo módulo \textit{Global Sensor Network} -
+em 2 blocos e uma camada de nome ``Aquisição de dados'' (figura
 \ref{fig:arquitetura-passo1}). Esta camada caracteriza toda a parte de baixo
-nível da arquitetura. Fazem parte dela os sensores médicos, sensores gerais, o
+nível da arquitetura. Fazem parte dela os sensores de saúde, sensores gerais, o
 \stb[] e suas aplicações embarcadas. A comunicação entre esses dois blocos
 dar-se através da rede WiFi diponibilizada na residência, Bluetooth ou NFC. Os
 dados adquiridos são persistidos no STB. Caso seja necessário, alguns desses
@@ -242,7 +248,7 @@ Virtualizado em 3 blocos e 3 camadas distintas, como pode ser visto na figura
 
 \figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
 
-A ``Camada de inteligência local'' (2) não tem representante equivalente na
+A ``Camada de inteligência local'' não tem representante equivalente na
 arquitetura OpenIoT e pode ser relacionada tanto com o Plano Físico, quanto com
 o Plano Virtualizado, uma vez que ela encontra-se logicamente no dispositivo
 STB mas tem características próprias dos módulos do Plano Virtualizado, 
@@ -253,7 +259,7 @@ na forma de ontologias. O próprio STB, portanto, pode decidir em eventuais
 situações, fornecendo uma resposta rápida e evitando assim, tráfego de dados
 desnecessário através da Internet.
 
-Já a ``Camada de inteligência remota'' (3) baseia-se no Plano Virtualizado que
+Já a ``Camada de inteligência remota'' baseia-se no Plano Virtualizado que
 é composto pelos módulos ``Scheduler'', ``Linked Stream Middleware'' e ``Service
 Delivery and Utility Manager''. A camada tem como função recuperar os dados
 adquiridos pelos sensores e processá-los através de classificadores,
@@ -264,17 +270,17 @@ através de ontologias, pode-se preparar os dados para inteligência artificial
 por meio de aprendizagem de máquinas, aumentando o poder de inferência do
 sistema.
 
-A ``Camada de gerência de dados'' (4), foi extraída do Plano Virtualizado e do
+A ``Camada de gerência de dados'' foi extraída do Plano Virtualizado e do
 Plano de utilitários e aplicativos. Ela trata os dados gerenciais, aqueles
 referentes ao paciente e a logística de um atendimento especializado em
-domicílio, podendo ainda, realizar a integração com o ambiente hospitalar, caso
+domicílio, podendo, ainda, realizar a integração com o ambiente hospitalar, caso
 seja necessário uma transferência do doente. A plataforma \nextsaude[]
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
 Registro Eletrônico de Saúde (RES), integração com áreas hospitalares, farmácias etc.
 
 \figurasimples{arquitetura-passo3}{Simplificação da arquitetura OpenIoT - Plano de Utilitários e Aplicações}{10cm}
 
-Por fim, a ``Camada de apresentação'' (5) é referente ao Plano de utilitários e
+Por fim, a ``Camada de apresentação'' é referente ao Plano de utilitários e
 aplicativos, porém, diferente da plataforma OpenIoT, esta camada se estende por
 toda a arquitetura, uma vez que a visualização de dados está presente em todas 
 as camadas. Sendo assim, é possível que os diversos atores interajam por meio de
@@ -283,25 +289,25 @@ A camada, portanto, se encarrega de apresentar os dados brutos ou as informaçõ
 processadas nos dispositivos conectados à plataforma. 
 
 A arquitetura é, portanto, composta de 5 camadas distintas mas que se comunicam
-entre si. As camadas descritas anteriormente, (1) ``Camada de aquisição de
-dados'' responsável por adquirir os dados brutos dos sensores, (2) ``Camada de
+entre si. As camadas descritas anteriormente, ``Camada de aquisição de
+dados'' responsável por adquirir os dados brutos dos sensores, ``Camada de
 Inteligência local'' responsável por inferir sob os dados acquisitados ainda no
-STB, (3) ``Camada de Inteligência na nuvem'', responsável por realizar
-inferências que não podiam ser realizadas localmente, (4) ``Camada de Gerência
+STB, ``Camada de Inteligência na nuvem'', responsável por realizar
+inferências que não podiam ser realizadas localmente, ``Camada de Gerência
 de dados'', responsável por gerenciar parte dos dados coletados no ambiente
 domiciliar, cruzando com dados oriundos de outros módulos da plataforma
-\nextsaude[] e (5) ``Camada de Apresentação de informações'' - responsável por
+\nextsaude[] e ``Camada de Apresentação de informações'' - responsável por
 apresentar os dados nos mais diversos dispositivos, são representadas na figura
 \ref{fig:arquitetura-final}.
 
-\figurasimples{arquitetura-final}{Visão geral arquitetural da solução}{12cm}
+\figurasimples{arquitetura-final}{Visão geral arquitetural TV Health das Coisas}{12cm}
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
 A figura \ref{fig:visao-engenharia-final} representa a visão de engenharia da arquitetura
 proposta. Ela tem como ponto principal a utilização de um \stb[], quando se
 conectam a ele sensores  implantados no ambiente, sensores de dispositivos como
-\smartphones[] e  \smartwatches[] do paciente e do cuidador, e sensores médicos
+\smartphones[] e  \smartwatches[] do paciente e do cuidador, e sensores de saúde 
 do doente.
 
 Esse processo é composto de três momentos distintos, mas interligados, no qual
@@ -310,7 +316,7 @@ transmissão destes dados ao STB. O segundo diz respeito ao processamento dos
 dados brutos. O terceiro momento o envio dos dados processados para a plataforma
 \nextsaude[].
 
-\figurasimples{visao-engenharia-final}{Visão de engenharia da arquitetura proposta.}{12cm}
+\figurasimples{visao-engenharia-final}{Visão de engenharia da arquitetura TV Health das Coisas.}{12cm}
 
 \subsection{Blocos \textit{hub} e sensores}
 
@@ -323,11 +329,11 @@ de celulares, como a localização, também cooperam com o contexto, a exemplo d
 informação proveniente do celular do cuidador que informa, à equipe médica ou
 aos parentes, se este está junto ao paciente.
 
-Já os sensores médicos têm como função principal coletar os sinais vitais do
+Já os sensores de saúde têm como função principal coletar os sinais vitais do
 paciente (pressão arterial, frequência cardíaca, níveis de oxigênio no sangue
-etc). Em ambos os casos, - sensores gerais e sensores médicos - as informações
+etc). Em ambos os casos, - sensores gerais e sensores de saúde - as informações
 coletadas pelos dispositivos repassam  esses dados para o STB através de
-interfaces com tecnologia  \textit{Bluetooth}, \textit{NFC} ou \textit{Wi-Fi}.
+interfaces com tecnologia  \textit{Bluetooth} ou \textit{Wi-Fi}.
 
 Ao utilizarmos sensores com Wi-Fi, por exemplo, os dados são transferidos ao
 STB utilizando um protocolo de transferência de mensagens entre máquinas, o
@@ -351,14 +357,21 @@ o STB pode tomar decisões no âmbito domiciliar, não necessitando de acesso
 \subsection{Bloco aprendizagem de máquinas}
 
 O bloco de aprendizagem de máquinas que pertence a camada de inferência remota
-recebe determinados dados, tais como sinais vitais, da camada de aquisição de
+recebe determinados dados, tais como sinais vitais da camada de aquisição de
 dados. Em seguida os dados são processados para que sejam extraídos os atributos,
 compondo um conjunto de dados específicos. Por fim, algoritmos de aprendizagem
 de máquinas são executados, inferindo sobre determinado assunto.
 
+Pesquisas realizadas por \citeonline{mario2016} utilizam aprendizagem de
+máquinas para auxiliar no cuidado a grávidas. Já a pesquisa de
+\citeonline{bragamobile} faz uso de classificadores preditivos para identificar a
+presença de doenças transmitíveis pelo mosquito \textit{Aedes Aegypti} a partir
+de um conjunto de dados. Ambas as pesquisas foram realizadas por pesquisadores 
+do projeto \nextsaude[] no âmbito do laboratório LAR.
+
 \subsection{Bloco plataforma \nextsaude}
 
-O bloco plataforma \nextsaude[], componente da camada de gerência de dados abriga
+O bloco plataforma \nextsaude[] compõe a camada de gerência de dados e abriga
 o sistema responsável pela interligação da TV Health das Coisas com outros sistemas
 do projeto \nextsaude[] (figura \ref{fig:projeto-nextsaude}).
 
