@@ -1,0 +1,191 @@
+\chapter{Conclusões e trabalhos futuros} \label{cap:conclusao}
+% ---
+
+Históricamente, a TV Health das Coisas nasceu do METAL (Mecanismo de Comunicação entre Concessionárias e Clientes baseada na TV Digital), um projeto de pesquisa e 
+desenvolvimento no setor elétrico fomentado pela Agência Nacional de
+Energia Elétrica (ANEEL) em parceria com a ENEL (antiga Companhia Energética do
+Ceará - COELCE), tendo como base o Sistema Brasileiro da TV Digital (SBTVD). 
+
+Em seguida, a ideia do projeto METAL evoluiu para o TV Health, um projeto que
+conservava a mesma estrutura de \textit{hardware} do METAL, baseada na TV Digital,
+mas tinha como foco a área de ADS. A principal motivação era, além da presença
+quase universal da TV nas residências do país, a política federal vigente que prometia
+dotar os STBs de aplicações interativas com interesses visivelmente sociais,
+em especial nas áreas de educação e saúde. Na verdade, esta foi a razão do Brasil
+ter decidido desenvolver um modelo próprio de TV Digital em 2003.
+
+O TV Health foi desenvolvido no contexto do \nextsaude, um projeto financiado
+pela Fundação Cearense de Apoio ao Desenvolvimento Científico e Tecnológico
+no Ceará (FUNCAP). Até 2015, esperava-se que este módulo do \nextsaude
+atendesse a demanda do Governo Federal que acabou sendo adiada e continua até
+hoje indefinida: a expectativa do uso de aplicações interativas em toda a rede
+de beneficiários do Bolsa Família. Nesse sentido, várias reuniões foram feitas
+pelo autor deste trabalho e seu orientador na PUC Rio, mais precisamente no
+laboratório Telemídia, autor do \middleware[] Ginga, um resultado do SBTVD que
+tornou-se o padrão ITU-T número.
+
+Diante deste impasse, relativo ao destino do SBTVD, deu-se início ao TV Health
+das Coisas, novo projeto que, se de um lado mantinha a TV Digital e o seu associado
+STB, por outro lado o foco da pesquisa passa a ser o ambiente de ADS. Assim,
+toda a experiência acumulada pelo autor deste trabalho nos projetos METAL e
+\nextsaude foi canalizada na concepção da TV Health das Coisas que, como o próprio
+título caracteriza, faz uso da tecnologia \textit{Internet of Things} (IoT).
+
+Foi, portanto, este o processo percorrido pelo TV Health das Coisas, uma plataforma
+que disponibiliza uma arquitetura para o ambiente de ADS e implementa um protótipo 
+como prova de conceito da proposta. Para tanto, buscou-se referência no OpenIoT,
+uma plataforma da comunidade Europeia. Uma das razões dessa escolha deve-se a
+uma série características conceituais do OpenIoT que vão ao encontro do Lariisa,
+um projeto do qual se originou o \nextsaude e, por consequência, a TV Health
+das Coisas. Por exemplo, tanto o OpenIoT quanto o Lariisa fazem uso de ontologias
+e são fortemente orientados a contexto (\textit{context-aware concept}). 
+
+Além da correlação arquitetural da TV Health das Coisas e o OpenIoT, a proposta
+desse trabalho apresenta-se como uma plataforma mais leve. A disponibilidade de
+APIs facilita o desenvolvimento de novas aplicações, e sua intengração a plataforma
+\nextsaude[] agrega novas funcionalidades específicas da área de saúde. Na TV
+Health das Coisas é viável o acesso a uma série de serviços de saúde, tais como 
+o Registro Eletrônico de Saúde (RES), regulação (marcação de consultas, leitos etc.),
+farmácia (acesso a remédios), entre outros.
+
+Finalmente, caso haja uma decisão do Governo Federal em retomar a política em relação
+ao programa Bolsa Família, a TV Health das Coisas poderá trazer benefícios a milhões 
+de brasileiros, em especial das classes menos favorecidas, como preconizado no decreto 
+4096 que instituiu o SBTVD. Neste ínterim, a TV Health das Coisas continua como
+uma plataforma de pesquisa e desenvolvimento tendo sido aprovado pelo polo de Inovação Embrapii/IFCE e está sendo cogitada sua implantação em um plano de saúde com abragência nacional.
+
+
+% Tomando como base a assertiva que um dos grandes meios de entretenimento e
+% informação da população brasileira é a televisão e o advento do Sistema
+% Brasileiro de Televisão Digital com a interatividade inerente a ele, foi
+% pensado que a televisão pudesse ser utilizada também como um meio de interação
+% com o usuário. Para fornecer mais funcionalidades foi necessário a aplicação do
+% STB com poder de processamento e conexão à Internet disponibilizados na casa do
+% usuário.   
+
+% O projeto de pesquisa \nextsaude[] (número do projeto: 6424611/2014) composto
+% por três módulos: (1) \textit{hardware}, (2) gerenciamento de ontologias e (3)
+% aplicação,  se propôs a desenvolver soluções especializadas e gerar inovações
+% tecnológicas de interoperabilidade sintática, integração semântica de dados,
+% tomada de decisão automatizada e o consequente aconselhamento aos atores
+% envolvidos (do usuário ao gestor) em sistemas público de saúde. Como prova de
+% conceito, o projeto fez uso do STB e sensores em conjunto com a televisão digital
+% para focar na  assistência domiciliar à saúde para doentes, idosos e cuidadores.
+
+% O autor desse trabalho foi responsável pela execução do módulo de
+% \textit{hardware} que era constituído por um sistema embarcado, além da aplicação de
+% captura de dados do paciente em sua residência (assistência domiciliar à
+% saúde), seja ela através de sensores ou por meio de aplicativos com entrada de
+% dados. 
+
+% Ao término do projeto \nextsaude[], o módulo de \textit{hardware} foi renomeado para
+% TV-Health e era composto de um \stb[], aplicações interativas e sistema de alertas 
+% e avisos. Os outros dois módulos receberam o nome de plataforma \nextsaude.
+
+% Além disso, foram realizadas reuniões com o laboratório Telemídia da PUC - Rio
+% no sentido de distribuir as aplicações interativas de saúde desenvolvidas para o TV
+% Health nos STBs entregues aos beneficiários do programa Bolsa Família do Governo Federal.
+% Essa ação colocaria as aplicações em uso para milhões de brasileiros,
+% melhorando assim o acesso a informação e saúde.
+
+% %Além disso, a coordenação do projeto disponibilizou a plataforma
+% %\nextsaude[] e todos os seus subsistemas para que secretarias de saúde dos
+% %municípios pudessem implantar o sistema em suas gestões.
+
+% %Durante a execução do projeto, 
+
+% Por fim, percebeu-se a necessidade de um ambiente de atenção domiciliar à saúde
+% de qualidade, a importância do cuidador no auxílio ao idoso/doente além da
+% qualidade de vida que é necessária para terceira idade ou doentes crônicos.
+% Através das pesquisas, nota-se a importância da tecnologia da
+% informação para prover uma solução mais impactante para o usuário. 
+
+% A percepção de instrumentalização dos atores (cuidador, equipe de saúde, idoso
+% ou doente) através da tecnologia também surgiu nesse período. Aplicações
+% móveis, interface \web[] e acompanhamento do doente através da Internet foram
+% tópicos importantes para o projeto.
+
+% No período da entrega da primeira versão do TV Health, a partir da
+% pesquisa do estado da arte de tecnologias emergentes, percebeu-se que a Internet das Coisas
+% irá revolucionar a nossa sociedade. Diversos estudos apontam para uma transformação
+% profunda nas áreas da indústria e de serviços.
+
+% Não será diferente com o ambiente de atenção domiciliar como nós o conhecemos. Através
+% de ``coisas'' conectadas dotadas de sensores, poderemos melhorar a experiência
+% do usuário. Será possível, então, entregar um serviço bem mais transparente
+% para o usuário final, alinhando-o com as novas soluções propostas ao
+% redor do mundo.
+
+% A arquitetura proposta para atenção domiciliar à saúde faz uso de tecnologias
+% já conhecidas, tais como sistema sensível a contexto, sistemas embarcados e
+% ontologias, incluindo-se também a Internet das Coisas. Auxiliar doente, cuidador,
+% parentes e equipe de saúde através do STB e dispositivos móveis foi um dos
+% objetivos deste trabalho. 
+
+% A arquitetura considera a utilização do STB como um \textit{hub} de
+% comunicação. Todas as ``coisas'', ou seja, sensores coletando sinais vitais do
+% paciente, sensores coletando informações do ambiente e dispositivos móveis
+% contribuindo para um sistema repleto de informações sobre o ator (idoso
+% ou doente). Além disso a arquitetura contempla a tomada de decisão, tanto
+% local, quanto na nuvem, através da utilização de ontologias e aprendizagem de
+% máquinas.
+
+% Com essas características o objeto de estudo foi aprovado como um
+% projeto a ser executado em parceria com o Polo Emprapii de Inovação/IFCE e
+% a empresa cearense EXATA. Uma alteração do objeto de estudo
+% está em fase de negociação para que um plano de saúde privado faça uso 
+% da TV Health das Coisas em unidades hospitalares.
+
+\section{Produção científica}\label{sec:producao}  
+
+Durante este projeto de mestrado, os seguintes trabalhos científicos foram
+aceitos e publicados, a saber:
+
+\begin{itemize}
+  \item \textbf{LOPES, V. C. M.}; QUEIROZ, E.; FREITAS, N.; OLIVEIRA, M.; MONTEIRO, O. TV-Health:
+  A Context-Aware health Care Application for Brazilian Digital TV. In ACM.
+  \textit{Proceedings of the 22nd Brazilian Symposium on Multimedia and the Web (Webmedia)}. 
+  Teresina, Brasil. 2016, pp. 103-106.
+
+  \item \textbf{LOPES, V. C. M.}; ROCHA, E.; QUEIROZ, E.; FREITAS, N.; VIANA, D.; OLIVEIRA, M. VITESSE 
+  - more intelligence with emerging technologies for health systems. In: IEEE. 
+  \textit{2016 7th International Conference on the Network of the Future (NOF)}. Buzios, Brasil. 2016, pp. 1-3.
+\end{itemize}
+
+Além do seguinte artigo aceito para publicação:
+
+\begin{itemize}
+  \item \textbf{LOPES, V. C. M.}; MOTA, H.; OLIVEIRA, M.; CARVALHO, G. Towards an Emergency/Urgency
+    approach based on the Brazilian Digital TV. \textit{Multi Conference on Computer Science 
+    and Information Systems (MCCSIS)}. Ilha da Madeira, Portugal, 2016.
+\end{itemize}
+
+\section{Trabalhos futuros} \label{sec:trabalhos-futuros}
+
+A TV Health das Coisas pode também ser visto como uma visão computacional do
+trabalho realizado por \citeauthor{paz2014}, que apresentou a visão de saúde
+dos cenários de ADS. 
+
+Como trabalhos futuros, cogita-se a total integração dos serviços do \nextsaude
+ao protótipo desenvolvido, aprimoramento de APIs e a inclusão de novos métodos de 
+aquisição de dados.
+
+Acredita-se que a arquitetura proposta na TV Health
+das Coisas fornece uma base sólida e moderna para futuramente ajudar na 
+concepção de um modelo de referência que facilite o desenvolvimento de aplicações
+para ambientes específicos de ADS. 
+
+
+% Uma vez definida a arquitetura e as características gerais que um sistema de
+% atenção domiciliar à saúde atual deve ter, pode-se propor a inclusão de
+% novas funcionalidades à arquitetura apresentada, tais como novos métodos
+% de aquisição de dados com a ajuda de processamento de linguagem natural.
+
+% A necessidade de gerenciar corretamente todos os dispositivos que a Internet
+% das Coisas proporciona cria uma linha de pesquisa em que é necessário aprimorar
+% a comunicação e gerência de IoT e Computação em Nuvem.
+
+% Para finalizar, é possível realizar estudos relacionados ao tratamento em domicílio de
+% doenças específicas - tais como Parkinson, pessoas com pressão alta,
+% diabetes etc. O estudo em aprendizagem de máquinas permite a detecção
+% antecipada do surgimento de uma doença específica.
