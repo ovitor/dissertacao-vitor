@@ -2,13 +2,13 @@
 
 Neste capítulo será descrita a principal contribuição do trabalho composta pela
 modelagem dos cenários de Assistência Domiciliar à Saúde (ADS) dentro de uma
-visão computacional, identificando aspectos funcionais que atendam os
+perspectiva computacional, identificando aspectos funcionais que atendam os
 requisitos do ambiente de ADS e os elementos estruturais que apresentem a visão
 de engenharia da solução proposta.
 
 \section{Descrição de cenários}
 
-A figura \ref{fig:cenarios} representa, de maneira genérica, o cenário de
+A Figura \ref{fig:cenarios} representa, de maneira genérica, o cenário de
 aplicação da solução proposta neste trabalho. Nela podem ser verificados três
 ambientes. O ambiente A diz respeito ao domicílio do paciente. Já o ambiente B
 aborda os atores móveis, tais como, equipe de saúde, parentes, amigos etc.  O
@@ -18,7 +18,7 @@ ambiente C representa os serviços disponibilizados pela solução.
 
 \subsection{Ambiente A} \label{subsec:ambiente-a}
 
-O ambiente A na figura \ref{fig:cenarios} representa o domicílio do usuário, seus atores locais (paciente,
+O ambiente A na Figura \ref{fig:cenarios} representa o domicílio do usuário, seus atores locais (paciente,
 visitantes e cuidador e/ou parentes), os equipamentos responsáveis por  realizar
 a aquisição dos dados: o \stb[] (\textit{gateway}), a TV, \smartphones[], outros
 dispositivos capazes de apresentar dados e informações úteis para a ADS.
@@ -74,7 +74,7 @@ dia, durante 30 minutos.  Além disso, foi prescrito à Luísa alguns medicament
 necessários para evitar as dores - cada um deles deveria ser ingerido em
 horários específicos.
 
-Através do \stb[] acoplado à televisão e conectado à Internet, é
+Através do \stb[] acoplado à TV e conectado à Internet, é
 possível enviar à Luísa avisos e notificações lembrando de suas atividades
 diárias, como por exemplo, a caminhada de 30 minutos recomendada pelo
 médico além do medicamento a ser ingerido.
@@ -126,7 +126,7 @@ procedimento inerente a um paciente com Parkinson.
 
 \subsection{Ambiente B} \label{subsec:ambiente-b}
 
-O ambiente B na figura \ref{fig:cenarios} diz respeito aos atores móveis do
+O ambiente B na Figura \ref{fig:cenarios} diz respeito aos atores móveis do
 cenário geral. Os atores externos são a equipe de saúde, os familiares e amigos
 do paciente. Estes três tipos de atores estão em constante movimento e não
 visitam o doente frequentemente. Nesse sentido, o sistema disponibiliza meios
@@ -167,12 +167,12 @@ medidas a serem tomadas enquanto o socorro médico não chega.
 
 \subsection{Ambiente C} \label{subsec:ambiente-c}
 
-O ambiente C na figura \ref{fig:cenarios} aborda, de forma geral, os serviços
+O ambiente C na Figura \ref{fig:cenarios} aborda, de forma geral, os serviços
 oferecidos pela TV Health das Coisas.  Também o ambiente C mostra a forma como
 estes serviços se relacionam com os ambientes A e B. O ambiente C é descrito a
-partir de uma leitura \textit{bottom-up} da figura \ref{fig:cenarios}. 
+partir de uma leitura \textit{bottom-up} da Figura \ref{fig:cenarios}. 
 
-No subitem Z (lado direito da figura \ref{fig:cenarios}) têm-se os módulos:
+No subitem Z (lado direito da Figura \ref{fig:cenarios}) têm-se os módulos:
 Internet das Coisas ou \textit{IoT} e o \textit{hub}. A partir desses dois
 módulos é possível realizar a aquisição de dados dos sensores de saúde
 conectados ao paciente e sensores instalados no domicílio (ambiente A).  Isso
@@ -180,13 +180,13 @@ proporciona um monitoramento constante dos atores envolvidos, o que é ideal
 para uma situação de ADS. Os aspectos funcionais destes blocos serão
 apresentados na seção \ref{sec:descricao-solucao}.
 
-O subitem Y (lado direito da figura \ref{fig:cenarios}) representa o módulo em
+O subitem Y (lado direito da Figura \ref{fig:cenarios}) representa o módulo em
 que é feita a integração dos dados adquiridos à plataforma \nextsaude[]
 (subitem X).  Para isso, ele utiliza o padrão OpenEHR \cite{mota2016}. Sua
 função é permitir que outros sistemas de saúde se comuniquem de maneira
 transparente e com o menor esforço técnico possível.
 
-No subitem X (lado direito da figura \ref{fig:cenarios}) encontra-se a
+No subitem X (lado direito da Figura \ref{fig:cenarios}) encontra-se a
 plataforma \nextsaude[]. Esta plataforma oferece meios para que outros sistemas
 possam se comunicar com ela, possibilitando uma integração entre vários
 sistemas. Além disso, é através desta plataforma que a TV Health das Coisas tem
@@ -203,7 +203,7 @@ e ``Plano de Utilitários e Aplicativos''. Esta divisão em três planos serviu
 como referencial para a estruturação da arquitetura proposta neste trabalho,
 como pode ser observado a seguir.
 
-A figura \ref{fig:arquitetura-passo1} mostra a correlação entre o Plano Físico
+A Figura \ref{fig:arquitetura-passo1} mostra a correlação entre o Plano Físico
 do OpenIoT e a camada de ``Aquisição de dados'' da TV Health das Coisas. Esta
 camada é composta pelos blocos sensores/\smartphones[] e \textit{hub}.  Esta
 camada caracteriza toda a parte de baixo nível da arquitetura. Fazem parte dela
@@ -215,13 +215,13 @@ posterior processamento.
 
 \figurasimples{arquitetura-passo1}{Simplificação da arquitetura OpenIoT - Plano Físico}{10cm}
 
-A figura \ref{fig:arquitetura-passo2} mostra a correlação entre o Plano
+A Figura \ref{fig:arquitetura-passo2} mostra a correlação entre o Plano
 Virtualizado do OpenIoT e as camadas de ``Inteligência Local'', ``Inteligência
 Remota'' e ``Gerência de Dados'' da arquitetura TV Health das Coisas.
 
 \figurasimples{arquitetura-passo2}{Simplificação da arquitetura OpenIoT - Plano Virtualizado}{10cm}
 
-A ``Camada de inteligência local'' (figura \ref{fig:arquitetura-passo2}) não tem equivalente na
+A ``Camada de inteligência local'' (Figura \ref{fig:arquitetura-passo2}) não tem equivalente na
 arquitetura OpenIoT e pode ser relacionada tanto com o Plano Físico, quanto com
 o Plano Virtualizado. Ela encontra-se virtualmente no dispositivo
 STB mas tem características próprias dos módulos do Plano Virtualizado.
@@ -232,7 +232,7 @@ na forma de ontologias. O próprio STB, portanto, pode decidir em eventuais
 situações, fornecendo uma resposta rápida e evitando assim, tráfego de dados
 desnecessário através da Internet.
 
-Já a ``Camada de inteligência remota'' (figura \ref{fig:arquitetura-passo2})
+Já a ``Camada de inteligência remota'' (Figura \ref{fig:arquitetura-passo2})
 tem como função recuperar os dados adquiridos pelos sensores e processá-los
 através de classificadores preditivos.  Ao transmitir dados do ambiente
 domiciliar para o sistema na nuvem, a solução TV Health das Coisas incorpora o
@@ -247,7 +247,7 @@ seja necessário uma transferência do doente. A plataforma \nextsaude[]
 é utilizada nesta camada para prover os serviços necessários, tais como, o 
 Registro Eletrônico de Saúde (RES), integração com áreas hospitalares, farmácias etc.
 
-A figura \ref{fig:arquitetura-passo3} mostra a correlação entre o Plano
+A Figura \ref{fig:arquitetura-passo3} mostra a correlação entre o Plano
 de Utilitários e Aplicações do OpenIoT e a camada de ``Apresentação'' da arquitetura 
 TV Health das Coisas.
 
@@ -260,7 +260,7 @@ computadores e a TV na casa do doente.  Esta camada, portanto, se encarrega de
 apresentar os dados brutos ou as informações processadas nos dispositivos
 conectados à plataforma. 
 
-A figura \ref{fig:arquitetura-final} mostra a arquitetura TV Health das Coisas 
+A Figura \ref{fig:arquitetura-final} mostra a arquitetura TV Health das Coisas 
 proposta neste trabalho. Ela é composta por 5 camadas distintas mas que se comunicam
 entre si: A ``Camada de aquisição de
 dados'', responsável por adquirir os dados brutos dos sensores; ``Camada de
@@ -275,14 +275,14 @@ apresentar os dados nos mais diversos dispositivos.
 
 \section{Visão de Engenharia} \label{sec:visao-engenharia}
 
-A visão de engenharia da TV Health das Coisas (figura
+A visão de engenharia da TV Health das Coisas (Figura
 \ref{fig:visao-engenharia-final}) tem como objetivo descrever as tecnologias e
-métodos utilizadas na concepção da arquitetura proposta (figura
+métodos utilizadas na concepção da arquitetura proposta (Figura
 \ref{fig:arquitetura-final}).
 
 Nela percebe-se que o \textit{hub} possui um papel central uma vez que a ele
 são conectados sensores implantados no ambiente, e sensores de saúde. Como pode
-ser observado na figura \ref{fig:visao-engenharia-final} ele é o elo de ligação
+ser observado na Figura \ref{fig:visao-engenharia-final} ele é o elo de ligação
 entre os atores, os sensores e o resto do sistema.
 
 Esta visão de engenharia é composta de três momentos distintos, mas interligados, no qual
@@ -348,7 +348,7 @@ partir de um conjunto de dados.
 
 O bloco plataforma \nextsaude[] compõe a camada de gerência de dados e abriga
 o sistema responsável pela interligação da TV Health das Coisas com outros módulos
-do projeto \nextsaude[] (figura \ref{fig:projeto-nextsaude}).
+do projeto \nextsaude[] (Figura \ref{fig:projeto-nextsaude}).
 
 \figuraadaptada[mota2016]{projeto-nextsaude}{Interação da TV Health das Coisas com outros módulos
 do projeto \nextsaude.}{12cm}
