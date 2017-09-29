@@ -9,7 +9,7 @@ disponibilizadas.
 \section{\textit{Hardware} utilizado} 
 
 O \stb[] escolhido possui especificações técnicas robustas, listadas na 
-tabela \ref{tab:stb-specs}, sendo resultado de um projeto de pesquisa
+Tabela \ref{tab:stb-specs}, sendo resultado de um projeto de pesquisa
 fomentado pela Agência Nacional de Energia Elétrica (ANEEL) e executado pela
 empresa CRAFF Tecnologia\footnote{\url{http://www.craff.com.br}}. 
 
@@ -59,7 +59,7 @@ por ocasião da conclusão do projeto \nextsaude[] e da aprovação de artigos
 acadêmicos apresentados em congressos, listados na conclusão.
 
 As aplicações foram projetadas para atender os requisitos de uma plataforma
-embarcada com as características da tabela \ref{tab:stb-specs}. Apesar 
+embarcada com as características da Tabela \ref{tab:stb-specs}. Apesar 
 das especificações do \hardware[], o desenvolvimento foi encaminhado para 
 obter-se um \software[] simples em consumo de recursos.
 
@@ -78,7 +78,7 @@ Foi necessária a implantação de um módulo \textit{web} para gerenciar as
 informações básicas do usuário. Neste sistema, será possível cadastrar um 
 paciente, seus alertas e contatos de emergência. O módulo \web[] foi desenvolvido
 na linguagem \python[] e funciona no STB. Ele pode ser acessado através de
-um navegador conectado a rede WiFi local. A tabela \ref{tab:web-api} apresenta
+um navegador conectado a rede WiFi local. A Tabela \ref{tab:web-api} apresenta
 a API disponível no sistema. A Figura \vref{fig:web-db} representa o diagrama
 de entidades e relação da aplicação.
 
@@ -250,7 +250,7 @@ dispositivo, seja ele um \textit{hardware} ou um \textit{script}, consiga
 realizar requisições HTTP e enviar mensagens MQTT com conteúdo JSON.
 
 A \textit{API Restful} projetada no contexto da solução proposta permite que determinado
-dispositivo seja adicionado ao sistema, utilizando a API de Gerenciamento (tabela
+dispositivo seja adicionado ao sistema, utilizando a API de Gerenciamento (Tabela
 \ref{tab:sensors-api}). 
 Assim, o novo dispositivo passa a fazer parte do grupo de sensores existentes.
 Já a API de dados permite que o novo sensor contribua com dados para o sistema.
@@ -266,7 +266,7 @@ nível de oxigênio no sangue etc). Uma vez conectado ao sistema e o dispositivo
 tenha sido identificado, o novo sensor poderá enviar os dados coletados por meio de
 mensagens MQTT. 
 
-A API de gerenciamento conta inicialmente com dois métodos listados na tabela
+A API de gerenciamento conta inicialmente com dois métodos listados na Tabela
 \ref{tab:sensors-api}. A mensagem JSON que deve ser enviada ao fazer uma
 requisição POST no caminho \texttt{api/v1/device/} é apresentada no código
 \ref{lst:message-post}.
