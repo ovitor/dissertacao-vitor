@@ -80,6 +80,7 @@
 \usepackage{colortbl}
 \usepackage{listings}			% Inclusão de códigos
 \usepackage{minted}				% Inclusão de códigos
+\usepackage{pdfpages}
 \include{utils/codigos}
 \include{utils/cores}
 \setlist[itemize]{noitemsep, topsep=0pt, leftmargin=1.75cm}
@@ -185,7 +186,10 @@
 \imprimircapa % Capa *
 \imprimirfolhaderosto % Folha de rosto *
 
-\input{utils/folhadeaprovacao.tex}
+\includepdf{pretextual/ficha_catalografica}
+\includepdf{pretextual/blank}
+\includepdf{pretextual/folha_aceite}
+\includepdf{pretextual/blank}
 
 
 %\includepdf{pretextual/folhadeaprovacao.pdf} 	% Folha de aprovação (Depois da apresentação)
